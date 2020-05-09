@@ -1,0 +1,44 @@
+/*
+* Dividers
+*/
+
+hr {
+	margin-top: 0;
+	margin-bottom: 0;
+	border-top: $hr-border-width solid $hr-border-color;
+}
+
+.divider {
+	display: block;
+	font-size: 0;
+	line-height: 0;
+
+	&:before {
+		content: "";
+		display: inline-block;
+		margin-top: 0;
+		margin-bottom: 0;
+	}
+
+	&-1 {
+		&:before {
+			width: 100%;
+			border-top: 1px solid $gray-300;
+		}
+	}
+
+	&-2 {
+		&:before {
+			width: 80%;
+			border-top: 1px solid $gray-200;
+		}
+	}
+}
+
+// Divider Offsets
+.big-text + .divider-2 { margin-top: 20px; }
+
+// Extra large ≥1200px
+@include media-breakpoint-up(xl) {
+	.big-text + .divider-2 { margin-top: 54px; }
+}

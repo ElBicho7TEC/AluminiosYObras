@@ -1,0 +1,39 @@
+/*
+* Element groups
+*/
+
+html {
+	.group {
+		@include group(15px, 20px);
+	}
+
+	.group-sm {
+		@include group(50px, 10px);
+	}
+
+	.group-md {
+		@include group(30px, 10px);
+	}
+
+	.group-xl {
+		@include group(30px, 20px);
+
+		@include media-breakpoint-up(lg) {
+			@include group-media(40px, 20px);
+		}
+	}
+
+	.group-middle {
+		display: inline-flex;
+		flex-wrap: wrap;
+		align-items: center;
+	}
+}
+
+* + .group-sm {
+	margin-top: 30px;
+}
+
+* + .group-xl {
+	margin-top: 20px;
+}

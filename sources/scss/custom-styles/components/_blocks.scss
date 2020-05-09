@@ -1,0 +1,41 @@
+/*
+* Blocks
+*/
+
+%block-center {
+	margin-left: auto;
+	margin-right: auto;
+}
+
+// Limits block width and block element can be centered horizontally
+//
+.block-sm {
+	@extend %block-center;
+	max-width: 560px;
+}
+
+.block-lg {
+	@extend %block-center;
+	max-width: 768px;
+}
+
+.block-1-custom {
+	max-width: 300px;
+	color: $black;
+
+	// Small <576px
+	@include media-breakpoint-up(sm) {
+		margin-left: auto;
+		margin-right: auto;
+	}
+}
+
+.block-2-custom {
+	max-width: 210px;
+
+	// Small <576px
+	@include media-breakpoint-up(sm) {
+		margin-left: auto;
+		margin-right: auto;
+	}
+}

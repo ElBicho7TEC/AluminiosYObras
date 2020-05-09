@@ -1,0 +1,210 @@
+//- Image
+	@param {string} name
+mixin img( name )
+	- var size = getImageSize( name );
+	img( src= setImagePath(setImageExtension(name)), alt='', width= size[0], height= size[1] )&attributes( attributes )
+
+
+//- Jpg image
+	@param {string} name
+mixin jpg( name )
+	- var size = getImageSize( name );
+	img( src= setImagePath(name + '.jpg'), alt='', width= size[0], height= size[1] )&attributes( attributes )
+
+
+//- Png image
+	@param {string} name
+mixin png( name )
+	- var size = getImageSize( name );
+	img( src= setImagePath(name + '.png'), alt='', width= size[0], height= size[1] )&attributes( attributes )
+
+
+//- Loop without indexing mixin
+	@param {number} iterations - number of iterations
+mixin loop( iterations )
+	- for ( var i = 0; i < iterations; i++ )
+	block
+
+
+//- Parallax Section
+	@param {object} obj - parameters storage
+	@param {string} obj.img - image path
+	@param {string} obj.innerClass - content wrapper class
+mixin parallax( obj )
+	section.parallax-container( data-parallax-img= setImagePath(setImageExtension(obj.img)) )&attributes( attributes )
+		.parallax-content( class= obj.innerClass )
+			block
+
+
+//- Breadcrumbs
+	@param {object} obj - parameters storage
+	@param {string} obj.category - required menu category
+	@param {string} obj.bgImage - section background image
+	@param {array}  obj.path - other navigation path
+mixin breadcrumbs( obj )
+	section.breadcrumbs-custom.bg-image.context-dark( style=obj.bgImage ? 'background-image: url(' + setImagePath(setImageExtension(obj.bgImage)) + ');' : '' )
+		.container
+			if (obj.tag)
+				.tag-small=obj.tag
+			if (obj.title)
+				h3.breadcrumbs-custom-title=obj.title
+			if (obj.titleSmall)
+				p.breadcrumbs-custom-title-small=obj.titleSmall
+			if (obj.subtitle)
+				pre-footer-classic.breadcrumbs-custom-subtitle=obj.subtitle
+
+
+//- Logo
+mixin logo
+	a.brand( href='index.html' )&attributes( attributes )
+		+png( logo.default.normal ).brand-logo-dark
+		+png( logo.inverse.normal ).brand-logo-light
+
+
+//- Copyright
+mixin rights
+	p.rights.font-weight-regular&attributes( attributes )
+		span &copy;&nbsp; 
+		span.copyright-year
+		span &nbsp;
+		span= logo.name
+		span .&nbsp;
+		span All Rights reserved
+		| . Design&nbsp;by&nbsp;#[a(href="https://zemez.io/") Zemez]
+
+//- Counter boxed
+mixin counter-boxed(obj)
+	article.box-counter(class=obj.addClass)
+		.box-counter-main
+			if (obj.valueZero)
+				.counter.counter-zero=obj.valueZero
+			if (obj.value)
+				.counter= obj.value
+			if (obj.postfix)
+				span.small.small_top=obj.postfix
+			if (obj.icon)
+				.icon(class=obj.icon)
+		.box-counter-title= obj.title
+
+//- Counter minimal
+mixin counter-minimal(obj)
+	.counter-minimal
+		.counter-left
+			.counter= obj.value
+		.counter-right
+			.postfix=obj.postfix
+			.title= obj.title
+
+//- Blurb minimal
+mixin blurb-minimal(obj)
+	.blurb-minimal.unit.unit-spacing-sm.flex-column.flex-lg-row
+		.unit-left
+			.blurb-minimal-icon(class=obj.icon)
+		.unit-body
+			h5.blurb-minimal-title= obj.title
+			p.blurb-minimal-exeption=obj.exeption
+
+//- Blurb hover
+mixin blurb-hover(obj)
+	.blurb-hover(class=obj.addClass)
+		.blurb-hover-header
+			.blurb-hover-icon(class=obj.icon)
+			.blurb-hover-counter.index-counter
+		h5.blurb-hover-title= obj.title
+		p.blurb-hover-exeption=obj.exeption
+
+//- Blurb boxed
+mixin blurb-boxed(obj)
+	.blurb-boxed(class=obj.addClass)
+		.blurb-boxed-header
+			h5.blurb-boxed-title= obj.title
+			.blurb-boxed-icon(class=obj.icon)
+		if (block)
+			block
+
+//- Project grid
+mixin project-grid(obj)
+	.project-grid(style="background-image: url(images/" + obj.imgBackground + ".jpg);")
+		.inner
+			+png(obj.imgLogo)
+			h5.title.text-capitalize.font-weight-medium: a(href= obj.link ? obj.link : "#")= obj.title
+			p.font-weight-regular.exeption= obj.exeption
+			a.button.button-default(href= obj.link ? obj.link : "#") View
+
+//- Project masonry
+mixin project-masonry(obj)
+	.project-masonry(class= obj.addClass, style="background-image: url(images/" + obj.imgBackground + ".jpg);")
+		.inner
+			.project-masonry-footer
+				h5.title: a(href= obj.link ? obj.link : "#")= obj.title
+				p.exeption= obj.exeption
+				a.button.button-default(href= obj.link ? obj.link : "#") View
+
+//- Post classic
+mixin post-classic(obj)
+	.post-classic
+		.media-wrap
+			if (obj.tag)
+				.tag= obj.tag
+			a(href=obj.link)
+				+jpg(obj.image)
+		h5.title: a(href=obj.link)= obj.title
+		p.exeption= obj.exeption
+		.time.text-black= obj.time
+
+//- Post classic small
+mixin post-classic-small(obj)
+	.post-classic-small
+		.media-wrap
+			if (obj.tag)
+				.tag= obj.tag
+			a(href=obj.link)
+				+jpg(obj.image)
+		h6.title
+			a(href=obj.link)= obj.title
+		.time= obj.time
+
+//- Post minimal
+mixin post-minimal(obj)
+	.post-minimal
+		h6.title
+			a(href= obj.link)= obj.title
+		.time= obj.time
+
+//- Box comment
+mixin box-comment(obj)
+	.box-comment
+		.box-comment-image
+			+jpg(obj.imgName)
+		.box-comment-body
+			.heading-6.title=obj.name
+			.meta
+				span.time=obj.time
+				a(href="#") Reply
+			p.exeption= obj.exeption
+
+//- Video box
+//- {background, link}
+mixin video-box(data)
+	a.video-cover(style="background-image: url('images/" + data.background + "');" data-lightgallery="item" href=data.link)
+		span.icon.icon-white.mdi.mdi-play
+
+//- Team box
+mixin team-box(obj)
+	.box-team(class=obj.addClass)
+		+jpg(obj.imgName)
+		.meta
+			.heading-6.title=obj.name
+			p.position= obj.position
+
+// Price box minimal
+mixin price-box-minimal(obj)
+	.price-box-minimal
+		.text From
+		.heading-5.price=obj.price
+
+
+//- String output
+	@param {*} data
+mixin strOut( data )
+	pre( style='background: #eeeeee; margin: 5px; padding: 5px; border: 1px solid black; font-family: Courier; color: black; font-size: 16px; font-weight: 400; line-height: 1.5; border-radius: 5px; tab-size: 2; text-align: left;' )= JSON.stringify(data, null, '\t')

@@ -1,0 +1,407 @@
+/*
+* Posts
+*/
+
+// 
+// Table of Contents:
+// 
+// Post Classic
+//
+//
+
+//
+// Post Classic
+//
+.post-classic {
+	max-width: 700px;
+
+	.media-wrap {
+		position: relative;
+
+		> a {
+			display: block;
+
+			&:hover {
+				img {
+					opacity: .8;
+				}
+			}
+		}
+
+		img {
+			transition: .3s;
+			width: 100%;
+		}
+	}
+
+	.tag {
+		position: absolute;
+		left: 32px;
+		top: 25px;
+		z-index: 1;
+		padding: 0 9px;
+		font-size: 13px;
+		font-weight: 500;
+		letter-spacing: 0.01em;
+		text-transform: uppercase;
+		color: $white;
+		background: $primary;
+		pointer-events: none;
+	}
+
+	.title {
+		letter-spacing: 0.01em;
+	}
+
+	.time {
+		display: flex;
+		font-weight: 400;
+		text-transform: uppercase;
+
+		&:before {
+			content: "";
+			position: relative;
+			top: 0.8em;
+			width: 22px;
+			margin-right: 15px;
+			flex-shrink: 0;
+			border-top: 1px solid;
+			color: inherit;
+		}
+	}
+
+	* + .title { margin-top: 18px; }
+	* + .exeption { margin-top: 10px; }
+	* + .time { margin-top: 10px; }
+
+	// Extra large ≥1200px
+	@include media-breakpoint-up(xl) {
+		* + .title { margin-top: 46px; }
+		* + .exeption { margin-top: 26px; }
+		* + .time { margin-top: 24px; }
+	}
+}
+
+.post-classic + .post-classic { margin-top: 50px; }
+
+// Extra large ≥1200px
+@include media-breakpoint-up(xl) {
+	.post-classic + .post-classic { margin-top: 70px; }
+}
+
+//
+// Post Classic
+//
+.post-classic-small {
+	.media-wrap {
+		position: relative;
+
+		> a {
+			display: block;
+
+			&:hover {
+				img {
+					opacity: .8;
+				}
+			}
+		}
+
+		img {
+			width: 100%;
+			transition: .3s;
+		}
+	}
+
+	.tag {
+		position: absolute;
+		left: 15px;
+		top: 14px;
+		z-index: 1;
+		padding: 0 9px;
+		font-size: 13px;
+		font-weight: 500;
+		letter-spacing: 0.01em;
+		text-transform: uppercase;
+		color: $white;
+		background: $primary;
+		pointer-events: none;
+	}
+
+	.title {
+		font-weight: 400;
+		line-height: 1.5;
+		letter-spacing: 0.01em;
+	}
+
+	.time {
+		padding-left: 4px;
+		display: flex;
+		font-weight: 400;
+		text-transform: uppercase;
+
+		&:before {
+			content: "";
+			position: relative;
+			top: 0.8em;
+			width: 10px;
+			margin-right: 8px;
+			flex-shrink: 0;
+			border-top: 1px solid;
+			color: inherit;
+		}
+	}
+
+	* + .title { margin-top: 18px; }
+	* + .time { margin-top: 7px; }
+
+	// Extra large ≥1200px
+	@include media-breakpoint-up(xl) {
+		* + .title { margin-top: 26px; }
+	}
+}
+
+// Sidebar
+.aside-wrap {
+	background: $gray-100;
+	padding: 28px 15px;
+}
+
+.aside-item + .aside-item {
+	margin-top: 43px;
+}
+
+// Extra large ≥1200px
+@include media-breakpoint-up(xl) {
+	.aside-wrap {
+		padding: 48px 36px 48px 59px;
+	}
+
+	.aside-item + .aside-item {
+		margin-top: 73px;
+	}
+}
+
+// Single post
+.post-single-wrap {
+	max-width: 700px;
+}
+
+.post-single-content {
+	.title {
+		letter-spacing: 0.015em;
+	}
+
+	* + p { margin-top: 15px; }
+	* + img { margin-top: 30px; }
+	* + .title { margin-top: 40px; }
+	* + .divider { margin-top: 44px; }
+	* + .box-inline { margin-top: 33px; }
+
+	
+	// Extra large ≥1200px
+	@include media-breakpoint-up(xl) {
+		* + p { margin-top: 34px; }
+		* + img { margin-top: 38px; }
+		* + .title { margin-top: 59px; }
+		* + .divider { margin-top: 44px; }
+		* + .box-inline { margin-top: 33px; }
+		* + .list-tags { margin-top: 37px; }
+	} 
+}
+
+* + .post-single-item { margin-top: 30px; }
+
+// Extra large ≥1200px
+@include media-breakpoint-up(xl) {
+	* + .post-single-item { margin-top: 77px; }
+}
+
+.box-inline {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	align-items: center;
+	@include group(10px, 17px);
+
+	.small-text {
+		font-size: 13px;
+		text-transform: uppercase;
+	}
+}
+
+// Comments list
+.comment-list {
+	.comment-list-reply {
+		> li { padding-left: 15px; }
+	}
+
+	> li + li,
+	.comment-list-reply > li + li { margin-top: 50px; }
+
+	* + .comment-list-reply { margin-top: 51px; }
+
+	// Medium ≥768px
+	@include media-breakpoint-up(md) {
+		.comment-list-reply {
+			> li { padding-left: 75px; }
+		}
+	}
+
+	// Extra large ≥1200px
+	@include media-breakpoint-up(xl) {
+		.comment-list-reply {
+			> li { padding-left: 115px; }
+		}
+	}
+}
+
+* + .comment-list { margin-top: 26px; }
+* + .comment-divider { margin-top: 27px; }
+
+// Extra large ≥1200px
+@include media-breakpoint-up(xl) {
+	* + .comment-list { margin-top: 56px; }
+	* + .comment-divider { margin-top: 57px; }
+}
+
+// Single comment
+.box-comment {
+	display: flex;
+	flex-direction: column;
+
+	&-image {
+		flex-shrink: 0;
+		padding-bottom: 15px;
+
+		img {
+			border-radius: 50%;
+		}
+	}
+
+	&-body {
+		.title {
+			font-weight: 400;
+		}
+	}
+
+	.time {
+		padding-right: 10px;
+		color: rgba($black, .5);
+	}
+
+	.meta {
+		a {
+			font-weight: 500;
+		}
+	}
+
+	* + .meta { margin-top: 5px; }
+	* + .exeption { margin-top: 15px; }
+
+	// Medium ≥768px
+	@include media-breakpoint-up(md) {
+		flex-direction: row;
+
+		&-image {
+			max-width: 30%;
+			padding-right: 30px;
+			padding-bottom: 0;
+		}
+	}
+
+	// Extra large ≥1200px
+	@include media-breakpoint-up(xl) {
+		* + .exeption { margin-top: 23px; }
+	}
+}
+
+// Widgets
+//
+
+// List tags
+.list-tags {
+	@include group(10px, 17px);
+
+	.tag {
+		display: inline-block;
+		padding: 6px 16px;
+		font-size: 13px;
+		font-weight: 500;
+		letter-spacing: 0.01em;
+		text-transform: uppercase;
+		color: $body-color;
+		border: 1px solid;
+
+		&:hover {
+			color: $white;
+			background: $primary;
+			border-color: $primary;
+		}
+	}
+}
+
+
+* + .list-tags { margin-top: 20px; }
+
+// Extra large ≥1200px
+@include media-breakpoint-up(xl) {
+	* + .list-tags { margin-top: 27px; }
+}
+
+// List categories
+.list-categories {
+	max-width: 130px;
+
+	> li {
+		display: flex;
+		justify-content: space-between;
+	}
+
+	> li + li { margin-top: 8px; }
+
+	.number {
+		color: rgba($black, .5);
+	}
+}
+
+* + .list-categories { margin-top: 16px; }
+
+// Extra large ≥1200px
+@include media-breakpoint-up(xl) {
+	* + .list-categories { margin-top: 26px; }
+}
+
+// Post minimal
+.post-minimal {
+
+	.title {
+		font-weight: 300;
+		line-height: 1.67;
+	}
+
+	.time {
+		text-transform: uppercase;
+		color: $primary;
+	}
+
+	* + .time { margin-top: 8px; }
+
+	// Extra large ≥1200px
+	@include media-breakpoint-up(xl) {
+		* + .time { margin-top: 15px; }
+	}
+}
+
+* + .post-minimal { margin-top: 16px; }
+.post-minimal + .post-minimal { margin-top: 20px; }
+
+// Extra large ≥1200px
+@include media-breakpoint-up(xl) {
+	* + .post-minimal { margin-top: 23px; }
+	.post-minimal + .post-minimal { margin-top: 28px; }
+}
+
+// Aside form
+.aside-item * + .aside-form {
+	margin-top: 25px;
+}

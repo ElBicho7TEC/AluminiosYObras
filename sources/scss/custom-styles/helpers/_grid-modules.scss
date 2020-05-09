@@ -1,0 +1,77 @@
+/*
+* Grid modules
+*/
+
+// Custom Grid
+//
+// Change $enable-grid-classes-custom: true
+// that would generate custom grid (example: 10 columns)
+
+$enable-grid-classes-custom: false;
+
+@mixin make-grid-columns-custom($columns: $grid-columns, $gutter: $grid-gutter-width, $breakpoints: $grid-breakpoints) {
+	@each $breakpoint in map-keys($breakpoints) {
+		$infix: breakpoint-infix($breakpoint, $breakpoints);
+
+		@include media-breakpoint-up($breakpoint, $breakpoints) {
+			@for $i from 1 through $columns {
+				.col#{$infix}-#{$i} {
+					@include make-col($i, $columns);
+				}
+			}
+		}
+	}
+}
+
+@if $enable-grid-classes-custom {
+	.row-ten {
+		@include make-grid-columns-custom(10);
+	}
+
+	.row-xl-ten {
+		@include make-grid-columns-custom(10, 30px, (xl: map-get($grid-breakpoints, xl), xlg: map-get($grid-breakpoints, xlg), xxl: map-get($grid-breakpoints, xxl)));
+	}
+}
+
+@mixin make-grid-columns-gutter-custom($gutter: $grid-gutter-width) {
+	margin-right: ($gutter / -2);
+	margin-left: ($gutter / -2);
+
+	> [class*="col-"] {
+		padding-right: ($gutter / 2);
+		padding-left: ($gutter / 2);
+	}
+}
+
+// Custom grid
+// Mega large ≥1600px
+@include media-breakpoint-up(xxl) {
+	.container-custom-width {
+		max-width: 1750px;
+		padding-left: $gutter-custom / 2;
+		padding-right: $gutter-custom / 2;
+
+		.row {
+			@include make-grid-columns-gutter-custom($gutter-custom)
+		}
+	}
+
+	.container-custom-width-1 {
+		max-width: $grid-custom-width;
+		padding-left: $gutter-custom-1 / 2;
+		padding-right: $gutter-custom-1 / 2;
+
+		.row-custom {
+			@include make-grid-columns-gutter-custom($gutter-custom-1)
+		}
+	}
+}
+
+// Custom col inset
+.row-gutter-14 {
+	@include make-grid-columns-gutter-custom(14px)
+}
+
+.row-gutter-20 {
+	@include make-grid-columns-gutter-custom(20px)
+}

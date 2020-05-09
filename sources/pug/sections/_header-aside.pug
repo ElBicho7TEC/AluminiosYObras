@@ -1,0 +1,37 @@
+header.section.page-header.header-absolute
+	// RD Navbar
+	.rd-navbar-wrap
+		nav.rd-navbar.rd-navbar-aside(
+		data-layout=                'rd-navbar-fixed'
+		data-sm-layout=             'rd-navbar-fixed'
+		data-md-layout=             'rd-navbar-fixed'
+		data-md-device-layout=      'rd-navbar-fixed'
+		data-lg-layout=             'rd-navbar-static'
+		data-lg-device-layout=      'rd-navbar-static'
+		data-xl-layout=             'rd-navbar-static'
+		data-xl-device-layout=      'rd-navbar-static'
+		data-lg-stick-up-offset=    '46px'
+		data-xl-stick-up-offset=    '46px'
+		data-xxl-stick-up-offset=   '46px'
+		data-lg-stick-up=           'true'
+		data-xl-stick-up=           'true'
+		data-xxl-stick-up=          'true')
+			.rd-navbar-collapse-toggle.rd-navbar-fixed-element-1(data-rd-navbar-toggle='.rd-navbar-collapse'): span
+			.rd-navbar-collapse
+				ul.list.rd-navbar-list
+					li: a.icon.icon-sm.icon-bordered.link-default.mdi.mdi-behance(href="#")
+					li: a.icon.icon-sm.icon-bordered.link-default.mdi.mdi-facebook(href="#")
+					li: a.icon.icon-sm.icon-bordered.link-default.mdi.mdi-instagram(href="#")
+			.rd-navbar-main-outer
+				.rd-navbar-main
+					// RD Navbar Panel
+					.rd-navbar-panel
+						// RD Navbar Toggle
+						button.rd-navbar-toggle(data-rd-navbar-toggle='.rd-navbar-nav-wrap'): span
+
+						// RD Navbar Brand
+						.rd-navbar-brand
+							+logo
+
+					.rd-navbar-nav-wrap
+						include ../includes/_navigation

@@ -25,9 +25,10 @@ create table logo
 create table modulo
 (
   idmodulo INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  nombremodulo varchar (20) not null,
   rutamodulo VARCHAR(100) NOT NULL,
   numeroresaltador int,
-  descripciondelnumero varchar (50)
+  descripciondelnumero varchar  (50)
 );
 
 create table caracteristicasmodulo

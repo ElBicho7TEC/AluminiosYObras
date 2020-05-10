@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>Login V15</title>
+	<title>Sesion</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 <!--===============================================================================================-->	
@@ -32,22 +32,22 @@
 	<div class="limiter">
 		<div class="container-login100">
 			<div class="wrap-login100">
-				<div class="login100-form-title" style="background-image: url(images/logoempresa2.jpg); width: auto; height: auto; ">
+				<div class="login100-form-title" style="background-image: url(images/logoempresa.jpg);">
 					<span class="login100-form-title-1">
-						Iniciar Sesión
+						Inciar Sesión
 					</span>
 				</div>
 
-				<form class="login100-form validate-form" style="background-color: #FBFCFC">
+				<form method="post" action="sesionBD.php" class="login100-form validate-form">
 					<div class="wrap-input100 validate-input m-b-26" data-validate="Username is required">
-						<span class="label-input100">Usuario</span>
-						<input class="input100" type="text" name="username" placeholder="Correo electronico">
+						<span class="label-input100">Correo Electrónico</span>
+						<input class="input100" type="text" name="correoElectronico" placeholder="Escribe tu correo electrónico" pattern="[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*@[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[.][a-zA-Z]{1,5}" title="El correo debe contener entre caracteres el símbolo de '@' en seguida el símbolo de '.' y finalmente el dominio" required="">
 						<span class="focus-input100"></span>
 					</div>
 
 					<div class="wrap-input100 validate-input m-b-18" data-validate = "Password is required">
 						<span class="label-input100">Contraseña</span>
-						<input class="input100" type="password" name="pass" placeholder="Escribir contraseña">
+						<input class="input100" type="password" name="contrasena" placeholder="Escribe tu contraseña">
 						<span class="focus-input100"></span>
 					</div>
 

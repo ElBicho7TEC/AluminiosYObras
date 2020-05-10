@@ -83,21 +83,30 @@
                 <div class="row justify-content-center justify-content-lg-start">
                   <div class="col-md-10 offset-lg-1 col-lg-8 offset-xl-1 col-xl-9 offset-xxl-2 col-xxl-8">
                     <div class="jumbotron-custom-1">
-                      <div class="text-1 font-weight-medium">Welcome to Concept</div>
-                      <div class="title text-decorative">Top-Notch</div>
+                      <div class="text-1 font-weight-medium">
+                               <!-- Aqui esta un imput para editar-->
+                              <input class="input100" type="text" name="mensajewelcome" placeholder="Welcome to Concept "></div>
+                      <div class="title text-decorative">
+                               <!-- Aqui esta un texto con el input por la case no me funciono para poder editar-->
+                              <textarea class="input100" type="text" name="subtitulo"> Top-Notch</textarea></div>
                       <div class="title">Architecture</div>
-                      <p class="big-2 text-white-darken">With 19+ years’ experience in combining traditions and innovations, Concept creates settings to inspire the way people  live, learn, heal, work, and play.</p>
+                      <textarea class="big-2 text-black-darken" type="text" >With 19+ years’ experience in combining traditions and innovations, Concept creates settings to inspire the way people  live, learn, heal, work, and play.</textarea>
                     </div>
+                            <!-- div del boton editar-->
+                          <div class="button-wrap-3 text-center"><a class="button button-default" href="#">Editar</a></div>
                   </div>
                 </div>
               </div>
-            </div>
+            </div>                  
           </div>
+          </div>
+           <!-- esta es la lista donde aparece las fotos de los segmentos-->
+              <!-- esta es la lista donde aparece las fotos de los segmentos
           <ul class="project-list">
             <li class="bg-image" style="background-image: url(images/home-3-project-1-671x214.jpg)"><a href="#">Architecture</a></li>
             <li class="bg-image" style="background-image: url(images/home-3-project-2-671x214.jpg)"><a href="#">Design</a></li>
             <li class="bg-image" style="background-image: url(images/home-3-project-3-671x214.jpg)"><a href="#">3d modeling</a></li>
-          </ul>
+          </ul>-->
         </section>
       </section>
       <!-- Portfolio-->

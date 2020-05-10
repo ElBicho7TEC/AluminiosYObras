@@ -13,7 +13,7 @@ $consulta="select * from login where correoElectronico='$correoElectronico'
 			 //iniciar sesion
 			 session_start();
 			 $_SESSION['correoElectronico']=$fila['correoElectronico'];
-			 header("Location: ../views/indexadmi.php");
+			 header("Location: ../views/inicioadmi.php");
 		 }else{
 			 header("Location: ../views/sesion.php");
 		 }

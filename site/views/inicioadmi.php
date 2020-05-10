@@ -70,6 +70,7 @@
         </header>
         <!-- Preview section-->
         <section class="section context-dark section-jumbotron bg-cover" style="background: url(../images/bg-image.jpg) #151515">
+<!-- aqui va lo de las titulo de bienvenida y eso  
           <div class="panel-left"><a class="brand" href="views/index.php"><img class="brand-logo-dark" src="../images/logo-default-119x102.png" alt="" width="119" height="102"/><img class="brand-logo-light" src="../images/logo-inverse-119x102.png" alt="" width="119" height="102"/></a>
             <ul class="list-md custom-list">
               <li><a class="icon icon-sm icon-gray-filled icon-circle mdi mdi-behance" href="#"></a></li>
@@ -93,12 +94,45 @@
               </div>
             </div>
           </div>
+<!-- aqui van las imagenes  
           <ul class="project-list">
             <li class="bg-image" style="background-image: url(../images/home-3-project-1-671x214.jpg)"><a href="#">Architecture</a></li>
             <li class="bg-image" style="background-image: url(../images/home-3-project-2-671x214.jpg)"><a href="#">Design</a></li>
             <li class="bg-image" style="background-image: url(../images/home-3-project-3-671x214.jpg)"><a href="#">3d modeling</a></li>
           </ul>
-        </section>
+--aqui terminar la de las imagenes
+
+ -->   
+<!--Este es el formulario del editar bienvenidos-->
+   
+  <div style="background-color: white; border: none; padding: 40px 50px; border-radius: 5px; width: 50%; margin-top: 75px; margin-left: auto; margin-right: auto; color: black; font-weight: bold;" >
+        <div class="col-12" style="font-size:35px; font-weight: bold;  font-style:italic;" >
+            <center> <label>Editar Bienvenida</label></center>
+        </div>
+
+      <form method="post" action="../controllers/inicioadmiBD.php">
+          <div class="form-group">
+            <label for="exampleFormControlInput1">Mensaje De Bienvenida</label>
+            <input type="text" class="form-control" id="mensajewelcome" name="mensajewelcome" placeholder="bienvenidos">
+          </div>
+          <div class="form-group">
+            <label for="exampleFormControlSelect1">Subtitulo</label>
+            <input type="text" class="form-control" id="subtitulo" name="subtitulo" placeholder="bienvenidos">
+          </div>
+        <div class="form-group">
+          <label for="exampleFormControlTextarea1">Descripción</label>
+          <textarea class="form-control" id="descripcion" name="descripcion" rows="3"></textarea>
+        </div>
+        <br>
+        <center>
+        <button type="submit" class="btn btn-primary" style="background: black; border: none; color: white;">Modificar</button>
+        </center>
+      </form>
+        
+      </div>
+
+</section>
+
       </section>
       <!-- Portfolio-->
       <section class="section section-lg bg-default section-lined" id="portfolio">
@@ -530,3 +564,5 @@
     <!-- coded by Starlight-->
   </body>
 </html>
+
+<!--===============================================================================================-->

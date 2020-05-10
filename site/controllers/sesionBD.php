@@ -4,7 +4,7 @@ $correoElectronico=$_POST["correoElectronico"];
 $contrasena=$_POST["contrasena"];
 
 //buscar esos datos en la base de datos
-include("conexionBD.php");
+include("../controllers/conexionBD.php");
 $consulta="select * from login where correoElectronico='$correoElectronico'
          and contrasena='$contrasena'";
 		 
@@ -13,9 +13,9 @@ $consulta="select * from login where correoElectronico='$correoElectronico'
 			 //iniciar sesion
 			 session_start();
 			 $_SESSION['correoElectronico']=$fila['correoElectronico'];
-			 header("Location: indiceadmi.php");
+			 header("Location: ../views/indexadmi.php");
 		 }else{
-			 header("Location: sesion.php");
+			 header("Location: ../views/sesion.php");
 		 }
 		 	 
 

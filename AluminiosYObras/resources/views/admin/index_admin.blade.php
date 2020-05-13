@@ -104,7 +104,7 @@
  -->   
 <!--Este es el formulario del editar bienvenidos-->
   <div style="background-color: white; border: none; padding: 40px 50px; border-radius: 5px; width: 50%; margin-top: 75px; margin-left: auto; margin-right: auto; color: black; font-weight: bold;" >
-        <div class="col-12" style="font-size:35px; font-weight: bold;  font-style:italic;" >
+        <div class="col-12" style="font-size:35px; font-weight: bold;  font-style:italic; width:100%;" >
             <center> <label>Editar Bienvenida</label></center>
         </div>
 
@@ -142,15 +142,19 @@
         <br>
       <form method="post" action="controllers/inicioadmiBD.php">
             <div class="form-group">
-              <center>
-              <label for="exampleFormControlInput1">Foto</label>
-             <input name="logotipo[]" type="file"accept="image/*" required style="padding: 5px 10px; background: black; color:#fff; border:0px solid #fff; ">
-             </center>
+                <label for="exampleFormControlInput1">Logo</label><br>
+                      <div class="photo">
+                                <div class="input-group">
+                                <input multiple="multiple"  name="rutalogo[]" type="file" accept="image/*" style="padding: 5px 10px; background: black; color:#fff; border:0px solid #fff;width:100%;" value="">
+                                </div>
+                      </div>
             </div>
+             
+            
             <div class="col-12">
             <center><label><b>Logotipo-Aqui debajo ira la foto</b></label><br>    
-            <img class="img-rounded" src="" width="160em" height="160em">
-              </center>     
+            <img class="img-rounded" src="" width="160em" height="160em" >
+                  
             </div>
           <br>
           <center>
@@ -180,7 +184,7 @@
                 <label>Solo seleccionar archivos si se deseea cambiar la imagen actual</label>
                       <div class="photo">
                                 <div class="input-group">
-                                <input multiple="multiple"  name="logotipo[]" type="file" accept="image/*" style="padding: 5px 10px; background: black; color:#fff; border:0px solid #fff;" value="">
+                                <input multiple="multiple"  name="logotipo[]" type="file" accept="image/*" style="padding: 5px 10px; background: black; color:#fff; border:0px solid #fff; width:100%;" value="">
                                 </div>
                       </div>
             </div>
@@ -193,12 +197,16 @@
             <input type="text" class="form-control" id="descripciondelnumero" name="descripciondelnumero" placeholder="Años siendo lider">
           </div>
           <center>
+         
           <button type="submit" class="btn btn-primary" style="background: black; border: none; color: white;">Modificar</button>
-          <button type="submit" class="btn btn-primary" style="background: black; border: none; color: white; margin-left: 5%">Agregar</button>
-          </center>
+          <button type="submit" class="btn btn-primary" style="background: black; border: none; color: white; margin-left: 1%; margin-top: 1px;">Agregar</button>
+            </center>
       </form>
-        
       </div>
+</section>
+
+
+<section class="section section-lg bg-gray-700 text-center text-sm-left" id="services">
 </section>
 
     

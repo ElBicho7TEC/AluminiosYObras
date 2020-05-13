@@ -1,0 +1,126 @@
+/*
+*
+* RD Navbar Wide
+*/
+$rd-navbar-wide-width: map-get($container-max-widths, xl);
+$navbar-wide-nav-indent: 20px;
+
+.rd-navbar-wide {
+	display: block;
+
+	// Static
+	&.rd-navbar-static {
+
+		.rd-navbar-main {
+			position: relative;
+			display: flex;
+			align-items: center;
+
+			.rd-navbar-nav-wrap {
+				flex-grow: 1;
+			}
+		}
+
+		// RD Navbar Nav
+		.rd-navbar-nav {
+			display: flex;
+		}
+
+		.rd-nav-item {
+			flex-grow: 1;
+			border-left: 1px solid $gray-300;
+			text-align: center;
+
+			> .rd-navbar-submenu-toggle {
+				position: absolute;
+				left: 50%;
+				bottom: 5px;
+				transform: translateX(-50%);
+			}
+
+			&.focus,
+			&.opened,
+			&.active {
+				.rd-nav-link {
+					background: $gray-100;
+				}
+			}
+		}
+
+		.rd-nav-item + .rd-nav-item { margin-left: 0; }
+
+		.rd-nav-link {
+			display: block;
+			padding: 30px 10px;
+
+			&:hover {
+				background: $gray-100;
+			}
+		}
+
+		// RD navbar dropdown
+		.rd-navbar-dropdown {
+			width: 100%;
+			text-align: center;
+		}
+
+		// Rd Menu (dropdown and megamenu)
+		.rd-menu {
+			margin-top: 36px;
+		}
+
+		// RD all submenus
+		.rd-navbar-submenu {
+			&.focus,
+			&.opened {
+				> .rd-menu {
+					margin-top: 0;
+				}
+			}
+		}
+
+		// Rd Navbar brand
+		.rd-navbar-brand {
+			display: flex;
+			justify-content: center;
+			padding-bottom: 2px;
+			min-width: 16vw;
+			text-align: center;
+
+			a {
+				display: inline-block;
+			}
+		}
+
+		// Extra large ≥1200px
+		@include media-breakpoint-up(xl) {
+			.rd-nav-item {
+				> .rd-navbar-submenu-toggle {
+					bottom: 10px;
+				}
+			}
+
+			.rd-nav-link {
+				padding: 41px 10px;
+			}
+		}
+
+		// RD Navbar Stuck || Clone
+		&.rd-navbar--is-stuck,
+		&.rd-navbar--is-clone {
+			border-bottom: 1px solid $gray-300;
+
+
+
+			.rd-nav-item {
+				> .rd-navbar-submenu-toggle {
+					bottom: 5px;
+				}
+			}
+
+			.rd-nav-link {
+				padding: 25px 10px;
+			}
+		}
+	}
+}

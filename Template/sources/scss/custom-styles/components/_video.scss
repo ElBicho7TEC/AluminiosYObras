@@ -1,0 +1,60 @@
+/*
+*
+* Video
+* --------------------------------------------------
+*/
+
+.video-cover {
+  position: relative;
+  display: flex;
+  padding-bottom: 46%;
+
+  background-position: center;
+  background-size: cover;
+
+  &:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background-image: linear-gradient(to bottom, transparent, rgba($black, 0.77));
+    opacity: 1;
+    transition: .3s;
+  }
+
+  .icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 60px;
+    height: 60px;
+    font-size: 30px;
+    line-height: 60px;
+    text-align: center;
+    transform: translate(-50%, -50%) scale(1);
+    will-change: transform;
+    transition: .2s transform;
+    background: $white;
+    color: $black;
+    border-radius: 50%;
+
+    &:hover { transform: translate(-50%, -50%) scale(1.2); }
+  }
+
+  &:hover {
+    &:before {
+      opacity: .7;
+    }
+  }
+
+  // Extra large ≥1200px
+  @include media-breakpoint-up(xl) {
+    .icon {
+      width: 90px;
+      height: 90px;
+      line-height: 90px;
+    }
+  }
+}

@@ -1,0 +1,132 @@
+/*
+*
+* RD Navbar Aside
+*/
+
+.rd-navbar-aside {
+	display: block;
+
+	// Static
+	&.rd-navbar-static {
+		background: transparent;
+
+		.rd-navbar-collapse {
+			display: none;
+		}
+
+		.rd-navbar-main {
+			position: relative;
+			display: flex;
+			justify-content: flex-end;
+			max-width: 1560px;
+			margin-left: auto;
+			margin-right: auto;
+			padding-left: 15px;
+			padding-right: 15px;
+		}
+
+		.rd-navbar-panel {
+			display: inline-block;
+		}
+
+		.rd-navbar-brand {
+			display: none;
+		}
+
+		.rd-navbar-nav {
+			padding: 25px 62px;
+			background-color: $white;
+
+
+
+			&:before {
+				content: '';
+				position: absolute;
+				top: 0;
+				left: 50%;
+				height: 100%;
+				transform: translateX(-50%);
+				width: 0;
+				background-color: inherit;
+				transition: inherit;
+			}
+		}
+
+		.rd-nav-link {
+			font-size: 15px;
+			color: $black;
+
+			&:hover {
+				color: $primary;
+			}
+		}
+
+		// RD Nav item 1-st level
+		.rd-nav-item {
+			display: inline-block;
+
+			> .rd-navbar-submenu-toggle {
+				color: $white;
+			}
+
+			&.focus,
+			&.opened {
+				.rd-nav-link {
+					color: $primary;
+				}
+
+				> .rd-navbar-submenu-toggle {
+					color: rgba($white, .5);
+				}
+			}
+
+			&.active {
+				.rd-nav-link {
+
+				}
+
+				> .rd-navbar-submenu-toggle {
+					color: rgba($white, .5);
+				}
+			}
+		}
+
+		// Extra large ≥1200px
+		@include media-breakpoint-up(xl) {
+			.rd-nav-item:not(:first-child) {
+				position: relative;
+
+				&:before {
+					content: '';
+					position: absolute;
+					left: -28px;
+					top: 50%;
+					height: 1.7em;
+					width: 2px;
+					background-color: $white;
+					transform: translateY(-50%);
+				}
+			}
+		}
+
+		// Mega large ≥1600px
+		@include media-breakpoint-up(xxl) {
+			.rd-navbar-nav {
+				padding: 36px 62px;
+			}
+		}
+
+		// RD Navbar Stuck || Clone
+		&.rd-navbar--is-stuck,
+		&.rd-navbar--is-clone {
+
+			.rd-navbar-nav {
+				padding: 18px 62px;
+
+				&:before {
+					width: 100vw;
+				}
+			}
+		}
+	}
+}

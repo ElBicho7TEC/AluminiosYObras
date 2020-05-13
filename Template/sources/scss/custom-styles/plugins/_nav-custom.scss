@@ -1,0 +1,153 @@
+//
+// Nav custom
+// 
+
+// 
+// Table of Contents:
+// 
+// Tabs Line 
+// Tabs Corporate
+//
+
+// Corporate style
+$tabs-corporate-color: $white;
+$tabs-corporate-background: $gray-700;
+$tabs-corporate-active-color: $secondary;
+$tabs-corporate-active-background: $tabs-corporate-background;
+$tabs-corporate-shadow: 0 0 0 1px rgba($black, .35);
+$tabs-corporate-shadow-active: 0 0 20px rgba($black, .5);
+
+// Base styles
+.tabs-custom {
+
+	.nav-tabs {
+		font-size: 0;
+		line-height: 0;
+		word-spacing: 0;
+		border: 0;
+
+		&:before,
+		&:after {
+			display: none;
+		}
+	}
+
+	.nav-item {
+		float: none;
+		border: 0;
+		cursor: pointer;
+		transition: .33s all ease;
+	}
+
+	.nav-link {
+		margin: 0;
+		padding: 0;
+		border-radius: 0;
+		border: 0;
+	}
+
+	.nav-link.active {
+		cursor: default;
+		border: 0;
+	}
+}
+
+.tab-content > .tab-pane {
+	display: block;
+	visibility: hidden;
+	height: 0;
+	overflow: hidden;
+}
+
+.tab-content > .active {
+	visibility: visible;
+	height: auto;
+	overflow: visible;
+}
+
+// Offsets
+* + .tabs-horizontal.tabs-corporate {
+	margin-top: 25px;
+}
+
+* + .tabs-vertical.tabs-corporate {
+	margin-top: 40px;
+}
+
+@include media-breakpoint-up(md) {
+	* + .tabs-vertical.tabs-corporate {
+		margin-top: 60px;
+	}
+}
+
+@include media-breakpoint-up(xl) {
+	* + .tabs-vertical.tabs-corporate {
+		margin-top: 80px;
+	}
+}
+
+// Tabs corporate style
+.tabs-corporate {
+	.nav-tabs {
+		display: flex;
+		flex-wrap: wrap;
+		max-width: 250px;
+		padding: 0 30px;
+		margin: 60px auto 30px;
+		transform: rotate(45deg);
+	}
+
+	.nav-item {
+		position: relative;
+		width: 50%;
+		padding-bottom: 50%;
+	}
+
+	.nav-link {
+		position: absolute;
+		top: 7px;
+		left: 7px;
+		right: 7px;
+		bottom: 7px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		font-size: 15px;
+		font-weight: 500;
+		line-height: 1.4;
+		color: $tabs-corporate-color;
+		background: $tabs-corporate-background;
+		box-shadow: $tabs-corporate-shadow;
+		letter-spacing: 0.03em;
+		text-align: center;
+		vertical-align: middle;
+		text-transform: uppercase;
+		overflow: hidden;
+
+		> span {
+			transform: rotate(-45deg);
+		}
+	}
+
+	.nav-link:hover,
+	.nav-link.active {
+		color: $tabs-corporate-active-color;
+		background: $tabs-corporate-active-background;
+		box-shadow: $tabs-corporate-shadow-active;
+	}
+
+	.tab-content {
+		font-size: $h5-font-size;
+		line-height: 1.5;
+		letter-spacing: .03em;
+	}
+
+	// Medium ≥768px
+	@include media-breakpoint-up(xxl) {
+		.nav-tabs {
+			max-width: 290px;
+			margin-top: 100px;
+		}
+	}
+}
+

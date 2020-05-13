@@ -45,7 +45,7 @@
                     <!-- RD Navbar Toggle-->
                     <button class="rd-navbar-toggle" data-rd-navbar-toggle=".rd-navbar-nav-wrap"><span></span></button>
                     <!-- RD Navbar Brand-->
-                    <div class="rd-navbar-brand"><a class="brand" href="index.html"><img class="brand-logo-dark" src="../storage/images/negro.png" alt="" width="119" height="102"/><img class="brand-logo-light" src="../storage/images/gris.png" alt="" width="119" height="102"/></a>
+                    <div class="rd-navbar-brand"><a class="brand" href="index.html"><img class="brand-logo-dark" src="../storage/images/negro.png" alt="" width="119" height="102"/><img class="brand-logo-light" src="../storage/images/grisblanco.png" alt="" width="119" height="102"/></a>
                     </div>
                   </div>
                   <div class="rd-navbar-nav-wrap">
@@ -70,7 +70,7 @@
         </header>
         <!-- Preview section-->
         <section class="section context-dark section-jumbotron bg-cover" style="background: url(templete/images/bg-image.jpg) #151515">
-          <div class="panel-left"><a class="brand" href="index.html"><img class="brand-logo-dark" src="../storage/images/negro.png" alt="" width="119" height="102"/><img class="brand-logo-light" src="../storage/images/gris.png" alt="" width="119" height="102"/></a>
+          <div class="panel-left"><a class="brand" href="index.html"><img class="brand-logo-dark" src="../storage/images/negro.png" alt="" width="119" height="102"/><img class="brand-logo-light" src="../storage/images/grisblanco.png" alt="" width="119" height="102"/></a>
             <ul class="list-md custom-list">
               <li><a class="icon icon-sm icon-gray-filled icon-circle mdi mdi-behance" href="#"></a></li>
               <li><a class="icon icon-sm icon-gray-filled icon-circle mdi mdi-facebook" href="#"></a></li>

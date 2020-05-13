@@ -13,18 +13,15 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('index');
-});
-
+Route::get('/','Visitante@index');
 
 //Controlador de Login para mostrar el formulario
-Route::Get('admin','LoginC@mostrar');
+Route::get('admin','LoginC@mostrar');
 
 //Controladores de botones de inicio de sesión dentro de un formulario o de cierre de sesión
 Route::post('btnLogin','LoginC@verificar');
-Route::Get('btnLogout','LoginC@cerrarSesion');
+Route::get('btnLogout','LoginC@cerrarSesion');
 
 //Controladores de Administrador para mostrar la pagina
-Route::Get('admin/index_admin','Administrador@index');
+Route::get('admin/index_admin','Administrador@index');
 

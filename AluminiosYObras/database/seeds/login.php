@@ -13,7 +13,6 @@ class login extends Seeder
     public function run()
     {
         //
-              DB::table('login')-> insert(array('correoElectronico'=>'admin@aluminiosyobras.com.mx',
-            'contrasena'=>md5('Admi12//1')));
+        DB::table('login')-> insert(array('correoElectronico'=>'admin@aluminiosyobras.com.mx','contrasena'=>md5('Admi12//1')));
     }
 }

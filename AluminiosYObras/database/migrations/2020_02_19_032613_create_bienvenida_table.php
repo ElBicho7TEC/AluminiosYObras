@@ -18,7 +18,7 @@ class CreateBienvenidaTable extends Migration
             $table-> string('mensajewelcome',40);
             $table-> string('subtitulo',60);
             $table-> string('descripcion',200);
-           
+            $table->engine = "InnoDB";
         });
     }
 

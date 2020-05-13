@@ -16,6 +16,7 @@ class CreateLogoTable extends Migration
         Schema::create('logo', function (Blueprint $table) {
             $table-> increments('idlogo');
             $table-> string('rutalogo',100);
+            $table->engine = "InnoDB";
         });
     }
 

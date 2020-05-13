@@ -21,6 +21,7 @@ class CreateGaleriaTable extends Migration
             $table-> string('descripcionlarga',200);
             $table-> integer ('fkidmodulo')->unsigned();
             $table-> foreign('fkidmodulo')->references('idmodulo')->on('modulo');
+            $table->engine = "InnoDB";
         });
     }
 

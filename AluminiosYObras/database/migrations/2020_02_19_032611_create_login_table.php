@@ -17,7 +17,7 @@ class CreateLoginTable extends Migration
             $table-> increments('idusuarios');
             $table-> string('correoElectronico',45);
             $table-> string('contrasena');
-
+            $table->engine = "InnoDB";
         });
     }
 

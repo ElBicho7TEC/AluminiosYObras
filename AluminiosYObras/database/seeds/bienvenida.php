@@ -13,9 +13,6 @@ class bienvenida extends Seeder
     public function run()
     {
         //
-         DB::table('bienvenida')-> 
-         insert(array('mensajewelcome'=>'bienvenido a Aluminios y Obras',
-        	'subtitulo'=>'De primera calidad',
-        	'descripcion'=>'Somos la empresa número uno de mayor calidad, en todo méxico, danos la oportunidad'));
+        DB::table('bienvenida')-> insert(array('mensajewelcome'=>'bienvenido a Aluminios y Obras', 'subtitulo'=>'De primera calidad','descripcion'=>'Somos la empresa número uno de mayor calidad, en todo méxico, danos la oportunidad'));
     }
 }

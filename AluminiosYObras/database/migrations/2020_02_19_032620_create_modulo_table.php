@@ -19,7 +19,7 @@ class CreateModuloTable extends Migration
             $table-> string('rutamodulo',100);
             $table-> integer ('numeroresaltador');
             $table-> string('descripciondelnumero',50);
-           
+            $table->engine = "InnoDB";
         });
     }
 

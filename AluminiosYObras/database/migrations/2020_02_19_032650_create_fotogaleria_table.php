@@ -19,6 +19,7 @@ class CreateFotoGaleriaTable extends Migration
             $table-> string('descripción',100);
             $table-> integer ('fkgaleria')->unsigned();
             $table-> foreign('fkgaleria')->references('idgaleria')->on('galeria');
+            $table->engine = "InnoDB";
         });
     }
 
@@ -29,6 +30,6 @@ class CreateFotoGaleriaTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('galeria');
+        Schema::dropIfExists('fotogaleria');
     }
 }

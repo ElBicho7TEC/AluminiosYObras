@@ -18,6 +18,7 @@ class CreateCaracteristicasModuloTable extends Migration
             $table-> string('caracteristica',70);
             $table-> integer ('fkidmodulo')->unsigned();
             $table-> foreign('fkidmodulo')->references('idmodulo')->on('modulo');
+            $table->engine = "InnoDB";
         });
     }
 
@@ -28,6 +29,6 @@ class CreateCaracteristicasModuloTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('modulo');
+        Schema::dropIfExists('caracteristicasmodulo');
     }
 }

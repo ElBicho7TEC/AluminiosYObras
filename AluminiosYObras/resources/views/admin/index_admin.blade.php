@@ -6,15 +6,15 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <link rel="icon" href="templete/templete/images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../templete/../templete/images/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,900%7CRoboto:300,300i,400,400i,500,500i,700,700i,900,900i">
-    <link rel="stylesheet" href="templete/css/bootstrap.css">
-    <link rel="stylesheet" href="templete/css/fonts.css">
-    <link rel="stylesheet" href="templete/css/style.css">
+    <link rel="stylesheet" href="../templete/css/bootstrap.css">
+    <link rel="stylesheet" href="../templete/css/fonts.css">
+    <link rel="stylesheet" href="../templete/css/style.css">
     <style>.ie-panel{display: none;background: #212121;padding: 10px 0;box-shadow: 3px 3px 5px 0 rgba(0,0,0,.3);clear: both;text-align:center;position: relative;z-index: 1;} html.ie-10 .ie-panel, html.lt-ie-10 .ie-panel {display: block;}</style>
   </head>
   <body>
-    <div class="ie-panel"><a href="http://windows.microsoft.com/en-US/internet-explorer/"><img src="templete/images/ie8-panel/warning_bar_0000_us.jpg" height="42" width="820" alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today."></a></div>
+    <div class="ie-panel"><a href="http://windows.microsoft.com/en-US/internet-explorer/"><img src="../templete/images/ie8-panel/warning_bar_0000_us.jpg" height="42" width="820" alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today."></a></div>
     <div class="preloader">
       <div class="preloader-body">
         <div class="cssload-container">
@@ -45,7 +45,7 @@
                     <!-- RD Navbar Toggle-->
                     <button class="rd-navbar-toggle" data-rd-navbar-toggle=".rd-navbar-nav-wrap"><span></span></button>
                     <!-- RD Navbar Brand-->
-                    <div class="rd-navbar-brand"><a class="brand" href="views/index.php"><img class="brand-logo-dark" src="templete/images/logo-default-119x102.png" alt="" width="119" height="102"/><img class="brand-logo-light" src="templete/images/logo-inverse-119x102.png" alt="" width="119" height="102"/></a>
+                    <div class="rd-navbar-brand"><a class="brand" href="views/index.php"><img class="brand-logo-dark" src="../templete/images/logo-default-119x102.png" alt="" width="119" height="102"/><img class="brand-logo-light" src="../templete/images/logo-inverse-119x102.png" alt="" width="119" height="102"/></a>
                     </div>
                   </div>
                   <div class="rd-navbar-nav-wrap">
@@ -69,9 +69,9 @@
           </div>
         </header>
         <!-- Preview section-->
-        <section class="section context-dark section-jumbotron bg-cover" style="background: url(templete/images/bg-image.jpg) #151515">
+        <section class="section context-dark section-jumbotron bg-cover" style="background: url(../templete/images/bg-image.jpg) #151515">
 <!-- aqui va lo de las titulo de bienvenida y eso  
-          <div class="panel-left"><a class="brand" href="views/index.php"><img class="brand-logo-dark" src="templete/images/logo-default-119x102.png" alt="" width="119" height="102"/><img class="brand-logo-light" src="templete/images/logo-inverse-119x102.png" alt="" width="119" height="102"/></a>
+          <div class="panel-left"><a class="brand" href="views/index.php"><img class="brand-logo-dark" src="../templete/images/logo-default-119x102.png" alt="" width="119" height="102"/><img class="brand-logo-light" src="../templete/images/logo-inverse-119x102.png" alt="" width="119" height="102"/></a>
             <ul class="list-md custom-list">
               <li><a class="icon icon-sm icon-gray-filled icon-circle mdi mdi-behance" href="#"></a></li>
               <li><a class="icon icon-sm icon-gray-filled icon-circle mdi mdi-facebook" href="#"></a></li>
@@ -95,9 +95,9 @@
             </div>
           </div>
           <ul class="project-list">
-            <li class="bg-image" style="background-image: url(templete/images/home-3-project-1-671x214.jpg)"><a href="#">Architecture</a></li>
-            <li class="bg-image" style="background-image: url(templete/images/home-3-project-2-671x214.jpg)"><a href="#">Design</a></li>
-            <li class="bg-image" style="background-image: url(templete/images/home-3-project-3-671x214.jpg)"><a href="#">3d modeling</a></li>
+            <li class="bg-image" style="background-image: url(../templete/images/home-3-project-1-671x214.jpg)"><a href="#">Architecture</a></li>
+            <li class="bg-image" style="background-image: url(../templete/images/home-3-project-2-671x214.jpg)"><a href="#">Design</a></li>
+            <li class="bg-image" style="background-image: url(../templete/images/home-3-project-3-671x214.jpg)"><a href="#">3d modeling</a></li>
           </ul>
 --aqui terminar la de las imagenes
 
@@ -132,7 +132,7 @@
 </section>
 
      <!-- Se divide por secciones y estoy haciendo uno por cada formulario-->
-<section class="section context-dark section-jumbotron bg-cover" style="background: url(templete/images/bg-image.jpg) #151515">
+<section class="section context-dark section-jumbotron bg-cover" style="background: url(../templete/images/bg-image.jpg) #151515">
 
   <div style="background-color: white; border: none; padding: 40px 50px; border-radius: 5px; width: 50%; margin-top: 75px; margin-left: auto; margin-right: auto; color: black; font-weight: bold;" >
         <div class="col-12" style="font-size:35px; font-weight: bold;  font-style:italic;" >
@@ -162,7 +162,7 @@
 </section>
 
 <!-- Se divide por secciones y estoy haciendo uno por cada formulario-->
-<section class="section context-dark section-jumbotron bg-cover" style="background: url(templete/images/bg-image.jpg) #151515">
+<section class="section context-dark section-jumbotron bg-cover" style="background: url(../templete/images/bg-image.jpg) #151515">
 
   <div style="background-color: white; border: none; padding: 40px 50px; border-radius: 5px; width: 50%; margin-top: 75px; margin-left: auto; margin-right: auto; color: black; font-weight: bold;" >
         <div class="col-12" style="font-size:35px; font-weight: bold;  font-style:italic;" >
@@ -215,48 +215,48 @@
           <h3 class="text-center">Our Latest Projects</h3>
           <div class="row row-custom-width row-30 row-xxl-100 row-flex">
             <div class="col-sm-6 col-lg-4 wow fadeInRight">
-              <div class="project-grid" style="background-image: url(templete/images/projects-1-518x373.jpg);">
-                <div class="inner"><img src="templete/images/bg-pattern-transparent.png" alt=""/>
+              <div class="project-grid" style="background-image: url(../templete/images/projects-1-518x373.jpg);">
+                <div class="inner"><img src="../templete/images/bg-pattern-transparent.png" alt=""/>
                   <h5 class="title text-capitalize font-weight-medium"><a href="#">Eastwood Hotel</a></h5>
                   <p class="font-weight-regular exeption">We deliver reliable architectural solutions to our individual and corporate clients throughout the USA.</p><a class="button button-default" href="#">View</a>
                 </div>
               </div>
             </div>
             <div class="col-sm-6 col-lg-4 wow fadeInRight" data-wow-delay="0.2s">
-              <div class="project-grid" style="background-image: url(templete/images/projects-2-518x373.jpg);">
-                <div class="inner"><img src="templete/images/bg-pattern-transparent.png" alt=""/>
+              <div class="project-grid" style="background-image: url(../templete/images/projects-2-518x373.jpg);">
+                <div class="inner"><img src="../templete/images/bg-pattern-transparent.png" alt=""/>
                   <h5 class="title text-capitalize font-weight-medium"><a href="#">Southward Concert Hall</a></h5>
                   <p class="font-weight-regular exeption">We deliver reliable architectural solutions to our individual and corporate clients throughout the USA.</p><a class="button button-default" href="#">View</a>
                 </div>
               </div>
             </div>
             <div class="col-sm-6 col-lg-4 wow fadeInRight" data-wow-delay="0.4s">
-              <div class="project-grid" style="background-image: url(templete/images/projects-3-518x373.jpg);">
-                <div class="inner"><img src="templete/images/bg-pattern-transparent.png" alt=""/>
+              <div class="project-grid" style="background-image: url(../templete/images/projects-3-518x373.jpg);">
+                <div class="inner"><img src="../templete/images/bg-pattern-transparent.png" alt=""/>
                   <h5 class="title text-capitalize font-weight-medium"><a href="#">California Mega Mall</a></h5>
                   <p class="font-weight-regular exeption">We deliver reliable architectural solutions to our individual and corporate clients throughout the USA.</p><a class="button button-default" href="#">View</a>
                 </div>
               </div>
             </div>
             <div class="col-sm-6 col-lg-4 wow fadeInRight" data-wow-delay="0.2s">
-              <div class="project-grid" style="background-image: url(templete/images/projects-4-518x373.jpg);">
-                <div class="inner"><img src="templete/images/bg-pattern-transparent.png" alt=""/>
+              <div class="project-grid" style="background-image: url(../templete/images/projects-4-518x373.jpg);">
+                <div class="inner"><img src="../templete/images/bg-pattern-transparent.png" alt=""/>
                   <h5 class="title text-capitalize font-weight-medium"><a href="#">Hearst Business Center</a></h5>
                   <p class="font-weight-regular exeption">We deliver reliable architectural solutions to our individual and corporate clients throughout the USA.</p><a class="button button-default" href="#">View</a>
                 </div>
               </div>
             </div>
             <div class="col-sm-6 col-lg-4 wow fadeInRight" data-wow-delay="0.4s">
-              <div class="project-grid" style="background-image: url(templete/images/projects-5-518x373.jpg);">
-                <div class="inner"><img src="templete/images/bg-pattern-transparent.png" alt=""/>
+              <div class="project-grid" style="background-image: url(../templete/images/projects-5-518x373.jpg);">
+                <div class="inner"><img src="../templete/images/bg-pattern-transparent.png" alt=""/>
                   <h5 class="title text-capitalize font-weight-medium"><a href="#">Westwood Child Center</a></h5>
                   <p class="font-weight-regular exeption">We deliver reliable architectural solutions to our individual and corporate clients throughout the USA.</p><a class="button button-default" href="#">View</a>
                 </div>
               </div>
             </div>
             <div class="col-sm-6 col-lg-4 wow fadeInRight" data-wow-delay="0.6s">
-              <div class="project-grid" style="background-image: url(templete/images/projects-6-518x373.jpg);">
-                <div class="inner"><img src="templete/images/bg-pattern-transparent.png" alt=""/>
+              <div class="project-grid" style="background-image: url(../templete/images/projects-6-518x373.jpg);">
+                <div class="inner"><img src="../templete/images/bg-pattern-transparent.png" alt=""/>
                   <h5 class="title text-capitalize font-weight-medium"><a href="#">Modern Art Gallery</a></h5>
                   <p class="font-weight-regular exeption">We deliver reliable architectural solutions to our individual and corporate clients throughout the USA.</p><a class="button button-default" href="#">View</a>
                 </div>
@@ -325,7 +325,7 @@
             <div class="col-lg-3">
               <div class="heading-3">High-quality solutions</div>
               <div class="big text-white-lighter text-white-darken">We are committed to providing the best possible solutions at a competitive cost. Our team is ready to offer a wide range of various architectural services.</div>
-              <div class="img-wrap-1"><img src="templete/images/speaker-1-180x80.png" alt="" width="180" height="80"/>
+              <div class="img-wrap-1"><img src="../templete/images/speaker-1-180x80.png" alt="" width="180" height="80"/>
               </div>
             </div>
           </div>
@@ -424,7 +424,7 @@
             </div>
             <div class="col-lg-6">
               <div class="box-border-wrap box-border-wrap-left">
-                <div class="row"><a class="col-6 col-md-4 box-border" href="#"><img src="templete/images/brand-1-196x162.png" alt="" width="196" height="162"/></a><a class="col-6 col-md-4 box-border" href="#"><img src="templete/images/brand-2-196x162.png" alt="" width="196" height="162"/></a><a class="col-6 col-md-4 box-border" href="#"><img src="templete/images/brand-3-196x162.png" alt="" width="196" height="162"/></a><a class="col-6 col-md-4 box-border" href="#"><img src="templete/images/brand-4-196x162.png" alt="" width="196" height="162"/></a><a class="col-6 col-md-4 box-border" href="#"><img src="templete/images/brand-5-196x162.png" alt="" width="196" height="162"/></a><a class="col-6 col-md-4 box-border" href="#">
+                <div class="row"><a class="col-6 col-md-4 box-border" href="#"><img src="../templete/images/brand-1-196x162.png" alt="" width="196" height="162"/></a><a class="col-6 col-md-4 box-border" href="#"><img src="../templete/images/brand-2-196x162.png" alt="" width="196" height="162"/></a><a class="col-6 col-md-4 box-border" href="#"><img src="../templete/images/brand-3-196x162.png" alt="" width="196" height="162"/></a><a class="col-6 col-md-4 box-border" href="#"><img src="../templete/images/brand-4-196x162.png" alt="" width="196" height="162"/></a><a class="col-6 col-md-4 box-border" href="#"><img src="../templete/images/brand-5-196x162.png" alt="" width="196" height="162"/></a><a class="col-6 col-md-4 box-border" href="#">
                     <div class="icon icon-sm mdi mdi-arrow-right"></div></a></div>
               </div>
             </div>
@@ -445,7 +445,7 @@
             <div class="col-lg-7 col-xl-8">
               <div class="row no-gutters">
                 <div class="col-sm-6 wow fadeInLeft">
-                  <div class="box-team box-team-right"><img src="templete/images/index-3-1-390x332.jpg" alt="" width="390" height="332"/>
+                  <div class="box-team box-team-right"><img src="../templete/images/index-3-1-390x332.jpg" alt="" width="390" height="332"/>
                     <div class="meta">
                       <div class="heading-6 title">Jane Smith</div>
                       <p class="position">Senior Architect</p>
@@ -453,7 +453,7 @@
                   </div>
                 </div>
                 <div class="col-sm-6 wow fadeInRight">
-                  <div class="box-team box-team-right"><img src="templete/images/index-3-2-390x332.jpg" alt="" width="390" height="332"/>
+                  <div class="box-team box-team-right"><img src="../templete/images/index-3-2-390x332.jpg" alt="" width="390" height="332"/>
                     <div class="meta">
                       <div class="heading-6 title">Nathan Porter</div>
                       <p class="position">Founder, Director</p>
@@ -461,7 +461,7 @@
                   </div>
                 </div>
                 <div class="col-sm-6 wow fadeInLeft" data-wow-delay="0.2s">
-                  <div class="box-team box-team-right"><img src="templete/images/index-3-3-390x332.jpg" alt="" width="390" height="332"/>
+                  <div class="box-team box-team-right"><img src="../templete/images/index-3-3-390x332.jpg" alt="" width="390" height="332"/>
                     <div class="meta">
                       <div class="heading-6 title">Sam Lee</div>
                       <p class="position">Interior Designer</p>
@@ -469,7 +469,7 @@
                   </div>
                 </div>
                 <div class="col-sm-6 wow fadeInRight" data-wow-delay="0.2s">
-                  <div class="box-team box-team-right"><img src="templete/images/index-3-4-390x332.jpg" alt="" width="390" height="332"/>
+                  <div class="box-team box-team-right"><img src="../templete/images/index-3-4-390x332.jpg" alt="" width="390" height="332"/>
                     <div class="meta">
                       <div class="heading-6 title">Sarah Parker</div>
                       <p class="position">Exterior Designer</p>
@@ -518,7 +518,7 @@
           <h3>Get in touch with us</h3>
           <p class="big">Feel free to contact our specialists to find out more about our prices and services. <br class="d-none d-xl-inline">We are always ready to answer your questions.</p>
           <!-- RD Mailform-->
-          <form class="rd-form rd-mailform form-boxed" data-form-output="form-output-global" data-form-type="contact" method="post" action="templete/bat/rd-mailform.php">
+          <form class="rd-form rd-mailform form-boxed" data-form-output="form-output-global" data-form-type="contact" method="post" action="../templete/bat/rd-mailform.php">
             <div class="row row-50">
               <div class="col-lg-4">
                 <div class="form-wrap form-wrap-icon">
@@ -595,7 +595,7 @@
             </div>
             <div class="col-lg-4">
               <h5>Newsletter</h5>
-              <form class="rd-form rd-mailform" data-form-output="form-output-global" data-form-type="contact" method="post" action="templete/bat/rd-mailform.php">
+              <form class="rd-form rd-mailform" data-form-output="form-output-global" data-form-type="contact" method="post" action="../templete/bat/rd-mailform.php">
                 <div class="form-wrap form-wrap-icon">
                   <div class="form-icon mdi mdi-email-outline"></div>
                   <input class="form-input" id="footer-email" type="email" name="email" data-constraints="@Email @Required">
@@ -627,8 +627,8 @@
       </footer>
     </div>
     <div class="snackbars" id="form-output-global"></div>
-    <script src="templete/js/core.min.js"></script>
-    <script src="templete/js/script.js"></script>
+    <script src="../templete/js/core.min.js"></script>
+    <script src="../templete/js/script.js"></script>
     <!-- coded by Starlight-->
   </body>
 </html>

@@ -25,7 +25,7 @@ use DB;
 			{
 				$login_variable = new login;
 				$correo_Electronico = $login_variable->email = $datos->input ('email');
-				$contrasena = $login_variable->pass = $datos->input ('pass');
+				$contrasena = $login_variable->pass = md5($datos->input ('pass');
 
 				//Creamos una varible usuario que se iguala a la tabla persona
 				//se hace una consulta donde se consultan los campos correo electrónico de la tabla persona y la contraseña

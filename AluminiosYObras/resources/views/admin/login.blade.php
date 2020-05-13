@@ -51,7 +51,7 @@
 					</div>
 
 					<div class="wrap-input100 validate-input m-b-18" data-validate = "La contrase&ntilde;a es requerida">
-						<span class="label-input100">Contrase&ntilde;</span>
+						<span class="label-input100">Contrase&ntilde;a</span>
 						<input class="input100" type="password" name="pass" placeholder="Ingresar contrase&ntilde;a">
 						<span class="focus-input100"></span>
 					</div>

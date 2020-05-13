@@ -2,11 +2,11 @@
 <!-- Price box minimal--><!DOCTYPE html>
 <html class="wide wow-animation" lang="en">
   <head>
-    <title>Home</title>
+    <title>Aluminios y Obras</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <link rel="icon" href="templete/images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../storage/images/icons/dorado.ico" type="image/x-icon">
     <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,900%7CRoboto:300,300i,400,400i,500,500i,700,700i,900,900i">
     <link rel="stylesheet" href="templete/css/bootstrap.css">
     <link rel="stylesheet" href="templete/css/fonts.css">
@@ -20,7 +20,7 @@
         <div class="cssload-container">
           <div class="cssload-speeding-wheel"></div>
         </div>
-        <p>Loading...</p>
+        <p>Cargando...</p>
       </div>
     </div>
     <div class="page">
@@ -45,21 +45,21 @@
                     <!-- RD Navbar Toggle-->
                     <button class="rd-navbar-toggle" data-rd-navbar-toggle=".rd-navbar-nav-wrap"><span></span></button>
                     <!-- RD Navbar Brand-->
-                    <div class="rd-navbar-brand"><a class="brand" href="index.html"><img class="brand-logo-dark" src="templete/images/logo-default-119x102.png" alt="" width="119" height="102"/><img class="brand-logo-light" src="templete/images/logo-inverse-119x102.png" alt="" width="119" height="102"/></a>
+                    <div class="rd-navbar-brand"><a class="brand" href="index.html"><img class="brand-logo-dark" src="../storage/images/negro.png" alt="" width="119" height="102"/><img class="brand-logo-light" src="../storage/images/gris.png" alt="" width="119" height="102"/></a>
                     </div>
                   </div>
                   <div class="rd-navbar-nav-wrap">
                     <!-- RD Navbar Nav-->
                     <ul class="rd-navbar-nav">
-                      <li class="rd-nav-item active"><a class="rd-nav-link" href="#home">Home</a>
+                      <li class="rd-nav-item active"><a class="rd-nav-link" href="#home">Inicio</a>
                       </li>
-                      <li class="rd-nav-item"><a class="rd-nav-link" href="#portfolio">Portfolio</a>
+                      <li class="rd-nav-item"><a class="rd-nav-link" href="#portfolio">Portafolio</a>
                       </li>
-                      <li class="rd-nav-item"><a class="rd-nav-link" href="#services">Services</a>
+                      <li class="rd-nav-item"><a class="rd-nav-link" href="#services">Servicios</a>
                       </li>
-                      <li class="rd-nav-item"><a class="rd-nav-link" href="#team">Team</a>
+                      <li class="rd-nav-item"><a class="rd-nav-link" href="#team">Equipo</a>
                       </li>
-                      <li class="rd-nav-item"><a class="rd-nav-link" href="#contacts">Contacts</a>
+                      <li class="rd-nav-item"><a class="rd-nav-link" href="#contacts">Contactos</a>
                       </li>
                     </ul>
                   </div>
@@ -70,7 +70,7 @@
         </header>
         <!-- Preview section-->
         <section class="section context-dark section-jumbotron bg-cover" style="background: url(templete/images/bg-image.jpg) #151515">
-          <div class="panel-left"><a class="brand" href="index.html"><img class="brand-logo-dark" src="templete/images/logo-default-119x102.png" alt="" width="119" height="102"/><img class="brand-logo-light" src="templete/images/logo-inverse-119x102.png" alt="" width="119" height="102"/></a>
+          <div class="panel-left"><a class="brand" href="index.html"><img class="brand-logo-dark" src="../storage/images/negro.png" alt="" width="119" height="102"/><img class="brand-logo-light" src="../storage/images/gris.png" alt="" width="119" height="102"/></a>
             <ul class="list-md custom-list">
               <li><a class="icon icon-sm icon-gray-filled icon-circle mdi mdi-behance" href="#"></a></li>
               <li><a class="icon icon-sm icon-gray-filled icon-circle mdi mdi-facebook" href="#"></a></li>

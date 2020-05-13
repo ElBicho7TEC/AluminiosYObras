@@ -15,7 +15,7 @@ use DB;
 		{
 
 			$datosBienvenida = DB::table('bienvenida')
-			->select('idbienvenidos','mensajewelcome','subtitulo','descripcion')
+			->select('idbienvenidos','mensajewelcome','subtitulo1','subtitulo2','descripcion')
 			->get();	
 
 			return view ('index',['datosBienvenida'=>$datosBienvenida]);	

@@ -16,7 +16,8 @@ class CreateBienvenidaTable extends Migration
         Schema::create('bienvenida', function (Blueprint $table) {
             $table-> increments('idbienvenidos');
             $table-> string('mensajewelcome',40);
-            $table-> string('subtitulo',60);
+            $table-> string('subtitulo1',30);
+            $table-> string('subtitulo2',30);
             $table-> string('descripcion',200);
             $table->engine = "InnoDB";
         });

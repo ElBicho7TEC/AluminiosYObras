@@ -33,7 +33,7 @@
               <div class="rd-navbar-collapse-toggle rd-navbar-fixed-element-1" data-rd-navbar-toggle=".rd-navbar-collapse"><span></span></div>
               <div class="rd-navbar-collapse">
                 <ul class="list rd-navbar-list">
-                  <li><a class="icon icon-sm icon-bordered link-default mdi mdi-behance" href="#"></a></li>
+                  <li><a class="icon icon-sm icon-bordered link-default mdi mdi-whatsapp" href="#"></a></li>
                   <li><a class="icon icon-sm icon-bordered link-default mdi mdi-facebook" href="#"></a></li>
                   <li><a class="icon icon-sm icon-bordered link-default mdi mdi-instagram" href="#"></a></li>
                 </ul>
@@ -72,7 +72,7 @@
         <section class="section context-dark section-jumbotron bg-cover" style="background: url(templete/images/bg-image.jpg) #151515">
           <div class="panel-left"><a class="brand" href="index.html"><img class="brand-logo-dark" src="../storage/images/negro.png" alt="" width="119" height="102"/><img class="brand-logo-light" src="../storage/images/grisblanco.png" alt="" width="119" height="102"/></a>
             <ul class="list-md custom-list">
-              <li><a class="icon icon-sm icon-gray-filled icon-circle mdi mdi-behance" href="#"></a></li>
+              <li><a class="icon icon-sm icon-gray-filled icon-circle mdi mdi-whatsapp" href="#"></a></li>
               <li><a class="icon icon-sm icon-gray-filled icon-circle mdi mdi-facebook" href="#"></a></li>
               <li><a class="icon icon-sm icon-gray-filled icon-circle mdi mdi-instagram" href="#"></a></li>
             </ul>
@@ -83,10 +83,10 @@
                 <div class="row justify-content-center justify-content-lg-start">
                   <div class="col-md-10 offset-lg-1 col-lg-8 offset-xl-1 col-xl-9 offset-xxl-2 col-xxl-8">
                     <div class="jumbotron-custom-1">
-                      <div class="text-1 font-weight-medium">Welcome to Concept</div>
-                      <div class="title text-decorative">Top-Notch</div>
-                      <div class="title">Architecture</div>
-                      <p class="big-2 text-white-darken">With 19+ years’ experience in combining traditions and innovations, Concept creates settings to inspire the way people  live, learn, heal, work, and play.</p>
+                      <div class="text-1 font-weight-medium">{{$datosBienvenida[0]->mensajewelcome}}</div>
+                      <div class="title text-decorative">{{$datosBienvenida[0]->subtitulo1}}</div>
+                      <div class="title">{{$datosBienvenida[0]->subtitulo2}}</div>
+                      <p class="big-2 text-white-darken">{{$datosBienvenida[0]->descripcion}}</p>
                     </div>
                   </div>
                 </div>

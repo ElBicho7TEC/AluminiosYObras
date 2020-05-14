@@ -110,7 +110,7 @@
           </div>
         </div>
         <div class="container container-custom-width">
-          <h3 class="text-center">Our Latest Projects</h3>
+          <h3 class="text-center">Nuestros últimos proyectos</h3>
           <div class="row row-custom-width row-30 row-xxl-100 row-flex">
             <div class="col-sm-6 col-lg-4 wow fadeInRight">
               <div class="project-grid" style="background-image: url(templete/images/projects-1-518x373.jpg);">
@@ -161,7 +161,7 @@
               </div>
             </div>
           </div>
-          <div class="button-wrap-1 text-center"><a class="button button-default" href="#">View All Projects</a></div>
+          <div class="button-wrap-1 text-center"><a class="button button-default" href="#">Ver todos los Proyectos</a></div>
         </div>
       </section>
       <!-- Branding-->
@@ -276,7 +276,7 @@
               <div class="owl-carousel" data-items="1" data-md-items="2" data-lg-items="1" data-dots="true" data-nav="false" data-stage-padding="0" data-loop="false" data-margin="30" data-mouse-drag="false">
                 <article class="quote-minimal">
                   <div class="quote-body">
-                    <q>Seleccionamos Concept debido a los rigurosos antecedentes de diseño y educación de sus arquitectos. ¡Hicieron el mejor trabajo!</q>
+                    <q>Seleccionamos Concept debido a los rigurosos antecedentes de diseño y educación de sus trabajadores. ¡Hicieron el mejor trabajo!</q>
                   </div>
                   <div class="quote-footer">
                     <cite class="quote-minimal-cite">Juan Peréz</cite>, <span class="quote-minimal-description">“STP productions”</span>
@@ -284,7 +284,7 @@
                 </article>
                 <article class="quote-minimal">
                   <div class="quote-body">
-                    <q>Cuando necesitábamos especialistas en diseño y arquitectura, su equipo estuvo allí para ayudarnos. ¡Gracias!</q>
+                    <q>Cuando necesitábamos especialistas en diseño y obras, su equipo estuvo allí para ayudarnos. ¡Gracias!</q>
                   </div>
                   <div class="quote-footer">
                     <cite class="quote-minimal-cite">Isabel López</cite>, <span class="quote-minimal-description">“Fireworx”</span>
@@ -292,7 +292,7 @@
                 </article>
                 <article class="quote-minimal">
                   <div class="quote-body">
-                    <q>¡De todas las empresas de arquitectura que ofrecen servicios de diseño y construcción, usted es el mejor!</q>
+                    <q>¡De todas las empresas de aluminios y obras que ofrecen servicios de diseño y construcción, usted es el mejor!</q>
                   </div>
                   <div class="quote-footer">
                     <cite class="quote-minimal-cite">Pedro Godinez</cite>, <span class="quote-minimal-description">“MCM ltd.”</span>
@@ -359,8 +359,8 @@
             <div class="col-lg-5 col-xl-4">
               <div class="row row-30 row-xxl-55 justify-content-end">
                 <div class="col-sm-6 col-lg-9 col-xl-10 text-lg-right">
-                  <h3 class="offset-left-70">Meet the Team of Our Designers and Architects</h3>
-                  <div class="big-text">The team of Concept has more than 20 years of experience in architecture.</div>
+                  <h3 class="offset-left-70">Conoce al equipo de nuestros diseñadores y trabajadores</h3>
+                  <div class="big-text">El equipo de Aluminios y Obras tiene más de 25 años de experiencia en el mercado.</div>
                   <div class="divider divider-2 d-none d-lg-block"></div>
                 </div>
                 <div class="col-sm-6 col-lg-8 col-xl-7">
@@ -370,12 +370,12 @@
                     </div>
                     <div class="counter-right">
                       <div class="postfix">+</div>
-                      <div class="title">People in team</div>
+                      <div class="title">PERSONAS EN EQUIPO</div>
                     </div>
                   </div>
                   <ul class="list-marked list-marked-big">
-                    <li>28 exceptional<br> full-time professionals</li>
-                    <li>5-year specialized team member practice</li>
+                    <li>28 profesionales<br> excepcionales a tiempo completo</li>
+                    <li>Práctica de 5 años de equipo especializado</li>
                   </ul>
                 </div>
               </div>
@@ -393,8 +393,8 @@
           </div>
         </div>
         <div class="container">
-          <h3>Get in touch with us</h3>
-          <p class="big">Feel free to contact our specialists to find out more about our prices and services. <br class="d-none d-xl-inline">We are always ready to answer your questions.</p>
+          <h3>Póngase en contacto con nosotros</h3>
+          <p class="big">No dude en ponerse en contacto con nuestros especialistas para obtener más información sobre nuestros precios y servicios. <br class="d-none d-xl-inline">Siempre estamos listos para responder sus preguntas.</p>
           <!-- RD Mailform-->
           <form class="rd-form rd-mailform form-boxed" data-form-output="form-output-global" data-form-type="contact" method="post" action="tamplete/bat/rd-mailform.php">
             <div class="row row-50">
@@ -402,32 +402,32 @@
                 <div class="form-wrap form-wrap-icon">
                   <div class="form-icon mdi mdi-account-outline"></div>
                   <input class="form-input" id="contact-name" type="text" name="name" data-constraints="@Required">
-                  <label class="form-label" for="contact-name">Name</label>
+                  <label class="form-label" for="contact-name">Nombre</label>
                 </div>
               </div>
               <div class="col-lg-4">
                 <div class="form-wrap form-wrap-icon">
                   <div class="form-icon mdi mdi-email-outline"></div>
                   <input class="form-input" id="contact-email" type="email" name="email" data-constraints="@Email @Required">
-                  <label class="form-label" for="contact-email">E-mail</label>
+                  <label class="form-label" for="contact-email">Correo electrónico</label>
                 </div>
               </div>
               <div class="col-lg-4">
                 <div class="form-wrap form-wrap-icon">
                   <div class="form-icon mdi mdi-phone"></div>
                   <input class="form-input" id="contact-phone" type="text" name="phone" data-constraints="@Numeric">
-                  <label class="form-label" for="contact-phone">Phone</label>
+                  <label class="form-label" for="contact-phone">Teléfono</label>
                 </div>
               </div>
               <div class="col-12">
                 <div class="form-wrap form-wrap-icon">
                   <div class="form-icon mdi mdi-message-outline"></div>
-                  <label class="form-label" for="contact-message">Message</label>
+                  <label class="form-label" for="contact-message">Mensaje</label>
                   <textarea class="form-input" id="contact-message" name="message" data-constraints="@Required"></textarea>
                 </div>
               </div>
               <div class="col-md-12">
-                <button class="button button-default" type="submit">Send Message</button>
+                <button class="button button-default" type="submit">Enviar Memnsaje</button>
               </div>
             </div>
           </form>
@@ -438,7 +438,7 @@
         <div class="container">
           <div class="row row-30 justify-content-lg-between">
             <div class="col-sm-6 col-lg-3 col-xl-3">
-              <h5>Location</h5>
+              <h5>Ubicación</h5>
               <ul class="list list-sm">
                 <li>
                   <p>1418 Riverwood Drive,</p>
@@ -450,37 +450,37 @@
                   <p>CA 96022</p>
                 </li>
                 <li>
-                  <p>United States</p>
+                  <p>México</p>
                 </li>
               </ul>
             </div>
             <div class="col-sm-6 col-lg-4 col-xl-3">
-              <h5>Contacts</h5>
+              <h5>Contactos</h5>
               <dl class="list-terms-custom">
-                <dt>Ph.</dt>
+                <dt>Tel.</dt>
                 <dd><a class="link-default" href="tel:#">1-300-123-1234</a></dd>
               </dl>
               <dl class="list-terms-custom">
-                <dt>Mail.</dt>
+                <dt>Correo.</dt>
                 <dd><a class="link-default" href="mailto:#">Info@demolink.org</a></dd>
               </dl>
               <ul class="list-inline list-inline-sm">
                 <li><a class="icon icon-sm icon-gray-filled icon-circle mdi mdi-facebook" href="#"></a></li>
                 <li><a class="icon icon-sm icon-gray-filled icon-circle mdi mdi-instagram" href="#"></a></li>
-                <li><a class="icon icon-sm icon-gray-filled icon-circle mdi mdi-behance" href="#"></a></li>
+                <li><a class="icon icon-sm icon-gray-filled icon-circle mdi mdi-whatsapp" href="#"></a></li>
                 <li><a class="icon icon-sm icon-gray-filled icon-circle mdi mdi-twitter" href="#"></a></li>
               </ul>
             </div>
             <div class="col-lg-4">
-              <h5>Newsletter</h5>
+              <h5>Boletin informativo</h5>
               <form class="rd-form rd-mailform" data-form-output="form-output-global" data-form-type="contact" method="post" action="templete/bat/rd-mailform.php">
                 <div class="form-wrap form-wrap-icon">
                   <div class="form-icon mdi mdi-email-outline"></div>
                   <input class="form-input" id="footer-email" type="email" name="email" data-constraints="@Email @Required">
-                  <label class="form-label" for="footer-email">E-mail</label>
+                  <label class="form-label" for="footer-email">Correo electrónico</label>
                 </div>
                 <div class="button-wrap">
-                  <button class="button button-default button-invariable" type="submit">Subscribe</button>
+                  <button class="button button-default button-invariable" type="submit">Suscribir</button>
                 </div>
               </form>
             </div>
@@ -495,9 +495,9 @@
             </div>
             <div class="col-lg-5 col-xl-6">
               <ul class="list-inline list-inline-lg text-uppercase">
-                <li><a href="#services">Services</a></li>
-                <li><a href="#portfolio">Our Portfolio</a></li>
-                <li><a href="#">News</a></li>
+                <li><a href="#services">Servicios</a></li>
+                <li><a href="#portfolio">Nuestro Portafolio</a></li>
+                <li><a href="#">Noticias</a></li>
               </ul>
             </div>
           </div>

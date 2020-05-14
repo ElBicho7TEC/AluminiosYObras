@@ -112,10 +112,10 @@
         <div class="container container-custom-width">
           <h3 class="text-center">Nuestros últimos proyectos</h3>
           <div class="row row-custom-width row-30 row-xxl-100 row-flex">
-            
+
             @foreach ($datosGaleria as $galeria)
             <div class="col-sm-6 col-lg-4 wow fadeInRight">
-              <div class="project-grid" style="background-image: url(templete/images/projects-1-518x373.jpg);">
+              <div class="project-grid" style="background-image: url(../storage/app/public{{$galeria->rutafotoprincipal}});">
                 <div class="inner"><img src="templete/images/bg-pattern-transparent.png" alt=""/>
                   <h5 class="title text-capitalize font-weight-medium"><a href="#">{{$galeria->nombreproyecto}}</a></h5>
                   <p class="font-weight-regular exeption">{{$galeria->descripcionbreve}}</p><a class="button button-default" href="#">Ver</a>

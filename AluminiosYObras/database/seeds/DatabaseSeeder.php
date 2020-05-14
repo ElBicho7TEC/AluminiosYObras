@@ -17,5 +17,6 @@ class DatabaseSeeder extends Seeder
         $this-> call (modulo::class);
         $this-> call (caracteristicasmodulo::class);
         $this-> call (galeria::class);
+        $this-> call (fotogaleria::class);
     }
 }

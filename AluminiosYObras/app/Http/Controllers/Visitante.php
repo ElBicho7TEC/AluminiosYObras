@@ -20,9 +20,15 @@ use DB;
 
 			$datosModulos = DB::table('modulo')
 			->select('idmodulo','nombremodulo','rutamodulo','numeroresaltador','descripciondelnumero')
+			->get();
+
+			$datosGaleria = DB::table('galeria')
+			->select('idgaleria','nombreproyecto','rutafotoprincipal','descripcionbreve','descripcionlarga','fkidmodulo')
+			->orderby('idgaleria','desc')
+			->take(6)
 			->get();	
 
-			return view ('index',['datosBienvenida'=>$datosBienvenida,'datosModulos'=>$datosModulos]);	
+			return view ('index',['datosBienvenida'=>$datosBienvenida,'datosModulos'=>$datosModulos,'datosGaleria'=>$datosGaleria]);	
 		}
 	}
 ?>

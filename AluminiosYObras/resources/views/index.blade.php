@@ -173,53 +173,31 @@
                 @foreach ($datosModulos as $modulo)
                 <div class="col-sm-6 col-md-4">
                   <h5>{{$modulo->nombremodulo}}</h5>
+                </div>
+                <div class="col-sm-6 col-md-4">
+                  <?php 
+                  $datosCaracteriticasModulo = DB::table('caracteristicasmodulo')
+                  ->select('idcaracteristicasmodulo','caracteristica','fkidmodulo')
+                  ->where('fkidmodulo','=','1')
+                  ->get();
+                  ?>
+
+                  @foreach ($datosCaracteriticasModulo as $caracteristica)
                   <ul class="list-xs font-weight-regular">
-                    <li><a class="link-item" href="#">Planning & Development</a></li>
-                    <li><a class="link-item" href="#">Project Management</a></li>
-                    <li><a class="link-item" href="#">Structural Engineering</a></li>
+                    <li><a class="link-item" href="#">{{$caracteristica->caracteristica}}</a></li>
                   </ul>
+                  @endforeach
+                </div>
+               
+                <div class="col-sm-6 col-md-4">
+                  <article class="box-counter">
+                    <div class="box-counter-main">
+                      <div class="counter">{{$modulo->numeroresaltador}}</div><span class="small small_top">+</span>
+                    </div>
+                    <div class="box-counter-title">{{$modulo->descripciondelnumero}}</div>
+                  </article>
                 </div>
                 @endforeach
-                <div class="col-sm-6 col-md-4">
-                  <h5>3D Modeling</h5>
-                  <ul class="list-xs font-weight-regular">
-                    <li><a class="link-item" href="#">Interior Rendering</a></li>
-                    <li><a class="link-item" href="#">Visualization</a></li>
-                    <li><a class="link-item" href="#">VR Architecture</a></li>
-                  </ul>
-                </div>
-                <div class="col-sm-6 col-md-4">
-                  <h5>Design</h5>
-                  <ul class="list-xs font-weight-regular">
-                    <li><a class="link-item" href="#">Interior Design</a></li>
-                    <li><a class="link-item" href="#">Architectural Design</a></li>
-                    <li><a class="link-item" href="#">Technical Detailing</a></li>
-                  </ul>
-                </div>
-                <div class="col-sm-6 col-md-4">
-                  <article class="box-counter">
-                    <div class="box-counter-main">
-                      <div class="counter">10</div><span class="small small_top">+</span>
-                    </div>
-                    <div class="box-counter-title">International awards</div>
-                  </article>
-                </div>
-                <div class="col-sm-6 col-md-4">
-                  <article class="box-counter">
-                    <div class="box-counter-main">
-                      <div class="counter">57</div>
-                    </div>
-                    <div class="box-counter-title">Finished projects</div>
-                  </article>
-                </div>
-                <div class="col-sm-6 col-md-4">
-                  <article class="box-counter">
-                    <div class="box-counter-main">
-                      <div class="counter">19</div>
-                    </div>
-                    <div class="box-counter-title">Years of experience</div>
-                  </article>
-                </div>
               </div>
             </div>
             <div class="col-lg-3">

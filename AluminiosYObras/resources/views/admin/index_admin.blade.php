@@ -205,8 +205,60 @@
       </div>
 </section>
 
-
+  <!-- Lista en donde estar los modulos -->
 <section class="section section-lg bg-gray-700 text-center text-sm-left" id="services">
+	<link rel="stylesheet" type="text/css" href="tablaresponsiva/css/stacktable.css">
+
+	<div>
+		
+		<table id="mitabla">
+			<thead>
+				<tr>
+					<th>Código</th>
+					<th>Descripción</th>
+					<th>Precio</th>
+					<th>Stock</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>001</td>
+					<td>Desktop</td>
+					<td>$1000</td>
+					<td>10</td>
+				</tr>
+				<tr>
+					<td>002</td>
+					<td>Laptop</td>
+					<td>$2000</td>
+					<td>20</td>
+				</tr>
+				<tr>
+					<td>002</td>
+					<td>Laptop</td>
+					<td>$2000</td>
+					<td>20</td>
+				</tr>
+				<tr>
+					<td>002</td>
+					<td>Laptop</td>
+					<td>$2000</td>
+					<td>20</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<script type="text/javascript" src="tablaresponsiva/js/jquery-3.0.0.min.js"></script>
+	<script type="text/javascript" src="tablaresponsiva/js/stacktable.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function() {
+			//$('table').cardtable();
+			$('#mitabla').cardtable();
+		})
+	</script>
+	
+
+     
 </section>
 
     

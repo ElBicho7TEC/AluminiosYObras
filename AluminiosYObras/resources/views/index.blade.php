@@ -201,8 +201,8 @@
               </div>
             </div>
             <div class="col-lg-3">
-              <div class="heading-3">High-quality solutions</div>
-              <div class="big text-white-lighter text-white-darken">We are committed to providing the best possible solutions at a competitive cost. Our team is ready to offer a wide range of various architectural services.</div>
+              <div class="heading-3">Soluciones de alta calidad</div>
+              <div class="big text-white-lighter text-white-darken">Estamos comprometidos a proporcionar las mejores soluciones posibles a un costo competitivo. Nuestro equipo está listo para ofrecer una amplia gama de diversos servicios de aluminios y obras.</div>
               <div class="img-wrap-1"><img src="templete/images/speaker-1-180x80.png" alt="" width="180" height="80"/>
               </div>
             </div>
@@ -227,8 +227,8 @@
                   <div class="blurb-minimal-icon construction-icon-12"></div>
                 </div>
                 <div class="unit-body">
-                  <h5 class="blurb-minimal-title">Modern Materials</h5>
-                  <p class="blurb-minimal-exeption">All our projects are designed and built using the best materials.</p>
+                  <h5 class="blurb-minimal-title">Materiales modernos</h5>
+                  <p class="blurb-minimal-exeption">Todos nuestros proyectos están diseñados y construidos con los mejores materiales.</p>
                 </div>
               </div>
             </div>
@@ -239,8 +239,8 @@
                   <div class="blurb-minimal-icon construction-icon-13"></div>
                 </div>
                 <div class="unit-body">
-                  <h5 class="blurb-minimal-title">Creative Ideas</h5>
-                  <p class="blurb-minimal-exeption">Creativity is a vital part of the projects we design for you.</p>
+                  <h5 class="blurb-minimal-title">Ideas creativas</h5>
+                  <p class="blurb-minimal-exeption">La creatividad es una parte vital de los proyectos que diseñamos para usted.</p>
                 </div>
               </div>
             </div>
@@ -251,8 +251,8 @@
                   <div class="blurb-minimal-icon construction-icon-18"></div>
                 </div>
                 <div class="unit-body">
-                  <h5 class="blurb-minimal-title">Unique Approach</h5>
-                  <p class="blurb-minimal-exeption">Our approach combines dedication and professionalism.</p>
+                  <h5 class="blurb-minimal-title">Enfoque único</h5>
+                  <p class="blurb-minimal-exeption">Nuestro enfoque combina dedicación y profesionalismo.</p>
                 </div>
               </div>
             </div>
@@ -271,31 +271,31 @@
         <div class="container">
           <div class="row row-40 justify-content-between">
             <div class="col-lg-6 col-xxl-5">
-              <h3>Our Clients</h3>
+              <h3>Nuestros clientes</h3>
               <!-- Owl Carousel-->
               <div class="owl-carousel" data-items="1" data-md-items="2" data-lg-items="1" data-dots="true" data-nav="false" data-stage-padding="0" data-loop="false" data-margin="30" data-mouse-drag="false">
                 <article class="quote-minimal">
                   <div class="quote-body">
-                    <q>We selected Concept because of their architects’ rigorous design background and education. They did the best job!</q>
+                    <q>Seleccionamos Concept debido a los rigurosos antecedentes de diseño y educación de sus arquitectos. ¡Hicieron el mejor trabajo!</q>
                   </div>
                   <div class="quote-footer">
-                    <cite class="quote-minimal-cite">John smith</cite>, <span class="quote-minimal-description">“STP productions”</span>
+                    <cite class="quote-minimal-cite">Juan Peréz</cite>, <span class="quote-minimal-description">“STP productions”</span>
                   </div>
                 </article>
                 <article class="quote-minimal">
                   <div class="quote-body">
-                    <q>When we needed design and architecture specialists, your team was there for us. Thank you!</q>
+                    <q>Cuando necesitábamos especialistas en diseño y arquitectura, su equipo estuvo allí para ayudarnos. ¡Gracias!</q>
                   </div>
                   <div class="quote-footer">
-                    <cite class="quote-minimal-cite">Kate williams</cite>, <span class="quote-minimal-description">“Fireworx”</span>
+                    <cite class="quote-minimal-cite">Isabel López</cite>, <span class="quote-minimal-description">“Fireworx”</span>
                   </div>
                 </article>
                 <article class="quote-minimal">
                   <div class="quote-body">
-                    <q>Out of all architecture companies offering design & construction services, you are the best!</q>
+                    <q>¡De todas las empresas de arquitectura que ofrecen servicios de diseño y construcción, usted es el mejor!</q>
                   </div>
                   <div class="quote-footer">
-                    <cite class="quote-minimal-cite">Peter McMillan</cite>, <span class="quote-minimal-description">“MCM ltd.”</span>
+                    <cite class="quote-minimal-cite">Pedro Godinez</cite>, <span class="quote-minimal-description">“MCM ltd.”</span>
                   </div>
                 </article>
               </div>
@@ -325,7 +325,7 @@
                 <div class="col-sm-6 wow fadeInLeft">
                   <div class="box-team box-team-right"><img src="templete/images/index-3-1-390x332.jpg" alt="" width="390" height="332"/>
                     <div class="meta">
-                      <div class="heading-6 title">Jane Smith</div>
+                      <div class="heading-6 title">Javier Ramirez</div>
                       <p class="position">Senior Architect</p>
                     </div>
                   </div>
@@ -333,7 +333,7 @@
                 <div class="col-sm-6 wow fadeInRight">
                   <div class="box-team box-team-right"><img src="templete/images/index-3-2-390x332.jpg" alt="" width="390" height="332"/>
                     <div class="meta">
-                      <div class="heading-6 title">Nathan Porter</div>
+                      <div class="heading-6 title">Julio Flores</div>
                       <p class="position">Founder, Director</p>
                     </div>
                   </div>
@@ -341,7 +341,7 @@
                 <div class="col-sm-6 wow fadeInLeft" data-wow-delay="0.2s">
                   <div class="box-team box-team-right"><img src="templete/images/index-3-3-390x332.jpg" alt="" width="390" height="332"/>
                     <div class="meta">
-                      <div class="heading-6 title">Sam Lee</div>
+                      <div class="heading-6 title">Keuri Machain</div>
                       <p class="position">Interior Designer</p>
                     </div>
                   </div>
@@ -349,7 +349,7 @@
                 <div class="col-sm-6 wow fadeInRight" data-wow-delay="0.2s">
                   <div class="box-team box-team-right"><img src="templete/images/index-3-4-390x332.jpg" alt="" width="390" height="332"/>
                     <div class="meta">
-                      <div class="heading-6 title">Sarah Parker</div>
+                      <div class="heading-6 title">Samuel Mojarro</div>
                       <p class="position">Exterior Designer</p>
                     </div>
                   </div>

@@ -94,9 +94,9 @@
             </div>
           </div>
           <ul class="project-list">
-            <li class="bg-image" style="background-image: url(templete/images/home-3-project-1-671x214.jpg)"><a href="#">Architecture</a></li>
-            <li class="bg-image" style="background-image: url(templete/images/home-3-project-2-671x214.jpg)"><a href="#">Design</a></li>
-            <li class="bg-image" style="background-image: url(templete/images/home-3-project-3-671x214.jpg)"><a href="#">3d modeling</a></li>
+            @foreach ($datosModulos as $modulo)
+            <li class="bg-image" style="background-image: url(../storage/app/public{{$modulo->rutamodulo}})"><a href="#">{{$modulo->nombremodulo}}</a></li>
+            @endforeach
           </ul>
         </section>
       </section>

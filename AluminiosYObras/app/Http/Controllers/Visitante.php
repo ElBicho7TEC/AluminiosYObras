@@ -16,9 +16,13 @@ use DB;
 
 			$datosBienvenida = DB::table('bienvenida')
 			->select('idbienvenidos','mensajewelcome','subtitulo1','subtitulo2','descripcion')
+			->get();
+
+			$datosModulos = DB::table('modulo')
+			->select('idmodulo','nombremodulo','rutamodulo','numeroresaltador','descripciondelnumero')
 			->get();	
 
-			return view ('index',['datosBienvenida'=>$datosBienvenida]);	
+			return view ('index',['datosBienvenida'=>$datosBienvenida,'datosModulos'=>$datosModulos]);	
 		}
 	}
 ?>

@@ -170,14 +170,16 @@
           <div class="row row-40">
             <div class="col-lg-9">
               <div class="row row-30 row-xxl-85">
+                @foreach ($datosModulos as $modulo)
                 <div class="col-sm-6 col-md-4">
-                  <h5>Architecture</h5>
+                  <h5>{{$modulo->nombremodulo}}</h5>
                   <ul class="list-xs font-weight-regular">
                     <li><a class="link-item" href="#">Planning & Development</a></li>
                     <li><a class="link-item" href="#">Project Management</a></li>
                     <li><a class="link-item" href="#">Structural Engineering</a></li>
                   </ul>
                 </div>
+                @endforeach
                 <div class="col-sm-6 col-md-4">
                   <h5>3D Modeling</h5>
                   <ul class="list-xs font-weight-regular">

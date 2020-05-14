@@ -178,7 +178,7 @@
                   <?php 
                   $datosCaracteriticasModulo = DB::table('caracteristicasmodulo')
                   ->select('idcaracteristicasmodulo','caracteristica','fkidmodulo')
-                  ->where('fkidmodulo','=','1')
+                  ->where('fkidmodulo','=',$modulo->idmodulo)
                   ->get();
                   ?>
 

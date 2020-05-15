@@ -30,5 +30,11 @@ use DB;
 
 			return view ('index',['datosBienvenida'=>$datosBienvenida,'datosModulos'=>$datosModulos,'datosGaleria'=>$datosGaleria]);	
 		}
+
+		public function verProyecto()
+		{
+
+			return view ('single');	
+		}
 	}
 ?>

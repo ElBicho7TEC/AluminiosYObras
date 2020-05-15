@@ -76,7 +76,7 @@
 			{
 				$('#etalage').etalage(
 				{
-					thumb_image_width: 300,
+					thumb_image_width: 400,
 					thumb_image_height: 400,
 										
 					show_hint: true,
@@ -132,14 +132,14 @@
 						<!-- end product_slider -->
 					</div>
 					
-					<div class="cont1 span_2_of_a1">
-						<h3 class="m_3">{{$datosGaleria[0]->nombreproyecto}}</h3>
+					<div class="cont1 span_2_of_a1" >
+						<h3 class="m_3" style="margin-left: 100px">{{$datosGaleria[0]->nombreproyecto}}</h3>
 					<div class="btn_form">	  
 				</div>
 	    		
-	    		<p class="m_desc">{{$datosGaleria[0]->descripcionlarga}}</p>
+	    		<p class="m_desc" style="margin-left: 100px">{{$datosGaleria[0]->descripcionlarga}}</p>
 	    			
-	            <div class="social_single">	
+	            <div class="social_single" style="margin-left: 100px">	
 					<ul>	
 						<li class="fb"><a href="#"><span> </span></a></li>
 						<li class="tw"><a href="#"><span> </span></a></li>
@@ -147,7 +147,7 @@
 						<li class="rss"><a href="#"><span> </span></a></li>		
 					</ul>
 				</div>
-				<div class="btn_form" align="center" >
+				<div class="btn_form" align="center" style="margin-left: 100px">
 				   <form>
 					 <input type="submit" value="Volver" title="">
 				  </form>

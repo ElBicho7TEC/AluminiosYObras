@@ -1,4 +1,5 @@
 
+
 <!-- Price box minimal--><!DOCTYPE html>
 <html class="wide wow-animation" lang="en">
   <head>
@@ -207,61 +208,187 @@
 
   <!-- Lista en donde estar los modulos -->
 <section class="section section-lg bg-gray-700 text-center text-sm-left" id="services">
-	<link rel="stylesheet" type="text/css" href="tablaresponsiva/css/stacktable.css">
 
-	<div>
+<!-- Inicio del modal-->
+
+<div id="modalCrearModulo" class="modal fade">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header" style="background:#546E7A;">
+                <h4 class="modal-title" style="color: white" >Crear Modulo</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+            </div>
 		
-		<table id="mitabla">
-			<thead>
-				<tr>
-					<th>Código</th>
-					<th>Descripción</th>
-					<th>Precio</th>
-					<th>Stock</th>
-				</tr>
-			</thead>
-			<tbody>
-				<tr>
-					<td>001</td>
-					<td>Desktop</td>
-					<td>$1000</td>
-					<td>10</td>
-				</tr>
-				<tr>
-					<td>002</td>
-					<td>Laptop</td>
-					<td>$2000</td>
-					<td>20</td>
-				</tr>
-				<tr>
-					<td>002</td>
-					<td>Laptop</td>
-					<td>$2000</td>
-					<td>20</td>
-				</tr>
-				<tr>
-					<td>002</td>
-					<td>Laptop</td>
-					<td>$2000</td>
-					<td>20</td>
-				</tr>
-			</tbody>
-		</table>
-	</div>
-	<script type="text/javascript" src="tablaresponsiva/js/jquery-3.0.0.min.js"></script>
-	<script type="text/javascript" src="tablaresponsiva/js/stacktable.js"></script>
-	<script type="text/javascript">
-		$(document).ready(function() {
-			//$('table').cardtable();
-			$('#mitabla').cardtable();
-		})
-	</script>
-	
+            <form action="btnCrear_Auditor" method="post" enctype="multipart/form-data">
+           
+                <div class="modal-body mx-auto" style="width: auto; background-color: #ECEFF1; color: black" >
+                    <div class="row">
+                            <div class="col-3">
+                                <b><label>Nombre modulo</label></b>
+                            </div>
+                            <div class="col-5">
+                                <input type="text" class="form-control" name="txtnombreModulo" required style="width: auto;">
+                            </div>
+                    </div>
+                    
+                     <div class="row">
+                            <div class="col-3">
+                                <b><label>Logotipo</label></b>
+                            </div>
+                            <div class="col-5">
+									<input name="logotipo[]" type="file"accept="image/*" required style="padding: 5px 10px; background: #546E7A; color:#fff; border:0px solid #fff; width: auto;">
+                            </div>
+                    </div>
+                    
+                    <div class="row">
+                            <div class="col-3">
+                                <b><label>Número a resaltar</label></b>
+                            </div>
+                            <div class="col-5">    
+                                <input type="text" class="form-control"  name="txtnumeroResaltar" required style="width: auto;">
+                            </div>
+                    </div>
+                    
+                    <div class="row">
+                            <div class="col-3">
+                                 <b><label>Descripción</label></b>
+                            </div>
+                            <div class="col-5">
+                                  <input type="text" class="form-control" name="txtdescribcion" required style="width: auto;">
+                            </div>
+                    </div>
+                    
+                </div>
+                <div class="modal-footer" style="background:#546E7A; margin: auto;">
+                    <button id="button" class="btn btn-primary" style="background: #00ACC1; border: none; align-items: center;">Guardar</button> 
 
-     
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<!-- fin del modal-->
+
+<!-- Inicio del modal-->
+
+<div id="modalEditarModulo" class="modal fade">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header" style="background:#546E7A;">
+                <h4 class="modal-title" style="color: white" >Editar Modulo</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+            </div>
+		
+            <form action="btnCrear_Auditor" method="post" enctype="multipart/form-data">
+           
+                <div class="modal-body mx-auto" style="width: auto; background-color: #ECEFF1; color: black" >
+                    <div class="row">
+                            <div class="col-3">
+                                <b><label>Nombre modulo</label></b>
+                            </div>
+                            <div class="col-5">
+                                <input type="text" class="form-control" name="txtnombreModulo" required style="width: auto;">
+                            </div>
+                    </div>
+                    
+                     <div class="row">
+                            <div class="col-3">
+                                <b><label>Logotipo</label></b>
+                            </div>
+                            <div class="col-5">
+									<input name="logotipo[]" type="file"accept="image/*" required style="padding: 5px 10px; background: #546E7A; color:#fff; border:0px solid #fff; width: auto;">
+                            </div>
+                    </div>
+                    
+                    <div class="row">
+                            <div class="col-3">
+                                <b><label>Número a resaltar</label></b>
+                            </div>
+                            <div class="col-5">    
+                                <input type="text" class="form-control"  name="txtnumeroResaltar" required style="width: auto;">
+                            </div>
+                    </div>
+                    
+                    <div class="row">
+                            <div class="col-3">
+                                 <b><label>Descripción</label></b>
+                            </div>
+                            <div class="col-5">
+                                  <input type="text" class="form-control" name="txtdescribcion" required style="width: auto;">
+                            </div>
+                    </div>
+                    
+                </div>
+                <div class="modal-footer" style="background:#546E7A; margin: auto;">
+                    <button id="button" class="btn btn-primary" style="background: #00ACC1; border: none; align-items: center;">Guardar</button> 
+
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<!-- fin del modal-->
+
+
+
+
+
+
+
+
+
+
+<!-- aqui esta para la tabla-->
+	<div class="col-12" style="font-size:35px; font-weight: bold;  font-style:italic;" >
+     <center> <label>Lista de modulos</label>
+   <!-- Button trigger modal-->
+     <button type="submit" class="btn btn-primary" style="background: black; border: none; color: white;"data-toggle="modal" data-target="#modalCrearModulo">Agregar</button>
+     </center>
+    </div>
+			<div class="table-responsive">
+					<table class="table table-bordered" style="color: black; background-color: white;">
+						  <thead class="thead-dark" style="color: black">
+						    <tr>
+						      <th scope="col" style="text-align:center;">#</th>
+						      <th scope="col" style="text-align:center;">Nombre modulo</th>
+						      <th scope="col" style="text-align:center;">Logotipo</th>
+						      <th scope="col" style="text-align:center;">Número resaltar</th>
+						      <th scope="col" style="text-align:center;">Descripción</th>
+						    </tr>
+						  </thead>
+							  <tbody>
+							    <tr style="text-align:center;">
+							      <th scope="row"><i class="mdi mdi-pencil-box" data-toggle="modal" data-target="#modalEditarModulo"></i> <i class="mdi mdi-file-excel-box" ></i></th>
+							      <td>Puertas</td>
+							      <td>Imagen</td>
+							      <td>10</td>
+							      <td>Años de experiencia</td>
+							    </tr>
+							    <tr style="text-align:center;">
+							      <th scope="row" ><i class="mdi mdi-pencil-box" ></i> <i class="mdi mdi-file-excel-box" ></i></th>
+							      <td>Ventas</td>
+							      <td>Imagen</td>
+							      <td>10</td>
+							      <td>Años de experiencia</td>
+							    </tr>
+							    <tr style="text-align:center;">
+							      <th scope="row"><i class="mdi mdi-pencil-box" ></i> <i class="mdi mdi-file-excel-box" ></i></th>
+							      <td>Portones</td>
+							      <td>Imagen</td>
+							      <td>10</td>
+							      <td>Años de experiencia</td>
+							    </tr>
+							    <tr style="text-align:center;">
+							      <th scope="row"><i class="mdi mdi-pencil-box" ></i> <i class="mdi mdi-file-excel-box" ></i></th>
+							      <td>Alumunio</td>
+							      <td>Imagen</td>
+							      <td>10</td>
+							      <td>Años de experiencia</td>
+							    </tr>
+							  </tbody>
+				</table>
+		</div>
 </section>
-
-    
       <!-- Portfolio-->
       <section class="section section-lg bg-default section-lined" id="portfolio">
         <div class="container container-lined">

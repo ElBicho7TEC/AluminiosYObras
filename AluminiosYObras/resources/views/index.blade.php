@@ -118,7 +118,12 @@
               <div class="project-grid" style="background-image: url(../storage/app/public{{$galeria->rutafotoprincipal}});">
                 <div class="inner"><img src="templete/images/bg-pattern-transparent.png" alt=""/>
                   <h5 class="title text-capitalize font-weight-medium"><a href="single">{{$galeria->nombreproyecto}}</a></h5>
-                  <p class="font-weight-regular exeption">{{$galeria->descripcionbreve}}</p><a class="button button-default" href="single">Ver</a>
+                  <p class="font-weight-regular exeption">{{$galeria->descripcionbreve}}</p>
+                  <form action="single" method="post" enctype="multipart/form-data">
+            	  {{ csrf_field() }}
+            	  	<input type="hidden" name='idGaleria' value="{{$galeria->idgaleria}}">
+            	  	<button id="button" class="button button-default">Ver</button> 
+              	  </form>
                 </div>
               </div>
             </div>

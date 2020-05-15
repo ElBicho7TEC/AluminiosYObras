@@ -2,6 +2,8 @@
 namespace App\Http\Controllers;
 use App\Http \Controllers\Controller;
 use App\bienvenida;
+use App\galeria;
+use App\fotogaleria;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\File;
@@ -31,10 +33,18 @@ use DB;
 			return view ('index',['datosBienvenida'=>$datosBienvenida,'datosModulos'=>$datosModulos,'datosGaleria'=>$datosGaleria]);	
 		}
 
-		public function verProyecto()
+		public function verProyecto(Request $datos)
 		{
+			$datosGaleria = DB::table('galeria')
+			->select('idgaleria','nombreproyecto','rutafotoprincipal','descripcionbreve','descripcionlarga','fkidmodulo')
+			->where('idgaleria','=',$datos->input ('idGaleria'))
+			->get();
 
-			return view ('single');	
+			$datosFotoGaleria = DB::table('fotogaleria')
+			->select('idfotogaleria','fotos','descripcion','fkidgaleria')
+			->where('fkidgaleria','=',$datos->input ('idGaleria'))
+			->get();
+			return view ('single',['datosFotoGaleria'=>$datosFotoGaleria,'datosGaleria'=>$datosGaleria]);	
 		}
 	}
 ?>

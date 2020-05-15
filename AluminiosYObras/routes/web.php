@@ -15,7 +15,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/','Visitante@index');
 Route::get('index','Visitante@index');
-Route::get('single','Visitante@verProyecto');
+Route::post('single','Visitante@verProyecto');
 
 //Controlador de Login para mostrar el formulario
 Route::get('admin','LoginC@mostrar');

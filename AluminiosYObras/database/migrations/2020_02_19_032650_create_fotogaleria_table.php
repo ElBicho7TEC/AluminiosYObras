@@ -16,9 +16,9 @@ class CreateFotoGaleriaTable extends Migration
         Schema::create('fotogaleria', function (Blueprint $table) {
             $table-> increments('idfotogaleria');
             $table-> string('fotos',100);
-            $table-> string('descripción',100);
-            $table-> integer ('fkgaleria')->unsigned();
-            $table-> foreign('fkgaleria')->references('idgaleria')->on('galeria');
+            $table-> string('descripcion',100);
+            $table-> integer ('fkidgaleria')->unsigned();
+            $table-> foreign('fkidgaleria')->references('idgaleria')->on('galeria');
             $table->engine = "InnoDB";
         });
     }

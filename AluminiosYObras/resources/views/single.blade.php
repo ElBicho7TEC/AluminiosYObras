@@ -118,44 +118,26 @@
 					    <ul id="etalage">
 							<li>
 								<a href="optionallink.html">
-									<img class="etalage_thumb_image" src="adiddas-web/images/t1.jpg" />
-									<img class="etalage_source_image" src="adiddas-web/images/t2.jpg" />
+									<img class="etalage_thumb_image" src="../storage/app/public{{$datosGaleria[0]->rutafotoprincipal}}" />
+									<img class="etalage_source_image" src="../storage/app/public{{$datosGaleria[0]->rutafotoprincipal}}" />
 								</a>
 							</li>
+							@foreach ($datosFotoGaleria as $foto)
 							<li>
-								<img class="etalage_thumb_image" src="adiddas-web/images/t2.jpg" />
-								<img class="etalage_source_image" src="adiddas-web/images/t2.jpg" />
+								<img class="etalage_thumb_image" src="../storage/app/public{{$foto->fotos}}" />
+								<img class="etalage_source_image" src="../storage/app/public{{$foto->fotos}}" />
 							</li>
-							<li>
-								<img class="etalage_thumb_image" src="adiddas-web/images/t3.jpg" />
-								<img class="etalage_source_image" src="adiddas-web/images/t3.jpg" />
-							</li>
-							<li>
-								<img class="etalage_thumb_image" src="adiddas-web/images/t4.jpg" />
-								<img class="etalage_source_image" src="adiddas-web/images/t4.jpg" />
-							</li>
-							<li>
-								<img class="etalage_thumb_image" src="adiddas-web/images/t5.jpg" />
-								<img class="etalage_source_image" src="adiddas-web/images/t5.jpg" />
-							</li>
-							<li>
-								<img class="etalage_thumb_image" src="adiddas-web/images/t6.jpg" />
-								<img class="etalage_source_image" src="adiddas-web/images/t6.jpg" />
-							</li>
-							<li>
-								<img class="etalage_thumb_image" src="adiddas-web/images/t1.jpg" />
-								<img class="etalage_source_image" src="adiddas-web/images/t1.jpg" />
-							</li>
+							@endforeach
 						</ul>	
 						<!-- end product_slider -->
 					</div>
 					
 					<div class="cont1 span_2_of_a1">
-						<h3 class="m_3">Lorem ipsum dolor sit amet</h3>
+						<h3 class="m_3">{{$datosGaleria[0]->nombreproyecto}}</h3>
 					<div class="btn_form">	  
 				</div>
 	    		
-	    		<p class="m_desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+	    		<p class="m_desc">{{$datosGaleria[0]->descripcionlarga}}</p>
 	    			
 	            <div class="social_single">	
 					<ul>	
@@ -167,7 +149,7 @@
 				</div>
 				<div class="btn_form" align="center" >
 				   <form>
-					 <input type="submit" value="buy now" title="">
+					 <input type="submit" value="Volver" title="">
 				  </form>
 				</div>
 			</div>

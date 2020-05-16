@@ -142,7 +142,16 @@ License URL: http://creativecommons.org/licenses/by/3.0/
          <div class="wrap">
      	    <div class="rsidebar span_1_of_left" >
 				   <section  class="sky-form" >
-                   	          <h4>Mensaje Bienvenida</h4>
+            <h4>Perfil</h4>
+                <br>
+                <h7 style="color: grey;">
+                  <form action="index_admin" method="get">
+                    {{ csrf_field() }}
+                    <a href="javascript:;" onclick="parentNode.submit();">&nbsp;&nbsp;&nbsp;&nbsp;Editar Contraseña</a>
+                  </form>   
+                </h7>
+                <br>
+            <h4>Mensaje Bienvenida</h4>
             <br>
             <h7 style="color: grey;">
               <form action="editarMensaje" method="get">
@@ -238,7 +247,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                                   <input class="input100" type="text" name="descripcionmodulo" placeholder="Ingresar la descripción del modulo" value="">
                             <span class="focus-input100"></span>
                         </div>    
-								<div class="container-login100-form-btn">
+								        <div class="container-login100-form-btn">
                 					    <button class="login100-form-btn" style="background-color: black">
                     					Guardar cambios
                   						</button>

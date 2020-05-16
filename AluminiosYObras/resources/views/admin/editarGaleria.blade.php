@@ -142,7 +142,16 @@ License URL: http://creativecommons.org/licenses/by/3.0/
          <div class="wrap">
      	    <div class="rsidebar span_1_of_left" >
 				   <section  class="sky-form" >
-                   	          <h4>Mensaje Bienvenida</h4>
+            <h4>Perfil</h4>
+                <br>
+                <h7 style="color: grey;">
+                  <form action="index_admin" method="get">
+                    {{ csrf_field() }}
+                    <a href="javascript:;" onclick="parentNode.submit();">&nbsp;&nbsp;&nbsp;&nbsp;Editar Contraseña</a>
+                  </form>   
+                </h7>
+                <br>
+            <h4>Mensaje Bienvenida</h4>
             <br>
             <h7 style="color: grey;">
               <form action="editarMensaje" method="get">
@@ -230,13 +239,21 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 											  <tbody>
 											    <tr style="text-align:center;">
 											      <th scope="row" style="color: black">
+
+													<div class="col-md-9" style="padding: 3px;">
+														<form action="editarFotoGaleria" method="get">
+															 {{ csrf_field() }}
+													    	<button style="text-align:center;" class="btn-floating btn-small waves-effect waves-light blue">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <img src="../../storage/images/icons/iconoFotoGaleria.png" width="25" height="25" style="width: auto;"></button>
+													    </form>
+													</div>
 											      	<div class="col-md-9" style="padding: 3px;">
-													    <button style="text-align:center;" class="btn-floating btn-small waves-effect waves-light blue" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="../../storage/images/icons/iconoeditar.png" width="20" height="20" data-toggle="modal" data-target="#proyectoEditar"></button>
+													    <button style="text-align:center;" class="btn-floating btn-small waves-effect waves-light blue" ><img src="../../storage/images/icons/iconoeditar.png" width="25" height="25" data-toggle="modal" data-target="#proyectoEditar"></button>
 													</div>
 													  
 													<div class="col-md-9" style="padding: 3px;">
-													    <button style="text-align:center;" class="btn-floating btn-small waves-effect waves-light blue"> <img src="../../storage/images/icons/iconoeliminar.png" width="20" height="20" style="width: auto;"></button>
+													    <button style="text-align:center;" class="btn-floating btn-small waves-effect waves-light blue"> <img src="../../storage/images/icons/iconoeliminar.png" width="25" height="25" style="width: auto;"></button>
 													</div>
+
 											      </th>
 											      <td>Proyecto1</td>
 											      <td>ImagenProyecto1</td>

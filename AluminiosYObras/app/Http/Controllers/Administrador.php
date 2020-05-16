@@ -66,5 +66,29 @@ use DB;
 				return redirect('admin');
 			}
 		}
+
+		public function agregarCaracteristicas()
+		{
+			if (session()->has('s_identificador') ) 
+			{
+				return view ('admin/agregarCaracteristicas');	
+			}
+			else
+			{
+				return redirect('admin');
+			}
+		}
+
+		public function editarCaracteristicas()
+		{
+			if (session()->has('s_identificador') ) 
+			{
+				return view ('admin/editarCaracteristicas');	
+			}
+			else
+			{
+				return redirect('admin');
+			}
+		}
 	}
 ?>

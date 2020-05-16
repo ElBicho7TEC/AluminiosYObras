@@ -101,5 +101,53 @@ use DB;
 				return redirect('admin');
 			}
 		}
+
+		public function agregarGaleria()
+		{
+			if (session()->has('s_identificador') ) 
+			{
+				return view ('admin/agregarGaleria');	
+			}
+			else
+			{
+				return redirect('admin');
+			}
+		}
+
+		public function listadoGaleria()
+		{
+			if (session()->has('s_identificador') ) 
+			{
+				return view ('admin/listadoGaleria');	
+			}
+			else
+			{
+				return redirect('admin');
+			}
+		}
+
+		public function agregarFotoGaleria()
+		{
+			if (session()->has('s_identificador') ) 
+			{
+				return view ('admin/agregarFotoGaleria');	
+			}
+			else
+			{
+				return redirect('admin');
+			}
+		}
+
+		public function listadoFotoGaleria()
+		{
+			if (session()->has('s_identificador') ) 
+			{
+				return view ('admin/listadoFotoGaleria');	
+			}
+			else
+			{
+				return redirect('admin');
+			}
+		}
 	}
 ?>

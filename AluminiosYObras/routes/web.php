@@ -33,4 +33,7 @@ Route::get('admin/editarLogo','Administrador@editarLogo');
 Route::get('admin/editarMensaje','Administrador@editarMensaje');
 Route::get('admin/editarCaracteristicas','Administrador@editarCaracteristicas');
 Route::get('admin/agregarCaracteristicas','Administrador@agregarCaracteristicas');
-
+Route::get('admin/agregarFotoGaleria','Administrador@agregarFotoGaleria');
+Route::get('admin/listadoFotoGaleria','Administrador@listadoFotoGaleria');
+Route::get('admin/agregarGaleria','Administrador@agregarGaleria');
+Route::get('admin/listadoGaleria','Administrador@listadoGaleria');

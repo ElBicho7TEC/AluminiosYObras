@@ -168,6 +168,10 @@ License URL: http://creativecommons.org/licenses/by/3.0/
             <h7 style="color: grey;"><a href="#">&nbsp;&nbsp;&nbsp;&nbsp;Agregar nuevo</a></h7>
             <br>
             <br>
+            <form action="../btnLogout" method="get">
+                {{ csrf_field() }}
+                <button class="login100-form-btn" style="background-color: black">Cerrar sesión</button>
+            </form>
           </section>
         </div>
         <div class="cont span_2_of_3">

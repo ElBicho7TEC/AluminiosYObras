@@ -200,68 +200,38 @@ License URL: http://creativecommons.org/licenses/by/3.0/
             </form>
           </section>
         </div>
-        <div class="cont span_2_of_3">
-          <div class="mens-toolbar" align="center">
-            <h3>Perfil</h3>
-            <div class="clear"></div>
-          </div>
+    <div class="cont span_2_of_3">
+      <div class="mens-toolbar">
+              Alumnios y obras
+          <div class="clear"></div>
+         </div>
+
           <div class="limiter">
-          <div class="container-login100" >
-            <div class="wrap-login100">
-              <div align="center">
-                <br>
-                <span class="login100-form-title-1" style="color: black !important;">
-                  Logotipo
-                </span>
-              </div>
-              <form class="login100-form validate-form" method="post" action="btnLogin" enctype="multipart/form-data">
-              {{csrf_field()}}  
-                <div class="wrap-input100 validate-input m-b-26" data-validate="El correo electr&oacute;nico es requerido">
-                  <span class="label-input100">Logo actual</span>
-                  <input class="input100" type="text" name="email" placeholder="Ingresar correo electr&oacute;nico" value="{{$listaUsuario[0]->correoElectronico}}">
-                  <span class="focus-input100"></span>
-                </div>
-
-                <div class="wrap-input100 validate-input m-b-18" data-validate = "La contrase&ntilde;a es requerida">
-                  <span class="label-input100">Contrase&ntilde;a</span>
-                  <input class="input100" type="password" name="pass" placeholder="Ingresar contrase&ntilde;a">
-                  <span class="focus-input100"></span>
-                </div>
-
-                <div class="wrap-input100 validate-input m-b-18" data-validate = "La contrase&ntilde;a es requerida">
-                  <span class="label-input100">Nueva Contrase&ntilde;a</span>
-                  <input class="input100" name="passN1" type="password" name="pass" placeholder="Ingresar contrase&ntilde;a">
-                  <span class="focus-input100"></span>
-                </div>
-
-                <div class="wrap-input100 validate-input m-b-18" data-validate = "La contrase&ntilde;a es requerida">
-                  <span class="label-input100">Confirmar contrase&ntilde;a</span>
-                  <input class="input100" name="passN2" type="password" name="pass" placeholder="Ingresar contrase&ntilde;a">
-                  <span class="focus-input100"></span>
-                </div>
-
-                <div class="flex-sb-m w-full p-b-30">
-                  <div class="contact100-form-checkbox">
-                  </div>
-
-                  <div>
+              <div class="container-login100" >
+                <div class="wrap-login100">
+                    <div align="center">
                     <br>
-                    <a href="#" class="txt1">
-                      Si no desea cambiar su contraseña deje los espacios en blanco
-                    </a>
-                  </div>
-                </div>
-
-                <div class="container-login100-form-btn">
-                  <button class="login100-form-btn" style="background-color: black">
-                    Guardar cambios
-                  </button>
-                </div>
-              </form>
-            </div>
+                    <span class="login100-form-title-1" style="color: black !important;">
+                      Editar Logo
+                    </span>
+                    </div>
+                    <form class="login100-form validate-form" method="post" action="btnAgregarProyecto" enctype="multipart/form-data">
+                       {{csrf_field()}}
+                           <div class="wrap-input100 validate-input m-b-26" data-validate="Foto del logo requerido">
+                              <span class="label-input100">Foto del logo</span>
+                                  <input class="input100" type="file" accept="image/*" name="fotoproyecto" placeholder="Ingresar el logo" value="">
+                            <span class="focus-input100"></span>
+                          </div>
+                          <div class="container-login100-form-btn">
+                              <button class="login100-form-btn" style="background-color: black">
+                              Editar
+                              </button>
+                            </div>
+                    </form>
           </div>
-        </div>
+            </div>
       </div>
+    </div>
       <div class="clear"></div>
     </div>
    <script type="text/javascript">
@@ -302,62 +272,3 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <!--===============================================================================================-->
   <script src="../login/js/main.js"></script>
 
-
-			</div>
-		<div class="cont span_2_of_3">
-		  <div class="mens-toolbar">
-              Alumnios y obras
-     	    <div class="clear"></div>
-	       </div>
-			    <div class="box1" ">
-			    	 <div class="register_account " style="border: solid; background-color: white; padding: 40px 50px; border-radius: 5px; width: 40%; margin-left: auto; margin-right: auto; color: black; font-weight: bold !important" >
-				            <div>
-				                <center><h4 style="color: black;">Logotipo</h4></center>
-				            </div>
-		
-				            <form action="btnCrear_Auditor" method="post" enctype="multipart/form-data" style="color: black; ">
-						            <div class="row">
-								        <div class="col-2">
-		                                <b><label>Logo</label></b>
-		                            	</div>
-				                            <div class="col-5">    
-				                                <div class="photo">
-		                                           <div class="input-group">
-		                                           <input multiple="multiple"  name="rutalogo[]" type="file" accept="image/*" style="padding: 5px 10px; background: black; color:#fff; border:0px solid #fff;width:100%;" value="">
-		                                        </div>
-		                                    </div>
-		                            	</div>
-						            </div>
-				          			 <button class="grey">Editar</button>
-				            </form>
-				        </div>
-			  </div>
-			 
-			  <div class="box1">
-				   
-			  </div>
-			  <div class="box1">
-			
-			  </div>
-		</div>
-			  <div class="clear"></div>
-		 </div>
-	    </div>
-       <script type="text/javascript">
-			$(document).ready(function() {
-			
-				var defaults = {
-		  			containerID: 'toTop', // fading element id
-					containerHoverID: 'toTopHover', // fading element hover id
-					scrollSpeed: 1200,
-					easingType: 'linear' 
-		 		};
-				
-				
-				$().UItoTop({ easingType: 'easeOutQuart' });
-				
-			});
-		</script>
-        <a href="#" id="toTop" style="display: block;"><span id="toTopHover" style="opacity: 1;"></span></a>
-</body>
-</html>

@@ -125,7 +125,6 @@
 	          </div>
           </nav>
         </div>
-        <br><br> <br>
         <hr size="2px" color="#E9E9E9" />
       </header>
 

@@ -33,18 +33,9 @@ use DB;
 			return view ('index',['datosBienvenida'=>$datosBienvenida,'datosModulos'=>$datosModulos,'datosGaleria'=>$datosGaleria]);	
 		}
 
-		public function verProyecto(Request $datos)
+		public function verProyecto()
 		{
-			$datosGaleria = DB::table('galeria')
-			->select('idgaleria','nombreproyecto','rutafotoprincipal','descripcionbreve','descripcionlarga','fkidmodulo')
-			->where('idgaleria','=',$datos->input ('idGaleria'))
-			->get();
-
-			$datosFotoGaleria = DB::table('fotogaleria')
-			->select('idfotogaleria','fotos','descripcion','fkidgaleria')
-			->where('fkidgaleria','=',$datos->input ('idGaleria'))
-			->get();
-			return view ('single',['datosFotoGaleria'=>$datosFotoGaleria,'datosGaleria'=>$datosGaleria]);	
+			return view ('single');	
 		}
 
 		public function verTodosProyecto()

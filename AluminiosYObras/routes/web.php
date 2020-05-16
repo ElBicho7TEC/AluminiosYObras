@@ -15,7 +15,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/','Visitante@index');
 Route::get('index','Visitante@index');
-Route::post('single','Visitante@verProyecto');
+Route::get('single','Visitante@verProyecto');
 Route::get('all','Visitante@verTodosProyecto');
 Route::post('all','Visitante@verTodosProyectoModulo');
 Route::post('module','Visitante@verProyectoModulo');
@@ -34,6 +34,6 @@ Route::get('admin/editarMensaje','Administrador@editarMensaje');
 Route::get('admin/editarCaracteristicas','Administrador@editarCaracteristicas');
 Route::get('admin/agregarCaracteristicas','Administrador@agregarCaracteristicas');
 Route::get('admin/agregarFotoGaleria','Administrador@agregarFotoGaleria');
-Route::get('admin/listadoFotoGaleria','Administrador@listadoFotoGaleria');
+Route::get('admin/editarFotoGaleria','Administrador@editarFotoGaleria');
 Route::get('admin/agregarGaleria','Administrador@agregarGaleria');
-Route::get('admin/listadoGaleria','Administrador@listadoGaleria');
+Route::get('admin/editarGaleria','Administrador@editarGaleria');

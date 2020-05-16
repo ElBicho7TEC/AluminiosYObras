@@ -125,11 +125,7 @@
                 <div class="inner"><img src="templete/images/bg-pattern-transparent.png" alt=""/>
                   <h5 class="title text-capitalize font-weight-medium">{{$galeria->nombreproyecto}}</a></h5>
                   <p class="font-weight-regular exeption">{{$galeria->descripcionbreve}}</p>
-                  <form action="single" method="post" enctype="multipart/form-data">
-            	  {{ csrf_field() }}
-            	  	<input type="hidden" name='idGaleria' value="{{$galeria->idgaleria}}">
-            	  	<button id="button" class="button button-default">Ver</button> 
-              	  </form>
+            	  	<a  href="single?proyect={{$galeria->idgaleria}}" id="button" class="button button-default">Ver</a> 
                 </div>
               </div>
             </div>
@@ -138,10 +134,7 @@
           </div> 
           
           <div class="button-wrap-1 text-center">
-          	<form action="all" method="get" enctype="multipart/form-data">
-            {{ csrf_field() }}
-              	<button id="button" class="button button-default">Ver todos los proyectos</button> 
-            </form>
+              	<a href="all" id="button" class="button button-default">Ver todos los proyectos</a> 
           </div>
         </div>
       </section>

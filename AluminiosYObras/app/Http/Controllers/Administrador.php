@@ -114,11 +114,11 @@ use DB;
 			}
 		}
 
-		public function listadoGaleria()
+		public function editarGaleria()
 		{
 			if (session()->has('s_identificador') ) 
 			{
-				return view ('admin/listadoGaleria');	
+				return view ('admin/editarGaleria');	
 			}
 			else
 			{
@@ -138,11 +138,11 @@ use DB;
 			}
 		}
 
-		public function listadoFotoGaleria()
+		public function editarFotoGaleria()
 		{
 			if (session()->has('s_identificador') ) 
 			{
-				return view ('admin/listadoFotoGaleria');	
+				return view ('admin/editarFotoGaleria');	
 			}
 			else
 			{

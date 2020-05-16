@@ -1,3 +1,23 @@
+<?php
+		$galeriaID=$_GET["proyect"];
+		if(empty($galeriaID))
+		{
+			header('Location: index');
+		}
+		else
+		{
+			$datosGaleria = DB::table('galeria')
+			->select('idgaleria','nombreproyecto','rutafotoprincipal','descripcionbreve','descripcionlarga','fkidmodulo')
+			->where('idgaleria','=',$galeriaID)
+			->get();
+
+			$datosFotoGaleria = DB::table('fotogaleria')
+			->select('idfotogaleria','fotos','descripcion','fkidgaleria')
+			->where('fkidgaleria','=',$galeriaID)
+			->get();
+
+?>
+
 <!DOCTYPE HTML>
 <html>
 	<head>
@@ -166,12 +186,9 @@
 			    			<br>
 			    		</div>
 			    		<div align="center">
-			    			<form action="index" method="get" enctype="multipart/form-data">
-				            {{ csrf_field() }}
-				              	<button id="button" class="button button-default">Volver</button> 
+				              	<a href="/AluminiosYObras/AluminiosYObras/public" id="button" class="button button-default">Volver</a> 
 				              	<br>
 			    			<br>
-				            </form>
 			    		</div>
 					</div>
 					<div class="clear"></div>
@@ -323,3 +340,6 @@
       </footer>
 	</body>
 </html>
+<?php
+}
+?>

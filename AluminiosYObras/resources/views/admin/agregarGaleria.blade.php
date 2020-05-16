@@ -236,6 +236,11 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 		                            	<textarea class="input100" type="text" name="descripcionlarga" placeholder="Ingresar la descripción larga del proyecto" value="" rows="3"> </textarea>
                  						<span class="focus-input100"></span>
                 					</div>
+                            <div class="wrap-input100 validate-input m-b-26" data-validate="Nombre del modulo requerido">
+                              <span class="label-input100">Modulo</span>
+                                  <input class="input100" type="text" name="nombremodulo" placeholder="Ingresar el nombre del modulo del proyecto" value="">
+                            <span class="focus-input100"></span>
+                          </div>
                 					<div class="container-login100-form-btn">
                 					    <button class="login100-form-btn" style="background-color: black">
                     					Agregar

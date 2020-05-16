@@ -215,18 +215,37 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                       Editar Logo
                     </span>
                     </div>
-                    <form class="login100-form validate-form" method="post" action="btnAgregarProyecto" enctype="multipart/form-data">
+                    <form class="login100-form validate-form" method="post" action="../btnEditarLogo" enctype="multipart/form-data">
                        {{csrf_field()}}
-                           <div class="wrap-input100 validate-input m-b-26" data-validate="Foto del logo requerido">
-                              <span class="label-input100">Foto del logo</span>
-                                  <input class="input100" type="file" accept="image/*" name="fotoproyecto" placeholder="Ingresar el logo" value="">
+                          <div class="wrap-input100 validate-input m-b-26" data-validate="Mensaje de bienvenida requerido">
+                            <span class="label-input100">Logo en su contraste negro</span>
+                            <img class="img-rounded" src="{{$rutaNegro}}" width="160" height="100">
+                            <br>
+                          </div>
+                          <div><input class="input100" type="file" accept="image/*" name="logoNegro[]" placeholder="Ingresar el logo" value=""></div>
+                          <div class="wrap-input100 validate-input m-b-26" data-validate="Mensaje de bienvenida requerido">
+                            <span class="label-input100" >Logo en su contraste blacno</span>
+                            <img class="img-rounded" style="background-color: black" src="{{$rutaBlanco}}" width="160" height="100">
                             <span class="focus-input100"></span>
                           </div>
+                          <div><input class="input100" type="file" accept="image/*" name="logoBlanco[]" placeholder="Ingresar el logo" value=""></div>
+
+                          <div class="flex-sb-m w-full p-b-30">
+                            <div>
+                              <br>
+                              <a href="#" class="txt1">
+                                Para editar el logo favor de seleccionar un archivo y dar click en guardar cambios
+                                <br>
+                                Nota: Utilizar imagenes en formato PNG
+                              </a>
+                            </div>
+                          </div>
+                           
                           <div class="container-login100-form-btn">
                               <button class="login100-form-btn" style="background-color: black">
-                              Editar
+                              Guardar cambios
                               </button>
-                            </div>
+                          </div>
                     </form>
           </div>
             </div>

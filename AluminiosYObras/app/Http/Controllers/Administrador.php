@@ -2,7 +2,11 @@
 namespace App\Http\Controllers;
 use App\Http \Controllers\Controller;
 use App\login;
+use App\bienvenida;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\File;
+use App\Http\Requests\subirImagenRequest;
 use DB;
 
 	class Administrador extends Controller
@@ -58,7 +62,37 @@ use DB;
 		{
 			if (session()->has('s_identificador') ) 
 			{
-				return view ('admin/editarLogo');	
+				$rutaNegro='../../storage/images/negro.png';
+				$rutaBlanco='../../storage/images/grisblanco.png';
+				return view ('admin/editarLogo',['rutaNegro'=>$rutaNegro,'rutaBlanco'=>$rutaBlanco]);	
+			}
+			else
+			{
+				return redirect('admin');
+			}
+		}
+
+		public function guardarLogo(subirImagenRequest $datos)
+		{
+			if (session()->has('s_identificador') ) 
+			{
+				if ($datos->logoNegro!=null)
+				{
+					foreach($datos->logoNegro as $logoNegro)
+					{
+						Storage::disk('images')->put('negro.png',File::get($logoNegro)); 
+					}
+				}
+
+				if ($datos->logoBlanco!=null)
+				{
+					foreach($datos->logoBlanco as $logoBlanco)
+					{
+						Storage::disk('images')->put('grisblanco.png',File::get($logoBlanco)); 
+					}
+				}
+
+				return redirect ('admin/editarLogo');
 			}
 			else
 			{
@@ -70,7 +104,38 @@ use DB;
 		{
 			if (session()->has('s_identificador') ) 
 			{
-				return view ('admin/editarMensaje');	
+				$listaMensaje = DB::table('bienvenida')
+				->select('idbienvenidos','mensajewelcome','subtitulo1','subtitulo2','descripcion')
+				->where('idbienvenidos','=',1)
+				->get(); 
+				
+				return view ('admin/editarMensaje',['listaMensaje'=>$listaMensaje]);	
+			}
+			else
+			{
+				return redirect('admin');
+			}
+		}
+
+		public function guardarMensaje(Request $datos)
+		{
+			if (session()->has('s_identificador') ) 
+			{	
+   			    $Mensaje=bienvenida::find(1);
+			 	$Mensaje->mensajewelcome=$datos->input('mensaje');
+			 	$Mensaje->subtitulo1=$datos->input('subtitulo1');
+			 	$Mensaje->subtitulo2=$datos->input('subtitulo2');
+			 	$Mensaje->descripcion=$datos->input('descripcion');
+				if($Mensaje->save()){
+					\Session::flash('flash_message', 'Mensaje modificado con éxito');
+					return redirect ('admin/editarMensaje');
+					
+				}
+				else 
+				{
+					\Session::flash('mensaje','Error al modificar el mensaje');
+					return redirect ('admin/editarMensaje');
+				}		
 			}
 			else
 			{

@@ -27,10 +27,17 @@ Route::post('btnLogin','LoginC@verificar');
 Route::get('btnLogout','LoginC@cerrarSesion');
 //Controladores de Administrador para mostrar la pagina
 Route::get('admin/index_admin','Administrador@index');
+
 Route::get('admin/agregarModulo','Administrador@agregarModulo');
 Route::get('admin/editarModulo','Administrador@editarModulo');
+
 Route::get('admin/editarLogo','Administrador@editarLogo');
+Route::post('btnEditarLogo','Administrador@guardarLogo');
+
 Route::get('admin/editarMensaje','Administrador@editarMensaje');
+Route::post('btnEditarMensaje','Administrador@guardarMensaje');
+
+
 Route::get('admin/editarCaracteristicas','Administrador@editarCaracteristicas');
 Route::get('admin/agregarCaracteristicas','Administrador@agregarCaracteristicas');
 Route::get('admin/agregarFotoGaleria','Administrador@agregarFotoGaleria');

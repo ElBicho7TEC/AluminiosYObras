@@ -139,67 +139,67 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <body>
 	<div class="login100-form-title" style="background-image: url(../../storage/images/gris.jpg); background-size: contain; "></div>
        <div class="login">
-         <div class="wrap">
-     	    <div class="rsidebar span_1_of_left" >
-				   <section  class="sky-form" >
-                   	          <h4>Mensaje Bienvenida</h4>
-            <br>
-            <h7 style="color: grey;">
-              <form action="editarMensaje" method="get">
-                {{ csrf_field() }}
-                <a href="javascript:;" onclick="parentNode.submit();">&nbsp;&nbsp;&nbsp;&nbsp;Editar mensaje</a>
-              </form>   
-            </h7>
-            <br>
-            <h4>Logo Empresa</h4>
-            <br>
-            <h7 style="color: grey;">
-              <form action="editarLogo" method="get">
-                {{ csrf_field() }}
-                <a href="javascript:;" onclick="parentNode.submit();">&nbsp;&nbsp;&nbsp;&nbsp;Editar logotipo</a>
-              </form> 
-            </h7>
-            <br>
-            <h4>Modulos</h4>
-            <br>
-            <h7 style="color: grey;">
-              <form action="editarModulo" method="get">
-                {{ csrf_field() }}
-                <a href="javascript:;" onclick="parentNode.submit();">&nbsp;&nbsp;&nbsp;&nbsp;Ver módulos</a>
-              </form> 
-            </h7>
-            <br>
-            <h7 style="color: grey;">
-              <form action="agregarModulo" method="get">
-                {{ csrf_field() }}
-                <a href="javascript:;" onclick="parentNode.submit();">&nbsp;&nbsp;&nbsp;&nbsp;Agregar nuevo</a>
-              </form> 
-            </h7>
-            <br>
-            <h4>Proyectos</h4>
-            <br>
-            <h7 style="color: grey;">
-              <form action="editarGaleria" method="get">
-                {{ csrf_field() }}
-                <a href="javascript:;" onclick="parentNode.submit();">&nbsp;&nbsp;&nbsp;&nbsp;Ver proyectos</a>
-              </form> 
-            </h7>
-            <br>
-            <h7 style="color: grey;">
-              <form action="agregarGaleria" method="get">
-                {{ csrf_field() }}
-                <a href="javascript:;" onclick="parentNode.submit();">&nbsp;&nbsp;&nbsp;&nbsp;Agregar nuevo</a>
-              </form> 
-              <a href="#">&nbsp;&nbsp;&nbsp;&nbsp;</a>
-            </h7>
-            <br>
-            <form action="../btnLogout" method="get">
-                {{ csrf_field() }}
-                <button class="login100-form-btn" style="background-color: black">Cerrar sesión</button>
-            </form>
-				</section>
-			</div>
-		<div class="cont span_2_of_3">
+	        <div class="wrap">
+	     	    <div class="rsidebar span_1_of_left" >
+					<section  class="sky-form" >
+	                <h4>Mensaje Bienvenida</h4>
+	            <br>
+	            <h7 style="color: grey;">
+	              <form action="editarMensaje" method="get">
+	                {{ csrf_field() }}
+	                <a href="javascript:;" onclick="parentNode.submit();">&nbsp;&nbsp;&nbsp;&nbsp;Editar mensaje</a>
+	              </form>   
+	            </h7>
+	            <br>
+	            <h4>Logo Empresa</h4>
+	            <br>
+	            <h7 style="color: grey;">
+	              <form action="editarLogo" method="get">
+	                {{ csrf_field() }}
+	                <a href="javascript:;" onclick="parentNode.submit();">&nbsp;&nbsp;&nbsp;&nbsp;Editar logotipo</a>
+	              </form> 
+	            </h7>
+	            <br>
+	            <h4>Modulos</h4>
+	            <br>
+	            <h7 style="color: grey;">
+	              <form action="editarModulo" method="get">
+	                {{ csrf_field() }}
+	                <a href="javascript:;" onclick="parentNode.submit();">&nbsp;&nbsp;&nbsp;&nbsp;Ver módulos</a>
+	              </form> 
+	            </h7>
+	            <br>
+	            <h7 style="color: grey;">
+	              <form action="agregarModulo" method="get">
+	                {{ csrf_field() }}
+	                <a href="javascript:;" onclick="parentNode.submit();">&nbsp;&nbsp;&nbsp;&nbsp;Agregar nuevo</a>
+	              </form> 
+	            </h7>
+	            <br>
+	            <h4>Proyectos</h4>
+	            <br>
+	            <h7 style="color: grey;">
+	              <form action="editarGaleria" method="get">
+	                {{ csrf_field() }}
+	                <a href="javascript:;" onclick="parentNode.submit();">&nbsp;&nbsp;&nbsp;&nbsp;Ver proyectos</a>
+	              </form> 
+	            </h7>
+	            <br>
+	            <h7 style="color: grey;">
+	              <form action="agregarGaleria" method="get">
+	                {{ csrf_field() }}
+	                <a href="javascript:;" onclick="parentNode.submit();">&nbsp;&nbsp;&nbsp;&nbsp;Agregar nuevo</a>
+	              </form> 
+	              <a href="#">&nbsp;&nbsp;&nbsp;&nbsp;</a>
+	            </h7>
+	            <br>
+	            <form action="../btnLogout" method="get">
+	                {{ csrf_field() }}
+	                <button class="login100-form-btn" style="background-color: black">Cerrar sesión</button>
+	            </form>
+					</section>
+				</div>
+			<div class="cont span_2_of_3">
 		  <div class="mens-toolbar">
               Alumnios y obras
      	    <div class="clear"></div>
@@ -214,32 +214,46 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                   		Editar mensaje
                 		</span>
               			</div>
-		
-				            <form class="login100-form validate-form" method="post" action="btnEditarMensaje" enctype="multipart/form-data">
-				            	 {{csrf_field()}}  
-						               <div class="wrap-input100 validate-input m-b-26" data-validate="Mensaje de bienvenida requerido">
-                  						<span class="label-input100">Mensaje Bienvenida</span>
-		                            	<input class="input100" type="text" name="mensaje" placeholder="Ingresar mensaje de bienvenida" value="">
-                 						<span class="focus-input100"></span>
-                						</div>
+							@if(Session::has('flash_message'))
+								<div class="alert alert-success" role="alert">
+									{{ Session::get('flash_message') }}
+								</div>
+							@elseif(Session::has('mensaje'))
+								<div class="alert alert-danger" role="alert">
+									{{ Session::get('mensaje') }}
+								</div>
+							@endif
+				            <form class="login100-form validate-form" method="post" action="../btnEditarMensaje" enctype="multipart/form-data">
+				            {{csrf_field()}}  
+				               	<div class="wrap-input100 validate-input m-b-26" data-validate="Mensaje de bienvenida requerido">
+          						<span class="label-input100">Mensaje Bienvenida</span>
+                            	<input class="input100" type="text" name="mensaje" placeholder="Ingresar mensaje de bienvenida" value="{{$listaMensaje[0]->mensajewelcome}}">
+         						<span class="focus-input100"></span>
+        						</div>
 
-                						<div class="wrap-input100 validate-input m-b-26" data-validate="El subtitulo es requerido">
-                  						<span class="label-input100">Subtitulo</span>
-		                            	<input class="input100" type="text" name="Subtitulo" placeholder="Ingresar el subtitulo" value="">
-                 						<span class="focus-input100"></span>
-                						</div>
+        						<div class="wrap-input100 validate-input m-b-26" data-validate="El subtitulo es requerido">
+          						<span class="label-input100">Subtitulo parte superior</span>
+                            	<input class="input100" type="text" name="subtitulo1" placeholder="Ingresar el subtitulo" value="{{$listaMensaje[0]->subtitulo1}}">
+         						<span class="focus-input100"></span>
+        						</div>
 
-                						<div class="wrap-input100 validate-input m-b-26" data-validate="La descripción es requerido">
-                  						<span class="label-input100">Descripción</span>
-		                            	<input class="input100" type="text" name="Descripción" placeholder="Ingresar la descripción" value="">
-                 						<span class="focus-input100"></span>
-                						</div>
+        						<div class="wrap-input100 validate-input m-b-26" data-validate="El subtitulo es requerido">
+          						<span class="label-input100">Subtitulo parte inferior</span>
+                            	<input class="input100" type="text" name="subtitulo2" placeholder="Ingresar el subtitulo" value="{{$listaMensaje[0]->subtitulo2}}">
+         						<span class="focus-input100"></span>
+        						</div>
 
-                						<div class="container-login100-form-btn">
-                					    <button class="login100-form-btn" style="background-color: black">
-                    					Guardar cambios
-                  						</button>
-                						</div>
+        						<div class="wrap-input100 validate-input m-b-26" data-validate="La descripción es requerido">
+          						<span class="label-input100">Descripción</span>
+                            	<input class="input100" type="text" name="descripcion" placeholder="Ingresar la descripción" value="{{$listaMensaje[0]->descripcion}}">
+         						<span class="focus-input100"></span>
+        						</div>
+
+        						<div class="container-login100-form-btn">
+            					    <button class="login100-form-btn" style="background-color: black">
+                					Guardar cambios
+              						</button>
+        						</div>
                 			</form>
 		            </div>
 		        </div>

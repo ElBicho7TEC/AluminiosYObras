@@ -111,9 +111,9 @@
 	  <header class="section page-header header-absolute">
 		<div style="transition: 0.35s all cubic-bezier(0.65, 0.05, 0.36, 1);">
           <nav >
-			  <div class="social_single">
+			  <div class="social_single" align="right" style="margin-right: 5%">
 	            <!-- RD Navbar Nav-->
-	            <ul class="list list-sm" style="background-color: white !important; border: solid; padding-top: 20px; padding-bottom: 20px; border-radius: 3px">
+	            <ul  style="background-color: white !important; padding-top: 20px; padding-bottom: 20px;">
 	              <font >
 	              <li style="margin-left: 70px;" class="rd-nav-item active"><a class="rd-nav-link" href="/AluminiosYObras/AluminiosYObras/public/#home">Inicio</a></li>
 	              <li style="margin-left: 70px;" class="rd-nav-item"><a class="rd-nav-link" href="/AluminiosYObras/AluminiosYObras/public/#portfolio">Portafolio</a></li>

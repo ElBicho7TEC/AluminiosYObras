@@ -46,5 +46,26 @@ use DB;
 			->get();
 			return view ('single',['datosFotoGaleria'=>$datosFotoGaleria,'datosGaleria'=>$datosGaleria]);	
 		}
+
+		public function verTodosProyecto()
+		{
+			$datosGaleria = DB::table('galeria')
+			->select('idgaleria','nombreproyecto','rutafotoprincipal','descripcionbreve','descripcionlarga','fkidmodulo')
+			->orderby('idgaleria','desc')
+			->get();	
+
+			return view ('all',['datosGaleria'=>$datosGaleria]);	
+		}
+
+		public function verTodosProyectoModulo(Request $datos)
+		{
+			$datosGaleria = DB::table('galeria')
+			->select('idgaleria','nombreproyecto','rutafotoprincipal','descripcionbreve','descripcionlarga','fkidmodulo')
+			->orderby('idgaleria','desc')
+			->get();	
+
+
+			return view ('all',['datosGaleria'=>$datosGaleria]);	
+		}
 	}
 ?>

@@ -108,51 +108,166 @@
 		</script>					
 	</head>
 	<body>
-		<div class="header-top"></div>
-	  	<div class="header-bottom">
-	   		<div class="wrap">
-	   			<!-- start header menu -->	
-				<div class="cont span_2_of_3">
-				  	<div class="labout span_1_of_a1">
-						<!-- start product_slider -->
-					    <ul id="etalage">
-							<li>
-								<a href="optionallink.html">
-									<img class="etalage_thumb_image" src="../storage/app/public{{$datosGaleria[0]->rutafotoprincipal}}" />
-									<img class="etalage_source_image" src="../storage/app/public{{$datosGaleria[0]->rutafotoprincipal}}" />
-								</a>
-							</li>
-							@foreach ($datosFotoGaleria as $foto)
-							<li>
-								<img class="etalage_thumb_image" src="../storage/app/public{{$foto->fotos}}" />
-								<img class="etalage_source_image" src="../storage/app/public{{$foto->fotos}}" />
-							</li>
-							@endforeach
-						</ul>	
-						<!-- end product_slider -->
+	  <header class="section page-header header-absolute">
+		<div style="transition: 0.35s all cubic-bezier(0.65, 0.05, 0.36, 1);">
+          <nav >
+			  <div class="social_single">
+	            <!-- RD Navbar Nav-->
+	            <ul class="list list-sm" style="background-color: white !important; border: solid; padding-top: 20px; padding-bottom: 20px; border-radius: 3px">
+	              <font >
+	              <li style="margin-left: 70px;" class="rd-nav-item active"><a class="rd-nav-link" href="/AluminiosYObras/AluminiosYObras/public/#home">Inicio</a></li>
+	              <li style="margin-left: 70px;" class="rd-nav-item"><a class="rd-nav-link" href="/AluminiosYObras/AluminiosYObras/public/#portfolio">Portafolio</a></li>
+	              <li style="margin-left: 70px;" class="rd-nav-item"><a class="rd-nav-link" href="/AluminiosYObras/AluminiosYObras/public/#services">Servicios</a></li>
+	              <li style="margin-left: 70px;" class="rd-nav-item"><a class="rd-nav-link" href="/AluminiosYObras/AluminiosYObras/public/#team">Equipo</a></li>
+	              <li style="margin-left: 70px;" class="rd-nav-item"><a class="rd-nav-link" href="/AluminiosYObras/AluminiosYObras/public/#contacts">Contactos</a></li>
+	              </font>
+	            </ul>
+	          </div>
+          </nav>
+        </div>
+        <br><br> <br>
+        <hr size="2px" color="#E9E9E9" />
+      </header>
+
+		 <section class="section section-lg bg-default section-lined">
+        <div class="container container-lined">
+          <div class="row">
+            <div class="col-md-4"></div>
+            <div class="col-md-4"></div>
+            <div class="col-md-4"></div>
+          </div>
+        </div>
+        <div >
+          <div >
+	      	<!-- ------------------------------------------------------------------------------------------ -->
+	      	<!-- ------------------------------------------------------------------------------------------ -->
+	      	<!-- ------------------------------------------------------------------------------------------ -->
+	      	<!-- ------------------------------------------------------------------------------------------ -->
+	      	<!-- ------------------------------------------------------------------------------------------ -->
+		  
+		   		<div class="wrap" ALIGN="justify">
+		   			<!-- start header menu -->	
+					<div class="cont span_2_of_3">
+					  	<div class="labout span_1_of_a1">
+							<!-- start product_slider -->
+						    <ul id="etalage">
+								<li>
+									<a href="optionallink.html">
+										<img class="etalage_thumb_image" src="../storage/app/public{{$datosGaleria[0]->rutafotoprincipal}}" />
+										<img class="etalage_source_image" src="../storage/app/public{{$datosGaleria[0]->rutafotoprincipal}}" />
+									</a>
+								</li>
+								@foreach ($datosFotoGaleria as $foto)
+								<li>
+									<img class="etalage_thumb_image" src="../storage/app/public{{$foto->fotos}}" />
+									<img class="etalage_source_image" src="../storage/app/public{{$foto->fotos}}" />
+								</li>
+								@endforeach
+							</ul>	
+							<!-- end product_slider -->
+						</div>
+						
+						<div class="cont1 span_2_of_a1" >
+							<h3 class="m_3" style="margin-left: 100px">{{$datosGaleria[0]->nombreproyecto}}</h3>
+						<div class="btn_form">	  
 					</div>
-					
-					<div class="cont1 span_2_of_a1" >
-						<h3 class="m_3" style="margin-left: 100px">{{$datosGaleria[0]->nombreproyecto}}</h3>
-					<div class="btn_form">	  
-				</div>
-	    		
-	    		<p class="m_desc" style="margin-left: 100px">{{$datosGaleria[0]->descripcionlarga}}</p>
-	    			
-	            <div class="social_single" style="margin-left: 100px">	
-					<ul>	
-						<li class="fb"><a href="#"><span> </span></a></li>
-						<li class="tw"><a href="#"><span> </span></a></li>
-						<li class="g_plus"><a href="#"><span> </span></a></li>
-						<li class="rss"><a href="#"><span> </span></a></li>		
-					</ul>
-				</div>
-				<div class="btn_form" align="center" style="margin-left: 100px">
-				   <form>
-					 <input type="submit" value="Volver" title="">
-				  </form>
+		    		
+		    		<p class="m_desc" style="margin-left: 100px;">{{$datosGaleria[0]->descripcionlarga}}</p>
+		    			
+		            <div class="social_single" style="margin-left: 100px">	
+						<ul>	
+							<li class="fb"><a href="#"><span> </span></a></li>
+							<li class="tw"><a href="#"><span> </span></a></li>
+							<li class="g_plus"><a href="#"><span> </span></a></li>
+							<li class="rss"><a href="#"><span> </span></a></li>		
+						</ul>
+					</div>
+					<div class="btn_form" align="center" style="margin-left: 100px">
+					   <form>
+						  <div class="button-wrap-1 text-center"><a class="button button-default" href="/AluminiosYObras/AluminiosYObras/public/">Volver</a></div>
+					  </form>
+					</div>
 				</div>
 			</div>
-		</div>
+			<!-- ------------------------------------------------------------------------------------------ -->
+	      	<!-- ------------------------------------------------------------------------------------------ -->
+	      	<!-- ------------------------------------------------------------------------------------------ -->
+	      	<!-- ------------------------------------------------------------------------------------------ -->
+	      	<!-- ------------------------------------------------------------------------------------------ -->
+      	  </div>     
+        </div>
+        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+      </section>
+
+      <!-- Page Footer-->
+      <div class="pre-footer-classic bg-gray-700 context-dark">
+        <div class="container">
+          <div class="row row-30 justify-content-lg-between">
+            <div class="col-sm-6 col-lg-3 col-xl-3" >
+              <h5>Ubicación</h5>
+              <ul class="list list-sm" style="background-color: transparent;">
+                <li>
+                  <p>1418 Riverwood Drive,</p>
+                </li>
+                <li>
+                  <p>Suite 3845 Cottonwood,</p>
+                </li>
+                <li>
+                  <p>CA 96022</p>
+                </li>
+                <li>
+                  <p>México</p>
+                </li>
+              </ul>
+            </div>
+            <div class="col-sm-6 col-lg-4 col-xl-3">
+              <h5>Contactos</h5>
+              <dl class="list-terms-custom">
+                <dt>Tel.</dt>
+                <dd><a class="link-default" href="tel:#">1-300-123-1234</a></dd>
+              </dl>
+              <dl class="list-terms-custom">
+                <dt>Correo.</dt>
+                <dd><a class="link-default" href="mailto:#">Info@demolink.org</a></dd>
+              </dl>
+              <ul class="list-inline list-inline-sm">
+                <li><a class="icon icon-sm icon-gray-filled icon-circle mdi mdi-facebook" href="#"></a></li>
+                <li><a class="icon icon-sm icon-gray-filled icon-circle mdi mdi-instagram" href="#"></a></li>
+                <li><a class="icon icon-sm icon-gray-filled icon-circle mdi mdi-whatsapp" href="#"></a></li>
+                <li><a class="icon icon-sm icon-gray-filled icon-circle mdi mdi-twitter" href="#"></a></li>
+              </ul>
+            </div>
+            <div class="col-lg-4">
+              <h5>Boletin informativo</h5>
+              <form class="rd-form rd-mailform" data-form-output="form-output-global" data-form-type="contact" method="post" action="templete/bat/rd-mailform.php">
+                <div class="form-wrap form-wrap-icon">
+                  <div class="form-icon mdi mdi-email-outline"></div>
+                  <input class="form-input" id="footer-email" type="email" name="email" data-constraints="@Email @Required">
+                  <label class="form-label" for="footer-email">Correo electrónico</label>
+                </div>
+                <div class="button-wrap">
+                  <button class="button button-default button-invariable" type="submit">Suscribir</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+      <footer class="section footer-classic context-dark text-center">
+        <div class="container">
+          <div class="row row-15">
+            <div class="col-lg-4 col-xl-3 text-lg-left">
+              <p class="rights font-weight-regular"><span>&copy;&nbsp; </span><span class="copyright-year"></span><span>&nbsp;</span><span>Concept</span><span>.&nbsp;</span><span>All Rights reserved</span>. Design&nbsp;by&nbsp;<a href="https://zemez.io/">Zemez</a></p>
+            </div>
+            <div class="col-lg-5 col-xl-6">
+              <ul class="list-inline list-inline-lg text-uppercase">
+                <li><a href="#services">Servicios</a></li>
+                <li><a href="#portfolio">Nuestro Portafolio</a></li>
+                <li><a href="#">Noticias</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </footer>
 	</body>
 </html>

@@ -117,7 +117,7 @@
             <div class="col-sm-6 col-lg-4 wow fadeInRight">
               <div class="project-grid" style="background-image: url(../storage/app/public{{$galeria->rutafotoprincipal}});">
                 <div class="inner"><img src="templete/images/bg-pattern-transparent.png" alt=""/>
-                  <h5 class="title text-capitalize font-weight-medium"><a href="single">{{$galeria->nombreproyecto}}</a></h5>
+                  <h5 class="title text-capitalize font-weight-medium">{{$galeria->nombreproyecto}}</a></h5>
                   <p class="font-weight-regular exeption">{{$galeria->descripcionbreve}}</p>
                   <form action="single" method="post" enctype="multipart/form-data">
             	  {{ csrf_field() }}
@@ -130,7 +130,13 @@
             @endforeach
             
           </div> 
-          <div class="button-wrap-1 text-center"><a class="button button-default" href="#">Ver todos los Proyectos</a></div>
+          
+          <div class="button-wrap-1 text-center">
+          	<form action="all" method="get" enctype="multipart/form-data">
+            {{ csrf_field() }}
+              	<button id="button" class="button button-default">Ver todos los proyectos</button> 
+            </form>
+          </div>
         </div>
       </section>
       <!-- Branding-->

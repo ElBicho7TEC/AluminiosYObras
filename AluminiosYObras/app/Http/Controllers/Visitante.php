@@ -35,7 +35,14 @@ use DB;
 
 		public function verProyecto()
 		{
-			return view ('single');	
+			try
+			{
+				return view ('single');	
+			}
+			catch(Exception $e)
+			{
+				return redirect('index');
+			}
 		}
 
 		public function verTodosProyecto()

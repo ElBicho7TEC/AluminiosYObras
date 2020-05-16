@@ -144,29 +144,54 @@ License URL: http://creativecommons.org/licenses/by/3.0/
           <section  class="sky-form">
             <h4>Mensaje Bienvenida</h4>
             <br>
-            <h7 style="color: grey;"><a href="#">&nbsp;&nbsp;&nbsp;&nbsp;Editar mensaje</a></h7>
-            <br>
+            <h7 style="color: grey;">
+              <form action="editarMensaje" method="get">
+                {{ csrf_field() }}
+                <a href="javascript:;" onclick="parentNode.submit();">&nbsp;&nbsp;&nbsp;&nbsp;Editar mensaje</a>
+              </form>   
+            </h7>
             <br>
             <h4>Logo Empresa</h4>
             <br>
-            <h7 style="color: grey;"><a href="#">&nbsp;&nbsp;&nbsp;&nbsp;Editar logotipo</a></h7>
-            <br>
+            <h7 style="color: grey;">
+              <form action="editarLogo" method="get">
+                {{ csrf_field() }}
+                <a href="javascript:;" onclick="parentNode.submit();">&nbsp;&nbsp;&nbsp;&nbsp;Editar logotipo</a>
+              </form> 
+            </h7>
             <br>
             <h4>Modulos</h4>
             <br>
-            <h7 style="color: grey;"><a href="#">&nbsp;&nbsp;&nbsp;&nbsp;Ver módulos</a></h7>
+            <h7 style="color: grey;">
+              <form action="editarModulo" method="get">
+                {{ csrf_field() }}
+                <a href="javascript:;" onclick="parentNode.submit();">&nbsp;&nbsp;&nbsp;&nbsp;Ver módulos</a>
+              </form> 
+            </h7>
             <br>
-            <br>
-            <h7 style="color: grey;"><a href="#">&nbsp;&nbsp;&nbsp;&nbsp;Agregar nuevo</a></h7>
-            <br>
+            <h7 style="color: grey;">
+              <form action="agregarModulo" method="get">
+                {{ csrf_field() }}
+                <a href="javascript:;" onclick="parentNode.submit();">&nbsp;&nbsp;&nbsp;&nbsp;Agregar nuevo</a>
+              </form> 
+            </h7>
             <br>
             <h4>Proyectos</h4>
             <br>
-            <h7 style="color: grey;"><a href="#">&nbsp;&nbsp;&nbsp;&nbsp;Ver proyectos</a></h7>
+            <h7 style="color: grey;">
+              <form action="editarGaleria" method="get">
+                {{ csrf_field() }}
+                <a href="javascript:;" onclick="parentNode.submit();">&nbsp;&nbsp;&nbsp;&nbsp;Ver proyectos</a>
+              </form> 
+            </h7>
             <br>
-            <br>
-            <h7 style="color: grey;"><a href="#">&nbsp;&nbsp;&nbsp;&nbsp;Agregar nuevo</a></h7>
-            <br>
+            <h7 style="color: grey;">
+              <form action="agregarGaleria" method="get">
+                {{ csrf_field() }}
+                <a href="javascript:;" onclick="parentNode.submit();">&nbsp;&nbsp;&nbsp;&nbsp;Agregar nuevo</a>
+              </form> 
+              <a href="#">&nbsp;&nbsp;&nbsp;&nbsp;</a>
+            </h7>
             <br>
             <form action="../btnLogout" method="get">
                 {{ csrf_field() }}

@@ -158,7 +158,6 @@
 	            		<input type="hidden" name='idModulo' value="{{$modulo->idmodulo}}">
 				        <a href="javascript:;" onclick="parentNode.submit();"><h5>{{$modulo->nombremodulo}}</h5></a>
 				    </form>
-                  
                 </div>
                 <div class="col-sm-6 col-md-4">
                   <?php 

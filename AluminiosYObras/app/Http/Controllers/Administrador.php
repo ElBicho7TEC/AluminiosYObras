@@ -11,7 +11,18 @@ use DB;
 		{
 			if (session()->has('s_identificador') ) 
 			{
-				return view ('admin/index_admin');	
+				$ConsultaidPersona = DB::table('login')
+				->select('login.idusuarios')
+				->where('correoElectronico','=',session('s_identificador'))
+				->get();
+
+				$idConversion = json_decode(json_encode($ConsultaidPersona),true);
+				$idPersona = implode($idConversion[0]);
+
+			  	$listaUsuario = DB::table('login')
+				->select('login.correoElectronico')
+				->get();  
+				return view ('admin/index_admin',['listaUsuario'=>$listaUsuario]);	
 			}
 			else
 			{

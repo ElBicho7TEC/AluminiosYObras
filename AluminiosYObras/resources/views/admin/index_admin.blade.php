@@ -1,823 +1,233 @@
-
-
-<!-- Price box minimal--><!DOCTYPE html>
-<html class="wide wow-animation" lang="en">
+<!--A Design by W3layouts
+Author: W3layout
+Author URL: http://w3layouts.com
+License: Creative Commons Attribution 3.0 Unported
+License URL: http://creativecommons.org/licenses/by/3.0/
+-->
+<!DOCTYPE HTML>
+<html>
   <head>
-    <title>Homies</title>
+    <title>Aluminios y Obras</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <link rel="icon" href="../templete/../templete/images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../../storage/images/icons/dorado.ico" type="image/x-icon">
     <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,900%7CRoboto:300,300i,400,400i,500,500i,700,700i,900,900i">
-    <link rel="stylesheet" href="../templete/css/bootstrap.css">
-    <link rel="stylesheet" href="../templete/css/fonts.css">
-    <link rel="stylesheet" href="../templete/css/style.css">
+    <link rel="stylesheet" href="templete/css/bootstrap.css">
+    <link rel="stylesheet" href="templete/css/fonts.css">
+    <link rel="stylesheet" href="templete/css/style.css">
     <style>.ie-panel{display: none;background: #212121;padding: 10px 0;box-shadow: 3px 3px 5px 0 rgba(0,0,0,.3);clear: both;text-align:center;position: relative;z-index: 1;} html.ie-10 .ie-panel, html.lt-ie-10 .ie-panel {display: block;}</style>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link href="../adiddas-web/css/style.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="../adiddas-web/css/form.css" rel="stylesheet" type="text/css" media="all" />
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800' rel='stylesheet' type='text/css'>
+    <script type="text/javascript" src="../adiddas-web/js/jquery.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function() 
+        {
+          $(".dropdown img.flag").addClass("flagvisibility");
+
+            $(".dropdown dt a").click(function() 
+            {
+                    $(".dropdown dd ul").toggle();
+            });
+                            
+            $(".dropdown dd ul li a").click(function() 
+            {
+                var text = $(this).html();
+                $(".dropdown dt a span").html(text);
+                $(".dropdown dd ul").hide();
+                $("#result").html("Selected value is: " + getSelectedValue("sample"));
+            });
+                            
+            function getSelectedValue(id) 
+            {
+                return $("#" + id).find("dt a span.value").html();
+            }
+
+            $(document).bind('click', function(e) 
+            {
+                var $clicked = $(e.target);
+                if (! $clicked.parents().hasClass("dropdown"))
+                    $(".dropdown dd ul").hide();
+            });
+
+            $("#flagSwitcher").click(function() 
+            {
+                $(".dropdown img.flag").toggleClass("flagvisibility");
+            });
+        });
+    </script>
+    <!-- start menu -->     
+    <link href="../adiddas-web/css/megamenu.css" rel="stylesheet" type="text/css" media="all" />
+    <script type="text/javascript" src="../adiddas-web/js/megamenu.js"></script>
+    <script>$(document).ready(function(){$(".megamenu").megamenu();});</script>
+    <!-- end menu -->
+    <script type="text/javascript" src="../adiddas-web/js/jquery.jscrollpane.min.js"></script>
+    <script type="text/javascript" id="sourcecode">
+      $(function()
+      {
+        $('.scroll-pane').jScrollPane();
+      });
+    </script>
+    <!----details-product-slider--->
+    <!-- Include the Etalage files -->
+    <link rel="stylesheet" href="../adiddas-web/css/etalage.css">
+    <script src="../adiddas-web/js/jquery.etalage.min.js"></script>
+    <!-- Include the Etalage files -->
+    <script>
+      jQuery(document).ready(function($)
+      {
+        $('#etalage').etalage(
+        {
+          thumb_image_width: 400,
+          thumb_image_height: 400,
+                    
+          show_hint: true,
+          click_callback: function(image_anchor, instance_id)
+          {
+            alert('Callback example:\nYou clicked on an image with the anchor: "'+image_anchor+'"\n(in Etalage instance: "'+instance_id+'")');
+          }
+        });
+        // This is for the dropdown list example:
+        $('.dropdownlist').change(function()
+        {
+          etalage_show( $(this).find('option:selected').attr('class') );
+        });
+      });
+    </script>
+    <!----//details-product-slider--->  
+    <!-- top scrolling -->
+    <script type="text/javascript" src="../adiddas-web/js/move-top.js"></script>
+    <script type="text/javascript" src="../adiddas-web/js/easing.js"></script>
+    <script type="text/javascript">
+      jQuery(document).ready(function($) 
+      {
+        $(".scroll").click(function(event)
+        {   
+          event.preventDefault();
+          $('html,body').animate({scrollTop:$(this.hash).offset().top},1200);
+        });
+      });
+    </script>   
   </head>
-  <body>
-    <div class="ie-panel"><a href="http://windows.microsoft.com/en-US/internet-explorer/"><img src="../templete/images/ie8-panel/warning_bar_0000_us.jpg" height="42" width="820" alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today."></a></div>
-    <div class="preloader">
-      <div class="preloader-body">
-        <div class="cssload-container">
-          <div class="cssload-speeding-wheel"></div>
-        </div>
-        <p>Loading...</p>
-      </div>
-    </div>
-    <div class="page">
-      <section class="section section-relative section-header" id="home">
-        <!-- Page Header-->
-        <header class="section page-header header-absolute">
-          <!-- RD Navbar-->
-          <div class="rd-navbar-wrap">
-            <nav class="rd-navbar rd-navbar-aside" data-layout="rd-navbar-fixed" data-sm-layout="rd-navbar-fixed" data-md-layout="rd-navbar-fixed" data-md-device-layout="rd-navbar-fixed" data-lg-layout="rd-navbar-static" data-lg-device-layout="rd-navbar-static" data-xl-layout="rd-navbar-static" data-xl-device-layout="rd-navbar-static" data-lg-stick-up-offset="46px" data-xl-stick-up-offset="46px" data-xxl-stick-up-offset="46px" data-lg-stick-up="true" data-xl-stick-up="true" data-xxl-stick-up="true">
-              <div class="rd-navbar-collapse-toggle rd-navbar-fixed-element-1" data-rd-navbar-toggle=".rd-navbar-collapse"><span></span></div>
-              <div class="rd-navbar-collapse">
-                <ul class="list rd-navbar-list">
-                  <li><a class="icon icon-sm icon-bordered link-default mdi mdi-behance" href="#"></a></li>
-                  <li><a class="icon icon-sm icon-bordered link-default mdi mdi-facebook" href="#"></a></li>
-                  <li><a class="icon icon-sm icon-bordered link-default mdi mdi-instagram" href="#"></a></li>
-                </ul>
+<body>
+       <div class="login">
+         <div class="wrap">
+          <div class="rsidebar span_1_of_left" >
+           <section  class="sky-form" >
+                      <h4>Mensaje Bienvenida</h4>
+            <div class="row  scroll-pane">
+              <div class="col col-4">
+                <label class="checkbox"><input type="checkbox" name="checkbox" checked=""><i></i><a href="#">Editar Mensaje</a></label>
               </div>
-              <div class="rd-navbar-main-outer">
-                <div class="rd-navbar-main">
-                  <!-- RD Navbar Panel-->
-                  <div class="rd-navbar-panel">
-                    <!-- RD Navbar Toggle-->
-                    <button class="rd-navbar-toggle" data-rd-navbar-toggle=".rd-navbar-nav-wrap"><span></span></button>
-                    <!-- RD Navbar Brand-->
-                    <div class="rd-navbar-brand"><a class="brand" href="views/index.php"><img class="brand-logo-dark" src="../templete/images/logo-default-119x102.png" alt="" width="119" height="102"/><img class="brand-logo-light" src="../templete/images/logo-inverse-119x102.png" alt="" width="119" height="102"/></a>
-                    </div>
-                  </div>
-                  <div class="rd-navbar-nav-wrap">
-                    <!-- RD Navbar Nav-->
-                    <ul class="rd-navbar-nav">
-                      <li class="rd-nav-item active"><a class="rd-nav-link" href="#home">Home</a>
-                      </li>
-                      <li class="rd-nav-item"><a class="rd-nav-link" href="#portfolio">Portfolio</a>
-                      </li>
-                      <li class="rd-nav-item"><a class="rd-nav-link" href="#services">Services</a>
-                      </li>
-                      <li class="rd-nav-item"><a class="rd-nav-link" href="#team">Team</a>
-                      </li>
-                      <li class="rd-nav-item"><a class="rd-nav-link" href="#contacts">Contacts</a>
-                      </li>
-                    </ul>
-                  </div>
+             </div>
+                      <h4>Logo Empresa</h4>
+            <div class="row  scroll-pane">
+              <div class="col col-4">
+                <label class="checkbox"><input type="checkbox" name="checkbox" checked=""><i></i><a href="#">Editar Logotipo</a></label>
                 </div>
+            </div>
+           <h4>Modulos</h4>
+            <div class="row scroll-pane">
+              <div class="col col-4">
+                <label class="checkbox"><input type="checkbox" name="checkbox" checked=""><i></i><a href="#">Agregar Modulo</a></label>
+                <label class="checkbox"><input type="checkbox" name="checkbox" checked=""><i></i><a href="#">Editar Modulo</a></label>
               </div>
-            </nav>
-          </div>
-        </header>
-        <!-- Preview section-->
-        <section class="section context-dark section-jumbotron bg-cover" style="background: url(../templete/images/bg-image.jpg) #151515">
-<!-- aqui va lo de las titulo de bienvenida y eso  
-          <div class="panel-left"><a class="brand" href="views/index.php"><img class="brand-logo-dark" src="../templete/images/logo-default-119x102.png" alt="" width="119" height="102"/><img class="brand-logo-light" src="../templete/images/logo-inverse-119x102.png" alt="" width="119" height="102"/></a>
-            <ul class="list-md custom-list">
-              <li><a class="icon icon-sm icon-gray-filled icon-circle mdi mdi-behance" href="#"></a></li>
-              <li><a class="icon icon-sm icon-gray-filled icon-circle mdi mdi-facebook" href="#"></a></li>
-              <li><a class="icon icon-sm icon-gray-filled icon-circle mdi mdi-instagram" href="#"></a></li>
-            </ul>
-          </div>
-          <div class="section-fullheight">
-            <div class="section-fullheight-inner section-md text-center text-lg-left">
-              <div class="container">
-                <div class="row justify-content-center justify-content-lg-start">
-                  <div class="col-md-10 offset-lg-1 col-lg-8 offset-xl-1 col-xl-9 offset-xxl-2 col-xxl-8">
-                    <div class="jumbotron-custom-1">
-                      <div class="text-1 font-weight-medium">Welcome to Concept</div>
-                      <div class="title text-decorative">Top-Notch</div>
-                      <div class="title">Architecture</div>
-                      <p class="big-2 text-white-darken">With 19+ years’ experience in combining traditions and innovations, Concept creates settings to inspire the way people  live, learn, heal, work, and play.</p>
+            </div>
+            <h4>Caracteristicas Modulo</h4>
+            <div class="row scroll-pane">
+              <div class="col col-4">
+                <label class="checkbox"><input type="checkbox" name="checkbox" checked=""><i></i><a href="#">Agregar Caracteristicas Modulo</a></label>
+                <label class="checkbox"><input type="checkbox" name="checkbox" checked=""><i></i><a href="#">Editar Caracteristicas Modulo</a></label>
+              </div>
+            </div>
+            <h4>Galeria</h4>
+            <div class="row scroll-pane">
+              <div class="col col-4">
+                <label class="checkbox"><input type="checkbox" name="checkbox" checked=""><i></i><a href="#">Agregar Galeria</a></label>
+                <label class="checkbox"><input type="checkbox" name="checkbox" checked=""><i></i><a href="#">Editar Galeria</a></label>
+              </div>
+            </div>
+            <h4>Foto Galeria</h4>
+            <div class="row scroll-pane">
+              <div class="col col-4">
+                <label class="checkbox"><input type="checkbox" name="checkbox" checked=""><i></i><a href="#">Agregar Foto Galeria</a></label>
+                <label class="checkbox"><input type="checkbox" name="checkbox" checked=""><i></i><a href="#">Editar Foto Galeria</a></label>
+              </div>
+            </div>
+        </section>
+      </div>
+    <div class="cont span_2_of_3">
+      <div class="mens-toolbar" align="center">
+              <h3>Perfil</h3>
+          <div class="clear"></div>
+         </div>
+          <div class="box1" ">
+             <div class="register_account " style="border: solid; background-color: white; padding: 40px 50px; border-radius: 5px; width: 40%; margin-left: auto; margin-right: auto; color: black; font-weight: bold !important" >
+                    <div>
+                        <center><h4 style="color: black;">Editar Mensaje</h4></center>
                     </div>
-                  </div>
+    
+                    <form action="btnCrear_Auditor" method="post" enctype="multipart/form-data" style="color: black; ">
+                        <div class="row">
+                        <div class="col-2">
+                                    <b><label>Mensaje de bienvenida</label></b>
+                                  </div>
+                                  <div class="col-5">    
+                                    <input type="text" class="form-control"  name="mensajewelcome" id="mensajewelcome" required style="width: auto; border: solid; " >
+                                  </div>
+                        </div>
+                        <div class="row">
+                        <div class="col-3">
+                                    <b><label>Subtitulo</label></b>
+                                  </div>
+                                  <div class="col-5">    
+                                    <input type="text" class="form-control"  name="subtitulo" id="subtitulo" required style="width: auto; border: solid;">
+                                  </div>
+                        </div>
+                          <div class="row">
+                        <div class="col-3">
+                                    <b><label>Descripción</label></b>
+                                  </div>
+                                  <div class="col-5">    
+                                    <textarea class="form-control" id="descripcion" name="descripcion" rows="3" style="width: auto; order: solid;"></textarea>
+                                  </div>
+                        </div>
+
+               
+                         <button class="grey">Editar</button>
+                    </form>
                 </div>
-              </div>
-            </div>
-          </div>
-          <ul class="project-list">
-            <li class="bg-image" style="background-image: url(../templete/images/home-3-project-1-671x214.jpg)"><a href="#">Architecture</a></li>
-            <li class="bg-image" style="background-image: url(../templete/images/home-3-project-2-671x214.jpg)"><a href="#">Design</a></li>
-            <li class="bg-image" style="background-image: url(../templete/images/home-3-project-3-671x214.jpg)"><a href="#">3d modeling</a></li>
-          </ul>
---aqui terminar la de las imagenes
-
- -->   
-<!--Este es el formulario del editar bienvenidos-->
-  <div style="background-color: white; border: none; padding: 40px 50px; border-radius: 5px; width: 50%; margin-top: 75px; margin-left: auto; margin-right: auto; color: black; font-weight: bold;" >
-        <div class="col-12" style="font-size:35px; font-weight: bold;  font-style:italic; width:100%;" >
-            <center> <label>Editar Bienvenida</label></center>
         </div>
-
-      <form method="post" action="controllers/inicioadmiBD.php">
-            <div class="form-group">
-              <label for="exampleFormControlInput1">Mensaje De Bienvenida</label>
-              <input type="text" class="form-control" id="mensajewelcome" name="mensajewelcome" placeholder="bienvenidos">
-            </div>
-            <div class="form-group">
-              <label for="exampleFormControlSelect1">Subtitulo</label>
-              <input type="text" class="form-control" id="subtitulo" name="subtitulo" placeholder="bienvenidos">
-            </div>
-          <div class="form-group">
-            <label for="exampleFormControlTextarea1">Descripción</label>
-            <textarea class="form-control" id="descripcion" name="descripcion" rows="3"></textarea>
-          </div>
-          <br>
-          <center>
-          <button type="submit" class="btn btn-primary" style="background: black; border: none; color: white;">Modificar</button>
-          </center>
-      </form>
-        
-      </div>
-
-</section>
-
-     <!-- Se divide por secciones y estoy haciendo uno por cada formulario-->
-<section class="section context-dark section-jumbotron bg-cover" style="background: url(../templete/images/bg-image.jpg) #151515">
-
-  <div style="background-color: white; border: none; padding: 40px 50px; border-radius: 5px; width: 50%; margin-top: 75px; margin-left: auto; margin-right: auto; color: black; font-weight: bold;" >
-        <div class="col-12" style="font-size:35px; font-weight: bold;  font-style:italic;" >
-            <center> <label>Editar Logotipo</label></center>
-        </div>
-        <br>
-        <br>
-      <form method="post" action="controllers/inicioadmiBD.php">
-            <div class="form-group">
-                <label for="exampleFormControlInput1">Logo</label><br>
-                      <div class="photo">
-                                <div class="input-group">
-                                <input multiple="multiple"  name="rutalogo[]" type="file" accept="image/*" style="padding: 5px 10px; background: black; color:#fff; border:0px solid #fff;width:100%;" value="">
-                                </div>
-                      </div>
-            </div>
-             
-            
-            <div class="col-12">
-            <center><label><b>Logotipo-Aqui debajo ira la foto</b></label><br>    
-            <img class="img-rounded" src="" width="160em" height="160em" >
-                  
-            </div>
-          <br>
-          <center>
-          <button type="submit" class="btn btn-primary" style="background: black; border: none; color: white;">Modificar</button>
-          </center>
-      </form>
-        
-      </div>
-</section>
-
-<!-- Se divide por secciones y estoy haciendo uno por cada formulario-->
-<section class="section context-dark section-jumbotron bg-cover" style="background: url(../templete/images/bg-image.jpg) #151515">
-
-  <div style="background-color: white; border: none; padding: 40px 50px; border-radius: 5px; width: 50%; margin-top: 75px; margin-left: auto; margin-right: auto; color: black; font-weight: bold;" >
-        <div class="col-12" style="font-size:35px; font-weight: bold;  font-style:italic;" >
-            <center> <label>Editar modulos</label></center>
-        </div>
-        <br>
-        <br>
-      <form method="post" action="controllers/inicioadmiBD.php">
-            <div class="form-group">
-              <label for="exampleFormControlInput1">Nombre del modulo</label>
-                <input type="text" class="form-control" id="nombremodulo" name="nombremodulo" placeholder="bienvenidos">
-            </div>
-            <div class="form-group">
-                <label for="exampleFormControlInput1">Logotipo</label><br>
-                <label>Solo seleccionar archivos si se deseea cambiar la imagen actual</label>
-                      <div class="photo">
-                                <div class="input-group">
-                                <input multiple="multiple"  name="logotipo[]" type="file" accept="image/*" style="padding: 5px 10px; background: black; color:#fff; border:0px solid #fff; width:100%;" value="">
-                                </div>
-                      </div>
-            </div>
-           <div class="form-group">
-            <label for="exampleFormControlTextarea1">Número a resaltar</label>
-            <input type="text" class="form-control" id="numeroresaltador" name="numeroresaltador" placeholder="3">
-          </div>
-          <div class="form-group">
-            <label for="exampleFormControlTextarea1">Descripción referente al número</label>
-            <input type="text" class="form-control" id="descripciondelnumero" name="descripciondelnumero" placeholder="Años siendo lider">
-          </div>
-          <center>
-         
-          <button type="submit" class="btn btn-primary" style="background: black; border: none; color: white;">Modificar</button>
-          <button type="submit" class="btn btn-primary" style="background: black; border: none; color: white; margin-left: 1%; margin-top: 1px;">Agregar</button>
-            </center>
-      </form>
-      </div>
-</section>
-
-  <!-- Lista en donde estar los modulos -->
-<section class="section section-lg bg-gray-700 text-center text-sm-left" id="services">
-
-<!-- Inicio del modal-->
-
-<div id="modalCrearModulo" class="modal fade">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header" style="background:#546E7A;">
-                <h4 class="modal-title" style="color: white" >Crear Modulo</h4>
-                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-            </div>
-		
-            <form action="btnCrear_Auditor" method="post" enctype="multipart/form-data">
+       
+        <div class="box1">
            
-                <div class="modal-body mx-auto" style="width: auto; background-color: #ECEFF1; color: black" >
-                    <div class="row">
-                            <div class="col-3">
-                                <b><label>Nombre modulo</label></b>
-                            </div>
-                            <div class="col-5">
-                                <input type="text" class="form-control" name="txtnombreModulo" required style="width: auto;">
-                            </div>
-                    </div>
-                    
-                     <div class="row">
-                            <div class="col-3">
-                                <b><label>Logotipo</label></b>
-                            </div>
-                            <div class="col-5">
-									<input name="logotipo[]" type="file"accept="image/*" required style="padding: 5px 10px; background: #546E7A; color:#fff; border:0px solid #fff; width: auto;">
-                            </div>
-                    </div>
-                    
-                    <div class="row">
-                            <div class="col-3">
-                                <b><label>Número a resaltar</label></b>
-                            </div>
-                            <div class="col-5">    
-                                <input type="text" class="form-control"  name="txtnumeroResaltar" required style="width: auto;">
-                            </div>
-                    </div>
-                    
-                    <div class="row">
-                            <div class="col-3">
-                                 <b><label>Descripción</label></b>
-                            </div>
-                            <div class="col-5">
-                                  <input type="text" class="form-control" name="txtdescribcion" required style="width: auto;">
-                            </div>
-                    </div>
-                    
-                </div>
-                <div class="modal-footer" style="background:#546E7A; margin: auto;">
-                    <button id="button" class="btn btn-primary" style="background: #00ACC1; border: none; align-items: center;">Guardar</button> 
-
-                </div>
-            </form>
+        </div>
+        <div class="box1">
+      
         </div>
     </div>
-</div>
-<!-- fin del modal-->
-
-<!-- Inicio del modal-->
-
-<div id="modalEditarModulo" class="modal fade">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header" style="background:#546E7A;">
-                <h4 class="modal-title" style="color: white" >Editar Modulo</h4>
-                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-            </div>
-		
-            <form action="btnCrear_Auditor" method="post" enctype="multipart/form-data">
-           
-                <div class="modal-body mx-auto" style="width: auto; background-color: #ECEFF1; color: black" >
-                    <div class="row">
-                            <div class="col-3">
-                                <b><label>Nombre modulo</label></b>
-                            </div>
-                            <div class="col-5">
-                                <input type="text" class="form-control" name="txtnombreModulo" required style="width: auto;">
-                            </div>
-                    </div>
-                    
-                     <div class="row">
-                            <div class="col-3">
-                                <b><label>Logotipo</label></b>
-                            </div>
-                            <div class="col-5">
-									<input name="logotipo[]" type="file"accept="image/*" required style="padding: 5px 10px; background: #546E7A; color:#fff; border:0px solid #fff; width: auto;">
-                            </div>
-                    </div>
-                    
-                    <div class="row">
-                            <div class="col-3">
-                                <b><label>Número a resaltar</label></b>
-                            </div>
-                            <div class="col-5">    
-                                <input type="text" class="form-control"  name="txtnumeroResaltar" required style="width: auto;">
-                            </div>
-                    </div>
-                    
-                    <div class="row">
-                            <div class="col-3">
-                                 <b><label>Descripción</label></b>
-                            </div>
-                            <div class="col-5">
-                                  <input type="text" class="form-control" name="txtdescribcion" required style="width: auto;">
-                            </div>
-                    </div>
-                    
-                </div>
-                <div class="modal-footer" style="background:#546E7A; margin: auto;">
-                    <button id="button" class="btn btn-primary" style="background: #00ACC1; border: none; align-items: center;">Guardar</button> 
-
-                </div>
-            </form>
-        </div>
-    </div>
-</div>
-<!-- fin del modal-->
-
-
-
-
-
-
-
-
-
-
-<!-- aqui esta para la tabla-->
-	<div class="col-12" style="font-size:35px; font-weight: bold;  font-style:italic;" >
-     <center> <label>Lista de modulos</label>
-   <!-- Button trigger modal-->
-     <button type="submit" class="btn btn-primary" style="background: black; border: none; color: white;"data-toggle="modal" data-target="#modalCrearModulo">Agregar</button>
-     </center>
-    </div>
-			<div class="table-responsive">
-					<table class="table table-bordered" style="color: black; background-color: white;">
-						  <thead class="thead-dark" style="color: black">
-						    <tr>
-						      <th scope="col" style="text-align:center;">#</th>
-						      <th scope="col" style="text-align:center;">Nombre modulo</th>
-						      <th scope="col" style="text-align:center;">Logotipo</th>
-						      <th scope="col" style="text-align:center;">Número resaltar</th>
-						      <th scope="col" style="text-align:center;">Descripción</th>
-						    </tr>
-						  </thead>
-							  <tbody>
-							    <tr style="text-align:center;">
-							      <th scope="row"><i class="mdi mdi-pencil-box" data-toggle="modal" data-target="#modalEditarModulo"></i> <i class="mdi mdi-file-excel-box" ></i></th>
-							      <td>Puertas</td>
-							      <td>Imagen</td>
-							      <td>10</td>
-							      <td>Años de experiencia</td>
-							    </tr>
-							    <tr style="text-align:center;">
-							      <th scope="row" ><i class="mdi mdi-pencil-box" ></i> <i class="mdi mdi-file-excel-box" ></i></th>
-							      <td>Ventas</td>
-							      <td>Imagen</td>
-							      <td>10</td>
-							      <td>Años de experiencia</td>
-							    </tr>
-							    <tr style="text-align:center;">
-							      <th scope="row"><i class="mdi mdi-pencil-box" ></i> <i class="mdi mdi-file-excel-box" ></i></th>
-							      <td>Portones</td>
-							      <td>Imagen</td>
-							      <td>10</td>
-							      <td>Años de experiencia</td>
-							    </tr>
-							    <tr style="text-align:center;">
-							      <th scope="row"><i class="mdi mdi-pencil-box" ></i> <i class="mdi mdi-file-excel-box" ></i></th>
-							      <td>Alumunio</td>
-							      <td>Imagen</td>
-							      <td>10</td>
-							      <td>Años de experiencia</td>
-							    </tr>
-							  </tbody>
-				</table>
-		</div>
-</section>
-      <!-- Portfolio-->
-      <section class="section section-lg bg-default section-lined" id="portfolio">
-        <div class="container container-lined">
-          <div class="row">
-            <div class="col-md-4"></div>
-            <div class="col-md-4"></div>
-            <div class="col-md-4"></div>
-          </div>
-        </div>
-        <div class="container container-custom-width">
-          <h3 class="text-center">Our Latest Projects</h3>
-          <div class="row row-custom-width row-30 row-xxl-100 row-flex">
-            <div class="col-sm-6 col-lg-4 wow fadeInRight">
-              <div class="project-grid" style="background-image: url(../templete/images/projects-1-518x373.jpg);">
-                <div class="inner"><img src="../templete/images/bg-pattern-transparent.png" alt=""/>
-                  <h5 class="title text-capitalize font-weight-medium"><a href="#">Eastwood Hotel</a></h5>
-                  <p class="font-weight-regular exeption">We deliver reliable architectural solutions to our individual and corporate clients throughout the USA.</p><a class="button button-default" href="#">View</a>
-                </div>
-              </div>
-            </div>
-            <div class="col-sm-6 col-lg-4 wow fadeInRight" data-wow-delay="0.2s">
-              <div class="project-grid" style="background-image: url(../templete/images/projects-2-518x373.jpg);">
-                <div class="inner"><img src="../templete/images/bg-pattern-transparent.png" alt=""/>
-                  <h5 class="title text-capitalize font-weight-medium"><a href="#">Southward Concert Hall</a></h5>
-                  <p class="font-weight-regular exeption">We deliver reliable architectural solutions to our individual and corporate clients throughout the USA.</p><a class="button button-default" href="#">View</a>
-                </div>
-              </div>
-            </div>
-            <div class="col-sm-6 col-lg-4 wow fadeInRight" data-wow-delay="0.4s">
-              <div class="project-grid" style="background-image: url(../templete/images/projects-3-518x373.jpg);">
-                <div class="inner"><img src="../templete/images/bg-pattern-transparent.png" alt=""/>
-                  <h5 class="title text-capitalize font-weight-medium"><a href="#">California Mega Mall</a></h5>
-                  <p class="font-weight-regular exeption">We deliver reliable architectural solutions to our individual and corporate clients throughout the USA.</p><a class="button button-default" href="#">View</a>
-                </div>
-              </div>
-            </div>
-            <div class="col-sm-6 col-lg-4 wow fadeInRight" data-wow-delay="0.2s">
-              <div class="project-grid" style="background-image: url(../templete/images/projects-4-518x373.jpg);">
-                <div class="inner"><img src="../templete/images/bg-pattern-transparent.png" alt=""/>
-                  <h5 class="title text-capitalize font-weight-medium"><a href="#">Hearst Business Center</a></h5>
-                  <p class="font-weight-regular exeption">We deliver reliable architectural solutions to our individual and corporate clients throughout the USA.</p><a class="button button-default" href="#">View</a>
-                </div>
-              </div>
-            </div>
-            <div class="col-sm-6 col-lg-4 wow fadeInRight" data-wow-delay="0.4s">
-              <div class="project-grid" style="background-image: url(../templete/images/projects-5-518x373.jpg);">
-                <div class="inner"><img src="../templete/images/bg-pattern-transparent.png" alt=""/>
-                  <h5 class="title text-capitalize font-weight-medium"><a href="#">Westwood Child Center</a></h5>
-                  <p class="font-weight-regular exeption">We deliver reliable architectural solutions to our individual and corporate clients throughout the USA.</p><a class="button button-default" href="#">View</a>
-                </div>
-              </div>
-            </div>
-            <div class="col-sm-6 col-lg-4 wow fadeInRight" data-wow-delay="0.6s">
-              <div class="project-grid" style="background-image: url(../templete/images/projects-6-518x373.jpg);">
-                <div class="inner"><img src="../templete/images/bg-pattern-transparent.png" alt=""/>
-                  <h5 class="title text-capitalize font-weight-medium"><a href="#">Modern Art Gallery</a></h5>
-                  <p class="font-weight-regular exeption">We deliver reliable architectural solutions to our individual and corporate clients throughout the USA.</p><a class="button button-default" href="#">View</a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="button-wrap-1 text-center"><a class="button button-default" href="#">View All Projects</a></div>
-        </div>
-      </section>
-      <!-- Branding-->
-      <section class="section section-lg bg-gray-700 text-center text-sm-left" id="services">
-        <div class="container">
-          <div class="row row-40">
-            <div class="col-lg-9">
-              <div class="row row-30 row-xxl-85">
-                <div class="col-sm-6 col-md-4">
-                  <h5>Architecture</h5>
-                  <ul class="list-xs font-weight-regular">
-                    <li><a class="link-item" href="#">Planning & Development</a></li>
-                    <li><a class="link-item" href="#">Project Management</a></li>
-                    <li><a class="link-item" href="#">Structural Engineering</a></li>
-                  </ul>
-                </div>
-                <div class="col-sm-6 col-md-4">
-                  <h5>3D Modeling</h5>
-                  <ul class="list-xs font-weight-regular">
-                    <li><a class="link-item" href="#">Interior Rendering</a></li>
-                    <li><a class="link-item" href="#">Visualization</a></li>
-                    <li><a class="link-item" href="#">VR Architecture</a></li>
-                  </ul>
-                </div>
-                <div class="col-sm-6 col-md-4">
-                  <h5>Design</h5>
-                  <ul class="list-xs font-weight-regular">
-                    <li><a class="link-item" href="#">Interior Design</a></li>
-                    <li><a class="link-item" href="#">Architectural Design</a></li>
-                    <li><a class="link-item" href="#">Technical Detailing</a></li>
-                  </ul>
-                </div>
-                <div class="col-sm-6 col-md-4">
-                  <article class="box-counter">
-                    <div class="box-counter-main">
-                      <div class="counter">10</div><span class="small small_top">+</span>
-                    </div>
-                    <div class="box-counter-title">International awards</div>
-                  </article>
-                </div>
-                <div class="col-sm-6 col-md-4">
-                  <article class="box-counter">
-                    <div class="box-counter-main">
-                      <div class="counter">57</div>
-                    </div>
-                    <div class="box-counter-title">Finished projects</div>
-                  </article>
-                </div>
-                <div class="col-sm-6 col-md-4">
-                  <article class="box-counter">
-                    <div class="box-counter-main">
-                      <div class="counter">19</div>
-                    </div>
-                    <div class="box-counter-title">Years of experience</div>
-                  </article>
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-3">
-              <div class="heading-3">High-quality solutions</div>
-              <div class="big text-white-lighter text-white-darken">We are committed to providing the best possible solutions at a competitive cost. Our team is ready to offer a wide range of various architectural services.</div>
-              <div class="img-wrap-1"><img src="../templete/images/speaker-1-180x80.png" alt="" width="180" height="80"/>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-      <!-- Blurb minimal-->
-      <section class="section section-lg bg-default section-lined">
-        <div class="container container-lined">
-          <div class="row">
-            <div class="col-md-4"></div>
-            <div class="col-md-4"></div>
-            <div class="col-md-4"></div>
-          </div>
-        </div>
-        <div class="container">
-          <div class="row row-40">
-            <div class="col-sm-6 col-md-4 offset-left-16 wow fadeInUp">
-              <!-- Blurb minimal-->
-              <div class="blurb-minimal unit unit-spacing-sm flex-column flex-lg-row">
-                <div class="unit-left">
-                  <div class="blurb-minimal-icon construction-icon-12"></div>
-                </div>
-                <div class="unit-body">
-                  <h5 class="blurb-minimal-title">Modern Materials</h5>
-                  <p class="blurb-minimal-exeption">All our projects are designed and built using the best materials.</p>
-                </div>
-              </div>
-            </div>
-            <div class="col-sm-6 col-md-4 wow fadeInUp" data-wow-delay="0.2s">
-              <!-- Blurb minimal-->
-              <div class="blurb-minimal unit unit-spacing-sm flex-column flex-lg-row">
-                <div class="unit-left">
-                  <div class="blurb-minimal-icon construction-icon-13"></div>
-                </div>
-                <div class="unit-body">
-                  <h5 class="blurb-minimal-title">Creative Ideas</h5>
-                  <p class="blurb-minimal-exeption">Creativity is a vital part of the projects we design for you.</p>
-                </div>
-              </div>
-            </div>
-            <div class="col-sm-6 col-md-4 wow fadeInUp" data-wow-delay="0.4s">
-              <!-- Blurb minimal-->
-              <div class="blurb-minimal unit unit-spacing-sm flex-column flex-lg-row">
-                <div class="unit-left">
-                  <div class="blurb-minimal-icon construction-icon-18"></div>
-                </div>
-                <div class="unit-body">
-                  <h5 class="blurb-minimal-title">Unique Approach</h5>
-                  <p class="blurb-minimal-exeption">Our approach combines dedication and professionalism.</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-      <!-- Our Clients-->
-      <section class="section section-lg bg-default section-lined" id="testimonials">
-        <div class="container container-lined">
-          <div class="row">
-            <div class="col-md-4"></div>
-            <div class="col-md-4"></div>
-            <div class="col-md-4"></div>
-          </div>
-        </div>
-        <div class="container">
-          <div class="row row-40 justify-content-between">
-            <div class="col-lg-6 col-xxl-5">
-              <h3>Our Clients</h3>
-              <!-- Owl Carousel-->
-              <div class="owl-carousel" data-items="1" data-md-items="2" data-lg-items="1" data-dots="true" data-nav="false" data-stage-padding="0" data-loop="false" data-margin="30" data-mouse-drag="false">
-                <article class="quote-minimal">
-                  <div class="quote-body">
-                    <q>We selected Concept because of their architects’ rigorous design background and education. They did the best job!</q>
-                  </div>
-                  <div class="quote-footer">
-                    <cite class="quote-minimal-cite">John smith</cite>, <span class="quote-minimal-description">“STP productions”</span>
-                  </div>
-                </article>
-                <article class="quote-minimal">
-                  <div class="quote-body">
-                    <q>When we needed design and architecture specialists, your team was there for us. Thank you!</q>
-                  </div>
-                  <div class="quote-footer">
-                    <cite class="quote-minimal-cite">Kate williams</cite>, <span class="quote-minimal-description">“Fireworx”</span>
-                  </div>
-                </article>
-                <article class="quote-minimal">
-                  <div class="quote-body">
-                    <q>Out of all architecture companies offering design & construction services, you are the best!</q>
-                  </div>
-                  <div class="quote-footer">
-                    <cite class="quote-minimal-cite">Peter McMillan</cite>, <span class="quote-minimal-description">“MCM ltd.”</span>
-                  </div>
-                </article>
-              </div>
-            </div>
-            <div class="col-lg-6">
-              <div class="box-border-wrap box-border-wrap-left">
-                <div class="row"><a class="col-6 col-md-4 box-border" href="#"><img src="../templete/images/brand-1-196x162.png" alt="" width="196" height="162"/></a><a class="col-6 col-md-4 box-border" href="#"><img src="../templete/images/brand-2-196x162.png" alt="" width="196" height="162"/></a><a class="col-6 col-md-4 box-border" href="#"><img src="../templete/images/brand-3-196x162.png" alt="" width="196" height="162"/></a><a class="col-6 col-md-4 box-border" href="#"><img src="../templete/images/brand-4-196x162.png" alt="" width="196" height="162"/></a><a class="col-6 col-md-4 box-border" href="#"><img src="../templete/images/brand-5-196x162.png" alt="" width="196" height="162"/></a><a class="col-6 col-md-4 box-border" href="#">
-                    <div class="icon icon-sm mdi mdi-arrow-right"></div></a></div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-      <!-- Team-->
-      <section class="section section-lg bg-gray-100 section-lined" id="team">
-        <div class="container container-lined">
-          <div class="row">
-            <div class="col-md-4"></div>
-            <div class="col-md-4"></div>
-            <div class="col-md-4"></div>
-          </div>
-        </div>
-        <div class="container">
-          <div class="row row-40 justify-content-between">
-            <div class="col-lg-7 col-xl-8">
-              <div class="row no-gutters">
-                <div class="col-sm-6 wow fadeInLeft">
-                  <div class="box-team box-team-right"><img src="../templete/images/index-3-1-390x332.jpg" alt="" width="390" height="332"/>
-                    <div class="meta">
-                      <div class="heading-6 title">Jane Smith</div>
-                      <p class="position">Senior Architect</p>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-sm-6 wow fadeInRight">
-                  <div class="box-team box-team-right"><img src="../templete/images/index-3-2-390x332.jpg" alt="" width="390" height="332"/>
-                    <div class="meta">
-                      <div class="heading-6 title">Nathan Porter</div>
-                      <p class="position">Founder, Director</p>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-sm-6 wow fadeInLeft" data-wow-delay="0.2s">
-                  <div class="box-team box-team-right"><img src="../templete/images/index-3-3-390x332.jpg" alt="" width="390" height="332"/>
-                    <div class="meta">
-                      <div class="heading-6 title">Sam Lee</div>
-                      <p class="position">Interior Designer</p>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-sm-6 wow fadeInRight" data-wow-delay="0.2s">
-                  <div class="box-team box-team-right"><img src="../templete/images/index-3-4-390x332.jpg" alt="" width="390" height="332"/>
-                    <div class="meta">
-                      <div class="heading-6 title">Sarah Parker</div>
-                      <p class="position">Exterior Designer</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-5 col-xl-4">
-              <div class="row row-30 row-xxl-55 justify-content-end">
-                <div class="col-sm-6 col-lg-9 col-xl-10 text-lg-right">
-                  <h3 class="offset-left-70">Meet the Team of Our Designers and Architects</h3>
-                  <div class="big-text">The team of Concept has more than 20 years of experience in architecture.</div>
-                  <div class="divider divider-2 d-none d-lg-block"></div>
-                </div>
-                <div class="col-sm-6 col-lg-8 col-xl-7">
-                  <div class="counter-minimal">
-                    <div class="counter-left">
-                      <div class="counter">20</div>
-                    </div>
-                    <div class="counter-right">
-                      <div class="postfix">+</div>
-                      <div class="title">People in team</div>
-                    </div>
-                  </div>
-                  <ul class="list-marked list-marked-big">
-                    <li>28 exceptional<br> full-time professionals</li>
-                    <li>5-year specialized team member practice</li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-      <!-- Get in touch with us-->
-      <section class="section section-md bg-default wow fadeIn section-lined" data-wow-delay="0.2s" id="contacts">
-        <div class="container container-lined">
-          <div class="row">
-            <div class="col-md-4"></div>
-            <div class="col-md-4"></div>
-            <div class="col-md-4"></div>
-          </div>
-        </div>
-        <div class="container">
-          <h3>Get in touch with us</h3>
-          <p class="big">Feel free to contact our specialists to find out more about our prices and services. <br class="d-none d-xl-inline">We are always ready to answer your questions.</p>
-          <!-- RD Mailform-->
-          <form class="rd-form rd-mailform form-boxed" data-form-output="form-output-global" data-form-type="contact" method="post" action="../templete/bat/rd-mailform.php">
-            <div class="row row-50">
-              <div class="col-lg-4">
-                <div class="form-wrap form-wrap-icon">
-                  <div class="form-icon mdi mdi-account-outline"></div>
-                  <input class="form-input" id="contact-name" type="text" name="name" data-constraints="@Required">
-                  <label class="form-label" for="contact-name">Name</label>
-                </div>
-              </div>
-              <div class="col-lg-4">
-                <div class="form-wrap form-wrap-icon">
-                  <div class="form-icon mdi mdi-email-outline"></div>
-                  <input class="form-input" id="contact-email" type="email" name="email" data-constraints="@Email @Required">
-                  <label class="form-label" for="contact-email">E-mail</label>
-                </div>
-              </div>
-              <div class="col-lg-4">
-                <div class="form-wrap form-wrap-icon">
-                  <div class="form-icon mdi mdi-phone"></div>
-                  <input class="form-input" id="contact-phone" type="text" name="phone" data-constraints="@Numeric">
-                  <label class="form-label" for="contact-phone">Phone</label>
-                </div>
-              </div>
-              <div class="col-12">
-                <div class="form-wrap form-wrap-icon">
-                  <div class="form-icon mdi mdi-message-outline"></div>
-                  <label class="form-label" for="contact-message">Message</label>
-                  <textarea class="form-input" id="contact-message" name="message" data-constraints="@Required"></textarea>
-                </div>
-              </div>
-              <div class="col-md-12">
-                <button class="button button-default" type="submit">Send Message</button>
-              </div>
-            </div>
-          </form>
-        </div>
-      </section>
-      <!-- Page Footer-->
-      <div class="pre-footer-classic bg-gray-700 context-dark">
-        <div class="container">
-          <div class="row row-30 justify-content-lg-between">
-            <div class="col-sm-6 col-lg-3 col-xl-3">
-              <h5>Location</h5>
-              <ul class="list list-sm">
-                <li>
-                  <p>1418 Riverwood Drive,</p>
-                </li>
-                <li>
-                  <p>Suite 3845 Cottonwood,</p>
-                </li>
-                <li>
-                  <p>CA 96022</p>
-                </li>
-                <li>
-                  <p>United States</p>
-                </li>
-              </ul>
-            </div>
-            <div class="col-sm-6 col-lg-4 col-xl-3">
-              <h5>Contacts</h5>
-              <dl class="list-terms-custom">
-                <dt>Ph.</dt>
-                <dd><a class="link-default" href="tel:#">1-300-123-1234</a></dd>
-              </dl>
-              <dl class="list-terms-custom">
-                <dt>Mail.</dt>
-                <dd><a class="link-default" href="mailto:#">Info@demolink.org</a></dd>
-              </dl>
-              <ul class="list-inline list-inline-sm">
-                <li><a class="icon icon-sm icon-gray-filled icon-circle mdi mdi-facebook" href="#"></a></li>
-                <li><a class="icon icon-sm icon-gray-filled icon-circle mdi mdi-instagram" href="#"></a></li>
-                <li><a class="icon icon-sm icon-gray-filled icon-circle mdi mdi-behance" href="#"></a></li>
-                <li><a class="icon icon-sm icon-gray-filled icon-circle mdi mdi-twitter" href="#"></a></li>
-              </ul>
-            </div>
-            <div class="col-lg-4">
-              <h5>Newsletter</h5>
-              <form class="rd-form rd-mailform" data-form-output="form-output-global" data-form-type="contact" method="post" action="../templete/bat/rd-mailform.php">
-                <div class="form-wrap form-wrap-icon">
-                  <div class="form-icon mdi mdi-email-outline"></div>
-                  <input class="form-input" id="footer-email" type="email" name="email" data-constraints="@Email @Required">
-                  <label class="form-label" for="footer-email">E-mail</label>
-                </div>
-                <div class="button-wrap">
-                  <button class="button button-default button-invariable" type="submit">Subscribe</button>
-                </div>
-              </form>
-            </div>
-          </div>
-        </div>
+        <div class="clear"></div>
+     </div>
       </div>
-      <footer class="section footer-classic context-dark text-center">
-        <div class="container">
-          <div class="row row-15">
-            <div class="col-lg-4 col-xl-3 text-lg-left">
-              <p class="rights font-weight-regular"><span>&copy;&nbsp; </span><span class="copyright-year"></span><span>&nbsp;</span><span>Concept</span><span>.&nbsp;</span><span>All Rights reserved</span>. Design&nbsp;by&nbsp;<a href="https://zemez.io/">Zemez</a></p>
-            </div>
-            <div class="col-lg-5 col-xl-6">
-              <ul class="list-inline list-inline-lg text-uppercase">
-                <li><a href="#services">Services</a></li>
-                <li><a href="#portfolio">Our Portfolio</a></li>
-                <li><a href="#">News</a></li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </footer>
-    </div>
-    <div class="snackbars" id="form-output-global"></div>
-    <script src="../templete/js/core.min.js"></script>
-    <script src="../templete/js/script.js"></script>
-    <!-- coded by Starlight-->
-  </body>
+       <script type="text/javascript">
+      $(document).ready(function() {
+      
+        var defaults = {
+            containerID: 'toTop', // fading element id
+          containerHoverID: 'toTopHover', // fading element hover id
+          scrollSpeed: 1200,
+          easingType: 'linear' 
+        };
+        
+        
+        $().UItoTop({ easingType: 'easeOutQuart' });
+        
+      });
+    </script>
+        <a href="#" id="toTop" style="display: block;"><span id="toTopHover" style="opacity: 1;"></span></a>
+</body>
 </html>
-
-<!--===============================================================================================-->

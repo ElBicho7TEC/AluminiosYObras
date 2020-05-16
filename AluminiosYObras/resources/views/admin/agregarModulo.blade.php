@@ -232,7 +232,12 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                   						<span class="label-input100">Número a resaltar</span>
 		                            	<input class="input100" type="text" name="numeroresaltar" placeholder="Ingresar número a resaltar del modulo" value="">
                  						<span class="focus-input100"></span>
-                				</div>  
+                				</div>
+                        <div class="wrap-input100 validate-input m-b-26" data-validate="Descripción de modulo requerido">
+                              <span class="label-input100">Descripción</span>
+                                  <input class="input100" type="text" name="descripcionmodulo" placeholder="Ingresar la descripción del modulo" value="">
+                            <span class="focus-input100"></span>
+                        </div>    
 								<div class="container-login100-form-btn">
                 					    <button class="login100-form-btn" style="background-color: black">
                     					Guardar cambios

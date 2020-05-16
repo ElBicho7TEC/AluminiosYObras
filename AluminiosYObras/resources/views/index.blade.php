@@ -95,7 +95,13 @@
           </div>
           <ul class="project-list">
             @foreach ($datosModulos as $modulo)
-            <li class="bg-image" style="background-image: url(../storage/app/public{{$modulo->rutamodulo}})"><a href="#">{{$modulo->nombremodulo}}</a></li>
+            <li class="bg-image" style="background-image: url(../storage/app/public{{$modulo->rutamodulo}})">
+            	<form action="module" method="post">
+            	{{ csrf_field() }}
+            		<input type="hidden" name='idModulo' value="{{$modulo->idmodulo}}">
+			        <a href="javascript:;" onclick="parentNode.submit();">{{$modulo->nombremodulo}}</a>
+			    </form>
+            </li>
             @endforeach
           </ul>
         </section>
@@ -147,7 +153,12 @@
               <div class="row row-30 row-xxl-85">
                 @foreach ($datosModulos as $modulo)
                 <div class="col-sm-6 col-md-4">
-                  <h5>{{$modulo->nombremodulo}}</h5>
+	                <form action="module" method="post">
+	            	{{ csrf_field() }}
+	            		<input type="hidden" name='idModulo' value="{{$modulo->idmodulo}}">
+				        <a href="javascript:;" onclick="parentNode.submit();"><h5>{{$modulo->nombremodulo}}</h5></a>
+				    </form>
+                  
                 </div>
                 <div class="col-sm-6 col-md-4">
                   <?php 
@@ -159,7 +170,7 @@
 
                   @foreach ($datosCaracteriticasModulo as $caracteristica)
                   <ul class="list-xs font-weight-regular">
-                    <li><a class="link-item" href="#">{{$caracteristica->caracteristica}}</a></li>
+                    <li><a class="link-item" >{{$caracteristica->caracteristica}}</a></li>
                   </ul>
                   @endforeach
                 </div>

@@ -64,8 +64,19 @@ use DB;
 			->orderby('idgaleria','desc')
 			->get();	
 
-
 			return view ('all',['datosGaleria'=>$datosGaleria]);	
+		}
+
+		public function verProyectoModulo(Request $datos)
+		{
+			$datosGaleria = DB::table('galeria')
+			->select('idgaleria','nombreproyecto','rutafotoprincipal','descripcionbreve','descripcionlarga','fkidmodulo','nombremodulo')
+			->join('modulo', 'galeria.fkidmodulo', '=', 'modulo.idmodulo')
+			->where('fkidmodulo','=',$datos->input ('idModulo'))
+			->orderby('idgaleria','desc')
+			->get();	
+
+			return view ('module',['datosGaleria'=>$datosGaleria]);	
 		}
 	}
 ?>

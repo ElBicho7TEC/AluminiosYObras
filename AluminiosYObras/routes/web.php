@@ -18,6 +18,7 @@ Route::get('index','Visitante@index');
 Route::post('single','Visitante@verProyecto');
 Route::get('all','Visitante@verTodosProyecto');
 Route::post('all','Visitante@verTodosProyectoModulo');
+Route::post('module','Visitante@verProyectoModulo');
 
 //Controlador de Login para mostrar el formulario
 Route::get('admin','LoginC@mostrar');

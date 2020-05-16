@@ -123,7 +123,7 @@
             <div class="col-sm-6 col-lg-4 wow fadeInRight">
               <div class="project-grid" style="background-image: url(../storage/app/public{{$galeria->rutafotoprincipal}});">
                 <div class="inner"><img src="templete/images/bg-pattern-transparent.png" alt=""/>
-                  <h5 class="title text-capitalize font-weight-medium">{{$galeria->nombreproyecto}}</a></h5>
+                  <h5 class="title text-capitalize font-weight-medium"><a href="single?proyect={{$galeria->idgaleria}}">{{$galeria->nombreproyecto}}</a></h5>
                   <p class="font-weight-regular exeption">{{$galeria->descripcionbreve}}</p>
             	  	<a  href="single?proyect={{$galeria->idgaleria}}" id="button" class="button button-default">Ver</a> 
                 </div>

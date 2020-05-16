@@ -86,13 +86,9 @@
             <div class="col-sm-6 col-lg-4 wow fadeInRight">
               <div class="project-grid" style="background-image: url(../storage/app/public{{$galeriaT->rutafotoprincipal}});">
                 <div class="inner"><img src="templete/images/bg-pattern-transparent.png" alt=""/>
-                  <h5 class="title text-capitalize font-weight-medium"><a href="single">{{$galeriaT->nombreproyecto}}</a></h5>
+                  <h5 class="title text-capitalize font-weight-medium"><a href="single?proyect={{$galeriaT->idgaleria}}">{{$galeriaT->nombreproyecto}}</a></h5>
                   <p class="font-weight-regular exeption">{{$galeriaT->descripcionbreve}}</p>
-                  <form action="single" method="post" enctype="multipart/form-data">
-            	  {{ csrf_field() }}
-            	  	<input type="hidden" name='idGaleria' value="{{$galeriaT->idgaleria}}">
-            	  	<button id="button" class="button button-default">Ver</button> 
-              	  </form>
+            	  	<a href="single?proyect={{$galeriaT->idgaleria}}" id="button" class="button button-default">Ver</a> 
                 </div>
               </div>
             </div>

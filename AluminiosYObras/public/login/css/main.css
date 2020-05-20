@@ -178,7 +178,6 @@ iframe {
   justify-content: center;
   align-items: center;
   padding: 15px;
-  background: #ebeeef;
 }
 
 
@@ -188,6 +187,8 @@ iframe {
   border-radius: 10px;
   overflow: hidden;
   position: relative;
+  border-style: solid;
+  border-color: gray;
 }
 
 /*==================================================================

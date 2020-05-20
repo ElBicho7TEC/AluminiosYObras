@@ -275,6 +275,18 @@ use DB;
 			}
 		}
 
+		public function editarModulo2()
+		{
+			if (session()->has('s_identificador') ) 
+			{
+				return view ('admin/editarModulo2');	
+			}
+			else
+			{
+				return redirect('admin');
+			}
+		}
+
 		public function agregarGaleria()
 		{
 			if (session()->has('s_identificador') ) 
@@ -299,6 +311,18 @@ use DB;
 			}
 		}
 
+		public function editarGaleria2()
+		{
+			if (session()->has('s_identificador') ) 
+			{
+				return view ('admin/editarGaleria2');	
+			}
+			else
+			{
+				return redirect('admin');
+			}
+		}
+
 		public function agregarFotoGaleria()
 		{
 			if (session()->has('s_identificador') ) 
@@ -316,6 +340,18 @@ use DB;
 			if (session()->has('s_identificador') ) 
 			{
 				return view ('admin/editarFotoGaleria');	
+			}
+			else
+			{
+				return redirect('admin');
+			}
+		}
+
+		public function editarFotoGaleria2()
+		{
+			if (session()->has('s_identificador') ) 
+			{
+				return view ('admin/editarFotoGaleria2');	
 			}
 			else
 			{

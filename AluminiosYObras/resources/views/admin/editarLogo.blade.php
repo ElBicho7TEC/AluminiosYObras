@@ -140,7 +140,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
   <body>
     <div class="login100-form-title" style="background-image: url(../../storage/images/gris.jpg); background-size: contain; "></div>
     <div class="login">
-      <div class="wrap">
+      <div class="wrap ">
         <div class="rsidebar span_1_of_left" >
           <section  class="sky-form">
             <h4>Perfil</h4>
@@ -216,7 +216,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
          </div>
 
           <div class="limiter">
-              <div align="center">
+              <div align="center" class="container-login100">
                 <div class="wrap-login100">
                     <div align="center">
                     <br>

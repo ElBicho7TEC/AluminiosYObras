@@ -32,7 +32,9 @@ Route::post('guardarPerfil','Administrador@guardarPerfil');
 
 Route::get('admin/agregarModulo','Administrador@agregarModulo');
 Route::get('admin/editarModulo','Administrador@editarModulo');
+
 Route::post('btnAgregarModulo','Administrador@crearModulo');
+Route::get('admin/editarModulo2','Administrador@editarModulo2');
 
 Route::get('admin/editarLogo','Administrador@editarLogo');
 Route::post('btnEditarLogo','Administrador@guardarLogo');
@@ -45,5 +47,7 @@ Route::get('admin/editarCaracteristicas','Administrador@editarCaracteristicas');
 Route::get('admin/agregarCaracteristicas','Administrador@agregarCaracteristicas');
 Route::get('admin/agregarFotoGaleria','Administrador@agregarFotoGaleria');
 Route::get('admin/editarFotoGaleria','Administrador@editarFotoGaleria');
+Route::get('admin/editarFotoGaleria2','Administrador@editarFotoGaleria2');
 Route::get('admin/agregarGaleria','Administrador@agregarGaleria');
 Route::get('admin/editarGaleria','Administrador@editarGaleria');
+Route::get('admin/editarGaleria2','Administrador@editarGaleria2');

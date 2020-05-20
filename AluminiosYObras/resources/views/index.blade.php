@@ -69,24 +69,24 @@
           </div>
         </header>
         <!-- Preview section-->
-        <section class="section context-dark section-jumbotron bg-cover" style="background: url(templete/images/bg-image.jpg) #151515">
+        <section class="section context-dark section-jumbotron bg-cover" style="background: url(templete/images/fondoblanco.png) #151515">
           <div class="panel-left"><a class="brand" href="/AluminiosYObras/AluminiosYObras/public/"><img class="brand-logo-dark" src="../storage/images/negro.png" alt="" width="119" height="102"/><img class="brand-logo-light" src="../storage/images/grisblanco.png" alt="" width="119" height="102"/></a>
-            <ul class="list-md custom-list">
-              <li><a class="icon icon-sm icon-gray-filled icon-circle mdi mdi-whatsapp" href="#"></a></li>
-              <li><a class="icon icon-sm icon-gray-filled icon-circle mdi mdi-facebook" href="#"></a></li>
-              <li><a class="icon icon-sm icon-gray-filled icon-circle mdi mdi-instagram" href="#"></a></li>
+            <ul class="list-md custom-list" >
+              <li><a class="icon icon-sm icon-gray-filled icon-circle mdi mdi-whatsapp" href="#" style="background: black"></a></li>
+              <li><a class="icon icon-sm icon-gray-filled icon-circle mdi mdi-facebook" href="#" style="background: black"></a></li>
+              <li><a class="icon icon-sm icon-gray-filled icon-circle mdi mdi-instagram" href="#" style="background: black"></a></li>
             </ul>
           </div>
-          <div class="section-fullheight">
+          <div class="section-fullheight" style="color: black">
             <div class="section-fullheight-inner section-md text-center text-lg-left">
               <div class="container">
                 <div class="row justify-content-center justify-content-lg-start">
                   <div class="col-md-10 offset-lg-1 col-lg-8 offset-xl-1 col-xl-9 offset-xxl-2 col-xxl-8">
                     <div class="jumbotron-custom-1">
-                      <div class="text-1 font-weight-medium">{{$datosBienvenida[0]->mensajewelcome}}</div>
+                      <div class="text-1 font-weight-medium" >{{$datosBienvenida[0]->mensajewelcome}}</div>
                       <div class="title text-decorative">{{$datosBienvenida[0]->subtitulo1}}</div>
                       <div class="title">{{$datosBienvenida[0]->subtitulo2}}</div>
-                      <p class="big-2 text-white-darken">{{$datosBienvenida[0]->descripcion}}</p>
+                      <p class="big-2" style="color: black">{{$datosBienvenida[0]->descripcion}}</p>
                     </div>
                   </div>
                 </div>
@@ -141,7 +141,7 @@
         </div>
       </section>
       <!-- Branding-->
-      <section class="section section-lg bg-gray-700 text-center text-sm-left" id="services">
+      <section class="section section-lg  text-center text-sm-left" id="services">
         <div class="container">
           <div class="row row-40">
             <div class="col-lg-9">
@@ -180,9 +180,9 @@
                 @endforeach
               </div>
             </div>
-            <div class="col-lg-3">
+            <div class="col-lg-3" style="color: black">
               <div class="heading-3">Soluciones de alta calidad</div>
-              <div class="big text-white-lighter text-white-darken">Estamos comprometidos a proporcionar las mejores soluciones posibles a un costo competitivo. Nuestro equipo está listo para ofrecer una amplia gama de diversos servicios de aluminios y obras.</div>
+              <div class="big">Estamos comprometidos a proporcionar las mejores soluciones posibles a un costo competitivo. Nuestro equipo está listo para ofrecer una amplia gama de diversos servicios de aluminios y obras.</div>
               <div class="img-wrap-1"><img src="templete/images/speaker-1-180x80.png" alt="" width="180" height="80"/>
               </div>
             </div>

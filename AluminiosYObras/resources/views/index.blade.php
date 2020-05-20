@@ -374,7 +374,7 @@
           <h3>Póngase en contacto con nosotros</h3>
           <p class="big">No dude en ponerse en contacto con nuestros especialistas para obtener más información sobre nuestros precios y servicios. <br class="d-none d-xl-inline">Siempre estamos listos para responder sus preguntas.</p>
           <!-- RD Mailform-->
-          <form class="rd-form rd-mailform form-boxed" data-form-output="form-output-global" data-form-type="contact" method="post" action="tamplete/bat/rd-mailform.php">
+          <form class="rd-form rd-mailform form-boxed" data-form-output="form-output-global" data-form-type="contact" method="post" action="enviarCorreo">
             <div class="row row-50">
               <div class="col-lg-4">
                 <div class="form-wrap form-wrap-icon">
@@ -400,12 +400,19 @@
               <div class="col-12">
                 <div class="form-wrap form-wrap-icon">
                   <div class="form-icon mdi mdi-message-outline"></div>
+                  <label class="form-label" for="contact-message">Asunto</label>
+                  <input class="form-input" id="contact-message" name="asunto" data-constraints="@Required"></input>
+                </div>
+              </div>
+              <div class="col-12">
+                <div class="form-wrap form-wrap-icon">
+                  <div class="form-icon mdi mdi-message-outline"></div>
                   <label class="form-label" for="contact-message">Mensaje</label>
                   <textarea class="form-input" id="contact-message" name="message" data-constraints="@Required"></textarea>
                 </div>
               </div>
               <div class="col-md-12">
-                <button class="button button-default" type="submit">Enviar Memnsaje</button>
+                <button class="button button-default" type="submit">Enviar Mensaje</button>
               </div>
             </div>
           </form>
@@ -440,7 +447,7 @@
               </dl>
               <dl class="list-terms-custom">
                 <dt>Correo.</dt>
-                <dd><a class="link-default" href="mailto:#">Info@demolink.org</a></dd>
+                <dd><a class="link-default" href="mailto:#">info@aluminiosyobras.com.mx</a></dd>
               </dl>
               <ul class="list-inline list-inline-sm">
                 <li><a class="icon icon-sm icon-gray-filled icon-circle mdi mdi-facebook" href="#"></a></li>

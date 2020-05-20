@@ -222,7 +222,16 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                   Bienvenido
                 </span>
               </div>
-              <form class="login100-form validate-form" method="post" action="btnLogin" enctype="multipart/form-data">
+              @if(Session::has('flash_message'))
+                <div class="alert alert-success" role="alert">
+                  {{ Session::get('flash_message') }}
+                </div>
+              @elseif(Session::has('mensaje'))
+                <div class="alert alert-danger" role="alert">
+                  {{ Session::get('mensaje') }}
+                </div>
+              @endif
+              <form class="login100-form validate-form" method="post" action="../guardarPerfil" enctype="multipart/form-data">
               {{csrf_field()}}  
                 <div class="wrap-input100 validate-input m-b-26" data-validate="El correo electr&oacute;nico es requerido">
                   <span class="label-input100">Correo electr&oacute;nico</span>
@@ -230,19 +239,19 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                   <span class="focus-input100"></span>
                 </div>
 
-                <div class="wrap-input100 validate-input m-b-18" data-validate = "La contrase&ntilde;a es requerida">
+                <div class="wrap-input100 " data-validate = "La contrase&ntilde;a es requerida">
                   <span class="label-input100">Contrase&ntilde;a</span>
                   <input class="input100" type="password" name="pass" placeholder="Ingresar contrase&ntilde;a">
                   <span class="focus-input100"></span>
                 </div>
 
-                <div class="wrap-input100 validate-input m-b-18" data-validate = "La contrase&ntilde;a es requerida">
+                <div class="wrap-input100 " data-validate = "La contrase&ntilde;a es requerida">
                   <span class="label-input100">Nueva Contrase&ntilde;a</span>
                   <input class="input100" name="passN1" type="password" name="pass" placeholder="Ingresar contrase&ntilde;a">
                   <span class="focus-input100"></span>
                 </div>
 
-                <div class="wrap-input100 validate-input m-b-18" data-validate = "La contrase&ntilde;a es requerida">
+                <div class="wrap-input100 " data-validate = "La contrase&ntilde;a es requerida">
                   <span class="label-input100">Confirmar contrase&ntilde;a</span>
                   <input class="input100" name="passN2" type="password" name="pass" placeholder="Ingresar contrase&ntilde;a">
                   <span class="focus-input100"></span>

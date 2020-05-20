@@ -19,6 +19,7 @@ Route::get('single','Visitante@verProyecto');
 Route::get('all','Visitante@verTodosProyecto');
 Route::post('all','Visitante@verTodosProyectoModulo');
 Route::post('module','Visitante@verProyectoModulo');
+Route::post('enviarCorreo','Visitante@enviarCorreo');
 
 //Controlador de Login para mostrar el formulario
 Route::get('admin','LoginC@mostrar');
@@ -27,6 +28,7 @@ Route::post('btnLogin','LoginC@verificar');
 Route::get('btnLogout','LoginC@cerrarSesion');
 //Controladores de Administrador para mostrar la pagina
 Route::get('admin/index_admin','Administrador@index');
+Route::post('guardarPerfil','Administrador@guardarPerfil');
 
 Route::get('admin/agregarModulo','Administrador@agregarModulo');
 Route::get('admin/editarModulo','Administrador@editarModulo');

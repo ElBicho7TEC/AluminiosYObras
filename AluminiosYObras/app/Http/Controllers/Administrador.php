@@ -34,6 +34,77 @@ use DB;
 			}
 		}
 
+		public function guardarPerfil(Request $datos)
+		{
+			if (session()->has('s_identificador') ) 
+			{
+				$ConsultaidPersona = DB::table('login')
+				->select('login.contrasena')
+				->where('correoElectronico','=',session('s_identificador'))
+				->get();
+
+				$idConversion = json_decode(json_encode($ConsultaidPersona),true);
+				$contra = implode($idConversion[0]);
+
+				$Usuario=login::find(1);
+			 	$Usuario->correoElectronico=$datos->input('email');
+
+			 	if($datos->input('pass')!="")
+			 	{
+			 		if(md5($datos->input('pass'))==$contra)
+				 	{
+				 		if($datos->input('passN1') == $datos->input('passN2'))
+				 		{
+				 			$Usuario1=login::find(1);
+				 			$Usuario1->contrasena=md5($datos->input('passN1'));
+
+				 			if($Usuario1->save() && $Usuario->save()){
+							\Session::flash('flash_message', 'Usuario modificado con éxito');
+							return redirect ('admin/index_admin');
+							}
+							else 
+							{
+								\Session::flash('mensaje','Error al modificar el usuario');
+								return redirect ('admin/index_admin');
+							}	
+				 		}
+				 		else
+				 		{
+				 			\Session::flash('flash_message', 'Las contraseñas no coinciden');
+							return redirect ('admin/index_admin');
+				 		}
+				 		
+				 	}
+				 	else
+				 	{
+				 		\Session::flash('flash_message', 'La contraseña actual no es correcta');
+						return redirect ('admin/index_admin');
+			 		}
+			 	}
+			 	else
+			 	{
+			 		if($Usuario->save()){
+					\Session::flash('flash_message', 'Usuario modificado con éxito');
+					session(['s_identificador'=>$datos->input('email')]);
+					return redirect ('admin/index_admin');
+					}
+					else 
+					{
+						\Session::flash('mensaje','Error al modificar el usuario');
+						return redirect ('admin/index_admin');
+					}		
+
+					return view ('admin/index_admin');	
+			 	}
+			 	
+				
+			}
+			else
+			{
+				return redirect('admin');
+			}
+		}
+
 		public function agregarModulo()
 		{
 			if (session()->has('s_identificador') ) 

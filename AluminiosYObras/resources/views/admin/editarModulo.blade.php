@@ -209,92 +209,69 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				</section>
 			</div>
 		<div class="cont span_2_of_3">
-		  <div class="mens-toolbar">
-              Alumnios y obras
+		  <div class="mens-toolbar" align="center">
+              Editar módulo
      	    <div class="clear"></div>
 	       </div>
 
 	        <div class="limiter">
-          		<div class="container-login100" >
-            		<div class="wrap-login100">
-              			<div align="center">
-                		<br>
-                		<span class="login100-form-title-1" style="color: black !important;">
-                  		Ver módulos
-                		</span>
-              			</div>
-				            	 {{csrf_field()}}
-							<div class="table-responsive">
-									<table class="table table-bordered" style="color: black; background-color: white;">
-										  <thead class="thead-dark" style="color: black">
-										    <tr>
-										      <th scope="col" style="text-align:center;">#</th>
-										      <th scope="col" style="text-align:center;">Nombre modulo</th>
-										      <th scope="col" style="text-align:center;">Logotipo</th>
-										      <th scope="col" style="text-align:center;">Número resaltar</th>
-										      <th scope="col" style="text-align:center;">Descripción</th>
-										    </tr>
-										  </thead>
-											  <tbody>
-											    <tr style="text-align:center;">
-											      <th scope="row" style="color: black">
-											      	 <div class="col-md-9" style="padding: 3px;">
-													    <button style="text-align:center;" class="btn-floating btn-small waves-effect waves-light blue" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="../../storage/images/icons/iconoeditar.png" width="20" height="20" data-toggle="modal" data-target="#moduloEditar"></button>
-													  </div>
-													  
-													  <div class="col-md-9" style="padding: 3px;">
-													    <button style="text-align:center;" class="btn-floating btn-small waves-effect waves-light blue"> <img src="../../storage/images/icons/iconoeliminar.png" width="20" height="20" style="width: auto;"></button>
-													  </div>
-											      </th>
-											      <td>Puertas</td>
-											      <td>Imagen</td>
-											      <td>10</td>
-											      <td>Años de experiencia</td>
-											    </tr>
-											    <tr style="text-align:center;">
-											      <th scope="row" ><i class="mdi mdi-pencil-box" ></i>2 <i class="mdi mdi-file-excel-box" ></i></th>
-											      <td>Ventas</td>
-											      <td>Imagen</td>
-											      <td>10</td>
-											      <td>Años de experiencia</td>
-											    </tr>
-											    <tr style="text-align:center;">
-											      <th scope="row"><i class="mdi mdi-pencil-box" ></i>3 <i class="mdi mdi-file-excel-box" ></i></th>
-											      <td>Portones</td>
-											      <td>Imagen</td>
-											      <td>10</td>
-											      <td>Años de experiencia</td>
-											    </tr>
-											    <tr style="text-align:center;">
-											      <th scope="row"><i class="mdi mdi-pencil-box" ></i>4 <i class="mdi mdi-file-excel-box" ></i></th>
-											      <td>Alumunio</td>
-											      <td>Imagen</td>
-											      <td>10</td>
-											      <td>Años de experiencia</td>
-											    </tr>
-											  </tbody>
+          	<div align="center">
+            	<div class="wrap-login100">
+              	<div align="center">
+                	<br>
+                	<span class="login100-form-title-1" style="color: black !important;">
+                  	Módulos
+                	</span>
+              	</div>
+							  <div class="table-responsive">
+							  <table class="table" >
+                  <br>
+								  <thead class="thead-dark"  style="color: white; background-color: black;">
+										<tr>
+										  <th scope="col" style="text-align:center;">#</th>
+								      <th scope="col" style="text-align:center;">Nombre modulo</th>
+								      <th scope="col" style="text-align:center;">Logotipo</th>
+								      <th scope="col" style="text-align:center;">Número resaltar</th>
+								      <th scope="col" style="text-align:center;">Descripción</th>
+								    </tr>
+								  </thead>
+								  <tbody>
+								    <tr style="text-align:center; vertical-align: center !important;">
+								      <th style="border:solid; border-width: 1px; border-color: #E7E7E7;">
+										    <button style="text-align:center;" class="btn-floating btn-small waves-effect waves-light blue" ><img src="../../storage/images/icons/iconoeditar.png" width="20" height="20" data-toggle="modal" data-target="#moduloEditar"></button>
+                      </th>
+                      <td rowspan="2" style="vertical-align: middle;">Puertas</td>
+                      <td rowspan="2" style="vertical-align: middle;">Imagen</td>
+                      <td rowspan="2" style="vertical-align: middle;">10</td>
+                      <td rowspan="2" style="vertical-align: middle;">Años de experiencia</td>
+                    </tr>
+                    <tr style="text-align:center;">
+                      <th style="border:solid; border-width: 1px; border-color: #E7E7E7;">
+                        <button style="text-align:center;" class="btn-floating btn-small waves-effect waves-light blue"> <img src="../../storage/images/icons/iconoeliminar.png" width="20" height="20" style="width: auto;"></button>
+                      </th>
+								    </tr>
+								  </tbody>
 								</table>
-				            </form>
-					</div>
+					    </div>
 		        </div>
-			</div>
+			    </div>
+		    </div>
+			<div class="clear"></div>
 		</div>
-			  <div class="clear"></div>
-		</div>
-	      <script type="text/javascript">
-	    	$(document).ready(function() 
-	    	{
-	      	var defaults = 
-	      	{
-	        containerID: 'toTop', // fading element id
-	        containerHoverID: 'toTopHover', // fading element hover id
-	        scrollSpeed: 1200,
-	        easingType: 'linear' 
-	     	};
-	        $().UItoTop({ easingType: 'easeOutQuart' });  
-	    	});
-	  	</script>
-  		<a href="#" id="toTop" style="display: block;"><span id="toTopHover" style="opacity: 1;"></span></a>
+    <script type="text/javascript">
+  	$(document).ready(function() 
+  	{
+    	var defaults = 
+    	{
+      containerID: 'toTop', // fading element id
+      containerHoverID: 'toTopHover', // fading element hover id
+      scrollSpeed: 1200,
+      easingType: 'linear' 
+   	};
+      $().UItoTop({ easingType: 'easeOutQuart' });  
+  	});
+	</script>
+	<a href="#" id="toTop" style="display: block;"><span id="toTopHover" style="opacity: 1;"></span></a>
 	</body>
 </html>
 <!--===============================================================================================-->

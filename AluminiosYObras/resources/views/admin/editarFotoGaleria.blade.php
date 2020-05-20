@@ -409,20 +409,14 @@ License URL: http://creativecommons.org/licenses/by/3.0/
   <!--=======================Modal agregar ===============================-->
 <div class="modal fade" id="agregarproyectoFotoGaleria" ">
   <div class="cont span_2_of_3">
-  	<div class="modal-dialog" >
+  	<div class="modal-dialog modal-lg modal-dialog-centered" >
 	        <div class="limiter modal-content">
 	        	<div class="modal-header" style="background: black;">
                 <h4 class="modal-title" style="color: white" >Galeria Proyecto</h4>
                 <button type="button" style="color: white" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
             </div>
-          		<div class="container-login100" >
+          		<div class="" >
             		<div class="wrap-login100">
-              			<div align="center">
-                		<br>
-                		<span class="login100-form-title-1" style="color: black !important;">
-                  		Agregar Foto Galeria Del Proyecto
-                		</span>
-              			</div>
               			<form class="login100-form validate-form" method="post" action="btnEditarProyecto" enctype="multipart/form-data">
 				            	 {{csrf_field()}}
                 					 <div class="wrap-input100 validate-input m-b-26" data-validate="Foto del proyecto requerido">
@@ -441,8 +435,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                           			  <span class="focus-input100"></span>
                           			</div>
 
-                					<div class="container-login100-form-btn">
-                					    <button class="login100-form-btn" style="background-color: black">
+                					<div class="container-login100-form-btn modal-footer">
+                					    <button class="login100-form-btn btn-primary btn" style="background-color: black">
                     					Agregar
                   						</button>
                 				    </div>

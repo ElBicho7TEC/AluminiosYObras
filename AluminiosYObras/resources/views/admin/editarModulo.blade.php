@@ -16,6 +16,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
     <link rel="stylesheet" href="templete/css/bootstrap.css">
     <link rel="stylesheet" href="templete/css/fonts.css">
     <link rel="stylesheet" href="templete/css/style.css">
+  <link rel="stylesheet" href="../templete/css/imagestyle.css">
     <style>.ie-panel{display: none;background: #212121;padding: 10px 0;box-shadow: 3px 3px 5px 0 rgba(0,0,0,.3);clear: both;text-align:center;position: relative;z-index: 1;} html.ie-10 .ie-panel, html.lt-ie-10 .ie-panel {display: block;}</style>
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -242,7 +243,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 										    <button style="text-align:center;" class="btn-floating btn-small waves-effect waves-light blue" ><img src="../../storage/images/icons/iconoeditar.png" width="20" height="20" data-toggle="modal" data-target="#moduloEditar"></button>
                       </th>
                       <td rowspan="2" style="vertical-align: middle;">{{$modulo->nombremodulo}}</td>
-                      <td rowspan="2" style="vertical-align: middle;"><img src="../../storage/app/public{{$modulo->rutamodulo}}" width="120px" height="40px"></td>
+                      <td rowspan="2" style="vertical-align: middle;"><img src="../../storage/app/public{{$modulo->rutamodulo}}" width="120px" height="40px" class="contenedor"></td>
                       <td rowspan="2" style="vertical-align: middle;">{{$modulo->numeroresaltador}}</td>
                       <td rowspan="2" style="vertical-align: middle;">{{$modulo->descripciondelnumero}}</td>
                     </tr>

@@ -141,8 +141,17 @@ License URL: http://creativecommons.org/licenses/by/3.0/
        <div class="login">
 	        <div class="wrap">
 	     	    <div class="rsidebar span_1_of_left" >
-					<section  class="sky-form" >
-	                <h4>Mensaje Bienvenida</h4>
+					<section  class="sky-form">
+						<h4>Perfil</h4>
+                <br>
+                <h7 style="color: grey;">
+                  <form action="index_admin" method="get">
+                    {{ csrf_field() }}
+                    <a href="javascript:;" onclick="parentNode.submit();">&nbsp;&nbsp;&nbsp;&nbsp;Editar Contraseña</a>
+                  </form>   
+                </h7>
+                <br>
+	            <h4>Mensaje Bienvenida</h4>
 	            <br>
 	            <h7 style="color: grey;">
 	              <form action="editarMensaje" method="get">
@@ -200,8 +209,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 					</section>
 				</div>
 			<div class="cont span_2_of_3">
-		  <div class="mens-toolbar">
-              Alumnios y obras
+		  <div class="mens-toolbar" align="center">
+              Mensaje de bienvenida
      	    <div class="clear"></div>
 	       </div>
 

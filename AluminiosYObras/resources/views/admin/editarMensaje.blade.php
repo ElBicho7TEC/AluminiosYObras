@@ -245,7 +245,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 
         						<div class="wrap-input100 validate-input m-b-26" data-validate="La descripción es requerido">
           						<span class="label-input100">Descripción</span>
-                            	<input class="input100" type="text" name="descripcion" placeholder="Ingresar la descripción" value="{{$listaMensaje[0]->descripcion}}">
+                            	<textarea  class="input100" type="text" name="descripcion" style="height: 100px;" placeholder="Ingresar la descripción">{{$listaMensaje[0]->descripcion}}</textarea>
          						<span class="focus-input100"></span>
         						</div>
 

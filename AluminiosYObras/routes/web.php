@@ -32,6 +32,7 @@ Route::post('guardarPerfil','Administrador@guardarPerfil');
 
 Route::get('admin/agregarModulo','Administrador@agregarModulo');
 Route::get('admin/editarModulo','Administrador@editarModulo');
+Route::post('btnAgregarModulo','Administrador@crearModulo');
 
 Route::get('admin/editarLogo','Administrador@editarLogo');
 Route::post('btnEditarLogo','Administrador@guardarLogo');

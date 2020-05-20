@@ -106,25 +106,10 @@ use DB;
 			}
 		}
 
-		public function agregarModulo()
+		public function agregarModulo(Request $datos)
 		{
 			if (session()->has('s_identificador') ) 
 			{
-				$Modulo = new modulo;
-			 	$Modulo->nombremodulo=$datos->input('txtFechaInicio');
-			 	$Modulo->rutamodulo=$datos->input('txtFechaFinal');
-			 	$Modulo->numeroresaltador=$datos->input('txtFechaFinal');
-			 	$Modulo->descripciondelnumero=$datos->input('txtFechaFinal');
-				if($Modulo->save()){
-				
-					\Session::flash('flash_message', '¡Nueva acta añadida con éxito');
-					return redirect('ver_Auditorias');			
-				}
-				else {
-					\Session::flash('mensaje','Error al añadir el acta');
-					 return redirect('ver_Auditorias');
-				}
-
 				return view ('admin/agregarModulo');	
 			}
 			else
@@ -148,14 +133,32 @@ use DB;
 			}
 		}
 
-		public function crearModulo()
+		public function crearModulo(subirImagenRequest $datos)
 		{
 			if (session()->has('s_identificador') ) 
 			{
-				$listaModulos = DB::table('modulo')
-				->select('idmodulo','nombremodulo','rutamodulo','numeroresaltador','descripciondelnumero')
-				->get();  
-				return view ('admin/editarModulo',['listaModulos'=>$listaModulos]);	
+				$Modulo = new modulo;
+			 	$Modulo->nombremodulo=$datos->input('nombremodulo');
+
+			 	foreach($datos->logotipo as $foto)
+				{
+					$segundo= "modulo_".$datos->input('nombremodulo').".jpg";
+				 	$carpeta="/modulos/".$segundo;
+					Storage::disk('public')->put($carpeta,File::get($foto)); 
+				}
+			 	
+			 	$Modulo->rutamodulo=$carpeta;
+			 	$Modulo->numeroresaltador=$datos->input('numeroresaltar');
+			 	$Modulo->descripciondelnumero=$datos->input('descripcionmodulo');
+
+			 	if($Modulo->save()){
+					\Session::flash('flash_message', '¡Nuevo módulo añadido con éxito');
+					return redirect('admin/editarModulo');			
+				}
+				else {
+					\Session::flash('mensaje','Error al añadir el módulo');
+					 return redirect('admin/agregarModulo');
+				}
 			}
 			else
 			{

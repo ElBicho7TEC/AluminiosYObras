@@ -74,7 +74,27 @@ use DB;
 			->orderby('idgaleria','desc')
 			->get();	
 
-			return view ('module',['datosGaleria'=>$datosGaleria]);	
+			if($datosGaleria == '[]')
+			{
+				$datosBienvenida = DB::table('bienvenida')
+				->select('idbienvenidos','mensajewelcome','subtitulo1','subtitulo2','descripcion')
+				->get();
+
+				$datosModulos = DB::table('modulo')
+				->select('idmodulo','nombremodulo','rutamodulo','numeroresaltador','descripciondelnumero')
+				->get();
+
+				$datosGaleria = DB::table('galeria')
+				->select('idgaleria','nombreproyecto','rutafotoprincipal','descripcionbreve','descripcionlarga','fkidmodulo')
+				->orderby('idgaleria','desc')
+				->take(6)
+				->get();	
+				return view('index',['datosBienvenida'=>$datosBienvenida,'datosModulos'=>$datosModulos,'datosGaleria'=>$datosGaleria]);
+			}
+			else
+			{
+				return view ('module',['datosGaleria'=>$datosGaleria]);	
+			}	
 		}
 
 		public function enviarCorreo(Request $datos)

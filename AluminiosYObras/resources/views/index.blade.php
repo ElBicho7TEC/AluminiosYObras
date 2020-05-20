@@ -24,7 +24,7 @@
       </div>
     </div>
     <div class="page">
-      <section class="section section-relative section-header" id="home">
+      <section class="section section-relative section-header" id="home" style="max-height:all; ">
         <!-- Page Header-->
         <header class="section page-header header-absolute">
           <!-- RD Navbar-->
@@ -94,6 +94,7 @@
             </div>
           </div>
           <ul class="project-list">
+          	<br><br>
             @foreach ($datosModulos as $modulo)
             <li class="bg-image" style="background-image: url(../storage/app/public{{$modulo->rutamodulo}})">
             	<form action="module" method="post">
@@ -103,6 +104,7 @@
 			    </form>
             </li>
             @endforeach
+            <br><br>
           </ul>
         </section>
       </section>

@@ -224,7 +224,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                 	</span>
               	</div>
 							  <div class="table-responsive">
-							  <table class="table" >
+							  <table class="table" width="90%">
                   <br>
 								  <thead class="thead-dark"  style="color: white; background-color: black;">
 										<tr>
@@ -236,20 +236,22 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 								    </tr>
 								  </thead>
 								  <tbody>
+                    @foreach ($listaModulos as $modulo)
 								    <tr style="text-align:center; vertical-align: center !important;">
 								      <th style="border:solid; border-width: 1px; border-color: #E7E7E7;">
 										    <button style="text-align:center;" class="btn-floating btn-small waves-effect waves-light blue" ><img src="../../storage/images/icons/iconoeditar.png" width="20" height="20" data-toggle="modal" data-target="#moduloEditar"></button>
                       </th>
-                      <td rowspan="2" style="vertical-align: middle;">Puertas</td>
-                      <td rowspan="2" style="vertical-align: middle;">Imagen</td>
-                      <td rowspan="2" style="vertical-align: middle;">10</td>
-                      <td rowspan="2" style="vertical-align: middle;">Años de experiencia</td>
+                      <td rowspan="2" style="vertical-align: middle;">{{$modulo->nombremodulo}}</td>
+                      <td rowspan="2" style="vertical-align: middle;"><img src="../../storage/app/public{{$modulo->rutamodulo}}" width="120px" height="40px"></td>
+                      <td rowspan="2" style="vertical-align: middle;">{{$modulo->numeroresaltador}}</td>
+                      <td rowspan="2" style="vertical-align: middle;">{{$modulo->descripciondelnumero}}</td>
                     </tr>
                     <tr style="text-align:center;">
                       <th style="border:solid; border-width: 1px; border-color: #E7E7E7;">
                         <button style="text-align:center;" class="btn-floating btn-small waves-effect waves-light blue"> <img src="../../storage/images/icons/iconoeliminar.png" width="20" height="20" style="width: auto;"></button>
                       </th>
 								    </tr>
+                    @endforeach
 								  </tbody>
 								</table>
 					    </div>

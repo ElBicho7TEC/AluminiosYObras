@@ -2,6 +2,7 @@
 namespace App\Http\Controllers;
 use App\Http \Controllers\Controller;
 use App\login;
+use App\modulo;
 use App\bienvenida;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
@@ -121,7 +122,10 @@ use DB;
 		{
 			if (session()->has('s_identificador') ) 
 			{
-				return view ('admin/editarModulo');	
+				$listaModulos = DB::table('modulo')
+				->select('idmodulo','nombremodulo','rutamodulo','numeroresaltador','descripciondelnumero')
+				->get();  
+				return view ('admin/editarModulo',['listaModulos'=>$listaModulos]);	
 			}
 			else
 			{

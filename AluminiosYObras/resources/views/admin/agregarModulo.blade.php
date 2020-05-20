@@ -209,18 +209,18 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				</section>
 			</div>
 		<div class="cont span_2_of_3">
-		  <div class="mens-toolbar">
-              Alumnios y obras
+		  <div class="mens-toolbar" align="center">
+              Añadir nuevo módulo
      	    <div class="clear"></div>
 	       </div>
 
 	        <div class="limiter">
-          		<div class="container-login100" >
+          		<div align="center">
             		<div class="wrap-login100">
               			<div align="center">
                 		<br>
                 		<span class="login100-form-title-1" style="color: black !important;">
-                  		Agregar Modulo
+                  		Agregar Módulo
                 		</span>
               			</div>
               			<form class="login100-form validate-form" method="post" action="btnAgregarModulo" enctype="multipart/form-data">

@@ -1,5 +1,5 @@
 .contenedor:hover {
-	transform: scale(2);
+	transform: scale(4.4);
 }
 .contenedor {
 	transition: all 1.9s ease;

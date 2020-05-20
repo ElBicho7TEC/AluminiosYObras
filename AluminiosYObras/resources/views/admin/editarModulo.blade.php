@@ -216,7 +216,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	       </div>
 
 	        <div class="limiter">
-          	<div align="center">
+          	<div align="center" class="container-login100">
             	<div class="wrap-login100">
               	<div align="center">
                 	<br>

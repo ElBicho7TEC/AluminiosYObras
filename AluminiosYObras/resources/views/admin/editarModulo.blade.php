@@ -225,7 +225,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                 	</span>
               	</div>
 							  <div class="table-responsive">
-							  <table class="table" width="90%">
+							  <table class="table" >
                   <br>
 								  <thead class="thead-dark"  style="color: white; background-color: black;">
 										<tr>

@@ -110,6 +110,21 @@ use DB;
 		{
 			if (session()->has('s_identificador') ) 
 			{
+				$Modulo = new modulo;
+			 	$Modulo->nombremodulo=$datos->input('txtFechaInicio');
+			 	$Modulo->rutamodulo=$datos->input('txtFechaFinal');
+			 	$Modulo->numeroresaltador=$datos->input('txtFechaFinal');
+			 	$Modulo->descripciondelnumero=$datos->input('txtFechaFinal');
+				if($Modulo->save()){
+				
+					\Session::flash('flash_message', '¡Nueva acta añadida con éxito');
+					return redirect('ver_Auditorias');			
+				}
+				else {
+					\Session::flash('mensaje','Error al añadir el acta');
+					 return redirect('ver_Auditorias');
+				}
+
 				return view ('admin/agregarModulo');	
 			}
 			else
@@ -119,6 +134,21 @@ use DB;
 		}
 
 		public function editarModulo()
+		{
+			if (session()->has('s_identificador') ) 
+			{
+				$listaModulos = DB::table('modulo')
+				->select('idmodulo','nombremodulo','rutamodulo','numeroresaltador','descripciondelnumero')
+				->get();  
+				return view ('admin/editarModulo',['listaModulos'=>$listaModulos]);	
+			}
+			else
+			{
+				return redirect('admin');
+			}
+		}
+
+		public function crearModulo()
 		{
 			if (session()->has('s_identificador') ) 
 			{

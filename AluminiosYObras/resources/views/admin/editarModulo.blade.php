@@ -240,7 +240,10 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                     @foreach ($listaModulos as $modulo)
 								    <tr style="text-align:center; vertical-align: center !important;">
 								      <th style="border:solid; border-width: 1px; border-color: #E7E7E7;">
+                        <form action="editarModulo2" method="get">
+                         {{ csrf_field() }}
 										    <button style="text-align:center;" class="btn-floating btn-small waves-effect waves-light blue" ><img src="../../storage/images/icons/iconoeditar.png" width="20" height="20" data-toggle="modal" data-target="#moduloEditar"></button>
+                         </form> 
                       </th>
                       <td rowspan="2" style="vertical-align: middle;">{{$modulo->nombremodulo}}</td>
                       <td rowspan="2" style="vertical-align: middle;"><img src="../../storage/app/public{{$modulo->rutamodulo}}" width="120px" height="40px" class="contenedor"></td>
@@ -293,87 +296,4 @@ License URL: http://creativecommons.org/licenses/by/3.0/
   <script src="../login/vendor/countdowntime/countdowntime.js"></script>
 <!--===============================================================================================-->
   <script src="../login/js/main.js"></script>
-  <!--=======================Modal editar ===============================-->
-<div class="modal fade" id="moduloEditar" ">
-  <div class="cont span_2_of_3">
-  	<div class="modal-dialog" >
-	        <div class="limiter modal-content">
-	        	<div class="modal-header" style="background: black;">
-                <h4 class="modal-title" style="color: white" >Modulo</h4>
-                <button type="button" style="color: white" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-            </div>
-          		<div class="container-login100" >
-            		<div class="wrap-login100">
-              			<div align="center">
-                		<br>
-                		<span class="login100-form-title-1" style="color: black !important;">
-                  		Editar Modulo
-                		</span>
-              			</div>
-              			<form class="login100-form validate-form" method="post" action="btnEditarModulo" enctype="multipart/form-data">
-				            	 {{csrf_field()}}
-						            <div class="wrap-input100 validate-input m-b-26" data-validate="Nombre del modulo requerido">
-                  						<span class="label-input100">Nombre del modulo</span>
-		                            	<input class="input100" type="text" name="nombremodulo" placeholder="Ingresar el nombre del modulo" value="">
-                 						<span class="focus-input100"></span>
-                					</div>
-                					 <div class="wrap-input100 validate-input m-b-26" data-validate="Foto del proyecto requerido">
-                  						<span class="label-input100">Foto del modulo</span>
-		                            	<input class="input100" type="file" accept="image/*" name="fotomodulo" placeholder="Ingresar la foto del modulo" value="">
-                 						<span class="focus-input100"></span>
-                					</div>
-                					<div class="wrap-input100 validate-input m-b-26" data-validate="Nombre del modulo requerido">
-                              		<span class="label-input100">Número a resaltar</span>
-                                  	<input class="input100" type="text" name="numeroResaltar" placeholder="Ingresar número a resaltar del moudulo" value="">
-                          			  <span class="focus-input100"></span>
-                          			</div>
-                          			<div class="wrap-input100 validate-input m-b-26" data-validate="Nombre del modulo requerido">
-                              		<span class="label-input100">Descripción</span>
-                                  	<input class="input100" type="text" name="descripción" placeholder="Ingresar la descripción del moudulo" value="">
-                          			  <span class="focus-input100"></span>
-                          			</div>
-
-                					<div class="container-login100-form-btn">
-                					    <button class="login100-form-btn" style="background-color: black">
-                    					Editar
-                  						</button>
-                				    </div>
-				            </form>
-					</div>
-		        </div>
-			</div>
-		<div class="clear"></div>
-	</div>
-</div>
-</div>
-	      <script type="text/javascript">
-	    	$(document).ready(function() 
-	    	{
-	      	var defaults = 
-	      	{
-	        containerID: 'toTop', // fading element id
-	        containerHoverID: 'toTopHover', // fading element hover id
-	        scrollSpeed: 1200,
-	        easingType: 'linear' 
-	     	};
-	        $().UItoTop({ easingType: 'easeOutQuart' });  
-	    	});
-	  	</script>
-  		<a href="#" id="toTop" style="display: block;"><span id="toTopHover" style="opacity: 1;"></span></a>
-
-<!--===============================================================================================-->
-  <script src="../login/vendor/jquery/jquery-3.2.1.min.js"></script>
-<!--===============================================================================================-->
-  <script src="../login/vendor/animsition/js/animsition.min.js"></script>
-<!--===============================================================================================-->
-  <script src="../login/vendor/bootstrap/js/popper.js"></script>
-  <script src="../login/vendor/bootstrap/js/bootstrap.min.js"></script>
-<!--===============================================================================================-->
-  <script src="../login/vendor/select2/select2.min.js"></script>
-<!--===============================================================================================-->
-  <script src="../login/vendor/daterangepicker/moment.min.js"></script>
-  <script src="../login/vendor/daterangepicker/daterangepicker.js"></script>
-<!--===============================================================================================-->
-  <script src="../login/vendor/countdowntime/countdowntime.js"></script>
-<!--===============================================================================================-->
-  <script src="../login/js/main.js"></script>
+  

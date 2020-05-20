@@ -137,7 +137,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
     </script>   
   </head>
 <body>
-       <div class="login100-form-title" style="background-image: url(../../storage/images/gris.jpg); background-size: contain; "></div>
+      <div class="login100-form-title" style="background-image: url(../../storage/images/gris.jpg); background-size: contain; "></div>
        <div class="login">
          <div class="wrap">
      	    <div class="rsidebar span_1_of_left" >
@@ -220,93 +220,37 @@ License URL: http://creativecommons.org/licenses/by/3.0/
               			<div align="center">
                 		<br>
                 		<span class="login100-form-title-1" style="color: black !important;">
-                  		Ver proyectos
+                  		Editar Foto De Galeria De Proyectos
                 		</span>
               			</div>
+              			<form class="login100-form validate-form" method="post" action="btnEditarFotoGaleria" enctype="multipart/form-data">
 				            	 {{csrf_field()}}
-							<div class="table-responsive">
-									<table class="table table-bordered" style="color: black; background-color: white;">
-										  <thead class="thead-dark" style="color: black">
-										    <tr>
-										      <th scope="col" style="text-align:center;">#</th>
-										      <th scope="col" style="text-align:center;">Nombre proyecto</th>
-										      <th scope="col" style="text-align:center;">Foto proyecto</th>
-										      <th scope="col" style="text-align:center;">Descripción breve</th>
-										      <th scope="col" style="text-align:center;">Descripción larga</th>
-										      <th scope="col" style="text-align:center;">Modulo</th>
-										    </tr>
-										  </thead>
-											  <tbody>
-											    <tr style="text-align:center;">
-											      <th scope="row" style="color: black">
-
-													<div class="col-md-9" style="padding: 3px;">
-														<form action="editarFotoGaleria" method="get">
-															 {{ csrf_field() }}
-													    	<button style="text-align:center;" class="btn-floating btn-small waves-effect waves-light blue">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <img src="../../storage/images/icons/iconoFotoGaleria.png" width="25" height="25" style="width: auto;"></button>
-													    </form>
-													</div>
-											      	<div class="col-md-9" style="padding: 3px;">
-                              <form action="editarGaleria2" method="get">
-                               {{ csrf_field() }}
-													    <button style="text-align:center;" class="btn-floating btn-small waves-effect waves-light blue" ><img src="../../storage/images/icons/iconoeditar.png" width="25" height="25"></button>
-                            </form>
-													</div>
-													  
-													<div class="col-md-9" style="padding: 3px;">
-													    <button style="text-align:center;" class="btn-floating btn-small waves-effect waves-light blue"> <img src="../../storage/images/icons/iconoeliminar.png" width="25" height="25" style="width: auto;"></button>
-													</div>
-
-											      </th>
-											      <td>Proyecto1</td>
-											      <td>ImagenProyecto1</td>
-											      <td>P1.- Brindamos soluciones de con aluminio confiabl...</td>
-											      <td>Proyecto dentro del cual se desarrollaron puertas ...</td>
-											      <td>Puertas</td>
-											    </tr>
-											    <tr style="text-align:center;">
-											      <th scope="row" ><i class="mdi mdi-pencil-box" ></i>2 <i class="mdi mdi-file-excel-box" ></i></th>
-											      <td>Proyecto2</td>
-											      <td>ImagenProyecto2</td>
-											      <td>P2.- Brindamos soluciones de con aluminio confiabl...</td>
-											      <td>Proyecto dentro del cual se desarrollaron puertas ...</td>
-											      <td>Puertas</td>
-											    </tr>
-											    <tr style="text-align:center;">
-											      <th scope="row"><i class="mdi mdi-pencil-box" ></i>3 <i class="mdi mdi-file-excel-box" ></i></th>
-											      <td>Proyecto3</td>
-											      <td>ImagenProyecto3</td>
-											      <td>P3.- Brindamos soluciones de con aluminio confiabl...</td>
-											      <td>Proyecto dentro del cual se desarrollaron puertas ...</td>
-											      <td>Puertas</td>
-											    </tr>
-											    <tr style="text-align:center;">
-											      <th scope="row"><i class="mdi mdi-pencil-box" ></i>4 <i class="mdi mdi-file-excel-box" ></i></th>
-											      <td>Proyecto4</td>
-											      <td>ImagenProyecto4</td>
-											      <td>P4.- Brindamos soluciones de con aluminio confiabl...</td>
-											      <td>Proyecto dentro del cual se desarrollaron puertas ...</td>
-											      <td>Portones</td>
-											    </tr>
-											    <tr style="text-align:center;">
-											      <th scope="row"><i class="mdi mdi-pencil-box" ></i>5 <i class="mdi mdi-file-excel-box" ></i></th>
-											      <td>Proyecto5</td>
-											      <td>ImagenProyecto5</td>
-											      <td>P5.- Brindamos soluciones de con aluminio confiabl...</td>
-											      <td>Proyecto dentro del cual se desarrollaron puertas ...</td>
-											      <td>Portones</td>
-											    </tr>
-											    <tr style="text-align:center;">
-											      <th scope="row"><i class="mdi mdi-pencil-box" ></i>6 <i class="mdi mdi-file-excel-box" ></i></th>
-											      <td>Proyecto6</td>
-											      <td>ImagenProyecto6</td>
-											      <td>P6.- Brindamos soluciones de con aluminio confiabl...</td>
-											      <td>Proyecto dentro del cual se desarrollaron puertas ...</td>
-											      <td>Portones</td>
-											    </tr>
-											  </tbody>
-								</table>
-						</form>
+                					 <div class="wrap-input100 validate-input m-b-26" data-validate="Foto de galeria del proyecto requerido">
+                  						<span class="label-input100">Galeria Del Proyecto</span>
+		                            	<input class="input100" type="file" accept="image/*" name="fotoproyecto" placeholder="Ingresar logotipo del modulo" value="">
+                 						<span class="focus-input100"></span>
+                					</div>
+                				    <div class="wrap-input100 validate-input m-b-26" data-validate="Descripción breve del proyecto requerido">
+                  						<span class="label-input100">Descripción breve</span>
+		                            	<textarea class="input100" type="text" name="descripcionbreve" placeholder="Ingresar la descripción breve del proyecto" value="" rows="3"> </textarea>
+                 						<span class="focus-input100"></span>
+                					</div>
+                					 <div class="wrap-input100 validate-input m-b-26" data-validate="Descripción larga del proyecto requerido">
+                  						<span class="label-input100">Descripción larga</span>
+		                            	<textarea class="input100" type="text" name="descripcionlarga" placeholder="Ingresar la descripción larga del proyecto" value="" rows="3"> </textarea>
+                 						<span class="focus-input100"></span>
+                					</div>
+                            <div class="wrap-input100 validate-input m-b-26" data-validate="Nombre del proyecto requerido">
+                              <span class="label-input100">Proyecto</span>
+                                  <input class="input100" type="text" name="nombremodulo" placeholder="Ingresar el nombre del proyecto" value="">
+                            <span class="focus-input100"></span>
+                          </div>
+                					<div class="container-login100-form-btn">
+                					    <button class="login100-form-btn" style="background-color: black">
+                    					Editar
+                  						</button>
+                				    </div>
+				            </form>
 					</div>
 		        </div>
 			</div>
@@ -345,4 +289,3 @@ License URL: http://creativecommons.org/licenses/by/3.0/
   <script src="../login/vendor/countdowntime/countdowntime.js"></script>
 <!--===============================================================================================-->
   <script src="../login/js/main.js"></script>
-

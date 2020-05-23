@@ -333,10 +333,23 @@ use DB;
 			}
 		}
 
-		public function eliminarModulo(subirImagenRequest $datos)
+		public function eliminarModulo(Request $datos)
 		{
 			if (session()->has('s_identificador') ) 
 			{
+				$modulo_variable = new modulo;
+				$idModulo = $modulo_variable->idModulo = $datos->input ('idModulo');
+
+				if(DB::delete('DELETE FROM modulo  where idmodulo=?',[$idModulo]))
+				{
+					\Session::flash('flash_message', 'Módulo eliminado con éxito');
+					return redirect('admin/editarModulo');	
+				}
+				else 
+				{
+					\Session::flash('mensaje','Error al eliminar el módulo');
+					return redirect('admin/editarModulo');	
+				}
 				
 				return redirect('admin/editarModulo');	
 			}

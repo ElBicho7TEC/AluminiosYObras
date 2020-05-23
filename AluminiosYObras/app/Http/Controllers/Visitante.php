@@ -99,29 +99,23 @@ use DB;
 
 		public function enviarCorreo(Request $datos)
 		{
-			 ini_set( 'display_errors', 1 );
-    		error_reporting( E_ALL );
 
-		    $destinatario = "info@aluminiosyobras.com.mx"; 
-			$asunto = $datos->input('asunto'); 
-			$cuerpo = $datos->input('message');
-
-		    $headers = "MIME-Version: 1.0\r\n"; 
-
-			$headers .= "Content-type: text/html; charset=iso-8859-1\r\n"; 
-
-			//dirección del remitente 
-			$headers .= "From: ".$datos->input('name')."<".$datos->input('email').">\r\n"; 
-
-			//dirección de respuesta, si queremos que sea distinta que la del remitente 
-			$headers .= "Reply-To: ".$datos->input('email')."\r\n"; 
-
-			//direcciones que recibián copia 
-			$headers .= "Cc: admin@aluminiosyobras.com.mx\r\n"; 
-
-			mail($destinatario,$asunto,$cuerpo,$headers);
-
-			return view ('index');
+			$to = "info@aluminiosyobras.com.mx";
+            $subject = "ALUMINIOS Y OBRAS - ".$datos->input('asunto');
+            $message = "
+            <html>
+            El cliente ".$datos->input('name')." con correo electrónico ".$datos->input('email')." y número de teléfono: ".$datos->input('phone')." 
+            envió el siguiente mensaje:
+            <br>
+            ".$datos->input('message')."
+            </html>";
+            $headers  = 'MIME-Version: 1.0' . "\r\n";
+            $headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
+            $headers .= "From: ".$datos->input('email');
+            mail($to, $subject, $message, $headers);
+            $para="admin@aluminiosyobras.com.mx";
+            mail($para, $subject, $message, $headers);
+            return  redirect ('index');
 		}
 	}
 ?>

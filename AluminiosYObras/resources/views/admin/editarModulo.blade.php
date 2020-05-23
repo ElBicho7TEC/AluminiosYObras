@@ -11,7 +11,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <link rel="icon" href="../../storage/images/icons/dorado.ico" type="image/x-icon">
+    <link rel="icon" href="../../storage/images/Icons/dorado.ico" type="image/x-icon">
     <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,900%7CRoboto:300,300i,400,400i,500,500i,700,700i,900,900i">
     <link rel="stylesheet" href="templete/css/bootstrap.css">
     <link rel="stylesheet" href="templete/css/fonts.css">
@@ -21,7 +21,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
   <!--===============================================================================================-->  
-    <link rel="icon" type="image/png" href="../../storage/images/icons/dorado.ico"/>
+    <link rel="icon" type="image/png" href="../../storage/images/Icons/dorado.ico"/>
   <!--===============================================================================================-->
     <link rel="stylesheet" type="text/css" href="../login/vendor/bootstrap/css/bootstrap.min.css">
   <!--===============================================================================================-->

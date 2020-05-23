@@ -413,6 +413,7 @@
           <p class="big">No dude en ponerse en contacto con nuestros especialistas para obtener más información sobre nuestros precios y servicios. <br class="d-none d-xl-inline">Siempre estamos listos para responder sus preguntas.</p>
           <!-- RD Mailform-->
           <form class="rd-form rd-mailform form-boxed" data-form-output="form-output-global" data-form-type="contact" method="post" action="enviarCorreo">
+             {{ csrf_field() }}
             <div class="row row-50">
               <div class="col-lg-4">
                 <div class="form-wrap form-wrap-icon">
@@ -497,6 +498,7 @@
             <div class="col-lg-4">
               <h5>Boletin informativo</h5>
               <form class="rd-form rd-mailform" data-form-output="form-output-global" data-form-type="contact" method="post" action="templete/bat/rd-mailform.php">
+                {{ csrf_field() }}
                 <div class="form-wrap form-wrap-icon">
                   <div class="form-icon mdi mdi-email-outline"></div>
                   <input class="form-input" id="footer-email" type="email" name="email" data-constraints="@Email @Required">

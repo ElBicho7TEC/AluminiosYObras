@@ -234,7 +234,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                           <div><input class="input100" type="file" accept="image/*" name="logoNegro[]" placeholder="Ingresar el logo" value=""></div>
                           <div class="wrap-input100 validate-input m-b-26" data-validate="Mensaje de bienvenida requerido">
                             <span class="label-input100" >Logo en su contraste blacno</span>
-                            <img class="img-rounded" style="background-color: black" src="{{$rutaBlanco}}" width="160" height="100">
+                            <img class="img-rounded" src="{{$rutaBlanco}}" width="160" height="100">
                             <span class="focus-input100"></span>
                           </div>
                           <div><input class="input100" type="file" accept="image/*" name="logoBlanco[]" placeholder="Ingresar el logo" value=""></div>

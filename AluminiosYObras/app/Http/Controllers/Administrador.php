@@ -140,28 +140,64 @@ use DB;
 		{
 			if (session()->has('s_identificador') ) 
 			{
-				$Modulo = new modulo;
-			 	$Modulo->nombremodulo=$datos->input('nombremodulo');
-
-			 	foreach($datos->logotipo as $foto)
+				try
 				{
-					$segundo= "modulo_".$datos->input('nombremodulo').".jpg";
-				 	$carpeta="/modulos/".$segundo;
-					Storage::disk('public')->put($carpeta,File::get($foto)); 
-				}
-			 	
-			 	$Modulo->rutamodulo=$carpeta;
-			 	$Modulo->numeroresaltador=$datos->input('numeroresaltar');
-			 	$Modulo->descripciondelnumero=$datos->input('descripcionmodulo');
+					DB::beginTransaction();
+					$Modulo = new modulo;
+				 	$Modulo->nombremodulo=$datos->input('nombremodulo');
 
-			 	if($Modulo->save()){
-					\Session::flash('flash_message', '¡Nuevo módulo añadido con éxito');
-					return redirect('admin/editarModulo');			
+				 	foreach($datos->logotipo as $foto)
+					{
+						$segundo= "modulo_".$datos->input('nombremodulo').".jpg";
+					 	$carpeta="/modulos/".$segundo;
+						Storage::disk('public')->put($carpeta,File::get($foto)); 
+					}
+				 	
+				 	$Modulo->rutamodulo=$carpeta;
+				 	$Modulo->numeroresaltador=$datos->input('numeroresaltar');
+				 	$Modulo->descripciondelnumero=$datos->input('descripcionmodulo');
+
+				 	if($Modulo->save()){
+				 		$ModuloAgregado=$Modulo->idmodulo;
+
+				 		$Caracteristica1 = new caracteristicasmodulo;
+				 		$Caracteristica1->caracteristicas=$datos->input('carac1');
+				 		$Caracteristica1->fkidmodulo=$datos->input('carac1');
+
+				 		$Caracteristica2 = new caracteristicasmodulo;
+				 		$Caracteristica2->caracteristicas=$datos->input('carac2');
+				 		$Caracteristica2->fkidmodulo=$datos->input('carac2');
+
+				 		$Caracteristica3 = new caracteristicasmodulo;
+				 		$Caracteristica3->caracteristicas=$datos->input('carac3');
+				 		$Caracteristica3->fkidmodulo=$datos->input('carac3');
+
+				 		if($Caracteristica1->save() && $Caracteristica2->save() && $Caracteristica3->save())
+				 		{
+				 			DB::commit(); 
+				 			\Session::flash('flash_message', '¡Nuevo módulo añadido con éxito');
+							return redirect('admin/editarModulo');
+				 		}
+				 		else
+				 		{
+				 			DB::rollback();
+				 			\Session::flash('mensaje','Error al añadir el módulo');
+						 return redirect('admin/agregarModulo');
+				 		}
+				 	}
+					else 
+					{
+						DB::rollback();
+						\Session::flash('mensaje','Error al añadir el módulo');
+						 return redirect('admin/agregarModulo');
+					}
 				}
-				else {
+				catch(Exeption $e)
+				{
+					DB::rollback();
 					\Session::flash('mensaje','Error al añadir el módulo');
-					 return redirect('admin/agregarModulo');
-				}
+						 return redirect('admin/agregarModulo');
+				}						
 			}
 			else
 			{
@@ -247,30 +283,6 @@ use DB;
 					\Session::flash('mensaje','Error al modificar el mensaje');
 					return redirect ('admin/editarMensaje');
 				}		
-			}
-			else
-			{
-				return redirect('admin');
-			}
-		}
-
-		public function agregarCaracteristicas()
-		{
-			if (session()->has('s_identificador') ) 
-			{
-				return view ('admin/agregarCaracteristicas');	
-			}
-			else
-			{
-				return redirect('admin');
-			}
-		}
-
-		public function editarCaracteristicas()
-		{
-			if (session()->has('s_identificador') ) 
-			{
-				return view ('admin/editarCaracteristicas');	
 			}
 			else
 			{

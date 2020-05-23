@@ -98,25 +98,25 @@
 							<div class="carousel-inner" style="height: 300px;">
 								<div class="carousel-item active">
 								    <div class="container">
-								        <img class="d-block w-100" src="templete/images/index-3-2-390x332.jpg" alt="First slide">
+								        <img class="d-block w-100" src="../storage/app/public{{$datosBanner[0]->rutacarrusel}}" alt="First slide">
 								    </div>
 								</div>
 								<div class="carousel-item">
 								    <div class="container">
-								        <img class="d-block w-100" src="templete/images/index-3-2-390x332.jpg" alt="Second slide">
+								        <img class="d-block w-100" src="../storage/app/public{{$datosBanner[1]->rutacarrusel}}" alt="Second slide">
 								    </div>
 								</div>
 								<div class="carousel-item">
 								    <div class="container">
-								        <img class="d-block w-100" src="templete/images/index-3-2-390x332.jpg" alt="Third slide">
+								        <img class="d-block w-100" src="../storage/app/public{{$datosBanner[2]->rutacarrusel}}" alt="Third slide">
 								    </div>
 								</div>
 						</div>
-								<a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev" style="color: #003366">
+								<a style="background-color: #E1DEDD; " class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev" style="color: #003366">
 								    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-								    <span class="sr-only">Previous</span>
+								    <span class="sr-only" >Previous</span>
 								</a>
-								<a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next" style="color: #003366">
+								<a style="background-color: #E1DEDD" class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next" style="color: #003366">
 								    <span class="carousel-control-next-icon" aria-hidden="true"></span>
 								    <span class="sr-only">Next</span>
 								</a>

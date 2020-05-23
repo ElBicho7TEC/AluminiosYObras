@@ -242,11 +242,31 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 		                            	<input class="input100" type="text" name="numeroresaltar" placeholder="Ingresar número a resaltar del módulo" value="">
                  						<span class="focus-input100"></span>
                 				</div>
+
                         <div class="wrap-input100 validate-input m-b-26" data-validate="Descripción de modulo requerido">
                               <span class="label-input100">Descripción</span>
                                   <input class="input100" type="text" name="descripcionmodulo" placeholder="Ingresar la descripción del módulo" value="">
                             <span class="focus-input100"></span>
-                        </div>    
+                        </div>
+
+                        <div class="wrap-input100 validate-input m-b-26" data-validate="Característica requerida">
+                              <span class="label-input100">Primer característica</span>
+                                  <input class="input100" type="text" name="carac1" placeholder="Ingresar la primer característica" value="">
+                            <span class="focus-input100"></span>
+                        </div>
+
+                        <div class="wrap-input100 validate-input m-b-26" data-validate="Característica requerida">
+                              <span class="label-input100">Segunda característica</span>
+                                  <input class="input100" type="text" name="carac2" placeholder="Ingresar la segunda característica" value="">
+                            <span class="focus-input100"></span>
+                        </div>
+
+                        <div class="wrap-input100 validate-input m-b-26" data-validate="Característica requerida">
+                              <span class="label-input100">Tercer característica</span>
+                                  <input class="input100" type="text" name="carac3" placeholder="Ingresar la tercer característica" value="">
+                            <span class="focus-input100"></span>
+                        </div>
+
 								        <div class="container-login100-form-btn">
                 					    <button class="login100-form-btn" style="background-color: black">
                     					Guardar cambios

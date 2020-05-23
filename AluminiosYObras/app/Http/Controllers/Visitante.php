@@ -4,6 +4,7 @@ use App\Http \Controllers\Controller;
 use App\bienvenida;
 use App\galeria;
 use App\fotogaleria;
+use App\carrusel;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\File;
@@ -28,9 +29,13 @@ use DB;
 			->select('idgaleria','nombreproyecto','rutafotoprincipal','descripcionbreve','descripcionlarga','fkidmodulo')
 			->orderby('idgaleria','desc')
 			->take(6)
+			->get();
+
+			$datosBanner = DB::table('carrusel')
+			->select('idcarrusel','rutacarrusel')
 			->get();	
 
-			return view ('index',['datosBienvenida'=>$datosBienvenida,'datosModulos'=>$datosModulos,'datosGaleria'=>$datosGaleria]);	
+			return view ('index',['datosBienvenida'=>$datosBienvenida,'datosModulos'=>$datosModulos,'datosGaleria'=>$datosGaleria, 'datosBanner'=>$datosBanner]);	
 		}
 
 		public function verProyecto()
@@ -89,7 +94,11 @@ use DB;
 				->orderby('idgaleria','desc')
 				->take(6)
 				->get();	
-				return view('index',['datosBienvenida'=>$datosBienvenida,'datosModulos'=>$datosModulos,'datosGaleria'=>$datosGaleria]);
+
+				$datosBanner = DB::table('carrusel')
+				->select('idcarrusel','rutacarrusel')
+				->get();
+				return view('index',['datosBienvenida'=>$datosBienvenida,'datosModulos'=>$datosModulos,'datosGaleria'=>$datosGaleria, 'datosBanner'=>$datosBanner]);
 			}
 			else
 			{

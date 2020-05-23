@@ -36,6 +36,7 @@ Route::get('admin/editarModulo','Administrador@editarModulo');
 Route::post('btnAgregarModulo','Administrador@crearModulo');
 Route::post('admin/editarModulo2','Administrador@editarModulo2');
 Route::post('btnEditarModulo2','Administrador@guardarModulo');
+Route::post('btnEliminarModulo','Administrador@eliminarModulo');
 
 
 Route::get('admin/editarLogo','Administrador@editarLogo');
@@ -43,6 +44,8 @@ Route::post('btnEditarLogo','Administrador@guardarLogo');
 
 Route::get('admin/editarMensaje','Administrador@editarMensaje');
 Route::post('btnEditarMensaje','Administrador@guardarMensaje');
+
+Route::get('admin/verbaner','Administrador@verBanner');
 
 
 Route::get('admin/editarCaracteristicas','Administrador@editarCaracteristicas');

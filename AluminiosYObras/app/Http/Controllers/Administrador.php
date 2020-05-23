@@ -333,6 +333,19 @@ use DB;
 			}
 		}
 
+		public function eliminarModulo(subirImagenRequest $datos)
+		{
+			if (session()->has('s_identificador') ) 
+			{
+				
+				return redirect('admin/editarModulo');	
+			}
+			else
+			{
+				return redirect('admin');
+			}
+		}
+
 		public function agregarGaleria()
 		{
 			if (session()->has('s_identificador') ) 
@@ -398,6 +411,18 @@ use DB;
 			if (session()->has('s_identificador') ) 
 			{
 				return view ('admin/editarFotoGaleria2');	
+			}
+			else
+			{
+				return redirect('admin');
+			}
+		}
+
+		public function verBanner()
+		{
+			if (session()->has('s_identificador') ) 
+			{
+				return view ('admin/verbaner');	
 			}
 			else
 			{

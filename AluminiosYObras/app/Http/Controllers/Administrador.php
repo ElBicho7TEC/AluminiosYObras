@@ -275,11 +275,57 @@ use DB;
 			}
 		}
 
-		public function editarModulo2()
+		public function editarModulo2(subirImagenRequest $datos)
 		{
 			if (session()->has('s_identificador') ) 
 			{
-				return view ('admin/editarModulo2');	
+				$datosModulo = DB::table('modulo')
+				->select('idmodulo','nombremodulo','rutamodulo','numeroresaltador','descripciondelnumero')
+				->where('idmodulo','=',$datos->input('idModulo'))
+				->get();  
+				return view ('admin/editarModulo2',['datosModulo'=>$datosModulo]);	
+			}
+			else
+			{
+				return redirect('admin');
+			}
+		}
+
+		public function guardarModulo(subirImagenRequest $datos)
+		{
+			if (session()->has('s_identificador') ) 
+			{
+				$idModulo=$datos->input('idModulo');
+				$Modulo=modulo::find($idModulo);
+			 	$Modulo->nombremodulo=$datos->input('nombremoudlo');
+
+			 	if ($datos->logotipo!=null)
+				{
+					unlink("../storage/app/public".$Modulo->rutamodulo);
+					foreach($datos->logotipo as $logo)
+					{
+						$segundo= "modulo_".$datos->input('nombremoudlo').".jpg";
+					 	$carpeta="/modulos/".$segundo;
+						Storage::disk('public')->put($carpeta,File::get($logo)); 
+						$Modulo->rutamodulo=$carpeta;
+					}
+				}
+			 	
+			 	$Modulo->numeroresaltador=$datos->input('numeroresaltar');
+			 	$Modulo->descripciondelnumero=$datos->input('descripcionmodulo');
+				if($Modulo->save()){
+
+					\Session::flash('flash_message', 'Módulo modificado con éxito');
+
+					return redirect('admin/editarModulo');	
+					
+				}
+				else 
+				{
+					\Session::flash('mensaje','Error al modificar el módulo');
+					return redirect('admin/editarModulo');	
+				}		
+
 			}
 			else
 			{

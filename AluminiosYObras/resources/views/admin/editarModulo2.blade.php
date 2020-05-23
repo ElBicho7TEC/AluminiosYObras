@@ -223,28 +223,30 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                   		Editar Módulo
                 		</span>
               			</div>
-              			<form class="login100-form validate-form" method="post" action="btnAgregarModulo" enctype="multipart/form-data">
-				            	 {{csrf_field()}}
+              			<form class="login100-form validate-form" method="post" action="../btnEditarModulo2" enctype="multipart/form-data">
+				            {{csrf_field()}}
 				            	 <div class="wrap-input100 validate-input m-b-26" data-validate="Nombre de modulo requerido">
                   						<span class="label-input100">Nombre Modulo</span>
-		                            	<input class="input100" type="text" name="nombremoudlo" placeholder="Ingresar nombre del modulo" value="">
+                              <input type="hidden" name="idModulo" value="{{$datosModulo[0]->idmodulo}}">
+		                            	<input class="input100" type="text" name="nombremoudlo" placeholder="Ingresar nombre del modulo" value="{{$datosModulo[0]->nombremodulo}}">
                  						<span class="focus-input100"></span>
                 				</div>  
 
                 				 <div class="wrap-input100 validate-input m-b-26" data-validate="Logotipo requerido">
                   						<span class="label-input100">Logotipo</span>
-		                            	<input class="input100" type="file" accept="image/*" name="logotipo" placeholder="Ingresar logotipo del modulo" value="">
+                                  <img src="../../storage/app/public{{$datosModulo[0]->rutamodulo}}">
+		                            	<input  type="file" accept="image/*" name="logotipo[]" placeholder="Ingresar logotipo del modulo" value="">
                  						<span class="focus-input100"></span>
                 				</div> 
 
                 				 <div class="wrap-input100 validate-input m-b-26" data-validate="Númer a resaltar de modulo requerido">
                   						<span class="label-input100">Número a resaltar</span>
-		                            	<input class="input100" type="text" name="numeroresaltar" placeholder="Ingresar número a resaltar del modulo" value="">
+		                            	<input class="input100" type="text" name="numeroresaltar" placeholder="Ingresar número a resaltar del modulo" value="{{$datosModulo[0]->numeroresaltador}}">
                  						<span class="focus-input100"></span>
                 				</div>
                         <div class="wrap-input100 validate-input m-b-26" data-validate="Descripción de modulo requerido">
                               <span class="label-input100">Descripción</span>
-                                  <input class="input100" type="text" name="descripcionmodulo" placeholder="Ingresar la descripción del modulo" value="">
+                                  <input class="input100" type="text" name="descripcionmodulo" placeholder="Ingresar la descripción del modulo" value="{{$datosModulo[0]->descripciondelnumero}}">
                             <span class="focus-input100"></span>
                         </div>    
 								        <div class="container-login100-form-btn">

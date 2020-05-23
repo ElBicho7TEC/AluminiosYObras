@@ -240,8 +240,9 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                     @foreach ($listaModulos as $modulo)
 								    <tr style="text-align:center; vertical-align: center !important;">
 								      <th style="border:solid; border-width: 1px; border-color: #E7E7E7;">
-                        <form action="editarModulo2" method="get">
+                        <form action="editarModulo2" method="post">
                          {{ csrf_field() }}
+                         <input type="hidden" name="idModulo" value="{{$modulo->idmodulo}}">
 										    <button style="text-align:center;" class="btn-floating btn-small waves-effect waves-light blue" ><img src="../../storage/images/icons/iconoeditar.png" width="20" height="20" data-toggle="modal" data-target="#moduloEditar"></button>
                          </form> 
                       </th>

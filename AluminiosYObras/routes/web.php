@@ -34,7 +34,9 @@ Route::get('admin/agregarModulo','Administrador@agregarModulo');
 Route::get('admin/editarModulo','Administrador@editarModulo');
 
 Route::post('btnAgregarModulo','Administrador@crearModulo');
-Route::get('admin/editarModulo2','Administrador@editarModulo2');
+Route::post('admin/editarModulo2','Administrador@editarModulo2');
+Route::post('btnEditarModulo2','Administrador@guardarModulo');
+
 
 Route::get('admin/editarLogo','Administrador@editarLogo');
 Route::post('btnEditarLogo','Administrador@guardarLogo');

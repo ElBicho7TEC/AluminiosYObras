@@ -131,13 +131,14 @@
           </div>
           <ul class="project-list">
           	<br><br>
+
             @foreach ($datosModulos as $modulo)
             <li class="bg-image" style="background-image: url(../storage/app/public{{$modulo->rutamodulo}})">
             	<form action="module" method="post">
             	{{ csrf_field() }}
             		<input type="hidden" name='idModulo' value="{{$modulo->idmodulo}}">
 			        <a href="javascript:;" onclick="parentNode.submit();">{{$modulo->nombremodulo}}</a>
-			    </form>
+			       </form>
             </li>
             @endforeach
             <br><br>

@@ -3,6 +3,9 @@ namespace App\Http\Controllers;
 use App\Http \Controllers\Controller;
 use App\login;
 use App\modulo;
+use App\galeria;
+use App\fotogaleria;
+use App\caracteristicasmodulo;
 use App\bienvenida;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
@@ -337,10 +340,77 @@ use DB;
 		{
 			if (session()->has('s_identificador') ) 
 			{
-				$modulo_variable = new modulo;
-				$idModulo = $modulo_variable->idModulo = $datos->input ('idModulo');
+				try
+				{
+					DB::beginTransaction();
+					$fotogaleria_variable = new fotogaleria;
+					$idModulo = $fotogaleria_variable->idModulo = $datos->input ('idModulo');
 
-				if(DB::delete('DELETE FROM modulo  where idmodulo=?',[$idModulo]))
+					if(DB::delete('DELETE fotogaleria FROM modulo INNER JOIN galeria ON galeria.fkidmodulo = modulo.idmodulo INNER JOIN fotogaleria ON fotogaleria.fkidgaleria = galeria.idgaleria WHERE modulo.idmodulo =?',[$idModulo]))
+					{
+						$galeria_variable = new galeria;
+						$idModulo2 = $galeria_variable->idModulo = $datos->input ('idModulo');
+
+						if(DB::delete('DELETE galeria FROM modulo INNER JOIN galeria ON galeria.fkidmodulo = modulo.idmodulo WHERE modulo.idmodulo =?',[$idModulo2]))
+						{
+							$caracteristicas_variable = new  caracteristicasmodulo;
+							$idModulo3 = $caracteristicas_variable->idModulo = $datos->input ('idModulo');
+
+							if(DB::delete('DELETE caracteristicasmodulo FROM modulo INNER JOIN caracteristicasmodulo ON caracteristicasmodulo.fkidmodulo = modulo.idmodulo WHERE modulo.idmodulo = ?',[$idModulo3]))
+							{
+								$modulo_variable = new modulo;
+								$idModulo4 = $modulo_variable->idModulo = $datos->input ('idModulo');
+
+								if(DB::delete('DELETE modulo FROM modulo WHERE modulo.idmodulo = ?',[$idModulo4]))
+								{
+									DB::commit(); 
+									\Session::flash('flash_message', 'Módulo eliminado con éxito');
+									return redirect('admin/editarModulo');	
+								}
+								else
+								{
+									DB::rollback();
+									\Session::flash('flash_message', 'El Módulo no se pudo eliminar');
+									return redirect('admin/editarModulo');	
+								}
+							}
+							else
+							{
+								DB::rollback();
+								\Session::flash('flash_message', 'El Módulo no se pudo eliminar');
+								return redirect('admin/editarModulo');	
+							}
+						}
+						else
+						{
+							DB::rollback();
+							\Session::flash('flash_message', 'El Módulo no se pudo eliminar');
+							return redirect('admin/editarModulo');	
+						}
+					}
+					else
+					{
+						DB::rollback();
+						\Session::flash('flash_message', 'El Módulo no se pudo eliminar');
+						return redirect('admin/editarModulo');	
+					}
+
+				}
+				catch(Exeption $e)
+				{
+					DB::rollback();
+					\Session::flash('flash_message', 'El Módulo no se pudo eliminar');
+					return redirect('admin/editarModulo');
+				}
+
+				
+
+				if(DB::delete('DELETE fotogaleria, galeria, caracteristicasmodulo, modulo 
+					FROM modulo
+					INNER JOIN fotogaleria ON galeria.idgaleria = fotogaleria.fkidgaleria
+					INNER JOIN galeria ON modulo.idmodulo = gelria.fkidmodulo
+					INNER JOIN caracteristicasmodulo ON modulo.idmodulo = caracteristicasmodulo.fkidmodulo
+					WHERE modulo.idmodulo=?',[$idModulo]))
 				{
 					\Session::flash('flash_message', 'Módulo eliminado con éxito');
 					return redirect('admin/editarModulo');	

@@ -13,11 +13,11 @@ class carrusel extends Seeder
     public function run()
     {
         //
-        DB::table('carrusel')-> insert(array('rutacarrusel'=>'/modulos/modulo_puertas.jpg'));
+        DB::table('carrusel')-> insert(array('rutacarrusel'=>'/banner/banner1.jpg'));
 
-        DB::table('carrusel')-> insert(array('rutacarrusel'=>'/modulos/modulo_escaleras.jpg'));
+        DB::table('carrusel')-> insert(array('rutacarrusel'=>'/banner/banner2.jpg'));
 
-        DB::table('carrusel')-> insert(array('rutacarrusel'=>'/modulos/modulo_ventanas.jpg'));
+        DB::table('carrusel')-> insert(array('rutacarrusel'=>'/banner/banner3.jpg'));
 
     }
 }

@@ -40,7 +40,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
   <!--===============================================================================================-->
     <link rel="stylesheet" type="text/css" href="../login/css/util.css">
     <link rel="stylesheet" type="text/css" href="../login/css/main.css">
-
+    <link rel="stylesheet" href="../templete/css/imagestyle.css">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <link href="../adiddas-web/css/style.css" rel="stylesheet" type="text/css" media="all" />
@@ -229,90 +229,56 @@ License URL: http://creativecommons.org/licenses/by/3.0/
               			<div align="center">
                 		<br>
                 		<span class="login100-form-title-1" style="color: black !important;">
-                  		Ver proyectos
+                  		Proyectos
                 		</span>
               			</div>
-				            	 {{csrf_field()}}
 							<div class="table-responsive">
-									<table class="table table-bordered" style="color: black; background-color: white;">
-										  <thead class="thead-dark" style="color: black">
+									<table class="table" >
+                  <br>
+                  <thead class="thead-dark"  style="color: white; background-color: black;">
+                    <tr>
 										    <tr>
-										      <th scope="col" style="text-align:center;">#</th>
-										      <th scope="col" style="text-align:center;">Nombre proyecto</th>
-										      <th scope="col" style="text-align:center;">Foto proyecto</th>
+										      <th scope="col" style="text-align:center; width: 45px!important;">#</th>
+										      <th scope="col" style="text-align:center;">Nombre</th>
+										      <th scope="col" style="text-align:center;">Foto </th>
 										      <th scope="col" style="text-align:center;">Descripción breve</th>
-										      <th scope="col" style="text-align:center;">Descripción larga</th>
 										      <th scope="col" style="text-align:center;">Modulo</th>
 										    </tr>
 										  </thead>
 											  <tbody>
-											    <tr style="text-align:center;">
-											      <th scope="row" style="color: black">
-
-													<div class="col-md-9" style="padding: 3px;">
-														<form action="editarFotoGaleria" method="get">
-															 {{ csrf_field() }}
-													    	<button style="text-align:center;" class="btn-floating btn-small waves-effect waves-light blue">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <img src="../../storage/images/icons/iconoFotoGaleria.png" width="25" height="25" style="width: auto;"></button>
-													    </form>
-													</div>
-											      	<div class="col-md-9" style="padding: 3px;">
-                              <form action="editarGaleria2" method="get">
+                          @foreach ($listaGaleria as $galeria)
+                          <tr style="text-align:center; vertical-align: center !important;">
+                            <th style="border:solid; border-width: 1px; border-color: #E7E7E7;">
+                              <form action="editarFotoGaleria" method="post">
                                {{ csrf_field() }}
-													    <button style="text-align:center;" class="btn-floating btn-small waves-effect waves-light blue" ><img src="../../storage/images/icons/iconoeditar.png" width="25" height="25"></button>
-                            </form>
-													</div>
-													  
-													<div class="col-md-9" style="padding: 3px;">
-													    <button style="text-align:center;" class="btn-floating btn-small waves-effect waves-light blue"> <img src="../../storage/images/icons/iconoeliminar.png" width="25" height="25" style="width: auto;"></button>
-													</div>
+                               <input type="hidden" name="idGaleria" value="{{$galeria->idgaleria}}">
+                              <button style="text-align:center;" class="btn-floating btn-small waves-effect waves-light blue" ><img src="../../storage/images/icons/iconoFotoGaleria.png" width="20" height="20" data-toggle="modal" data-target="#moduloEditar"></button>
+                               </form> 
+                            </th>
+											     <td rowspan="3" style="vertical-align: middle;">{{$galeria->nombreproyecto}}</td>
+                           <td rowspan="3" style="vertical-align: middle;"><img src="../../storage/app/public{{$galeria->rutafotoprincipal}}" width="300px" height="80px" class="contenedor"></td>
+                            <td rowspan="3" style="vertical-align: middle;">{{$galeria->descripcionbreve}}</td>
+                            <td rowspan="3" style="vertical-align: middle;">{{$galeria->nombremodulo}}</td>
+                          </tr>
 
-											      </th>
-											      <td>Proyecto1</td>
-											      <td>ImagenProyecto1</td>
-											      <td>P1.- Brindamos soluciones de con aluminio confiabl...</td>
-											      <td>Proyecto dentro del cual se desarrollaron puertas ...</td>
-											      <td>Puertas</td>
-											    </tr>
-											    <tr style="text-align:center;">
-											      <th scope="row" ><i class="mdi mdi-pencil-box" ></i>2 <i class="mdi mdi-file-excel-box" ></i></th>
-											      <td>Proyecto2</td>
-											      <td>ImagenProyecto2</td>
-											      <td>P2.- Brindamos soluciones de con aluminio confiabl...</td>
-											      <td>Proyecto dentro del cual se desarrollaron puertas ...</td>
-											      <td>Puertas</td>
-											    </tr>
-											    <tr style="text-align:center;">
-											      <th scope="row"><i class="mdi mdi-pencil-box" ></i>3 <i class="mdi mdi-file-excel-box" ></i></th>
-											      <td>Proyecto3</td>
-											      <td>ImagenProyecto3</td>
-											      <td>P3.- Brindamos soluciones de con aluminio confiabl...</td>
-											      <td>Proyecto dentro del cual se desarrollaron puertas ...</td>
-											      <td>Puertas</td>
-											    </tr>
-											    <tr style="text-align:center;">
-											      <th scope="row"><i class="mdi mdi-pencil-box" ></i>4 <i class="mdi mdi-file-excel-box" ></i></th>
-											      <td>Proyecto4</td>
-											      <td>ImagenProyecto4</td>
-											      <td>P4.- Brindamos soluciones de con aluminio confiabl...</td>
-											      <td>Proyecto dentro del cual se desarrollaron puertas ...</td>
-											      <td>Portones</td>
-											    </tr>
-											    <tr style="text-align:center;">
-											      <th scope="row"><i class="mdi mdi-pencil-box" ></i>5 <i class="mdi mdi-file-excel-box" ></i></th>
-											      <td>Proyecto5</td>
-											      <td>ImagenProyecto5</td>
-											      <td>P5.- Brindamos soluciones de con aluminio confiabl...</td>
-											      <td>Proyecto dentro del cual se desarrollaron puertas ...</td>
-											      <td>Portones</td>
-											    </tr>
-											    <tr style="text-align:center;">
-											      <th scope="row"><i class="mdi mdi-pencil-box" ></i>6 <i class="mdi mdi-file-excel-box" ></i></th>
-											      <td>Proyecto6</td>
-											      <td>ImagenProyecto6</td>
-											      <td>P6.- Brindamos soluciones de con aluminio confiabl...</td>
-											      <td>Proyecto dentro del cual se desarrollaron puertas ...</td>
-											      <td>Portones</td>
-											    </tr>
+                          <tr style="border:solid; border-width: 1px; border-color: #E7E7E7;">
+                            <th style="border:solid; border-width: 1px; border-color: #E7E7E7;">
+                              <form action="editarGaleria2" method="post">
+                               {{ csrf_field() }}
+                               <input type="hidden" name="idGaleria" value="{{$galeria->idgaleria}}">
+                              <button style="text-align:center;" class="btn-floating btn-small waves-effect waves-light blue" ><img src="../../storage/images/icons/iconoeditar.png" width="20" height="20" data-toggle="modal" data-target="#moduloEditar"></button>
+                               </form> 
+                             </th>
+                          </tr>
+
+                          <tr style="text-align:center;">
+                            <th style="border:solid; border-width: 1px; border-color: #E7E7E7;">
+                              
+                              <button style="text-align:center;" data-toggle="modal" data-target="#eliminarGaleria{{$galeria->idgaleria}}"> <img src="../../storage/images/icons/iconoeliminar.png" width="20" height="20" style="width: auto;"></button>
+
+                            </th>
+                          </tr>
+                          @endforeach
 											  </tbody>
 								</table>
 						</form>

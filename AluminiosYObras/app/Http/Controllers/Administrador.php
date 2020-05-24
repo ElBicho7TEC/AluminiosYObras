@@ -468,7 +468,11 @@ use DB;
 		{
 			if (session()->has('s_identificador') ) 
 			{
-				return view ('admin/editarGaleria');	
+				$listaGaleria = DB::table('galeria')
+				->select('idgaleria','nombreproyecto','rutafotoprincipal','descripcionbreve','descripcionlarga','idmodulo','nombremodulo')
+				->join('modulo','galeria.fkidmodulo','=','modulo.idmodulo')
+				->get();  
+				return view ('admin/editarGaleria',['listaGaleria'=>$listaGaleria]);	
 			}
 			else
 			{

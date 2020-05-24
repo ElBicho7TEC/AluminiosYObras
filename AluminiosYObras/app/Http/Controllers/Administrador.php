@@ -459,7 +459,7 @@ use DB;
 				$listaModulos = DB::table('modulo')
 				->select('idmodulo','nombremodulo','rutamodulo','numeroresaltador','descripciondelnumero')
 				->get();  
-				
+
 				return view ('admin/agregarGaleria',['listaModulos'=>$listaModulos]);	
 			}
 			else
@@ -475,44 +475,56 @@ use DB;
 				try
 				{
 					DB::beginTransaction();
-					$Galeria = new galeria;
-				 	$Galeria->nombreproyecto=$datos->input('');
 
-				 	foreach($datos->logotipo as $foto)
+					$listaGaleria = DB::table('galeria')
+					->select('nombreproyecto',)
+					->get();
+
+					foreach($listaGaleria as $proyecto)
 					{
-						$segundo= "proyecto_".$datos->input('').".jpg";
+						if($proyecto->nombreproyecto == $datos->input('nombreproyecto'))
+						{
+							DB::rollback();
+							\Session::flash('mensaje','El nombre de proyecto ya existe, favor de añadir un nombre distinto');
+							 return redirect ('admin/agregarGaleria');
+						}
+					}  	
+
+					
+					$Galeria = new galeria;
+				 	$Galeria->nombreproyecto=$datos->input('nombreproyecto');
+
+				 	foreach($datos->fotoproyecto as $foto)
+					{
+						$segundo= "proyecto_".$datos->input('nombreproyecto').".jpg";
 					 	$carpeta="/proyectos/".$segundo;
 						Storage::disk('public')->put($carpeta,File::get($foto)); 
 					}
 				 	
 				 	$Galeria->rutafotoprincipal=$carpeta;
-				 	$Galeria->descripcionbreve=$datos->input('');
-				 	$Galeria->descripcionlarga=$datos->input('');
+				 	$Galeria->descripcionbreve=$datos->input('descripcionbreve');
+				 	$Galeria->descripcionlarga=$datos->input('descripcionlarga');
+				 	$Galeria->fkidmodulo=$datos->input('idModulo');
 
 				 	if($Galeria->save()){
-				 		$ModuloAgregado=$Galeria->idmodulo;
 
 			 			DB::commit(); 
 			 			\Session::flash('flash_message', '¡Nuevo módulo añadido con éxito');
-						return redirect('admin/editarModulo');
+						return redirect ('admin/agregarGaleria');
 				 	}
 					else 
 					{
 						DB::rollback();
 						\Session::flash('mensaje','Error al añadir el módulo');
-						 return redirect('admin/agregarModulo');
+						 return redirect ('admin/agregarGaleria');
 					}
 				}
 				catch(Exeption $e)
 				{
 					DB::rollback();
 					\Session::flash('mensaje','Error al añadir el módulo');
-						 return redirect('admin/agregarModulo');
-				}			
-
-
-
-				return view ('admin/agregarGaleria');	
+					return redirect ('admin/agregarGaleria');
+				}				
 			}
 			else
 			{

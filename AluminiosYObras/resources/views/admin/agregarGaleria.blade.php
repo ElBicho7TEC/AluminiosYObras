@@ -241,7 +241,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                 					</div>
                 					 <div class="wrap-input100 validate-input m-b-26" data-validate="Foto del proyecto requerido">
                   						<span class="label-input100">Foto Proyecto</span>
-		                            	<input class="input100" type="file" accept="image/*" name="fotoproyecto" placeholder="Ingresar logotipo del modulo" value="">
+		                            	<input class="input100" type="file" accept="image/*" name="fotoproyecto[]" placeholder="Ingresar logotipo del modulo" value="">
                  						<span class="focus-input100"></span>
                 					</div>
                 				    <div class="wrap-input100 validate-input m-b-26" data-validate="Descripción breve del proyecto requerido">
@@ -256,7 +256,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                 					</div>
                             <div class="wrap-input100 validate-input m-b-26" data-validate="Nombre del modulo requerido">
                               <span class="label-input100">Módulo</span>
-                                 <select name="idModulo" class="form-control" style="width: auto;" title="Tienes que seleccionar un módulo" required>
+                                 <select name="idModulo" class="form-control" " title="Tienes que seleccionar un módulo" required>
                                     <option selected>Selecciona el módulo
                                     </option>
                                     @foreach ($listaModulos as $modulo)
@@ -265,7 +265,6 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                                     </option>
                                     @endforeach     
                                 </select> 
-                                  <input class="input100" type="text" name="nombremodulo" placeholder="Ingresar el nombre del modulo del proyecto" value="">
                             <span class="focus-input100"></span>
                           </div>
                 					<div class="container-login100-form-btn">

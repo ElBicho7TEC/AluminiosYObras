@@ -746,11 +746,17 @@ use DB;
 			}
 		}
 
-		public function editarFotoGaleria()
+		public function editarFotoGaleria(subirImagenRequest $datos)
 		{
 			if (session()->has('s_identificador') ) 
 			{
-				return view ('admin/editarFotoGaleria');	
+				$listaFotoGaleria = DB::table('fotogaleria')
+				->select('descripcion','idfotogaleria','fotos','fkidgaleria','nombreproyecto')
+				->join('galeria','fotogaleria.fkidgaleria','=','galeria.idgaleria')
+				->where('fkidgaleria','=', $datos->input ('idGaleria'))
+				->get();
+
+				return view ('admin/editarFotoGaleria',['listaFotoGaleria'=>$listaFotoGaleria]);	
 			}
 			else
 			{

@@ -163,6 +163,8 @@
 							</li>
 							@foreach ($datosFotoGaleria as $foto)
 							<li>
+								<input type="text" value="{{$foto->descripcion}}" style="border:none; width: 100%; text-align: center; color: grey;">
+								<hr style="width: 90%">
 								<img class="etalage_thumb_image" src="../storage/app/public{{$foto->fotos}}" />
 								<img class="etalage_source_image" src="../storage/app/public{{$foto->fotos}}" />
 							</li>

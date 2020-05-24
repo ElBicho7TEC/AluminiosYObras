@@ -217,10 +217,21 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	        <div class="limiter">
           		<div class="container-login100" >
             		<div class="wrap-login100">
+
+                  <form action="agregarFotoGaleria" method="get">
+                               {{ csrf_field() }}
+                    <div class="container-login100-form-btn" style="text-align: right;">
+                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button class="login100-form-btn" style="background-color: black;" >
+                              Agregar nueva foto
+                              </button>
+                        </div>
+                      </form>
+
               			<div align="center">
                 		<br>
                 		<span class="login100-form-title-1" style="color: black !important;">
-                  		Ver foto galeria de los proyectos
+                  		Fotos del proyecto {{$listaFotoGaleria[0]->nombreproyecto}}
                 		</span>
               			</div>
 				            	 {{csrf_field()}}
@@ -234,74 +245,41 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                   {{ Session::get('mensaje') }}
                 </div>
               @endif
-									<table class="table table-bordered" style="color: black; background-color: white;">
-										  <thead class="thead-dark" style="color: black">
-										    <tr>
+									<table class="table" >
+                  <br>
+                  <thead class="thead-dark"  style="color: white; background-color: black;">
+                    <tr>
 										      <th scope="col" style="text-align:center;">#</th>
-										      <th scope="col" style="text-align:center;">Foto proyecto</th>
-										      <th scope="col" style="text-align:center;">Descripción breve</th>
-										      <th scope="col" style="text-align:center;">Galeria</th>
+										      <th scope="col" style="text-align:center;">Fotografía</th>
+										      <th scope="col" style="text-align:center;">Descripción</th>
 										    </tr>
 										  </thead>
 											  <tbody>
-											    <tr style="text-align:center;">
-											      <th scope="row" style="color: black">
-											      		<div class="col-md-9" style="padding: 3px;">
-                                  <form action="editarFotoGaleria2" method="get">
+                          @foreach ($listaFotoGaleria as $foto)
+											    <tr style="text-align:center; vertical-align: center !important;">
+                            <th style="border:solid; border-width: 1px; border-color: #E7E7E7;">
+                              <form action="editarFotoGaleria2" method="post">
                                {{ csrf_field() }}
-													    <button style="text-align:center;" class="btn-floating btn-small waves-effect waves-light blue" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="../../storage/images/icons/iconoeditar.png" width="25" height="25" data-toggle="modal" data-target="#editarproyectoFotoGaleria"></button>
-                            </form>
-													</div>
-													  
-													<div class="col-md-9" style="padding: 3px;">
-													    <button style="text-align:center;" class="btn-floating btn-small waves-effect waves-light blue"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="../../storage/images/icons/iconoeliminar.png" width="25" height="25" style="width: auto;"></button>
-													</div>
-											      </th>
-											      <td>Proyecto1_lateral_1</td>
-											      <td>Vista lateral</td>
-											      <td>Proyecto1</td>
-											    </tr>
-											    <tr style="text-align:center;">
-											      <th scope="row" ><i class="mdi mdi-pencil-box" ></i>2 <i class="mdi mdi-file-excel-box" ></i></th>
-											      <td>Proyecto1_lateral_2</td>
-											      <td>Vista lateral</td>
-											      <td>Proyecto1</td>
-											    </tr>
-											    <tr style="text-align:center;">
-											      <th scope="row"><i class="mdi mdi-pencil-box" ></i>3 <i class="mdi mdi-file-excel-box" ></i></th>
-											       <td>Proyecto1_lateral_3</td>
-											      <td>Vista lateral</td>
-											      <td>Proyecto1</td>
-											    </tr>
-											    <tr style="text-align:center;">
-											      <th scope="row"><i class="mdi mdi-pencil-box" ></i>4 <i class="mdi mdi-file-excel-box" ></i></th>
-											       <td>Proyecto2_lateral_1</td>
-											      <td>Vista lateral</td>
-											      <td>Proyecto2</td>
-											    </tr>
-											    <tr style="text-align:center;">
-											      <th scope="row"><i class="mdi mdi-pencil-box" ></i>5 <i class="mdi mdi-file-excel-box" ></i></th>
-											      <td>Proyecto2_lateral_2</td>
-											      <td>Vista lateral</td>
-											      <td>Proyecto2</td>
-											    </tr>
-											    <tr style="text-align:center;">
-											      <th scope="row"><i class="mdi mdi-pencil-box" ></i>6 <i class="mdi mdi-file-excel-box" ></i></th>
-											      <td>Proyecto2_lateral_3</td>
-											      <td>Vista lateral</td>
-											      <td>Proyecto2</td>
-											    </tr>
+                               <input type="hidden" name="idGaleria" value="{{$foto->idfotogaleria}}">
+                              <button style="text-align:center; width: 100%; vertical-align: middle!important;" class="btn-floating btn-small waves-effect waves-light blue" ><img src="../../storage/images/icons/iconoeditar.png" width="20" height="20" data-toggle="modal" data-target="#moduloEditar"></button>
+                               </form> 
+                            </th>
+                           <td rowspan="2" style="vertical-align: middle;"><img src="../../storage/app/public{{$foto->fotos}}" width="100px" height="100px" class="contenedor"></td>
+                            <td rowspan="2" style="vertical-align: middle;">{{$foto->descripcion}}</td>
+                          </tr>
+
+                          <tr style="border:solid; border-width: 1px; border-color: #E7E7E7;">
+                            <th style="border:solid; border-width: 1px; border-color: #E7E7E7;">
+                              <form action="editarGaleria2" method="post">
+                               {{ csrf_field() }}
+                               <input type="hidden" name="idGaleria" value="{{$foto->idfotogaleria}}">
+                              <button style="text-align:center; width: 100%; vertical-align: middle;" class="btn-floating btn-small waves-effect waves-light blue" ><img src="../../storage/images/icons/iconoeliminar.png" width="20" height="20" data-toggle="modal" data-target="#moduloEditar"></button>
+                               </form> 
+                             </th>
+                          </tr>
+                          @endforeach
 											  </tbody>
 								</table>
-                    <form action="agregarFotoGaleria" method="get">
-                               {{ csrf_field() }}
-								    <div class="container-login100-form-btn">
-								  		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                					    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button class="login100-form-btn" style="background-color: black;" >
-                    					Agregar foto
-                  						</button>
-                				</div>
-                      </form>
 						</form>
 					</div>
 		        </div>

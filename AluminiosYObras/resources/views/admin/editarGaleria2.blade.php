@@ -246,7 +246,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                 					</div>
                 				    <div class="wrap-input100 validate-input m-b-26" data-validate="Descripción breve del proyecto requerido">
                   						<span class="label-input100">Descripción breve</span>
-		                            	<textarea class="input100" type="text" name="descripcionbreve" placeholder="Ingresar la descripción breve del proyecto" value="" rows="3"> </textarea>
+		                            	<textarea class="input100" type="text" name="descripcionbreve" placeholder="Ingresar la descripción breve del proyecto" value="
+                                  " rows="3"> </textarea>
                  						<span class="focus-input100"></span>
                 					</div>
                 					 <div class="wrap-input100 validate-input m-b-26" data-validate="Descripción larga del proyecto requerido">
@@ -255,9 +256,15 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                  						<span class="focus-input100"></span>
                 					</div>
                             <div class="wrap-input100 validate-input m-b-26" data-validate="Nombre del modulo requerido">
-                              <span class="label-input100">Modulo</span>
-                                  <input class="input100" type="text" name="nombremodulo" placeholder="Ingresar el nombre del modulo del proyecto" value="">
-                            <span class="focus-input100"></span>
+                              <select name="idModulo" class="form-control" " title="Tienes que seleccionar un módulo" required>
+                                    <option selected>{{$datosGaleria[0]->nombremodulo}}
+                                    </option>
+                                    @foreach ($listaModulos as $modulo)
+                                    <option  value={{$modulo->idmodulo}}>
+                                        {{ $modulo->nombremodulo}} 
+                                    </option>
+                                    @endforeach     
+                                </select> 
                           </div>
                 					<div class="container-login100-form-btn">
                 					    <button class="login100-form-btn" style="background-color: black">

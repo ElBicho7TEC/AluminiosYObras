@@ -548,11 +548,21 @@ use DB;
 			}
 		}
 
-		public function editarGaleria2()
+		public function editarGaleria2(subirImagenRequest $datos)
 		{
 			if (session()->has('s_identificador') ) 
 			{
-				return view ('admin/editarGaleria2');	
+				$datosGaleria = DB::table('galeria')
+				->select('idgaleria','nombreproyecto','rutafotoprincipal','descripcionbreve','descripcionlarga','fkidmodulo','nombremodulo')
+				->join('modulo','modulo.idmodulo','=','galeria.fkidmodulo')
+				->where('idgaleria','=',$datos->input('idGaleria'))
+				->get(); 
+
+				$listaModulos = DB::table('modulo')
+				->select('idmodulo','nombremodulo','rutamodulo','numeroresaltador','descripciondelnumero')
+				->get();  
+
+				return view ('admin/editarGaleria2',['datosGaleria'=>$datosGaleria, 'listaModulos'=>$listaModulos]);	
 			}
 			else
 			{

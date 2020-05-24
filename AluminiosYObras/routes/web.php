@@ -46,6 +46,7 @@ Route::get('admin/editarMensaje','Administrador@editarMensaje');
 Route::post('btnEditarMensaje','Administrador@guardarMensaje');
 
 Route::get('admin/verbaner','Administrador@verBanner');
+Route::post('btnEditarBanner','Administrador@guardarBanner');
 
 Route::get('admin/agregarFotoGaleria','Administrador@agregarFotoGaleria');
 Route::get('admin/editarFotoGaleria','Administrador@editarFotoGaleria');

@@ -236,19 +236,19 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                        {{csrf_field()}}
                           <div class="wrap-input100 validate-input m-b-26" data-validate="Banner 1 requerido">
                             <span class="label-input100">Banner 1</span>
-                            <img class="img-rounded" src="" width="160" height="100">
+                            <img class="img-rounded" src="../../storage/app/public{{$datosBanner[0]->rutacarrusel}}" width="300" height="100">
                             <br>
                           </div>
                           <div><input class="input100" type="file" accept="image/*" name="banner1[]" placeholder="Ingresar el banner 1" value=""></div>
                           <div class="wrap-input100 validate-input m-b-26" data-validate="Banner 2 requerido">
                             <span class="label-input100" >Banner 2</span>
-                            <img class="img-rounded" src="" width="160" height="100">
+                            <img class="img-rounded" src="../../storage/app/public{{$datosBanner[1]->rutacarrusel}}" width="300" height="100">
                             <span class="focus-input100"></span>
                           </div>
                           <div><input class="input100" type="file" accept="image/*" name="banner2[]" placeholder="Ingresar el banner 2" value=""></div>
                           <div class="wrap-input100 validate-input m-b-26" data-validate="Banner 3 requerido">
                             <span class="label-input100">Banner 3</span>
-                            <img class="img-rounded" src="" width="160" height="100">
+                            <img class="img-rounded" src="../../storage/app/public{{$datosBanner[2]->rutacarrusel}}" width="300" height="100">
                             <br>
                           </div>
                           <div><input class="input100" type="file" accept="image/*" name="banner3[]" placeholder="Ingresar el banner 3" value=""></div>

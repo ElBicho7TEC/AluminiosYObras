@@ -528,7 +528,47 @@ use DB;
 		{
 			if (session()->has('s_identificador') ) 
 			{
-				return view ('admin/verbaner');	
+				$datosBanner = DB::table('carrusel')
+				->select('idcarrusel','rutacarrusel')
+				->get();
+				return view ('admin/verbaner',['datosBanner'=>$datosBanner]);	
+			}
+			else
+			{
+				return redirect('admin');
+			}
+		}
+
+		public function guardarBanner(subirImagenRequest $datos)
+		{
+			if (session()->has('s_identificador') ) 
+			{
+				if ($datos->banner1!=null)
+				{
+					foreach($datos->banner1 as $carrusel1)
+					{			
+						Storage::disk('banner')->put('banner1.jpg',File::get($carrusel1)); 
+						$Carrusel=modulo::find($idModulo);
+					}
+				}
+
+				if ($datos->banner2!=null)
+				{
+					foreach($datos->banner2 as $carrusel2)
+					{
+						Storage::disk('banner')->put('banner2.jpg',File::get($carrusel2)); 
+					}
+				}
+
+				if ($datos->banner3!=null)
+				{
+					foreach($datos->banner3 as $carrusel3)
+					{
+						Storage::disk('banner')->put('banner3.jpg',File::get($carrusel3)); 
+					}
+				}
+
+				return redirect ('admin/verbaner');	
 			}
 			else
 			{

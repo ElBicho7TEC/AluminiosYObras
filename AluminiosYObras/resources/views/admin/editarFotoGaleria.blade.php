@@ -16,6 +16,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
     <link rel="stylesheet" href="templete/css/bootstrap.css">
     <link rel="stylesheet" href="templete/css/fonts.css">
     <link rel="stylesheet" href="templete/css/style.css">
+    <link rel="stylesheet" href="../templete/css/imagestyle.css">
     <style>.ie-panel{display: none;background: #212121;padding: 10px 0;box-shadow: 3px 3px 5px 0 rgba(0,0,0,.3);clear: both;text-align:center;position: relative;z-index: 1;} html.ie-10 .ie-panel, html.lt-ie-10 .ie-panel {display: block;}</style>
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -261,7 +262,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                               <form action="editarFotoGaleria2" method="post">
                                {{ csrf_field() }}
                                <input type="hidden" name="idGaleria" value="{{$foto->idfotogaleria}}">
-                              <button style="text-align:center; width: 100%; vertical-align: middle!important;" class="btn-floating btn-small waves-effect waves-light blue" ><img src="../../storage/images/icons/iconoeditar.png" width="20" height="20" data-toggle="modal" data-target="#moduloEditar"></button>
+                              <button style="text-align:center; width: 100%; vertical-align: middle!important;" class="btn-floating btn-small waves-effect waves-light blue" ><img src="../../storage/images/icons/iconoeditar.png" width="20" height="20" data-toggle="modal" data-target="#moduloEditar"  class="contenedor"></button>
                                </form> 
                             </th>
                            <td rowspan="2" style="vertical-align: middle;"><img src="../../storage/app/public{{$foto->fotos}}" width="100px" height="100px" class="contenedor"></td>

@@ -232,7 +232,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                     {{ csrf_field() }}
                       <div class="input-group" style="height: 40px">
                         <input class="form-control" type="search" placeholder="Buscar" name="txtBuscar" style="height: 40px">
-                        <button style="text-align:center; background-color: black; width: 50px" class="btn-floating btn-small waves-effect waves-light blue" ><img src="../../storage/images/icons/iconoeditar.png" width="20" height="20" data-toggle="modal" data-target="#moduloEditar"></button>
+                        <button style="text-align:center; background-color: black; width: 50px" class="btn-floating btn-small waves-effect waves-light blue" ><img src="../../storage/images/icons/iconobuscar.png" width="20" height="20" data-toggle="modal" data-target="#moduloEditar"></button>
                                
                       </div>
                     </form>

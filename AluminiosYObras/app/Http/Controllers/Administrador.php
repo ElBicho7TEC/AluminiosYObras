@@ -788,7 +788,7 @@ use DB;
 			{
 
 				$idFotoGaleria=$datos->input('idFotoGaleria');
-				$FotoGaleria=galeria::find($idFotoGaleria);
+				$FotoGaleria=fotogaleria::find($idFotoGaleria);
 			 	$FotoGaleria->descripcion=$datos->input('descripcion');
 
 			 	if ($datos->fotoproyecto!=null)
@@ -805,30 +805,55 @@ use DB;
 			 	
 				if($FotoGaleria->save()){
 
-					\Session::flash('flash_message', 'Proyectp modificado con éxito');
+					\Session::flash('flash_message', 'Foto modificada con éxito');
 
-					$listaFotoGaleria = DB::table('fotogaleria')
-					->select('descripcion','idfotogaleria','fotos','fkidgaleria','nombreproyecto')
-					->join('galeria','fotogaleria.fkidgaleria','=','galeria.idgaleria')
-					->where('fkidgaleria','=', $datos->input ('idGaleria'))
-					->get();
-
-					return view ('admin/editarFotoGaleria',['listaFotoGaleria'=>$listaFotoGaleria]);
+					return redirect ('admin/editarGaleria');
 					
 				}
 				else 
 				{
-					\Session::flash('mensaje','Error al modificar el proyecto');
+					\Session::flash('mensaje','Error al modificar la foto');
 
-					$listaFotoGaleria = DB::table('fotogaleria')
-					->select('descripcion','idfotogaleria','fotos','fkidgaleria','nombreproyecto')
-					->join('galeria','fotogaleria.fkidgaleria','=','galeria.idgaleria')
-					->where('fkidgaleria','=', $datos->input ('idGaleria'))
-					->get();
-
-					return view ('admin/editarFotoGaleria',['listaFotoGaleria'=>$listaFotoGaleria]);	
+					return redirect ('admin/editarGaleria');	
 				}		
 
+			}
+			else
+			{
+				return redirect('admin');
+			}
+		}
+
+		public function eliminarFotoGaleria(Request $datos)
+		{
+			if (session()->has('s_identificador') ) 
+			{
+				try
+				{
+					DB::beginTransaction();
+
+					$fotogaleria_variable = new fotogaleria;
+					$idFotoGaleria = $fotogaleria_variable->idFotoGaleria = $datos->input ('idFotoGaleria');
+
+					if(DB::delete('DELETE FROM fotogaleria WHERE idfotogaleria =?',[$idFotoGaleria]))
+					{
+						DB::commit(); 
+						\Session::flash('flash_message', 'Fotografía eliminada con éxito');
+						return redirect('admin/editarGaleria');	
+					}
+					else
+					{
+						DB::rollback();
+						\Session::flash('flash_message', 'La fotografía no se pudo eliminar');
+						return redirect('admin/editarGaleria');	
+					}
+				}
+				catch(Exeption $e)
+				{
+					DB::rollback();
+					\Session::flash('flash_message', 'El Proyecto no se pudo eliminar');
+					return redirect('admin/editarGaleria');
+				}
 			}
 			else
 			{

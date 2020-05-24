@@ -55,6 +55,7 @@ Route::post('btnEliminarGaleria','Administrador@eliminarGaleria');
 
 Route::post('admin/editarFotoGaleria2','Administrador@editarFotoGaleria2');
 Route::post('btnGuardarFotoGaleria','Administrador@guardarFotoGaleria');
+Route::post('btnEliminarFotoGaleria','Administrador@eliminarFotoGaleria');
 
 Route::get('admin/agregarFotoGaleria','Administrador@agregarFotoGaleria');
 Route::post('admin/editarFotoGaleria','Administrador@editarFotoGaleria');

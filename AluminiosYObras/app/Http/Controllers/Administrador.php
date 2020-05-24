@@ -638,7 +638,7 @@ use DB;
 			 	$Galeria->fkidmodulo=$datos->input('idModulo');
 				if($Galeria->save()){
 
-					\Session::flash('flash_message', 'Proyectp modificado con éxito');
+					\Session::flash('flash_message', 'Proyecto modificado con éxito');
 
 					return redirect ('admin/editarGaleria');	
 					
@@ -764,11 +764,71 @@ use DB;
 			}
 		}
 
-		public function editarFotoGaleria2()
+		public function editarFotoGaleria2(subirImagenRequest $datos)
 		{
 			if (session()->has('s_identificador') ) 
 			{
-				return view ('admin/editarFotoGaleria2');	
+				$listaFotoGaleria = DB::table('fotogaleria')
+				->select('descripcion','idfotogaleria','fotos','fkidgaleria','nombreproyecto')
+				->join('galeria','fotogaleria.fkidgaleria','=','galeria.idgaleria')
+				->where('idfotogaleria','=',$datos->input ('idFotoGaleria'))
+				->get();
+
+				return view ('admin/editarFotoGaleria2',['listaFotoGaleria'=>$listaFotoGaleria]);	
+			}
+			else
+			{
+				return redirect('admin');
+			}
+		}
+
+		public function guardarFotoGaleria(subirImagenRequest $datos)
+		{
+			if (session()->has('s_identificador') ) 
+			{
+
+				$idFotoGaleria=$datos->input('idFotoGaleria');
+				$FotoGaleria=galeria::find($idFotoGaleria);
+			 	$FotoGaleria->descripcion=$datos->input('descripcion');
+
+			 	if ($datos->fotoproyecto!=null)
+				{
+					unlink("../storage/app/public".$FotoGaleria->fotos);
+					foreach($datos->fotoproyecto as $foto)
+					{
+						$segundo= "proyecto_".$datos->input('nombreproyecto')."_".$datos->input('descripcion').".jpg";
+					 	$carpeta="/ImagenesLaterales/".$segundo;
+						Storage::disk('public')->put($carpeta,File::get($foto)); 
+						$FotoGaleria->fotos=$carpeta;
+					}
+				}
+			 	
+				if($FotoGaleria->save()){
+
+					\Session::flash('flash_message', 'Proyectp modificado con éxito');
+
+					$listaFotoGaleria = DB::table('fotogaleria')
+					->select('descripcion','idfotogaleria','fotos','fkidgaleria','nombreproyecto')
+					->join('galeria','fotogaleria.fkidgaleria','=','galeria.idgaleria')
+					->where('fkidgaleria','=', $datos->input ('idGaleria'))
+					->get();
+
+					return view ('admin/editarFotoGaleria',['listaFotoGaleria'=>$listaFotoGaleria]);
+					
+				}
+				else 
+				{
+					\Session::flash('mensaje','Error al modificar el proyecto');
+
+					$listaFotoGaleria = DB::table('fotogaleria')
+					->select('descripcion','idfotogaleria','fotos','fkidgaleria','nombreproyecto')
+					->join('galeria','fotogaleria.fkidgaleria','=','galeria.idgaleria')
+					->where('fkidgaleria','=', $datos->input ('idGaleria'))
+					->get();
+
+					return view ('admin/editarFotoGaleria',['listaFotoGaleria'=>$listaFotoGaleria]);	
+				}		
+
 			}
 			else
 			{

@@ -261,7 +261,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                             <th style="border:solid; border-width: 1px; border-color: #E7E7E7;">
                               <form action="editarFotoGaleria2" method="post">
                                {{ csrf_field() }}
-                               <input type="hidden" name="idGaleria" value="{{$foto->idfotogaleria}}">
+                               <input type="hidden" name="idFotoGaleria" value="{{$foto->idfotogaleria}}">
                               <button style="text-align:center; width: 100%; vertical-align: middle!important;" class="btn-floating btn-small waves-effect waves-light blue" ><img src="../../storage/images/icons/iconoeditar.png" width="20" height="20" data-toggle="modal" data-target="#moduloEditar" ></button>
                                </form> 
                             </th>
@@ -273,7 +273,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                             <th style="border:solid; border-width: 1px; border-color: #E7E7E7;">
                               <form action="editarGaleria2" method="post">
                                {{ csrf_field() }}
-                               <input type="hidden" name="idGaleria" value="{{$foto->idfotogaleria}}">
+                               <input type="hidden" name="idFotoGaleria" value="{{$foto->idfotogaleria}}">
                               <button style="text-align:center; width: 100%; vertical-align: middle;" class="btn-floating btn-small waves-effect waves-light blue" ><img src="../../storage/images/icons/iconoeliminar.png" width="20" height="20" data-toggle="modal" data-target="#moduloEditar"></button>
                                </form> 
                              </th>

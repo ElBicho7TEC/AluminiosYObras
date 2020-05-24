@@ -220,7 +220,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
               			<div align="center">
                 		<br>
                 		<span class="login100-form-title-1" style="color: black !important;">
-                  		Editar Foto De Galeria De Proyectos
+                  		Editar Foto {{$listaFotoGaleria[0]->descripcion}}
                 		</span>
               			</div>
                      @if(Session::has('flash_message'))
@@ -232,28 +232,22 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                   {{ Session::get('mensaje') }}
                 </div>
               @endif
-              			<form class="login100-form validate-form" method="post" action="btnEditarFotoGaleria" enctype="multipart/form-data">
+              			<form class="login100-form validate-form" method="post" action="../btnGuardarFotoGaleria" enctype="multipart/form-data">
 				            	 {{csrf_field()}}
-                					 <div class="wrap-input100 validate-input m-b-26" data-validate="Foto de galeria del proyecto requerido">
-                  						<span class="label-input100">Galeria Del Proyecto</span>
-		                            	<input class="input100" type="file" accept="image/*" name="fotoproyecto" placeholder="Ingresar logotipo del modulo" value="">
-                 						<span class="focus-input100"></span>
-                					</div>
-                				    <div class="wrap-input100 validate-input m-b-26" data-validate="Descripción breve del proyecto requerido">
-                  						<span class="label-input100">Descripción breve</span>
-		                            	<textarea class="input100" type="text" name="descripcionbreve" placeholder="Ingresar la descripción breve del proyecto" value="" rows="3"> </textarea>
-                 						<span class="focus-input100"></span>
-                					</div>
-                					 <div class="wrap-input100 validate-input m-b-26" data-validate="Descripción larga del proyecto requerido">
-                  						<span class="label-input100">Descripción larga</span>
-		                            	<textarea class="input100" type="text" name="descripcionlarga" placeholder="Ingresar la descripción larga del proyecto" value="" rows="3"> </textarea>
-                 						<span class="focus-input100"></span>
-                					</div>
-                            <div class="wrap-input100 validate-input m-b-26" data-validate="Nombre del proyecto requerido">
-                              <span class="label-input100">Proyecto</span>
-                                  <input class="input100" type="text" name="nombremodulo" placeholder="Ingresar el nombre del proyecto" value="">
+                					 <div class="wrap-input100 " data-validate="Foto del proyecto requerido">
+                              <span class="label-input100">Fotografía</span>
+                                <img class="img-rounded" src="../../storage/app/public{{$listaFotoGaleria[0]->fotos}}" width="300" height="200">
+                                  <input class="input100" type="file" accept="image/*" name="fotoproyecto[]" placeholder="Ingresar logotipo del modulo" value="">
                             <span class="focus-input100"></span>
                           </div>
+                          <div class="wrap-input100 validate-input m-b-26" data-validate="Característica requerida">
+                              <span class="label-input100"><br>Descripción</span>
+                              <br>
+                              <input type="hidden" name="idFotoGaleria" value="{{$listaFotoGaleria[0]->idfotogaleria}}">
+                               <input type="hidden" name="nombreproyecto" value="{{$listaFotoGaleria[0]->nombreproyecto}}">
+                                  <input class="input100" type="text" maxlength="70" name="descripcion" placeholder="Ingresar la primer característica" value="{{$listaFotoGaleria[0]->descripcion}}">
+                            <span class="focus-input100"></span>
+                        </div>
                 					<div class="container-login100-form-btn">
                 					    <button class="login100-form-btn" style="background-color: black">
                     					Editar

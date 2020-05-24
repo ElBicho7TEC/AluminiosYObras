@@ -169,6 +169,15 @@ License URL: http://creativecommons.org/licenses/by/3.0/
               </form> 
             </h7>
             <br>
+            <h4>Banner Empresa</h4>
+            <br>
+            <h7 style="color: grey;">
+              <form action="verbaner" method="get">
+                {{ csrf_field() }}
+                <a href="javascript:;" onclick="parentNode.submit();">&nbsp;&nbsp;&nbsp;&nbsp;Editar banner</a>
+              </form> 
+            </h7>
+            <br>
             <h4>Modulos</h4>
             <br>
             <h7 style="color: grey;">
@@ -248,7 +257,29 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                               <span class="label-input100">Descripción</span>
                                   <input class="input100" type="text" name="descripcionmodulo" placeholder="Ingresar la descripción del modulo" value="{{$datosModulo[0]->descripciondelnumero}}">
                             <span class="focus-input100"></span>
-                        </div>    
+                        </div> 
+
+                        <div class="wrap-input100 validate-input m-b-26" data-validate="Característica requerida">
+                              <span class="label-input100">Primer característica</span>
+                                   <input type="hidden" name="id1" value="{{$datosCarac[0]->idcaracteristicasmodulo}}">
+                                  <input class="input100" type="text" name="carac1" placeholder="Ingresar la primer característica" value="{{$datosCarac[0]->caracteristica}}">
+                            <span class="focus-input100"></span>
+                        </div>
+
+                        <div class="wrap-input100 validate-input m-b-26" data-validate="Característica requerida">
+                              <span class="label-input100">Segunda característica</span>
+                                <input type="hidden" name="id2" value="{{$datosCarac[1]->idcaracteristicasmodulo}}">
+                                  <input class="input100" type="text" name="carac2" placeholder="Ingresar la segunda característica" value="{{$datosCarac[1]->caracteristica}}">
+                            <span class="focus-input100"></span>
+                        </div>
+
+                        <div class="wrap-input100 validate-input m-b-26" data-validate="Característica requerida">
+                              <span class="label-input100">Tercer característica</span>
+                                <input type="hidden" name="id3" value="{{$datosCarac[2]->idcaracteristicasmodulo}}">
+                                  <input class="input100" type="text" name="carac3" placeholder="Ingresar la tercer característica" value="{{$datosCarac[2]->caracteristica}}">
+                            <span class="focus-input100"></span>
+                        </div>
+
 								        <div class="container-login100-form-btn">
                 					    <button class="login100-form-btn" style="background-color: black">
                     					Guardar cambios

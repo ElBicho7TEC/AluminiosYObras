@@ -161,16 +161,16 @@ use DB;
 				 		$ModuloAgregado=$Modulo->idmodulo;
 
 				 		$Caracteristica1 = new caracteristicasmodulo;
-				 		$Caracteristica1->caracteristicas=$datos->input('carac1');
-				 		$Caracteristica1->fkidmodulo=$datos->input('carac1');
+				 		$Caracteristica1->caracteristica=$datos->input('carac1');
+				 		$Caracteristica1->fkidmodulo=$ModuloAgregado;
 
 				 		$Caracteristica2 = new caracteristicasmodulo;
-				 		$Caracteristica2->caracteristicas=$datos->input('carac2');
-				 		$Caracteristica2->fkidmodulo=$datos->input('carac2');
+				 		$Caracteristica2->caracteristica=$datos->input('carac2');
+				 		$Caracteristica2->fkidmodulo=$ModuloAgregado;
 
 				 		$Caracteristica3 = new caracteristicasmodulo;
-				 		$Caracteristica3->caracteristicas=$datos->input('carac3');
-				 		$Caracteristica3->fkidmodulo=$datos->input('carac3');
+				 		$Caracteristica3->caracteristica=$datos->input('carac3');
+				 		$Caracteristica3->fkidmodulo=$ModuloAgregado;
 
 				 		if($Caracteristica1->save() && $Caracteristica2->save() && $Caracteristica3->save())
 				 		{
@@ -297,8 +297,14 @@ use DB;
 				$datosModulo = DB::table('modulo')
 				->select('idmodulo','nombremodulo','rutamodulo','numeroresaltador','descripciondelnumero')
 				->where('idmodulo','=',$datos->input('idModulo'))
-				->get();  
-				return view ('admin/editarModulo2',['datosModulo'=>$datosModulo]);	
+				->get(); 
+
+				$datosCarac = DB::table('caracteristicasmodulo')
+				->select('idcaracteristicasmodulo','caracteristica','fkidmodulo')
+				->where('fkidmodulo','=',$datos->input('idModulo'))
+				->get(); 
+
+				return view ('admin/editarModulo2',['datosModulo'=>$datosModulo,'datosCarac'=>$datosCarac]);	
 			}
 			else
 			{
@@ -316,6 +322,12 @@ use DB;
 
 			 	if ($datos->logotipo!=null)
 				{
+					DB::select('UPDATE caracteristicasmodulo SET caracteristica ='. $datos->input('carac1').' WHERE fkidmodulo = '.$idModulo.' AND idcaracteristicasmodulo = '. $datos->input('id1'));
+
+					DB::select('UPDATE caracteristicasmodulo SET caracteristica ='. $datos->input('carac2').' WHERE fkidmodulo = '.$idModulo.' AND idcaracteristicasmodulo = '. $datos->input('id2'));
+
+					DB::select('UPDATE caracteristicasmodulo SET caracteristica ='. $datos->input('carac3').' WHERE fkidmodulo = '.$idModulo.' AND idcaracteristicasmodulo = '. $datos->input('id3'));
+
 					unlink("../storage/app/public".$Modulo->rutamodulo);
 					foreach($datos->logotipo as $logo)
 					{
@@ -329,6 +341,7 @@ use DB;
 			 	$Modulo->numeroresaltador=$datos->input('numeroresaltar');
 			 	$Modulo->descripciondelnumero=$datos->input('descripcionmodulo');
 				if($Modulo->save()){
+
 
 					\Session::flash('flash_message', 'Módulo modificado con éxito');
 

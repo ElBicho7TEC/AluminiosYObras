@@ -194,13 +194,6 @@ License URL: http://creativecommons.org/licenses/by/3.0/
               </form> 
             </h7>
             <br>
-            <h7 style="color: grey;">
-              <form action="editarCaracteristicas" method="get">
-                {{ csrf_field() }}
-                <a href="javascript:;" onclick="parentNode.submit();">&nbsp;&nbsp;&nbsp;&nbsp;Editar características</a>
-              </form> 
-            </h7>
-            <br>
             <h4>Proyectos</h4>
             <br>
             <h7 style="color: grey;">

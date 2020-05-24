@@ -245,25 +245,25 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				            {{csrf_field()}}  
 				               	<div class="wrap-input100 validate-input m-b-26" data-validate="Mensaje de bienvenida requerido">
           						<span class="label-input100">Mensaje Bienvenida</span>
-                            	<input class="input100" type="text" name="mensaje" placeholder="Ingresar mensaje de bienvenida" value="{{$listaMensaje[0]->mensajewelcome}}">
+                            	<input class="input100" type="text" name="mensaje" maxlength="40" placeholder="Ingresar mensaje de bienvenida" value="{{$listaMensaje[0]->mensajewelcome}}">
          						<span class="focus-input100"></span>
         						</div>
 
         						<div class="wrap-input100 validate-input m-b-26" data-validate="El subtitulo es requerido">
           						<span class="label-input100">Subtitulo parte superior</span>
-                            	<input class="input100" type="text" name="subtitulo1" placeholder="Ingresar el subtitulo" value="{{$listaMensaje[0]->subtitulo1}}">
+                            	<input class="input100" type="text" name="subtitulo1" maxlength="30" placeholder="Ingresar el subtitulo" value="{{$listaMensaje[0]->subtitulo1}}">
          						<span class="focus-input100"></span>
         						</div>
 
         						<div class="wrap-input100 validate-input m-b-26" data-validate="El subtitulo es requerido">
           						<span class="label-input100">Subtitulo parte inferior</span>
-                            	<input class="input100" type="text" name="subtitulo2" placeholder="Ingresar el subtitulo" value="{{$listaMensaje[0]->subtitulo2}}">
+                            	<input class="input100" type="text" name="subtitulo2" maxlength="30" placeholder="Ingresar el subtitulo" value="{{$listaMensaje[0]->subtitulo2}}">
          						<span class="focus-input100"></span>
         						</div>
 
         						<div class="wrap-input100 validate-input m-b-26" data-validate="La descripción es requerido">
           						<span class="label-input100">Descripción</span>
-                            	<textarea  class="input100" type="text" name="descripcion" style="height: 100px;" placeholder="Ingresar la descripción">{{$listaMensaje[0]->descripcion}}</textarea>
+                            	<textarea  class="input100" type="text" maxlength="200" name="descripcion" style="height: 100px;" placeholder="Ingresar la descripción">{{$listaMensaje[0]->descripcion}}</textarea>
          						<span class="focus-input100"></span>
         						</div>
 

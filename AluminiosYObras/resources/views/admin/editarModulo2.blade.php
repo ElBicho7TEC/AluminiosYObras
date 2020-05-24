@@ -236,8 +236,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				            {{csrf_field()}}
 				            	 <div class="wrap-input100 validate-input m-b-26" data-validate="Nombre de modulo requerido">
                   						<span class="label-input100">Nombre Modulo</span>
-                              <input type="hidden" name="idModulo" value="{{$datosModulo[0]->idmodulo}}">
-		                            	<input class="input100" type="text" name="nombremoudlo" placeholder="Ingresar nombre del modulo" value="{{$datosModulo[0]->nombremodulo}}">
+                              <input type="hidden" name="idModulo"  value="{{$datosModulo[0]->idmodulo}}">
+		                            	<input class="input100" type="text" maxlength="20" name="nombremoudlo" placeholder="Ingresar nombre del modulo" value="{{$datosModulo[0]->nombremodulo}}">
                  						<span class="focus-input100"></span>
                 				</div>  
 
@@ -250,33 +250,33 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 
                 				 <div class="wrap-input100 validate-input m-b-26" data-validate="Númer a resaltar de modulo requerido">
                   						<span class="label-input100">Número a resaltar</span>
-		                            	<input class="input100" type="text" name="numeroresaltar" placeholder="Ingresar número a resaltar del modulo" value="{{$datosModulo[0]->numeroresaltador}}">
+		                            	<input class="input100" type="number" max="100" name="numeroresaltar" placeholder="Ingresar número a resaltar del modulo" value="{{$datosModulo[0]->numeroresaltador}}">
                  						<span class="focus-input100"></span>
                 				</div>
                         <div class="wrap-input100 validate-input m-b-26" data-validate="Descripción de modulo requerido">
                               <span class="label-input100">Descripción</span>
-                                  <input class="input100" type="text" name="descripcionmodulo" placeholder="Ingresar la descripción del modulo" value="{{$datosModulo[0]->descripciondelnumero}}">
+                                  <input class="input100" type="text" maxlength="50" name="descripcionmodulo" placeholder="Ingresar la descripción del modulo" value="{{$datosModulo[0]->descripciondelnumero}}">
                             <span class="focus-input100"></span>
                         </div> 
 
                         <div class="wrap-input100 validate-input m-b-26" data-validate="Característica requerida">
                               <span class="label-input100">Primer característica</span>
                                    <input type="hidden" name="id1" value="{{$datosCarac[0]->idcaracteristicasmodulo}}">
-                                  <input class="input100" type="text" name="carac1" placeholder="Ingresar la primer característica" value="{{$datosCarac[0]->caracteristica}}">
+                                  <input class="input100" type="text" maxlength="70" name="carac1" placeholder="Ingresar la primer característica" value="{{$datosCarac[0]->caracteristica}}">
                             <span class="focus-input100"></span>
                         </div>
 
                         <div class="wrap-input100 validate-input m-b-26" data-validate="Característica requerida">
                               <span class="label-input100">Segunda característica</span>
                                 <input type="hidden" name="id2" value="{{$datosCarac[1]->idcaracteristicasmodulo}}">
-                                  <input class="input100" type="text" name="carac2" placeholder="Ingresar la segunda característica" value="{{$datosCarac[1]->caracteristica}}">
+                                  <input class="input100" type="text" maxlength="70" name="carac2" placeholder="Ingresar la segunda característica" value="{{$datosCarac[1]->caracteristica}}">
                             <span class="focus-input100"></span>
                         </div>
 
                         <div class="wrap-input100 validate-input m-b-26" data-validate="Característica requerida">
                               <span class="label-input100">Tercer característica</span>
                                 <input type="hidden" name="id3" value="{{$datosCarac[2]->idcaracteristicasmodulo}}">
-                                  <input class="input100" type="text" name="carac3" placeholder="Ingresar la tercer característica" value="{{$datosCarac[2]->caracteristica}}">
+                                  <input class="input100" type="text" maxlength="70" name="carac3" placeholder="Ingresar la tercer característica" value="{{$datosCarac[2]->caracteristica}}">
                             <span class="focus-input100"></span>
                         </div>
 

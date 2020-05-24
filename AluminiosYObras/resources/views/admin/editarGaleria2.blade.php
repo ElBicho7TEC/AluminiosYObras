@@ -232,32 +232,44 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                   		Editar Proyecto
                 		</span>
               			</div>
-              			<form class="login100-form validate-form" method="post" action="btnAgregarProyecto" enctype="multipart/form-data">
+                    @if(Session::has('flash_message'))
+                <div class="alert alert-success" role="alert">
+                  {{ Session::get('flash_message') }}
+                </div>
+              @elseif(Session::has('mensaje'))
+                <div class="alert alert-danger" role="alert">
+                  {{ Session::get('mensaje') }}
+                </div>
+              @endif
+              			<form class="login100-form validate-form" method="post" action="../btnGuardarGaleria" enctype="multipart/form-data">
 				            	 {{csrf_field()}}
 						            <div class="wrap-input100 validate-input m-b-26" data-validate="Nombre del proyecto requerido">
                   						<span class="label-input100">Nombre Proyecto</span>
-		                            	<input class="input100" type="text" name="nombreproyecto" placeholder="Ingresar el nombre del proyecto" value="">
+                                <input type="hidden" name="idGaleria" value="{{$datosGaleria[0]->idgaleria}}">
+		                            	<input class="input100" type="text" name="nombreproyecto" placeholder="Ingresar el nombre del proyecto" value="{{$datosGaleria[0]->nombreproyecto}}">
                  						<span class="focus-input100"></span>
                 					</div>
-                					 <div class="wrap-input100 validate-input m-b-26" data-validate="Foto del proyecto requerido">
+                					 <div class="wrap-input100 " data-validate="Foto del proyecto requerido">
                   						<span class="label-input100">Foto Proyecto</span>
-		                            	<input class="input100" type="file" accept="image/*" name="fotoproyecto" placeholder="Ingresar logotipo del modulo" value="">
+                                <img class="img-rounded" src="../../storage/app/public{{$datosGaleria[0]->rutafotoprincipal}}" width="400" height="200">
+		                            	<input class="input100" type="file" accept="image/*" name="fotoproyecto[]" placeholder="Ingresar logotipo del modulo" value="">
                  						<span class="focus-input100"></span>
                 					</div>
                 				    <div class="wrap-input100 validate-input m-b-26" data-validate="Descripción breve del proyecto requerido">
                   						<span class="label-input100">Descripción breve</span>
 		                            	<textarea class="input100" type="text" name="descripcionbreve" placeholder="Ingresar la descripción breve del proyecto" value="
-                                  " rows="3"> </textarea>
+                                  " rows="4">{{$datosGaleria[0]->descripcionbreve}} </textarea>
                  						<span class="focus-input100"></span>
                 					</div>
                 					 <div class="wrap-input100 validate-input m-b-26" data-validate="Descripción larga del proyecto requerido">
                   						<span class="label-input100">Descripción larga</span>
-		                            	<textarea class="input100" type="text" name="descripcionlarga" placeholder="Ingresar la descripción larga del proyecto" value="" rows="3"> </textarea>
+		                            	<textarea class="input100" type="text" name="descripcionlarga" placeholder="Ingresar la descripción larga del proyecto" value="" rows="8">{{$datosGaleria[0]->descripcionlarga}} </textarea>
                  						<span class="focus-input100"></span>
                 					</div>
                             <div class="wrap-input100 validate-input m-b-26" data-validate="Nombre del modulo requerido">
+                              <span class="label-input100">Módulo</span>
                               <select name="idModulo" class="form-control" " title="Tienes que seleccionar un módulo" required>
-                                    <option selected>{{$datosGaleria[0]->nombremodulo}}
+                                    <option value="{{$datosGaleria[0]->idmodulo}}" selected>{{$datosGaleria[0]->nombremodulo}}
                                     </option>
                                     @foreach ($listaModulos as $modulo)
                                     <option  value={{$modulo->idmodulo}}>

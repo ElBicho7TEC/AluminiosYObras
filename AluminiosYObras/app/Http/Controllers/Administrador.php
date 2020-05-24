@@ -205,91 +205,6 @@ use DB;
 			}
 		}
 
-		public function editarLogo()
-		{
-			if (session()->has('s_identificador') ) 
-			{
-				$rutaNegro='../../storage/images/negro.png';
-				$rutaBlanco='../../storage/images/grisblanco.png';
-				return view ('admin/editarLogo',['rutaNegro'=>$rutaNegro,'rutaBlanco'=>$rutaBlanco]);	
-			}
-			else
-			{
-				return redirect('admin');
-			}
-		}
-
-		public function guardarLogo(subirImagenRequest $datos)
-		{
-			if (session()->has('s_identificador') ) 
-			{
-				if ($datos->logoNegro!=null)
-				{
-					foreach($datos->logoNegro as $logoNegro)
-					{
-						Storage::disk('images')->put('negro.png',File::get($logoNegro)); 
-					}
-				}
-
-				if ($datos->logoBlanco!=null)
-				{
-					foreach($datos->logoBlanco as $logoBlanco)
-					{
-						Storage::disk('images')->put('grisblanco.png',File::get($logoBlanco)); 
-					}
-				}
-
-				return redirect ('admin/editarLogo');
-			}
-			else
-			{
-				return redirect('admin');
-			}
-		}
-
-		public function editarMensaje()
-		{
-			if (session()->has('s_identificador') ) 
-			{
-				$listaMensaje = DB::table('bienvenida')
-				->select('idbienvenidos','mensajewelcome','subtitulo1','subtitulo2','descripcion')
-				->where('idbienvenidos','=',1)
-				->get(); 
-				
-				return view ('admin/editarMensaje',['listaMensaje'=>$listaMensaje]);	
-			}
-			else
-			{
-				return redirect('admin');
-			}
-		}
-
-		public function guardarMensaje(Request $datos)
-		{
-			if (session()->has('s_identificador') ) 
-			{	
-   			    $Mensaje=bienvenida::find(1);
-			 	$Mensaje->mensajewelcome=$datos->input('mensaje');
-			 	$Mensaje->subtitulo1=$datos->input('subtitulo1');
-			 	$Mensaje->subtitulo2=$datos->input('subtitulo2');
-			 	$Mensaje->descripcion=$datos->input('descripcion');
-				if($Mensaje->save()){
-					\Session::flash('flash_message', 'Mensaje modificado con éxito');
-					return redirect ('admin/editarMensaje');
-					
-				}
-				else 
-				{
-					\Session::flash('mensaje','Error al modificar el mensaje');
-					return redirect ('admin/editarMensaje');
-				}		
-			}
-			else
-			{
-				return redirect('admin');
-			}
-		}
-
 		public function editarModulo2(subirImagenRequest $datos)
 		{
 			if (session()->has('s_identificador') ) 
@@ -452,6 +367,91 @@ use DB;
 			}
 		}
 
+		public function editarLogo()
+		{
+			if (session()->has('s_identificador') ) 
+			{
+				$rutaNegro='../../storage/images/negro.png';
+				$rutaBlanco='../../storage/images/grisblanco.png';
+				return view ('admin/editarLogo',['rutaNegro'=>$rutaNegro,'rutaBlanco'=>$rutaBlanco]);	
+			}
+			else
+			{
+				return redirect('admin');
+			}
+		}
+
+		public function guardarLogo(subirImagenRequest $datos)
+		{
+			if (session()->has('s_identificador') ) 
+			{
+				if ($datos->logoNegro!=null)
+				{
+					foreach($datos->logoNegro as $logoNegro)
+					{
+						Storage::disk('images')->put('negro.png',File::get($logoNegro)); 
+					}
+				}
+
+				if ($datos->logoBlanco!=null)
+				{
+					foreach($datos->logoBlanco as $logoBlanco)
+					{
+						Storage::disk('images')->put('grisblanco.png',File::get($logoBlanco)); 
+					}
+				}
+
+				return redirect ('admin/editarLogo');
+			}
+			else
+			{
+				return redirect('admin');
+			}
+		}
+
+		public function editarMensaje()
+		{
+			if (session()->has('s_identificador') ) 
+			{
+				$listaMensaje = DB::table('bienvenida')
+				->select('idbienvenidos','mensajewelcome','subtitulo1','subtitulo2','descripcion')
+				->where('idbienvenidos','=',1)
+				->get(); 
+				
+				return view ('admin/editarMensaje',['listaMensaje'=>$listaMensaje]);	
+			}
+			else
+			{
+				return redirect('admin');
+			}
+		}
+
+		public function guardarMensaje(Request $datos)
+		{
+			if (session()->has('s_identificador') ) 
+			{	
+   			    $Mensaje=bienvenida::find(1);
+			 	$Mensaje->mensajewelcome=$datos->input('mensaje');
+			 	$Mensaje->subtitulo1=$datos->input('subtitulo1');
+			 	$Mensaje->subtitulo2=$datos->input('subtitulo2');
+			 	$Mensaje->descripcion=$datos->input('descripcion');
+				if($Mensaje->save()){
+					\Session::flash('flash_message', 'Mensaje modificado con éxito');
+					return redirect ('admin/editarMensaje');
+					
+				}
+				else 
+				{
+					\Session::flash('mensaje','Error al modificar el mensaje');
+					return redirect ('admin/editarMensaje');
+				}		
+			}
+			else
+			{
+				return redirect('admin');
+			}
+		}
+
 		public function agregarGaleria()
 		{
 			if (session()->has('s_identificador') ) 
@@ -553,7 +553,7 @@ use DB;
 			if (session()->has('s_identificador') ) 
 			{
 				$datosGaleria = DB::table('galeria')
-				->select('idgaleria','nombreproyecto','rutafotoprincipal','descripcionbreve','descripcionlarga','fkidmodulo','nombremodulo')
+				->select('idgaleria','nombreproyecto','rutafotoprincipal','descripcionbreve','descripcionlarga','idmodulo','nombremodulo')
 				->join('modulo','modulo.idmodulo','=','galeria.fkidmodulo')
 				->where('idgaleria','=',$datos->input('idGaleria'))
 				->get(); 
@@ -563,6 +563,64 @@ use DB;
 				->get();  
 
 				return view ('admin/editarGaleria2',['datosGaleria'=>$datosGaleria, 'listaModulos'=>$listaModulos]);	
+			}
+			else
+			{
+				return redirect('admin');
+			}
+		}
+
+		public function guardarGaleria(subirImagenRequest $datos)
+		{
+			if (session()->has('s_identificador') ) 
+			{
+				$listaGaleria = DB::table('galeria')
+				->select('nombreproyecto')
+				->get();
+
+				foreach($listaGaleria as $proyecto)
+				{
+					if($proyecto->nombreproyecto == $datos->input('nombreproyecto'))
+					{
+						DB::rollback();
+						\Session::flash('mensaje','El nombre de proyecto ya existe, favor de añadir un nombre distinto');
+						 return redirect ('admin/editarGaleria');
+					}
+				}  	
+
+				$idGaleria=$datos->input('idGaleria');
+				$Galeria=galeria::find($idGaleria);
+			 	$Galeria->nombreproyecto=$datos->input('nombreproyecto');
+
+			 	if ($datos->fotoproyecto!=null)
+				{
+					unlink("../storage/app/public".$Galeria->rutafotoprincipal);
+					foreach($datos->fotoproyecto as $foto)
+					{
+						$segundo= "proyecto_".$datos->input('nombreproyecto').".jpg";
+					 	$carpeta="/proyectos/".$segundo;
+						Storage::disk('public')->put($carpeta,File::get($foto)); 
+						$Galeria->rutafotoprincipal=$carpeta;
+					}
+				}
+			 	
+			 	$Galeria->descripcionbreve=$datos->input('descripcionbreve');
+			 	$Galeria->descripcionlarga=$datos->input('descripcionlarga');
+			 	$Galeria->fkidmodulo=$datos->input('idModulo');
+				if($Galeria->save()){
+
+					\Session::flash('flash_message', 'Proyectp modificado con éxito');
+
+					return redirect ('admin/editarGaleria');	
+					
+				}
+				else 
+				{
+					\Session::flash('mensaje','Error al modificar el proyecto');
+
+					return redirect ('admin/editarGaleria');		
+				}		
+
 			}
 			else
 			{

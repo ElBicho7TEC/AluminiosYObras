@@ -456,6 +456,62 @@ use DB;
 		{
 			if (session()->has('s_identificador') ) 
 			{
+				$listaModulos = DB::table('modulo')
+				->select('idmodulo','nombremodulo','rutamodulo','numeroresaltador','descripciondelnumero')
+				->get();  
+				
+				return view ('admin/agregarGaleria',['listaModulos'=>$listaModulos]);	
+			}
+			else
+			{
+				return redirect('admin');
+			}
+		}
+
+		public function crearGaleria(subirImagenRequest $datos)
+		{
+			if (session()->has('s_identificador') ) 
+			{
+				try
+				{
+					DB::beginTransaction();
+					$Galeria = new galeria;
+				 	$Galeria->nombreproyecto=$datos->input('');
+
+				 	foreach($datos->logotipo as $foto)
+					{
+						$segundo= "proyecto_".$datos->input('').".jpg";
+					 	$carpeta="/proyectos/".$segundo;
+						Storage::disk('public')->put($carpeta,File::get($foto)); 
+					}
+				 	
+				 	$Galeria->rutafotoprincipal=$carpeta;
+				 	$Galeria->descripcionbreve=$datos->input('');
+				 	$Galeria->descripcionlarga=$datos->input('');
+
+				 	if($Galeria->save()){
+				 		$ModuloAgregado=$Galeria->idmodulo;
+
+			 			DB::commit(); 
+			 			\Session::flash('flash_message', '¡Nuevo módulo añadido con éxito');
+						return redirect('admin/editarModulo');
+				 	}
+					else 
+					{
+						DB::rollback();
+						\Session::flash('mensaje','Error al añadir el módulo');
+						 return redirect('admin/agregarModulo');
+					}
+				}
+				catch(Exeption $e)
+				{
+					DB::rollback();
+					\Session::flash('mensaje','Error al añadir el módulo');
+						 return redirect('admin/agregarModulo');
+				}			
+
+
+
 				return view ('admin/agregarGaleria');	
 			}
 			else

@@ -48,6 +48,8 @@ Route::post('btnEditarMensaje','Administrador@guardarMensaje');
 Route::get('admin/verbaner','Administrador@verBanner');
 Route::post('btnEditarBanner','Administrador@guardarBanner');
 
+Route::post('btnAgregarProyecto','Administrador@crearGaleria');
+
 Route::get('admin/agregarFotoGaleria','Administrador@agregarFotoGaleria');
 Route::get('admin/editarFotoGaleria','Administrador@editarFotoGaleria');
 Route::get('admin/editarFotoGaleria2','Administrador@editarFotoGaleria2');

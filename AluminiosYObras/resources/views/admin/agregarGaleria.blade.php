@@ -232,7 +232,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                   		Agregar Proyecto
                 		</span>
               			</div>
-              			<form class="login100-form validate-form" method="post" action="btnAgregarProyecto" enctype="multipart/form-data">
+              			<form class="login100-form validate-form" method="post" action="../btnAgregarProyecto" enctype="multipart/form-data">
 				            	 {{csrf_field()}}
 						            <div class="wrap-input100 validate-input m-b-26" data-validate="Nombre del proyecto requerido">
                   						<span class="label-input100">Nombre Proyecto</span>
@@ -255,7 +255,16 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                  						<span class="focus-input100"></span>
                 					</div>
                             <div class="wrap-input100 validate-input m-b-26" data-validate="Nombre del modulo requerido">
-                              <span class="label-input100">Modulo</span>
+                              <span class="label-input100">Módulo</span>
+                                 <select name="idModulo" class="form-control" style="width: auto;" title="Tienes que seleccionar un módulo" required>
+                                    <option selected>Selecciona el módulo
+                                    </option>
+                                    @foreach ($listaModulos as $modulo)
+                                    <option  value={{$modulo->idmodulo}}>
+                                        {{ $modulo->nombremodulo}} 
+                                    </option>
+                                    @endforeach     
+                                </select> 
                                   <input class="input100" type="text" name="nombremodulo" placeholder="Ingresar el nombre del modulo del proyecto" value="">
                             <span class="focus-input100"></span>
                           </div>

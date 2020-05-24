@@ -577,6 +577,22 @@ use DB;
 			}
 		}
 
+		public function editarGaleriaBuscar(Request $datos)
+		{
+			if (session()->has('s_identificador') ) 
+			{
+				$listaGaleria = DB::table('galeria')
+				->select('idgaleria','nombreproyecto','rutafotoprincipal','descripcionbreve','descripcionlarga','idmodulo','nombremodulo')
+				->join('modulo','galeria.fkidmodulo','=','modulo.idmodulo')
+				->get();  
+				return view ('admin/editarGaleria',['listaGaleria'=>$listaGaleria]);	
+			}
+			else
+			{
+				return redirect('admin');
+			}
+		}
+
 		public function editarGaleria2(subirImagenRequest $datos)
 		{
 			if (session()->has('s_identificador') ) 

@@ -232,6 +232,16 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                   		Agregar Módulo
                 		</span>
               			</div>
+                    <div class="table-responsive">
+                @if(Session::has('flash_message'))
+                <div class="alert alert-success" role="alert">
+                  {{ Session::get('flash_message') }}
+                </div>
+              @elseif(Session::has('mensaje'))
+                <div class="alert alert-danger" role="alert">
+                  {{ Session::get('mensaje') }}
+                </div>
+              @endif
               			<form class="login100-form validate-form" method="post" action="../btnAgregarModulo" enctype="multipart/form-data">
 				            	 {{csrf_field()}}
 				            	 <div class="wrap-input100 validate-input m-b-26" data-validate="Nombre de modulo requerido">

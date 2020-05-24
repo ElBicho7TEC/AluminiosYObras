@@ -225,6 +225,15 @@ License URL: http://creativecommons.org/licenses/by/3.0/
               			</div>
 				            	 {{csrf_field()}}
 							<div class="table-responsive">
+                 @if(Session::has('flash_message'))
+                <div class="alert alert-success" role="alert">
+                  {{ Session::get('flash_message') }}
+                </div>
+              @elseif(Session::has('mensaje'))
+                <div class="alert alert-danger" role="alert">
+                  {{ Session::get('mensaje') }}
+                </div>
+              @endif
 									<table class="table table-bordered" style="color: black; background-color: white;">
 										  <thead class="thead-dark" style="color: black">
 										    <tr>

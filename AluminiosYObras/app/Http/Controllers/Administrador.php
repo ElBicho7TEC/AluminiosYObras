@@ -143,6 +143,21 @@ use DB;
 				try
 				{
 					DB::beginTransaction();
+
+					$listaModulos = DB::table('modulo')
+					->select('idmodulo','nombremodulo','rutamodulo','numeroresaltador','descripciondelnumero')
+					->get();  
+
+					foreach($listaModulos as $modulos)
+					{
+						if($modulos->nombremodulo == $datos->input('nombremodulo'))
+						{
+							DB::rollback();
+							\Session::flash('mensaje','El nombre de módulo ya existe, favor de añadir un nombre distinto');
+							 return redirect ('admin/agregarModulo');
+						}
+					} 
+
 					$Modulo = new modulo;
 				 	$Modulo->nombremodulo=$datos->input('nombremodulo');
 
@@ -231,6 +246,20 @@ use DB;
 		{
 			if (session()->has('s_identificador') ) 
 			{
+				$listaModulos = DB::table('modulo')
+				->select('idmodulo','nombremodulo','rutamodulo','numeroresaltador','descripciondelnumero')
+				->get();  
+
+				foreach($listaModulos as $modulo)
+				{
+					if($modulo->nombremodulo == $datos->input('nombremoudlo'))
+					{
+						\Session::flash('mensaje','El nombre de módulo ya existe, favor de añadir un nombre distinto');
+						 return redirect ('admin/editarModulo');
+					}
+				}  	
+
+
 				$idModulo=$datos->input('idModulo');
 				$Modulo=modulo::find($idModulo);
 			 	$Modulo->nombremodulo=$datos->input('nombremoudlo');

@@ -257,6 +257,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                 					</div>
                 				    <div class="wrap-input100 validate-input m-b-26" data-validate="Descripción breve del proyecto requerido">
                   						<span class="label-input100">Descripción breve</span>
+
+                                  <br>
 		                            	<textarea class="input100" type="text" name="descripcionbreve" placeholder="Ingresar la descripción breve del proyecto" value="
                                   " rows="4">{{$datosGaleria[0]->descripcionbreve}} </textarea>
                  						<span class="focus-input100"></span>

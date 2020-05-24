@@ -322,12 +322,6 @@ use DB;
 
 			 	if ($datos->logotipo!=null)
 				{
-					DB::select('UPDATE caracteristicasmodulo SET caracteristica ='. $datos->input('carac1').' WHERE fkidmodulo = '.$idModulo.' AND idcaracteristicasmodulo = '. $datos->input('id1'));
-
-					DB::select('UPDATE caracteristicasmodulo SET caracteristica ='. $datos->input('carac2').' WHERE fkidmodulo = '.$idModulo.' AND idcaracteristicasmodulo = '. $datos->input('id2'));
-
-					DB::select('UPDATE caracteristicasmodulo SET caracteristica ='. $datos->input('carac3').' WHERE fkidmodulo = '.$idModulo.' AND idcaracteristicasmodulo = '. $datos->input('id3'));
-
 					unlink("../storage/app/public".$Modulo->rutamodulo);
 					foreach($datos->logotipo as $logo)
 					{
@@ -341,7 +335,11 @@ use DB;
 			 	$Modulo->numeroresaltador=$datos->input('numeroresaltar');
 			 	$Modulo->descripciondelnumero=$datos->input('descripcionmodulo');
 				if($Modulo->save()){
+					DB::update('UPDATE caracteristicasmodulo SET caracteristica = "'. $datos->input("carac1").'" WHERE fkidmodulo = "'.$idModulo.'" AND idcaracteristicasmodulo = "'. $datos->input("id1").'"') ;
 
+					DB::update('UPDATE caracteristicasmodulo SET caracteristica = "'. $datos->input("carac2").'" WHERE fkidmodulo = "'.$idModulo.'" AND idcaracteristicasmodulo = "'. $datos->input("id2").'"') ;
+
+					DB::update('UPDATE caracteristicasmodulo SET caracteristica = "'. $datos->input("carac3").'" WHERE fkidmodulo = "'.$idModulo.'" AND idcaracteristicasmodulo = "'. $datos->input("id3").'"');
 
 					\Session::flash('flash_message', 'Módulo modificado con éxito');
 

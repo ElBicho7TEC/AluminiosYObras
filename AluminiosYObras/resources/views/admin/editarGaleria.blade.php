@@ -262,7 +262,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 										      <th scope="col" style="text-align:center;">Nombre</th>
 										      <th scope="col" style="text-align:center;">Foto </th>
 										      <th scope="col" style="text-align:center;">Descripción breve</th>
-										      <th scope="col" style="text-align:center;">Modulo</th>
+										      <th scope="col" style="text-align:center;">Módulo</th>
 										    </tr>
 										  </thead>
 											  <tbody>

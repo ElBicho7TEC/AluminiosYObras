@@ -581,10 +581,14 @@ use DB;
 		{
 			if (session()->has('s_identificador') ) 
 			{
-				$listaGaleria = DB::table('galeria')
-				->select('idgaleria','nombreproyecto','rutafotoprincipal','descripcionbreve','descripcionlarga','idmodulo','nombremodulo')
-				->join('modulo','galeria.fkidmodulo','=','modulo.idmodulo')
-				->get();  
+				$galeria_variable = new galeria;
+				$busqueda = $galeria_variable->txtBuscar = $datos->input ('txtBuscar');	
+
+				$listaGaleria = DB::select('SELECT idgaleria,nombreproyecto,rutafotoprincipal,descripcionbreve,descripcionlarga,idmodulo,nombremodulo 
+								FROM galeria  
+								INNER JOIN modulo ON galeria.fkidmodulo =modulo.idmodulo
+								WHERE nombreproyecto like "%'.$busqueda.'%" OR descripcionbreve like "%'.$busqueda.'%" OR descripcionlarga like "%'.$busqueda.'%" OR nombremodulo like "%'.$busqueda.'%"');
+
 				return view ('admin/editarGaleria',['listaGaleria'=>$listaGaleria]);	
 			}
 			else

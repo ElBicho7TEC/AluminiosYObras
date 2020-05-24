@@ -477,7 +477,7 @@ use DB;
 					DB::beginTransaction();
 
 					$listaGaleria = DB::table('galeria')
-					->select('nombreproyecto',)
+					->select('nombreproyecto')
 					->get();
 
 					foreach($listaGaleria as $proyecto)

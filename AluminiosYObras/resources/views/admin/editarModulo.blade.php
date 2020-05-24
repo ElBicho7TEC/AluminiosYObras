@@ -296,7 +296,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                                         <input type="hidden" name="idModulo" value="{{$modulo->idmodulo}}">
                                         <button id="button" class="btn btn-primary" style="background-color: black; color: white; border:none; width: 50px; height: 20px; text-align: middle;">Si</button>
                                     </form>
-                                    <form action="ver_Auditor" method="get" enctype="multipart/form-data">
+                                    <form action="editarModulo" method="get" enctype="multipart/form-data">
                                     {{ csrf_field() }}
                                         <button id="button" class="btn btn-primary" class="btn btn-sm btn-default" data-dismiss="modal" style="background-color: black; color: white; border:none; width: 50px; height: 20px; text-align: middle;">No</button>
                                     </form>

@@ -369,26 +369,6 @@ use DB;
 					\Session::flash('flash_message', 'El Módulo no se pudo eliminar');
 					return redirect('admin/editarModulo');
 				}
-
-				
-
-				if(DB::delete('DELETE fotogaleria, galeria, caracteristicasmodulo, modulo 
-					FROM modulo
-					INNER JOIN fotogaleria ON galeria.idgaleria = fotogaleria.fkidgaleria
-					INNER JOIN galeria ON modulo.idmodulo = gelria.fkidmodulo
-					INNER JOIN caracteristicasmodulo ON modulo.idmodulo = caracteristicasmodulo.fkidmodulo
-					WHERE modulo.idmodulo=?',[$idModulo]))
-				{
-					\Session::flash('flash_message', 'Módulo eliminado con éxito');
-					return redirect('admin/editarModulo');	
-				}
-				else 
-				{
-					\Session::flash('mensaje','Error al eliminar el módulo');
-					return redirect('admin/editarModulo');	
-				}
-				
-				return redirect('admin/editarModulo');	
 			}
 			else
 			{
@@ -670,6 +650,83 @@ use DB;
 					return redirect ('admin/editarGaleria');		
 				}		
 
+			}
+			else
+			{
+				return redirect('admin');
+			}
+		}
+
+		public function eliminarGaleria(Request $datos)
+		{
+			if (session()->has('s_identificador') ) 
+			{
+				try
+				{
+					DB::beginTransaction();
+
+					$listaFotoGaleria = DB::table('fotogaleria')
+					->select('descripcion')
+					->where('fkidgaleria','=', $datos->input ('idGaleria'))
+					->get();
+
+					if($listaFotoGaleria=!'[]')
+					{
+						$fotogaleria_variable = new fotogaleria;
+						$idGaleria = $fotogaleria_variable->idGaleria = $datos->input ('idGaleria');
+
+						if(DB::delete('DELETE FROM fotogaleria WHERE fkidgaleria =?',[$idGaleria]))
+						{
+							$galeria_variable = new galeria;
+							$idGaleria2 = $galeria_variable->idGaleria = $datos->input ('idGaleria');
+
+							if(DB::delete('DELETE FROM galeria WHERE galeria.idgaleria =?',[$idGaleria2]))
+							{
+								DB::commit(); 
+								\Session::flash('flash_message', 'Proyecto eliminado con éxito');
+								return redirect('admin/editarGaleria');	
+								
+							}
+							else
+							{
+								DB::rollback();
+								\Session::flash('flash_message', 'El Proyecto no se pudo eliminar');
+								return redirect('admin/editarGaleria');	
+							}
+						}
+						else
+						{
+							DB::rollback();
+							\Session::flash('flash_message', 'El Proyecto no se pudo eliminar');
+							return redirect('admin/editarGaleria');	
+						}
+					}
+					else
+					{
+						$galeria_variable = new galeria;
+						$idGaleria2 = $galeria_variable->idGaleria = $datos->input ('idGaleria');
+
+						if(DB::delete('DELETE FROM galeria WHERE galeria.idgaleria =?',[$idGaleria2]))
+						{
+							DB::commit(); 
+							\Session::flash('flash_message', 'Proyecto eliminado con éxito');
+							return redirect('admin/editarGaleria');	
+							
+						}
+						else
+						{
+							DB::rollback();
+							\Session::flash('flash_message', 'El Proyecto no se pudo eliminar');
+							return redirect('admin/editarGaleria');	
+						}	
+					}
+				}
+				catch(Exeption $e)
+				{
+					DB::rollback();
+					\Session::flash('flash_message', 'El Proyecto no se pudo eliminar');
+					return redirect('admin/editarGaleria');
+				}
 			}
 			else
 			{

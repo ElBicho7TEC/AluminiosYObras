@@ -51,11 +51,12 @@ Route::post('btnEditarBanner','Administrador@guardarBanner');
 Route::post('btnAgregarProyecto','Administrador@crearGaleria');
 Route::post('admin/editarGaleria2','Administrador@editarGaleria2');
 Route::post('btnGuardarGaleria','Administrador@guardarGaleria');
+Route::post('btnEliminarGaleria','Administrador@eliminarGaleria');
 
 Route::get('editarFotoGaleria2','Administrador@editarFotoGaleria2');
 
 Route::get('admin/agregarFotoGaleria','Administrador@agregarFotoGaleria');
-Route::get('admin/editarFotoGaleria','Administrador@editarFotoGaleria');
+Route::post('admin/editarFotoGaleria','Administrador@editarFotoGaleria');
 
 Route::get('admin/agregarGaleria','Administrador@agregarGaleria');
 Route::get('admin/editarGaleria','Administrador@editarGaleria');

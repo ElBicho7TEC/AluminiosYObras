@@ -298,6 +298,33 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 
                             </th>
                           </tr>
+
+                           {{-----------------------Modal de confirmación de Eliminar Proyecto---------------------------}}
+                    <div id="eliminarGaleria{{$galeria->idgaleria}}" class="modal fade">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header" style="background:black;">
+                                    <h4 class="modal-title" style="color: white" >Eliminar Proyecto</h4>
+                                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true"  style="color: white">&times;</button>
+                                </div>
+                                <div class="modal-body mx-auto" >
+                                    <b><label id="form_nombre">¿Estás seguro que deseas eliminar el proyecto {{$galeria->nombreproyecto}}?, se eliminarán todas las fotografías pertenecientes al mismo y no podrá recuperarlas</label></b>
+                                </div>
+                                <div class="modal-footer" style="height: 100px;">
+                                    <form action="../btnEliminarGaleria" method="post" enctype="multipart/form-data">
+                                    {{ csrf_field() }}
+                                        <input type="hidden" name="idGaleria" value="{{$galeria->idgaleria}}">
+                                        <button id="button" class="btn btn-primary" style="background-color: black; color: white; border:none; width: 50px; height: 20px; text-align: middle;">Si</button>
+                                    </form>
+                                    <form action="editarGaleria" method="get" enctype="multipart/form-data">
+                                    {{ csrf_field() }}
+                                        <button id="button" class="btn btn-primary" class="btn btn-sm btn-default" data-dismiss="modal" style="background-color: black; color: white; border:none; width: 50px; height: 20px; text-align: middle;">No</button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
                           @endforeach
 											  </tbody>
 								</table>

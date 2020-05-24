@@ -245,25 +245,25 @@ License URL: http://creativecommons.org/licenses/by/3.0/
               {{csrf_field()}}  
                 <div class="wrap-input100 validate-input m-b-26" data-validate="El correo electr&oacute;nico es requerido">
                   <span class="label-input100">Correo electr&oacute;nico</span>
-                  <input class="input100" type="text" name="email" placeholder="Ingresar correo electr&oacute;nico" value="{{$listaUsuario[0]->correoElectronico}}">
+                  <input class="input100" type="text" name="email" maxlength="45" placeholder="Ingresar correo electr&oacute;nico" value="{{$listaUsuario[0]->correoElectronico}}">
                   <span class="focus-input100"></span>
                 </div>
 
                 <div class="wrap-input100 " data-validate = "La contrase&ntilde;a es requerida">
                   <span class="label-input100">Contrase&ntilde;a</span>
-                  <input class="input100" type="password" name="pass" placeholder="Ingresar contrase&ntilde;a">
+                  <input class="input100" type="password" name="pass" placeholder="Ingresar contrase&ntilde;a" maxlength="255">
                   <span class="focus-input100"></span>
                 </div>
 
                 <div class="wrap-input100 " data-validate = "La contrase&ntilde;a es requerida">
                   <span class="label-input100">Nueva Contrase&ntilde;a</span>
-                  <input class="input100" name="passN1" type="password" name="pass" placeholder="Ingresar contrase&ntilde;a">
+                  <input class="input100" name="passN1" type="password" name="pass" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" placeholder="Ingresar contrase&ntilde;a" title="La contraseña debe contener al menos 8 caracteres incluyendo como mínimo un número, una minúscula y una mayúscula" maxlength="255">
                   <span class="focus-input100"></span>
                 </div>
 
                 <div class="wrap-input100 " data-validate = "La contrase&ntilde;a es requerida">
                   <span class="label-input100">Confirmar contrase&ntilde;a</span>
-                  <input class="input100" name="passN2" type="password" name="pass" placeholder="Ingresar contrase&ntilde;a">
+                  <input class="input100" name="passN2" type="password" name="pass" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" placeholder="Ingresar contrase&ntilde;a" title="La contraseña debe contener al menos 8 caracteres incluyendo como mínimo un número, una minúscula y una mayúscula" maxlength="255">
                   <span class="focus-input100"></span>
                 </div>
 

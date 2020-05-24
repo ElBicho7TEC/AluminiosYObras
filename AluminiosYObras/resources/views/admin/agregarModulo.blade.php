@@ -236,7 +236,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				            	 {{csrf_field()}}
 				            	 <div class="wrap-input100 validate-input m-b-26" data-validate="Nombre de modulo requerido">
                   						<span class="label-input100">Nombre Modulo</span>
-		                            	<input class="input100" type="text" name="nombremodulo" placeholder="Ingresar nombre del módulo" value="">
+		                            	<input class="input100" type="text" name="nombremodulo" maxlength="20" placeholder="Ingresar nombre del módulo" value="">
                  						<span class="focus-input100"></span>
                 				</div>  
 
@@ -248,31 +248,31 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 
                 				 <div class="wrap-input100 validate-input m-b-26" data-validate="Númer a resaltar de modulo requerido">
                   						<span class="label-input100">Número a resaltar</span>
-		                            	<input class="input100" type="text" name="numeroresaltar" placeholder="Ingresar número a resaltar del módulo" value="">
+		                            	<input class="input100"  type="number" max="100" name="numeroresaltar" placeholder="Ingresar número a resaltar del módulo" value="">
                  						<span class="focus-input100"></span>
                 				</div>
 
                         <div class="wrap-input100 validate-input m-b-26" data-validate="Descripción de modulo requerido">
                               <span class="label-input100">Descripción</span>
-                                  <input class="input100" type="text" name="descripcionmodulo" placeholder="Ingresar la descripción del módulo" value="">
+                                  <input class="input100" type="text" maxlength="50" name="descripcionmodulo" placeholder="Ingresar la descripción del módulo" value="">
                             <span class="focus-input100"></span>
                         </div>
 
                         <div class="wrap-input100 validate-input m-b-26" data-validate="Característica requerida">
                               <span class="label-input100">Primer característica</span>
-                                  <input class="input100" type="text" name="carac1" placeholder="Ingresar la primer característica" value="">
+                                  <input class="input100" type="text" maxlength="70" name="carac1" placeholder="Ingresar la primer característica" value="">
                             <span class="focus-input100"></span>
                         </div>
 
                         <div class="wrap-input100 validate-input m-b-26" data-validate="Característica requerida">
                               <span class="label-input100">Segunda característica</span>
-                                  <input class="input100" type="text" name="carac2" placeholder="Ingresar la segunda característica" value="">
+                                  <input class="input100" type="text" maxlength="70" name="carac2" placeholder="Ingresar la segunda característica" value="">
                             <span class="focus-input100"></span>
                         </div>
 
                         <div class="wrap-input100 validate-input m-b-26" data-validate="Característica requerida">
                               <span class="label-input100">Tercer característica</span>
-                                  <input class="input100" type="text" name="carac3" placeholder="Ingresar la tercer característica" value="">
+                                  <input class="input100" type="text" maxlength="70" name="carac3" placeholder="Ingresar la tercer característica" value="">
                             <span class="focus-input100"></span>
                         </div>
 

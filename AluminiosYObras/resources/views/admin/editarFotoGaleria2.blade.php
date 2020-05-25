@@ -246,7 +246,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                               <input type="hidden" name="idFotoGaleria" value="{{$listaFotoGaleria[0]->idfotogaleria}}">
                               <input type="hidden" name="idGaleria" value="{{$listaFotoGaleria[0]->fkidgaleria}}">
                                <input type="hidden" name="nombreproyecto" value="{{$listaFotoGaleria[0]->nombreproyecto}}">
-                                  <input class="input100" type="text" maxlength="70" name="descripcion" placeholder="Ingresar la primer característica" value="{{$listaFotoGaleria[0]->descripcion}}">
+                                  <input class="input100" type="text" maxlength="70" name="descripcion" placeholder="Ingresa la descripción" value="{{$listaFotoGaleria[0]->descripcion}}">
                             <span class="focus-input100"></span>
                         </div>
                 					<div class="container-login100-form-btn">

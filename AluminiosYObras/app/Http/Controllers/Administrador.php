@@ -246,6 +246,7 @@ use DB;
 		{
 			if (session()->has('s_identificador') ) 
 			{
+				/*
 				$listaModulos = DB::table('modulo')
 				->select('idmodulo','nombremodulo','rutamodulo','numeroresaltador','descripciondelnumero')
 				->get();  
@@ -257,7 +258,7 @@ use DB;
 						\Session::flash('mensaje','El nombre de módulo ya existe, favor de añadir un nombre distinto');
 						 return redirect ('admin/editarModulo');
 					}
-				}  	
+				}  */	
 
 
 				$idModulo=$datos->input('idModulo');
@@ -603,6 +604,7 @@ use DB;
 		{
 			if (session()->has('s_identificador') ) 
 			{
+				/*
 				$listaGaleria = DB::table('galeria')
 				->select('nombreproyecto')
 				->get();
@@ -615,7 +617,7 @@ use DB;
 						\Session::flash('mensaje','El nombre de proyecto ya existe, favor de añadir un nombre distinto');
 						 return redirect ('admin/editarGaleria');
 					}
-				}  	
+				} */ 	
 
 				$idGaleria=$datos->input('idGaleria');
 				$Galeria=galeria::find($idGaleria);
@@ -734,11 +736,12 @@ use DB;
 			}
 		}
 
-		public function agregarFotoGaleria()
+		public function agregarFotoGaleria(Request $datos)
 		{
 			if (session()->has('s_identificador') ) 
 			{
-				return view ('admin/agregarFotoGaleria');	
+				$idGaleria = $datos->input('idGaleria');
+				return view ('admin/agregarFotoGaleria',['idGaleria'=>$idGaleria]);	
 			}
 			else
 			{
@@ -817,6 +820,53 @@ use DB;
 					return redirect ('admin/editarGaleria');	
 				}		
 
+			}
+			else
+			{
+				return redirect('admin');
+			}
+		}
+
+		public function crearFotoGaleria(subirImagenRequest $datos)
+		{
+			if (session()->has('s_identificador') ) 
+			{
+				try
+				{
+					DB::beginTransaction();
+					
+					$FotoGaleria = new fotogaleria;
+
+				 	foreach($datos->fotoproyecto as $foto)
+					{
+						$segundo= "proyecto_".$datos->input('nombreproyecto')."_".$datos->input('descripcion').".jpg";
+					 	$carpeta="/proyectos/".$segundo;
+						Storage::disk('public')->put($carpeta,File::get($foto)); 
+					}
+				 	
+				 	$FotoGaleria->fotos=$carpeta;
+				 	$FotoGaleria->descripcion=$datos->input('descripcion');
+				 	$FotoGaleria->fkidgaleria=$datos->input('idGaleria');
+
+				 	if($FotoGaleria->save()){
+
+			 			DB::commit(); 
+			 			\Session::flash('flash_message', '¡Nueva fotografía añadida con éxito');
+						return redirect ('admin/editarGaleria');
+				 	}
+					else 
+					{
+						DB::rollback();
+						\Session::flash('mensaje','Error al añadir la fotografía');
+						 return redirect ('admin/editarGaleria');
+					}
+				}
+				catch(Exeption $e)
+				{
+					DB::rollback();
+					\Session::flash('mensaje','Error al añadir el módulo');
+					return redirect ('admin/editarGaleria');
+				}				
 			}
 			else
 			{

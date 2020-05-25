@@ -219,8 +219,9 @@ License URL: http://creativecommons.org/licenses/by/3.0/
           		<div class="container-login100" >
             		<div class="wrap-login100">
 
-                  <form action="agregarFotoGaleria" method="get">
+                  <form action="agregarFotoGaleria" method="post">
                                {{ csrf_field() }}
+                               <input type="hidden" name="idGaleria" value="{{$listaFotoGaleria[0]->fkidgaleria}}">
                     <div class="container-login100-form-btn" style="text-align: right;">
                       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                               &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button class="login100-form-btn" style="background-color: black;" >

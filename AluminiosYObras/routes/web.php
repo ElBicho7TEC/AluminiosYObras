@@ -64,3 +64,5 @@ Route::post('admin/editarFotoGaleria','Administrador@editarFotoGaleria');
 Route::get('admin/agregarGaleria','Administrador@agregarGaleria');
 Route::get('admin/editarGaleria','Administrador@editarGaleria');
 Route::post('admin/editarGaleria','Administrador@editarGaleriaBuscar');
+
+Route::post('recuperarContrasena','LoginC@recuperarContrasena');

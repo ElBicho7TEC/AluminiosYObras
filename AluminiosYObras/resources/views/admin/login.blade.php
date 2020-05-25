@@ -58,7 +58,7 @@
 
 					<div class="flex-sb-m w-full p-b-30">
 						<div>
-							<a href="#" class="txt1" data-toggle="modal" data-target="#recuperarContrasena">
+							<a href="#" class="txt1" data-toggle="modal" data-target="#recuperarContrasena" style="color:blue">
 								¿Se te olvid&oacute; tu contrase&ntilde;a?
 							</a>
 						</div>
@@ -67,27 +67,31 @@
                     <div id="recuperarContrasena" class="modal fade">
                         <div class="modal-dialog">
                             <div class="modal-content">
+                            	<form class="login100-form validate-form" method="post" action="recuperarContrasena" enctype="multipart/form-data">
+								{{csrf_field()}}	
                                 <div class="modal-header" style="background:black;">
                                     <h4 class="modal-title" style="color: white" >Recuperar Contraseña</h4>
                                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true"  style="color: white">&times;</button>
                                 </div>
                                 <div class="modal-body mx-auto" >
-                                    <b><label id="form_nombre">Favor de escribir su correo electronico para restablecer su contraseña </label></b>
+                                    <b><label id="form_nombre">Favor de escribir su correo electronico para restablecer su contraseña:</label></b>
                                 </div>
-                                <div class="modal-footer" style="height: 100px;">
-                                    <div class="wrap-input100 validate-input m-b-26" data-validate="El correo electr&oacute;nico es requerido">
-									<span class="label-input100">Correo electr&oacute;nico</span>
-									<input class="input100" type="text" name="email" placeholder="Ingresar correo electr&oacute;nico" pattern="[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*@[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[.][a-zA-Z]{1,5}" title="El correo debe contener entre caracteres el símbolo de '@' en seguida el símbolo de '.' y finalmente el dominio">
+                                <div class="wrap-input100 validate-input m-b-26" data-validate="El correo electr&oacute;nico es requerido" style="width: 80%!important; text-align: center!important; margin-left: 10%">
+									
+									<input class="input100" type="text" name="recuperar" placeholder="Ingresar correo electr&oacute;nico" pattern="[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*@[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[.][a-zA-Z]{1,5}" title="El correo debe contener entre caracteres el símbolo de '@' en seguida el símbolo de '.' y finalmente el dominio" >
 									<span class="focus-input100"></span>
-									</div>
-									<div class="modal-footer" style="height: 100px;">
-                                    <div class="container-login100-form-btn">
-									<button class="login100-form-btn" style="background-color: black">
-									Restablecer contraseña
-									</button>
-									</div>
 								</div>
+                                <div class="modal-footer" style="height: 100px;">
+                                    
+									<div class="modal-footer" style="height: 100px;">
+                                    	<div class="container-login100-form-btn">
+										<button class="login100-form-btn" style="background-color: black">
+										Restablecer contraseña
+										</button>
+										</div>
+									</div>
                                 </div>
+                            	</form>
                             </div>
                         </div>
                     </div>

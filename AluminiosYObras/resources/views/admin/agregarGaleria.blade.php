@@ -218,8 +218,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				</section>
 			</div>
 		<div class="cont span_2_of_3">
-		  <div class="mens-toolbar">
-              Alumnios y obras
+		  <div class="mens-toolbar" align="center">
+              Agregar nuevo proyecto
      	    <div class="clear"></div>
 	       </div>
 
@@ -245,7 +245,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				            	 {{csrf_field()}}
 						            <div class="wrap-input100 validate-input m-b-26" data-validate="Nombre del proyecto requerido">
                   						<span class="label-input100">Nombre Proyecto</span>
-		                            	<input class="input100" type="text" name="nombreproyecto" placeholder="Ingresar el nombre del proyecto" value="">
+		                            	<input class="input100" type="text" name="nombreproyecto" maxlength="40" placeholder="Ingresar el nombre del proyecto" value="">
                  						<span class="focus-input100"></span>
                 					</div>
                 					 <div class="wrap-input100 validate-input m-b-26" data-validate="Foto del proyecto requerido">
@@ -255,12 +255,12 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                 					</div>
                 				    <div class="wrap-input100 validate-input m-b-26" data-validate="Descripción breve del proyecto requerido">
                   						<span class="label-input100">Descripción breve</span>
-		                            	<textarea class="input100" type="text" name="descripcionbreve" placeholder="Ingresar la descripción breve del proyecto" value="" rows="3"> </textarea>
+		                            	<textarea class="input100" type="text" name="descripcionbreve" maxlength="150" placeholder="Ingresar la descripción breve del proyecto" value="" rows="3"> </textarea>
                  						<span class="focus-input100"></span>
                 					</div>
                 					 <div class="wrap-input100 validate-input m-b-26" data-validate="Descripción larga del proyecto requerido">
                   						<span class="label-input100">Descripción larga</span>
-		                            	<textarea class="input100" type="text" name="descripcionlarga" placeholder="Ingresar la descripción larga del proyecto" value="" rows="3"> </textarea>
+		                            	<textarea class="input100" type="text" name="descripcionlarga" maxlength="255" placeholder="Ingresar la descripción larga del proyecto" value="" rows="3"> </textarea>
                  						<span class="focus-input100"></span>
                 					</div>
                             <div class="wrap-input100 validate-input m-b-26" data-validate="Nombre del modulo requerido">

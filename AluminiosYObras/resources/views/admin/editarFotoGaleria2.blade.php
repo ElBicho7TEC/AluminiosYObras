@@ -209,8 +209,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				</section>
 			</div>
 		<div class="cont span_2_of_3">
-		  <div class="mens-toolbar">
-              Alumnios y obras
+		  <div class="mens-toolbar" align="center">
+              Editar foto proyecto
      	    <div class="clear"></div>
 	       </div>
 

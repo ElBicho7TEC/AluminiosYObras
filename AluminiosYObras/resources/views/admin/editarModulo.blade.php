@@ -220,7 +220,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 			</div>
 		<div class="cont span_2_of_3">
 		  <div class="mens-toolbar" align="center">
-              Editar módulo
+              Módulos
      	    <div class="clear"></div>
 	       </div>
 

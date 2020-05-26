@@ -143,6 +143,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
          <div class="wrap">
      	    <div class="rsidebar span_1_of_left" >
 				   <section  class="sky-form" >
+            <section  class="sky-form" >
             <h4>Perfil</h4>
                 <br>
                 <h7 style="color: grey;">
@@ -167,6 +168,15 @@ License URL: http://creativecommons.org/licenses/by/3.0/
               <form action="editarLogo" method="get">
                 {{ csrf_field() }}
                 <a href="javascript:;" onclick="parentNode.submit();">&nbsp;&nbsp;&nbsp;&nbsp;Editar logotipo</a>
+              </form> 
+            </h7>
+            <br>
+            <h4>Banner Empresa</h4>
+            <br>
+            <h7 style="color: grey;">
+              <form action="verbaner" method="get">
+                {{ csrf_field() }}
+                <a href="javascript:;" onclick="parentNode.submit();">&nbsp;&nbsp;&nbsp;&nbsp;Editar banner</a>
               </form> 
             </h7>
             <br>
@@ -207,7 +217,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                 {{ csrf_field() }}
                 <button class="login100-form-btn" style="background-color: black">Cerrar sesión</button>
             </form>
-				</section>
+        </section>
 			</div>
 		<div class="cont span_2_of_3">
 		  <div class="mens-toolbar" align="center">

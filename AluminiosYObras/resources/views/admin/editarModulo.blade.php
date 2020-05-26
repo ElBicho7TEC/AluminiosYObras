@@ -218,34 +218,33 @@ License URL: http://creativecommons.org/licenses/by/3.0/
             </form>
 				</section>
 			</div>
-		<div class="cont span_2_of_3">
-		  <div class="mens-toolbar" align="center">
+<div class="cont span_2_of_3">
+			<div class="mens-toolbar" align="center">
               Módulos
      	    <div class="clear"></div>
-	       </div>
+	       	</div>
 
-	        <div class="limiter">
-          	<div align="center" class="container-login100">
-            	<div class="wrap-login100">
+	<div class="limiter">
+        <div class="container-login100" align="center" >
+            <div class="wrap-login100">
               	<div align="center">
                 	<br>
                 	<span class="login100-form-title-1" style="color: black !important;">
                   	Módulos
                 	</span>
               	</div>
-							  <div class="table-responsive">
-                  <div class="table-responsive">
-                @if(Session::has('flash_message'))
-                <div class="alert alert-success" role="alert">
-                  {{ Session::get('flash_message') }}
-                </div>
-              @elseif(Session::has('mensaje'))
-                <div class="alert alert-danger" role="alert">
-                  {{ Session::get('mensaje') }}
-                </div>
-              @endif
-							  <table class="table" >
-                  <br>
+                <div class="table-responsive">
+                	@if(Session::has('flash_message'))
+                	<div class="alert alert-success" role="alert">
+                  	{{ Session::get('flash_message') }}
+                	</div>
+              		@elseif(Session::has('mensaje'))
+                	<div class="alert alert-danger" role="alert">
+                  	{{ Session::get('mensaje') }}
+                	</div>
+              		@endif
+					<table class="table" >
+                  	<br>
 								  <thead class="thead-dark"  style="color: white; background-color: black;">
 										<tr>
 										  <th scope="col" style="text-align:center;">#</th>
@@ -279,42 +278,17 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 								    </tr>
 
 
-                    {{-----------------------Modal de confirmación de Eliminar Módulo---------------------------}}
-                    <div id="eliminarModulo{{$modulo->idmodulo}}" class="modal fade">
-                        <div class="modal-dialog">
-                            <div class="modal-content">
-                                <div class="modal-header" style="background:black;">
-                                    <h4 class="modal-title" style="color: white" >Eliminar Módulo</h4>
-                                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true"  style="color: white">&times;</button>
-                                </div>
-                                <div class="modal-body mx-auto" >
-                                    <b><label id="form_nombre">¿Estás seguro que deseas eliminar el módulo {{$modulo->nombremodulo}}?, se eliminarán todos los proyectos pertenecientes al mismo y no podrá recuperarlos</label></b>
-                                </div>
-                                <div class="modal-footer" style="height: 100px;">
-                                    <form action="../btnEliminarModulo" method="post" enctype="multipart/form-data">
-                                    {{ csrf_field() }}
-                                        <input type="hidden" name="idModulo" value="{{$modulo->idmodulo}}">
-                                        <button id="button" class="btn btn-primary" style="background-color: black; color: white; border:none; width: 50px; height: 20px; text-align: middle;">Si</button>
-                                    </form>
-                                    <form action="editarModulo" method="get" enctype="multipart/form-data">
-                                    {{ csrf_field() }}
-                                        <button id="button" class="btn btn-primary" class="btn btn-sm btn-default" data-dismiss="modal" style="background-color: black; color: white; border:none; width: 50px; height: 20px; text-align: middle;">No</button>
-                                    </form>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
 
 
                     @endforeach
 								  </tbody>
-								</table>
-					    </div>
-		        </div>
-			    </div>
+				    </table>
+				</div>	    
 		    </div>
+	    </div>
+	</div>
 			<div class="clear"></div>
-		</div>
+</div>
     <script type="text/javascript">
   	$(document).ready(function() 
   	{

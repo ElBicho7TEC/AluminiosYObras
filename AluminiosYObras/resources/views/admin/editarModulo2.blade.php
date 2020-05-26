@@ -217,14 +217,14 @@ License URL: http://creativecommons.org/licenses/by/3.0/
             </form>
 				</section>
 			</div>
-		<div class="cont span_2_of_3">
-		  <div class="mens-toolbar" align="center">
+<div class="cont span_2_of_3">
+	          <div class="mens-toolbar" align="center">
               Editar módulo
-     	    <div class="clear"></div>
-	       </div>
+     	      <div class="clear"></div>
+	          </div>
 
-	        <div class="limiter">
-          		<div align="center">
+	<div class="limiter">
+          		<div class="container-login100" align="center">
             		<div class="wrap-login100">
               			<div align="center">
                 		<br>
@@ -298,9 +298,9 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 		            </div>
 		        </div>
 			</div>
-		</div>
+  </div>
 			  <div class="clear"></div>
-		</div>
+</div>
 	      <script type="text/javascript">
 	    	$(document).ready(function() 
 	    	{

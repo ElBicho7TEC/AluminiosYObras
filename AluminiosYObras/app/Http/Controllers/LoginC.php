@@ -88,29 +88,60 @@ use DB;
 			    $strMin = "abcdefghijklmnopqrstuvwxyz";
 			    $strCar = "1234567890";
 			    $strNum = "@!#%&.";
-			    $passwordMay = "";
-			    $passwordMin = "";
-			    $passwordCar = "";
-			    $passwordNum = "";
+
+			    function generate_Mayusculas($input, $strength = 16) {
+				    $input_length = strlen($input);
+				    $random_string = '';
+				    for($i = 0; $i < $strength; $i++) {
+				        $random_character = $input[mt_rand(0, $input_length - 1)];
+				        $random_string .= $random_character;
+				    }
+				 
+				    return $random_string;
+				}
+
+				function generate_Minusculas($input, $strength = 16) {
+				    $input_length = strlen($input);
+				    $random_string = '';
+				    for($i = 0; $i < $strength; $i++) {
+				        $random_character = $input[mt_rand(0, $input_length - 1)];
+				        $random_string .= $random_character;
+				    }
+				 
+				    return $random_string;
+				}
+
+				function generate_Caracteres($input, $strength = 16) {
+				    $input_length = strlen($input);
+				    $random_string = '';
+				    for($i = 0; $i < $strength; $i++) {
+				        $random_character = $input[mt_rand(0, $input_length - 1)];
+				        $random_string .= $random_character;
+				    }
+				 
+				    return $random_string;
+				}
+
+				function generate_Numeros($input, $strength = 16) {
+				    $input_length = strlen($input);
+				    $random_string = '';
+				    for($i = 0; $i < $strength; $i++) {
+				        $random_character = $input[mt_rand(0, $input_length - 1)];
+				        $random_string .= $random_character;
+				    }
+				 
+				    return $random_string;
+				}
+
+
+			    $passwordMay = generate_Mayusculas($strMay, 3);
+			    $passwordMin = generate_Minusculas($strMin, 6);
+			    $passwordCar = generate_Caracteres($strCar, 2);
+			    $passwordNum = generate_Numeros($strNum, 4);
 			    $password = "";
+
 			    $str = $passwordMay.$passwordMin.$passwordCar.$passwordNum;
 
-			    for($i=0;$i<2;$i++) {
-			      //obtenemos 2 caracteres aleatorio escogido de la cadena de caracteres
-			      $passwordCar .= substr($strCar,rand(0,62),1);
-				}
-				for($i=0;$i<3;$i++) {
-			      //obtenemos 3 mayusculas aleatorio escogido de la cadena de caracteres
-			      $passwordMay .= substr($strMay,rand(0,62),1);
-				}
-				for($i=0;$i<6;$i++) {
-			      //obtenemos 6 minusculas aleatorio escogido de la cadena de caracteres
-			      $passwordMin .= substr($strMin,rand(0,62),1);
-				}
-				for($i=0;$i<4;$i++) {
-			      //obtenemos 4 numeros aleatorio escogido de la cadena de caracteres
-			      $passwordNum .= substr($strNum,rand(0,62),1);
-				}
 				//desordenamos los caracteres
 				$password = str_shuffle($str);
 

@@ -935,7 +935,6 @@ use DB;
 					foreach($datos->banner1 as $carrusel1)
 					{			
 						Storage::disk('banner')->put('banner1.jpg',File::get($carrusel1)); 
-						$Carrusel=modulo::find($idModulo);
 					}
 				}
 

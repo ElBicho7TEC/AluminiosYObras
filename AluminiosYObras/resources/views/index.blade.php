@@ -81,11 +81,17 @@
             <div class="section-fullheight-inner section-md text-center text-lg-left">
               <div class="container">
                 <div class="row justify-content-center justify-content-lg-start" >
-                  <div class="col-md-10 offset-lg-1 col-lg-8 offset-xl-1 col-xl-9 offset-xxl-2 col-xxl-8">
-                    <div class="text-center">
-                      <div class="text-1 font-weight-medium" style="text-transform: uppercase; font-size: 30px; " >{{$datosBienvenida[0]->mensajewelcome}}</div>
-                      <div class="title text-decorative " style="font-size: 20px;"><b>{{$datosBienvenida[0]->subtitulo1}} {{$datosBienvenida[0]->subtitulo2}}&nbsp;&nbsp;&nbsp;<i class="text-decorative"></i></b></div > 
+                  <div class="col-md-10 offset-lg-1 col-lg-8 offset-xl-1 col-xl-9 offset-xxl-2 col-xxl-8" >
+                    <div class="jumbotron-custom-1" >
+
+                    <div class="" style="width: 200%;">
+                      <div class="text-1 font-weight-medium">{{$datosBienvenida[0]->mensajewelcome}}</div>
+                      <div class="title text-decorative">{{$datosBienvenida[0]->subtitulo1}} </div>
+                       <div class="title">{{$datosBienvenida[0]->subtitulo2}} <i class="text-decorative"></i>&nbsp;&nbsp;&nbsp;</div>
+                     
                     </div>
+                  </div>
+
                   </div>
                 </div>
                     <div>

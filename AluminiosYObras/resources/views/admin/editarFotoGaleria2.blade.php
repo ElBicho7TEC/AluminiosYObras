@@ -169,6 +169,15 @@ License URL: http://creativecommons.org/licenses/by/3.0/
               </form> 
             </h7>
             <br>
+            <h4>Banner Empresa</h4>
+            <br>
+            <h7 style="color: grey;">
+              <form action="verbaner" method="get">
+                {{ csrf_field() }}
+                <a href="javascript:;" onclick="parentNode.submit();">&nbsp;&nbsp;&nbsp;&nbsp;Editar banner</a>
+              </form> 
+            </h7>
+            <br>
             <h4>Modulos</h4>
             <br>
             <h7 style="color: grey;">
@@ -206,7 +215,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                 {{ csrf_field() }}
                 <button class="login100-form-btn" style="background-color: black">Cerrar sesión</button>
             </form>
-				</section>
+        </section>
 			</div>
 		<div class="cont span_2_of_3">
 		  <div class="mens-toolbar" align="center">

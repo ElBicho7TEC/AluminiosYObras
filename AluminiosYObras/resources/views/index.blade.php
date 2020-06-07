@@ -77,25 +77,20 @@
               <li><a class="icon icon-sm icon-gray-filled icon-circle mdi mdi-instagram" href="#" style="background: black"></a></li>
             </ul>
           </div>
-          <div class="section-fullheight" style="color: black;">
+          <div class="section-fullheight" style="color: black;" >
             <div class="section-fullheight-inner section-md text-center text-lg-left">
               <div class="container">
-                <div class="row justify-content-center justify-content-lg-start" >
-                  <div class="col-md-10 offset-lg-1 col-lg-8 offset-xl-1 col-xl-9 offset-xxl-2 col-xxl-8" >
-                    <div class="jumbotron-custom-1" >
-
-                    <div class="" style="width: 200%;">
+                <div class="row justify-content-center justify-content-lg-start">
+                  <div class="col-md-10 offset-lg-1 col-lg-10 offset-xl-1 col-xl-10 offset-xxl-2 col-xxl-10">
+                    <div class="jumbotron-custom">
                       <div class="text-1 font-weight-medium">{{$datosBienvenida[0]->mensajewelcome}}</div>
-                      <div class="title text-decorative">{{$datosBienvenida[0]->subtitulo1}} </div>
-                       <div class="title">{{$datosBienvenida[0]->subtitulo2}} <i class="text-decorative"></i>&nbsp;&nbsp;&nbsp;</div>
-                     
+                      <div class="title text-decorative"style="font-size: 52px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{$datosBienvenida[0]->subtitulo1}} </div>
+                      <div class="title" style="font-size: 52px">{{$datosBienvenida[0]->subtitulo2}}<i class="text-decorative"></i></div>
                     </div>
                   </div>
-
-                  </div>
                 </div>
-                    <div>
-                        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+              </div>
+              <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
 						    <ol class="carousel-indicators">
 								<li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
 								<li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
@@ -130,9 +125,7 @@
 								<div class="container-fluid">
 								    <hr>
 						        </div>
-				    </div>
-				    <p class="big-1 text-center" style="color: black">{{$datosBienvenida[0]->descripcion}}</p>
-              </div>                 
+               <p class="big-2 text-center" style="color: black;">{{$datosBienvenida[0]->descripcion}}</p>
             </div>
           </div>
           <ul class="project-list">
